@@ -442,8 +442,9 @@
 
 
                             </p>
-                            <button class="dashboard-btn" onclick="toggleDashboard()">Show Dashboard</button>
-                            <div class="dashboard-container" id="dashboard">
+                            <button class="dashboard-btn" onclick="toggleDashboard('dashboard1')">Show
+                                Dashboard</button>
+                            <div class="dashboard-container" id="dashboard1" style="display: none;">
                                 <!-- Replace the src URL with your Power BI embed URL -->
                                 <iframe title="DB_salariosTech" width="1024" height="1060"
                                     src="https://app.powerbi.com/view?r=eyJrIjoiYjAxN2FhNDEtODM0Yi00ZTUyLTg5NDQtYWFlNDEwYzBiNzZmIiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9&pageName=069c2afd845301422361"
@@ -478,29 +479,30 @@
 
                             </ul>
                             </p>
-                            <button class="dashboard-btn" onclick="toggleDashboard()">Show Dashboard
-                                <div class="dashboard-container" id="dashboard">
-                                    <!-- Replace the src URL with your Power BI embed URL -->
-                                    <iframe title="Dashboeard Shopify" width="1024" height="1060"
-                                        src="https://app.powerbi.com/view?r=eyJrIjoiMDIxZWFkMjUtMWY4My00MzhkLTllZjgtNTFhNzI0ZWExMDYyIiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9&pageName=d9f70f06e243722aafc7"
-                                        frameborder="0" allowFullScreen="true"></iframe>
-                            </button>
+                            <button class="dashboard-btn" onclick="toggleDashboard('dashboard2')">Show
+                                Dashboard</button>
+                            <div class="dashboard-container" id="dashboard2" style="display: none;">
+                                <!-- Replace the src URL with your Power BI embed URL -->
+                                <iframe title="Dashboeard Shopify" width="1024" height="1060"
+                                    src="https://app.powerbi.com/view?r=eyJrIjoiMDIxZWFkMjUtMWY4My00MzhkLTllZjgtNTFhNzI0ZWExMDYyIiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9&pageName=d9f70f06e243722aafc7"
+                                    frameborder="0" allowFullScreen="true"></iframe>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+
                         </div>
                     </div>
+                    <!-- Dashboard Section end -->
 
-                    <div class="row">
 
-                    </div>
                 </div>
-                <!-- Dashboard Section end -->
-
+            </section>
+            <!--====portifolio section end====-->
 
         </div>
-        </section>
-        <!--====portifolio section end====-->
-
-    </div>
-    <!--====Main Content end====-->
+        <!--====Main Content end====-->
     </div>
 
     <!--====Main Container end====-->
@@ -518,11 +520,15 @@
     <script src="js/style-switcher.js"></script>
     <script>
         // JavaScript to toggle dashboard visibility
-        function toggleDashboard() {
-            const dashboard = document.getElementById('dashboard');
+        function toggleDashboard(dashboardId) {
+            const dashboard = document.getElementById(dashboardId);
+            if (dashboard.style.display === "none" || dashboard.style.display === "") {
+                dashboard.style.display = "block";
+            } else {
+                dashboard.style.display = "none";
+            }
             const button = document.querySelector('.dashboard-btn');
             dashboard.classList.toggle('active');
-            // Update button text based on dashboard visibility
             button.textContent = dashboard.classList.contains('active') ? 'Hide Dashboard' : 'Show Dashboard';
         }
     </script>
