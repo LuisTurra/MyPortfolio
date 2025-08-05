@@ -601,7 +601,7 @@ h3.my-profession {
 
 /* Portfolio */
 .portfolio .container {
-    padding: 0 15px 40px;
+    padding: 0 15px 30px;
     /* Added side padding for smaller screens */
     max-width: 1200px;
     /* Constrain max-width for larger screens */
