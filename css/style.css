@@ -179,7 +179,9 @@ ul {
     align-items: center;
     z-index: 10;
 }
-
+.aside.open {
+    left: 0;
+}
 .aside .logo {
 
     position: absolute;
@@ -298,7 +300,9 @@ ul {
     color: var(--skin-color);
 
 }
-
+.nav-toggler {
+    display: none;
+}
 .aside .nav li a i {
     margin-right: 15px;
 
@@ -831,8 +835,7 @@ h3.my-profession {
 
     .main-content {
         padding-left: 0 !important;
-        width: 100%;
-        max-width: 100%;
+        
     }
 
     .main-contact {
@@ -842,6 +845,33 @@ h3.my-profession {
     .about .about-content .personal-info .info-item p span {
         display: block;
     }
+    .nav-toggler {
+        display: flex;
+        z-index: 100;
+        left: 20px;
+    }
+.nav-toggler.open span {
+        background: transparent;
+    }
+    
+    .nav-toggler.open span::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    
+    .nav-toggler.open span::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    .about .about-content .timeline .circle-dot {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: var(--skin-color);
+}
 }
 
 @media (min-width: 1200px) {
