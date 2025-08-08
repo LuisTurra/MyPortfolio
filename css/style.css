@@ -99,7 +99,7 @@ ul {
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 10px;
-padding: 10px;
+    padding: 10px;
 
 }
 
@@ -113,7 +113,7 @@ padding: 10px;
     height: 60px;
     align-items: center;
     text-decoration: underline;
-    
+
 
 }
 
@@ -806,19 +806,23 @@ h3.my-profession {
 
 
 
-/* Responsive Adjustments */
-@media (max-width: 991px) {
-    .portfolio .portfolio-item {
-        flex: 0 0 50%;
-        /* Two columns on medium screens */
-        max-width: 50%;
-    }
-}
+
+
 
 @media (max-width: 767px) {
-    .aside.open {
-        left: 0; /* Show aside when open */
+    .aside {
+        display: none !important;
+        /* Completely hide the aside */
     }
+
+    .main-content {
+        padding-left: 0 !important;
+        /* Remove left padding */
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
     .row {
         margin-left: -5px;
         margin-right: -5px;
@@ -842,6 +846,21 @@ h3.my-profession {
         max-width: 100%;
     }
 
+    .home {
+        min-height: 100vh;
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .home .home-info {
+        flex: 0 0 60%;
+        max-width: 60%;
+        padding-left: 15px;
+    }
+
     .home .home-img {
         display: none;
     }
@@ -858,15 +877,22 @@ h3.my-profession {
 
 @media (max-width: 1199px) {
     .main-content {
-        padding-left: 270px !important;
+        /* padding-left: 270px !important; */
         background: var(--bg-black-900);
         color: var(--text-black-900);
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
     }
-
+ .home .home-img {
+        display: none;
+    }
     .aside {
+        display: none !important;
+        /* Completely hide the aside */
+    }
+
+    /* .aside {
         position: fixed;
         top: 0;
         left: 0;
@@ -879,7 +905,7 @@ h3.my-profession {
         justify-content: center;
         align-items: center;
         z-index: 10;
-    }
+    } */
 
     .container {
         width: 100%;
