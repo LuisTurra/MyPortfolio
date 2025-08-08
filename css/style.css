@@ -816,6 +816,9 @@ h3.my-profession {
 }
 
 @media (max-width: 767px) {
+    .aside.open {
+        left: 0; /* Show aside when open */
+    }
     .row {
         margin-left: -5px;
         margin-right: -5px;
