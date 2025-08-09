@@ -548,8 +548,8 @@ h3.my-profession {
 }
 
 .about .about-content .education {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 100%;
+    max-width: 100%;
     margin-top: 30px;
 
 }
@@ -873,6 +873,11 @@ h3.my-profession {
         padding-left: 5px;
         padding-right: 5px;
     }
+    .about .about-content .education {
+        flex: 0 0 50%;
+        max-width: 100%;
+        padding: 0 10px;
+    }
 }
 
 @media (max-width: 1199px) {
@@ -963,9 +968,9 @@ h3.my-profession {
         padding: 0 5px;
     }
 
-    .about .about-content .education {
+   .about .about-content .education {
         flex: 0 0 50%;
-        max-width: 50%;
+        max-width: 100%;
         padding: 0 10px;
     }
 }
@@ -1054,7 +1059,7 @@ h3.my-profession {
 
     .about .about-content .education {
         flex: 0 0 50%;
-        max-width: 50%;
+        max-width: 100%;
         padding: 0 10px;
     }
 }
