@@ -560,7 +560,12 @@
                                             <strong><span class="highlight">Skills:</span></strong>
                                             <ul>
                                                 <li>DAX</li>
-                                                <li>Dashboard</li>
+                                                <li>Pensamento analítico</li>
+                                                <li>Comunicação</li>
+                                                <li>Modelagem de dados</li>
+                                                <li>Resolução de problemas</li>
+                                                <li>ETL básico</li>
+                                                <li>Atenção a detalhes</li>
                                             </ul>
 
 
@@ -572,13 +577,13 @@
 
 
                                 </p>
+                                <button class="relatorio-btn" onclick="window.open('relatoriopdf/Dashboard Salários de Dados.pdf', '_blank')">📄 Relatório</button>
+                                
                                 <button class="dashboard-btn" onclick="toggleDashboard('dashboard1')">Show
                                     Dashboard</button>
                                 <div class="dashboard-container" id="dashboard1" style="display: none;">
                                     <!-- Replace the src URL with your Power BI embed URL -->
-                                    <iframe title="DB_salariosTech" width="1024" height="1060"
-                                        src="https://app.powerbi.com/view?r=eyJrIjoiYjAxN2FhNDEtODM0Yi00ZTUyLTg5NDQtYWFlNDEwYzBiNzZmIiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9&pageName=069c2afd845301422361"
-                                        frameborder="0" allowFullScreen="true"></iframe>
+                                    <iframe title="DB_salariosTech" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYjAxN2FhNDEtODM0Yi00ZTUyLTg5NDQtYWFlNDEwYzBiNzZmIiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
 
                                 </div>
                             </div>
@@ -749,14 +754,16 @@
                                     </div>
                                 </div>
                                 <a href="https://github.com/LuisTurra/Demiss-es-MySQLDashboard" target="_blank"
-                                        class="github-link">
-                                        View on GitHub
-                                    </a>
+                                    class="github-link">
+                                    View on GitHub
+                                </a>
                                 <button class="dashboard-btn" onclick="toggleDashboard('dashboard4')">Show
                                     Dashboard</button>
                                 <div class="dashboard-container" id="dashboard4" style="display: none;">
                                     <!-- Replace the src URL with your Power BI embed URL -->
-                                    <iframe title="demissões Dashboard" width="600" height="900" src="https://app.powerbi.com/view?r=eyJrIjoiMWZhM2U0NmUtOGNmOC00NDZiLWFiMWYtOGNkZDVhNWQyODg1IiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+                                    <iframe title="demissões Dashboard" width="600" height="900"
+                                        src="https://app.powerbi.com/view?r=eyJrIjoiMWZhM2U0NmUtOGNmOC00NDZiLWFiMWYtOGNkZDVhNWQyODg1IiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9"
+                                        frameborder="0" allowFullScreen="true"></iframe>
                                 </div>
                             </div>
 
@@ -773,7 +780,7 @@
                                 <p class="portfolio-description">
                                     Projeto pessoal, onde desenvolvi limpeza de dados remoção de erros e
                                     dados nulos para
-                                    dashboard interativo 
+                                    dashboard interativo
                                     utilizando Excel.
                                     Dados providenciado
                                     por: https://www.kaggle.com/datasets/urvishahir/global-freelancers-raw-dataset
@@ -786,7 +793,7 @@
                                             <strong><span class="highlight">Ferramentas:</span></strong>
                                             <ul>
                                                 <li>Excel</li>
-                                                
+
 
 
                                             </ul>
@@ -800,7 +807,7 @@
                                             <strong><span class="highlight">Skills:</span></strong>
                                             <ul>
                                                 <li>Excel</li>
-                                                
+
 
                                             </ul>
 
@@ -808,12 +815,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <button class="dashboard-btn" onclick="toggleDashboard('dashboard5')">Show
                                     Dashboard</button>
                                 <div class="dashboard-container" id="dashboard5" style="display: none;">
                                     <!-- Replace the src URL with your Power BI embed URL -->
-                                    <iframe width="402" height="346" frameborder="0" scrolling="no" src="https://1drv.ms/x/c/0472c20a7b379144/IQTy5NAyyKlKRLQWXM24RhmeAT9eIytJQm4jnQeDq2uJNQU?em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+                                    <iframe width="402" height="346" frameborder="0" scrolling="no"
+                                        src="https://1drv.ms/x/c/0472c20a7b379144/IQTy5NAyyKlKRLQWXM24RhmeAT9eIytJQm4jnQeDq2uJNQU?em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
                                 </div>
                             </div>
 
@@ -842,6 +850,7 @@
     <!--====JS FFiles====-->
     <script src="js/script.js"></script>
     <script src="js/style-switcher.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
     <script>
         // JavaScript to toggle dashboard visibility
         function toggleDashboard(dashboardId) {
@@ -855,6 +864,7 @@
             dashboard.classList.toggle('active');
             button.textContent = dashboard.classList.contains('active') ? 'Hide Dashboard' : 'Show Dashboard';
         }
+       
     </script>
 
 </body>

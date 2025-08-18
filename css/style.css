@@ -402,6 +402,7 @@ h3.my-profession {
     
 }*/
 
+
 .home .home-img img {
     display: block;
     margin: auto;
@@ -761,7 +762,18 @@ h3.my-profession {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
+.relatorio-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: darkred;
+    /* Power BI blue color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 .dashboard-btn:hover {
     background-color: darkred;
 }
@@ -873,6 +885,7 @@ h3.my-profession {
         padding-left: 5px;
         padding-right: 5px;
     }
+
     .about .about-content .education {
         flex: 0 0 50%;
         max-width: 100%;
@@ -889,9 +902,11 @@ h3.my-profession {
         max-width: 100%;
         box-sizing: border-box;
     }
- .home .home-img {
+
+    .home .home-img {
         display: none;
     }
+
     .aside {
         display: none !important;
         /* Completely hide the aside */
@@ -968,7 +983,7 @@ h3.my-profession {
         padding: 0 5px;
     }
 
-   .about .about-content .education {
+    .about .about-content .education {
         flex: 0 0 50%;
         max-width: 100%;
         padding: 0 10px;
