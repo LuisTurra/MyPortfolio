@@ -29,7 +29,7 @@ body {
     color: var(--text-black-900);
     width: 100%;
     overflow-x: hidden !important;
-
+    scroll-behavior: smooth;
 
 }
 
