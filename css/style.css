@@ -762,6 +762,7 @@ h3.my-profession {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .relatorio-btn {
     padding: 15px 30px;
     font-size: 18px;
@@ -774,6 +775,7 @@ h3.my-profession {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .dashboard-btn:hover {
     background-color: darkred;
 }
@@ -828,16 +830,16 @@ h3.my-profession {
     }
 
     .main-content {
-        padding-left: 0 !important;
+
         /* Remove left padding */
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box
     }
 
     .row {
-        margin-left: -5px;
-        margin-right: -5px;
+        width: 100%
     }
 
     .container {
@@ -856,6 +858,22 @@ h3.my-profession {
     .portfolio-item-inner {
         width: 100%;
         max-width: 100%;
+    }
+
+    .about .about-content .skills {
+        display: none;
+    }
+
+    .about .about-content .personal-info {
+       flex: 1!important; /* Take all available space */
+        width: 100%!important; /* Ensure full width of row */
+        max-width: 100%!important; /* Fill row's width */
+        padding: 5px!important; /* Optional: Increase padding for visual size */
+        margin-left: -5px !important; /* Extend 20px to the left */
+        overflow-wrap: break-word !important; /* Ensure long words break */
+        word-wrap: break-word !important; /* Fallback for older browsers */
+        white-space: normal !important; /* Allow text to wrap */
+        text-overflow: clip !important; /* Prevent ellipsis, let text wrap */
     }
 
     .home {
@@ -975,6 +993,10 @@ h3.my-profession {
         flex: 0 0 60%;
         max-width: 60%;
         padding: 0 10px;
+        overflow-wrap: break-word !important; /* Ensure long words break */
+        word-wrap: break-word !important; /* Fallback for older browsers */
+        white-space: normal !important; /* Allow text to wrap */
+        text-overflow: clip !important; /* Prevent ellipsis, let text wrap */
     }
 
     .about .about-content .skills {
@@ -1064,6 +1086,10 @@ h3.my-profession {
         flex: 0 0 70%;
         max-width: 70%;
         padding: 0 10px;
+        overflow-wrap: break-word !important; /* Ensure long words break */
+        word-wrap: break-word !important; /* Fallback for older browsers */
+        white-space: normal !important; /* Allow text to wrap */
+        text-overflow: clip !important; /* Prevent ellipsis, let text wrap */
     }
 
     .about .about-content .skills {
