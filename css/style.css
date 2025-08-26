@@ -834,7 +834,7 @@ h3.my-profession {
         /* Remove left padding */
         width: 100%;
         max-width: 100%;
-
+        padding-left: 0px;
         box-sizing: border-box
     }
 
@@ -865,15 +865,24 @@ h3.my-profession {
     }
 
     .about .about-content .personal-info {
-       flex: 1!important; /* Take all available space */
-        width: 100%!important; /* Ensure full width of row */
-        max-width: 100%!important; /* Fill row's width */
-        padding: 5px!important; /* Optional: Increase padding for visual size */
-        margin-left: -5px !important; /* Extend 20px to the left */
-        overflow-wrap: break-word !important; /* Ensure long words break */
-        word-wrap: break-word !important; /* Fallback for older browsers */
-        white-space: normal !important; /* Allow text to wrap */
-        text-overflow: clip !important; /* Prevent ellipsis, let text wrap */
+        flex: 1 !important;
+        /* Take all available space */
+        width: 100% !important;
+        /* Ensure full width of row */
+        max-width: 100% !important;
+        /* Fill row's width */
+        padding: 5px !important;
+        /* Optional: Increase padding for visual size */
+        margin-left: -5px !important;
+        /* Extend 20px to the left */
+        overflow-wrap: break-word !important;
+        /* Ensure long words break */
+        word-wrap: break-word !important;
+        /* Fallback for older browsers */
+        white-space: normal !important;
+        /* Allow text to wrap */
+        text-overflow: clip !important;
+        /* Prevent ellipsis, let text wrap */
     }
 
     .home {
@@ -886,9 +895,24 @@ h3.my-profession {
     }
 
     .home .home-info {
-        flex: 0 0 60%;
-        max-width: 60%;
-        padding-left: 15px;
+        flex: 1 !important;
+        /* Take all available space */
+        width: 100% !important;
+        /* Ensure full width of row */
+        max-width: 100% !important;
+        /* Fill row's width */
+        padding: 5px !important;
+        /* Optional: Increase padding for visual size */
+        margin-left: 10px !important;
+        /* Extend 20px to the left */
+        overflow-wrap: break-word !important;
+        /* Ensure long words break */
+        word-wrap: break-word !important;
+        /* Fallback for older browsers */
+        white-space: normal !important;
+        /* Allow text to wrap */
+        text-overflow: clip !important;
+        /* Prevent ellipsis, let text wrap */
     }
 
     .home .home-img {
@@ -971,9 +995,24 @@ h3.my-profession {
     }
 
     .home .home-info {
-        flex: 0 0 60%;
-        max-width: 60%;
-        padding-left: 15px;
+        flex: 1 !important;
+        /* Take all available space */
+        width: 100% !important;
+        /* Ensure full width of row */
+        max-width: 100% !important;
+        /* Fill row's width */
+        padding: 5px !important;
+        /* Optional: Increase padding for visual size */
+        margin-left: 10px !important;
+        /* Extend 20px to the left */
+        overflow-wrap: break-word !important;
+        /* Ensure long words break */
+        word-wrap: break-word !important;
+        /* Fallback for older browsers */
+        white-space: normal !important;
+        /* Allow text to wrap */
+        text-overflow: clip !important;
+        /* Prevent ellipsis, let text wrap */
     }
 
     .home .home-img {
@@ -993,10 +1032,14 @@ h3.my-profession {
         flex: 0 0 60%;
         max-width: 60%;
         padding: 0 10px;
-        overflow-wrap: break-word !important; /* Ensure long words break */
-        word-wrap: break-word !important; /* Fallback for older browsers */
-        white-space: normal !important; /* Allow text to wrap */
-        text-overflow: clip !important; /* Prevent ellipsis, let text wrap */
+        overflow-wrap: break-word !important;
+        /* Ensure long words break */
+        word-wrap: break-word !important;
+        /* Fallback for older browsers */
+        white-space: normal !important;
+        /* Allow text to wrap */
+        text-overflow: clip !important;
+        /* Prevent ellipsis, let text wrap */
     }
 
     .about .about-content .skills {
@@ -1064,9 +1107,24 @@ h3.my-profession {
     }
 
     .home .home-info {
-        flex: 0 0 60%;
-        max-width: 60%;
-        padding-left: 15px;
+        flex: 1 !important;
+        /* Take all available space */
+        width: 100% !important;
+        /* Ensure full width of row */
+        max-width: 100% !important;
+        /* Fill row's width */
+        padding: 5px !important;
+        /* Optional: Increase padding for visual size */
+        margin-left: 10px !important;
+        /* Extend 20px to the left */
+        overflow-wrap: break-word !important;
+        /* Ensure long words break */
+        word-wrap: break-word !important;
+        /* Fallback for older browsers */
+        white-space: normal !important;
+        /* Allow text to wrap */
+        text-overflow: clip !important;
+        /* Prevent ellipsis, let text wrap */
     }
 
     .home .home-img {
@@ -1086,10 +1144,14 @@ h3.my-profession {
         flex: 0 0 70%;
         max-width: 70%;
         padding: 0 10px;
-        overflow-wrap: break-word !important; /* Ensure long words break */
-        word-wrap: break-word !important; /* Fallback for older browsers */
-        white-space: normal !important; /* Allow text to wrap */
-        text-overflow: clip !important; /* Prevent ellipsis, let text wrap */
+        overflow-wrap: break-word !important;
+        /* Ensure long words break */
+        word-wrap: break-word !important;
+        /* Fallback for older browsers */
+        white-space: normal !important;
+        /* Allow text to wrap */
+        text-overflow: clip !important;
+        /* Prevent ellipsis, let text wrap */
     }
 
     .about .about-content .skills {
