@@ -186,14 +186,16 @@ ul {
     top: 0;
     left: 0;
     width: 270px;
-    height: 100%;
+    height: 100vh;
     padding: 30px;
     border-right: 1px solid var(--bg-black-50);
     background-color: var(--bg-black-100);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    scroll-behavior: auto;
+   
 }
 
 .aside.open {
@@ -251,53 +253,52 @@ ul {
 
 }
 
-.aside .nav-toggler {
-
-    width: 45px;
+.nav-toggler {
+    position: fixed;
+    top: 15px;
+    left: 5px;
+    width: 40px;
     height: 40px;
     border: 1px solid var(--bg-black-50);
-    cursor: pointer;
-    position: fixed;
-    left: 300px;
-    top: 20px;
-    border-radius: 5px;
+    border-radius: 2px;
     background: var(--bg-black-100);
-    display: none;
-    align-items: center;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2000;
+     
 }
 
-
-.aside .nav-toggler span {
-    display: inline-block;
-    width: 18px;
-    height: 2px;
-    background: var(--skin-color);
-    position: relative;
+.nav-toggler .hamburger {
+    display: block;
+    width: 28px;
+    height: 28px;
 }
 
-.aside .nav-toggler span::before {
-    content: '';
-    width: 18px;
-    height: 2px;
-    background: var(--skin-color);
-    position: absolute;
-    top: -6px;
-    left: 0;
-
+.nav-toggler .hamburger .line {
+    stroke: var(--skin-color, var(--text-black-900)); /* Ensure consistent color */
 }
 
-.aside .nav-toggler span::after {
-    content: '';
-    width: 18px;
-    height: 2px;
-    background: var(--skin-color);
-    position: absolute;
-    top: 6px;
-    left: 0;
-
+/* Blink animation */
+.nav-toggler.clicked {
+    animation: blink 0.3s ease-in-out;
 }
 
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+        background: var(--bg-black-100);
+    }
+    50% {
+        opacity: 0.5;
+        background: var(--skin-color, var(--text-black-900));
+    }
+}
+.nav-toggler, .nav-toggler svg {
+    width: auto !important;
+    overflow: visible !important;
+}
 .aside .nav {
     margin-top: 50px;
 
@@ -321,11 +322,21 @@ ul {
     color: var(--skin-color);
 
 }
+.aside::-webkit-scrollbar {
+    width: 0px;       /* remove the scrollbar width */
+    background: transparent;  /* optional: transparent background */
+}
 
-/**
-.nav-toggler {
-    display: none;
-}*/
+/* For Firefox */
+.aside {
+    scrollbar-width: thin;    /* or none to hide completely */
+    scrollbar-color: transparent transparent; /* track & thumb */
+}
+.aside .nav .nav-sub li a {
+    font-size: 10px; /* smaller than main menu items */
+    padding-left: 20px; /* optional: indent subitems */
+}
+
 .aside .nav li a i {
     margin-right: 15px;
 
@@ -635,6 +646,37 @@ h3.my-profession {
     color: var(--text-black-900);
 }
 
+.nav-sub {
+    list-style: none;       /* remove default bullets */
+    padding-left: 20px;     /* indent */
+}
+.nav > li > a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 8px 0;
+}
+/* Hover effect */
+.nav > li > a:hover {
+    background-color: #222;
+}
+.nav-sub li a {
+    color: white;
+    font-size: 3px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;    /* vertically center the ball and text */
+    gap: 8px;               /* spacing between bullet and text */
+}
+
+.white-ball {
+    display: inline-block;
+    width: 6px;             /* size of the bullet */
+    height: 6px;
+    background-color: white; /* bullet color */
+    border-radius: 50%;      /* makes it a circle */
+}
 .about .about-content .timeline .timeline-text {
     line-height: 25px;
     font-size: 16px;
@@ -825,18 +867,45 @@ h3.my-profession {
 
 @media (max-width: 767px) {
     .aside {
-        display: none !important;
-        /* Completely hide the aside */
+        left: -270px;
+        display: flex
     }
+
+    /* .nav-toggler {
+        position: fixed;
+        
+        top: 15px;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--bg-black-50);
+        border-radius: 5px;
+        background: var(--bg-black-100);
+        display: flex;
+       
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 2000;
+        
+    } */
 
     .main-content {
 
-        /* Remove left padding */
+
         width: 100%;
         max-width: 100%;
-        padding-left: 0px;
+        padding-left: 0 !important;
         box-sizing: border-box
     }
+
+    .aside.open {
+        left: 0;
+    }
+
+    /* .aside .nav-toggler {
+        display: flex !important;
+    } */
 
     .row {
         width: 100%
@@ -943,6 +1012,7 @@ h3.my-profession {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
+        padding-left: 0 ;
     }
 
     .home .home-img {
@@ -950,10 +1020,17 @@ h3.my-profession {
     }
 
     .aside {
-        display: none !important;
-        /* Completely hide the aside */
+        left: -270px;
+        display: flex
     }
 
+    .aside.open {
+        left: 0;
+    }
+
+    /* .aside .nav-toggler {
+        display: flex !important; 
+    } */
     /* .aside {
         position: fixed;
         top: 0;
@@ -1063,6 +1140,10 @@ h3.my-profession {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
+    }
+
+    .nav-toggler {
+        display: none;
     }
 
     .aside {
