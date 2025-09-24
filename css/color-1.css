@@ -1,4 +1,11 @@
 :root {
    --skin-color: #ec1839;
+   --text-color: #ffffff;
+   --hover-color: #b11228;
+}
 
+.random-color {
+   color: var(--skin-color);
+   font-weight: bold;
+   transition: color 0.5s ease;
 }

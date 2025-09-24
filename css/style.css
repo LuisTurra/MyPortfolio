@@ -51,10 +51,6 @@ body.dark .main-content {
 }
 
 
-/* ::before,
-::after {
-    box-sizing: border-box;
-} */
 
 ul {
 
@@ -78,11 +74,6 @@ ul {
     color: var(--text-black-900);
 }
 
-/*.hidden {
-    
-    padding-left: 15px;
-    padding-right: 15px;
-}*/
 
 .container {
     width: 100%;
@@ -109,7 +100,6 @@ ul {
     font-weight: 700;
     position: relative;
     overflow: hidden;
-    /* border: 1px solid red; */
     height: 60px;
     align-items: center;
     text-decoration: underline;
@@ -125,7 +115,6 @@ ul {
     background: var(--skin-color);
     top: 100%;
     left: 0;
-    /* border: 1px solid blue; */
 }
 
 .section-title h2::after {
@@ -137,7 +126,6 @@ ul {
     top: 100%;
     left: 0;
     margin-top: 8px;
-    /* border: 1px solid blue; */
 }
 
 .section .container {
@@ -173,14 +161,13 @@ ul {
 }
 
 .btn:hover {
-    transform: scale(1.05);
+    background-color:var(--hover-color);
 }
 
 .shadow-dark {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
-/*aside*/
 .aside {
     position: fixed;
     top: 0;
@@ -277,10 +264,9 @@ ul {
 }
 
 .nav-toggler .hamburger .line {
-    stroke: var(--skin-color, var(--text-black-900)); /* Ensure consistent color */
+    stroke: var(--skin-color, var(--text-black-900)); 
 }
 
-/* Blink animation */
 .nav-toggler.clicked {
     animation: blink 0.3s ease-in-out;
 }
@@ -323,18 +309,17 @@ ul {
 
 }
 .aside::-webkit-scrollbar {
-    width: 0px;       /* remove the scrollbar width */
-    background: transparent;  /* optional: transparent background */
+    width: 0px;      
+    background: transparent;  
 }
 
-/* For Firefox */
 .aside {
-    scrollbar-width: thin;    /* or none to hide completely */
-    scrollbar-color: transparent transparent; /* track & thumb */
+    scrollbar-width: thin;  
+    scrollbar-color: transparent transparent; 
 }
 .aside .nav .nav-sub li a {
-    font-size: 10px; /* smaller than main menu items */
-    padding-left: 20px; /* optional: indent subitems */
+    font-size: 12px; 
+    padding-left: 20px; 
 }
 
 .aside .nav li a i {
@@ -342,7 +327,6 @@ ul {
 
 }
 
-/**HOME*/
 .home {
     min-height: 100vh;
     display: flex;
@@ -382,55 +366,24 @@ h3.my-profession {
 }
 
 .home .home-img {
-    flex: 0 0 60px;
+    flex: 0 0 50%;         
     max-width: 50%;
     display: flex;
-    overflow: hidden;
+    justify-content: center;
+    align-items: center;
     position: relative;
-
-
-
+    overflow: hidden;
 }
-
-/*
-.home .home-img::after {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-bottom: 10px solid var(--skin-color);
-    border-right: 10px solid var(--skin-color);
-    
-}
-
-.home .home-img::before {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-top: 10px solid var(--skin-color);
-    border-left: 10px solid var(--skin-color);
-    
-}*/
-
 
 .home .home-img img {
-    display: block;
-    margin: auto;
-    border-radius: 1px;
-    height: 400px;
+    height: 400px;          
+    width: auto;            
     object-fit: cover;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 0 30px;
-    overflow: hidden;
-
-
+    border-radius: 15px;    
+    border: 3px solid var(--skin-color);
 }
 
-/*About*/
+
 .about .about-content {
     flex: 0 0 100%;
     max-width: 100%;
@@ -616,17 +569,7 @@ h3.my-profession {
     background-color: var(--skin-color);
 }
 
-/*
-.about .about-content .timeline .circle-dot {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 5px;
-    width: 51px;
-    border-radius: 5%;
-    background-color: var(--skin-color);
-    padding-right: 10px;
-}*/
+
 .about .about-content .timeline .timeline-date {
     font-weight: 400;
     font-size: 14px;
@@ -647,8 +590,8 @@ h3.my-profession {
 }
 
 .nav-sub {
-    list-style: none;       /* remove default bullets */
-    padding-left: 20px;     /* indent */
+    list-style: none;       
+    padding-left: 20px;     
 }
 .nav > li > a {
     color: white;
@@ -657,7 +600,7 @@ h3.my-profession {
     display: block;
     padding: 8px 0;
 }
-/* Hover effect */
+
 .nav > li > a:hover {
     background-color: #222;
 }
@@ -666,16 +609,16 @@ h3.my-profession {
     font-size: 3px;
     text-decoration: none;
     display: flex;
-    align-items: center;    /* vertically center the ball and text */
-    gap: 8px;               /* spacing between bullet and text */
+    align-items: center;    
+    gap: 8px;               
 }
 
 .white-ball {
     display: inline-block;
-    width: 6px;             /* size of the bullet */
+    width: 6px;             
     height: 6px;
-    background-color: white; /* bullet color */
-    border-radius: 50%;      /* makes it a circle */
+    background-color: white; 
+    border-radius: 50%;      
 }
 .about .about-content .timeline .timeline-text {
     line-height: 25px;
@@ -684,14 +627,11 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
-/* Portfolio */
+
 .portfolio .container {
     padding: 0 15px 30px;
-    /* Added side padding for smaller screens */
     max-width: 1200px;
-    /* Constrain max-width for larger screens */
     margin: 0 auto;
-    /* Center the container */
 }
 
 .portfolio .portfolio-heading {
@@ -700,7 +640,6 @@ h3.my-profession {
     padding: 0 20px;
     margin-bottom: 40px;
     text-align: left;
-    /* Center heading for better aesthetics */
 }
 
 .portfolio .portfolio-heading h2 {
@@ -712,10 +651,8 @@ h3.my-profession {
     flex: 0 0 33.3333%;
     max-width: 33.3333%;
     padding: 0 15px;
-    /* Add padding to create gaps between items */
     margin-bottom: 30px;
     box-sizing: border-box;
-    /* Ensure padding doesn’t affect width */
 }
 
 .portfolio .portfolio-item-inner {
@@ -724,30 +661,26 @@ h3.my-profession {
     overflow: hidden;
     position: relative;
     background-color: var(--bg-black-50);
-    /* Optional: consistent background */
     transition: transform 0.3s ease;
-    /* Smooth hover effect */
 }
 
 .portfolio .portfolio-item-inner:hover {
     transform: translateY(-5px);
-    /* Subtle lift on hover */
 }
 
 .github-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: red;
+    background-color:var(--skin-color);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
     transition: background-color 0.3s ease;
-    /* Smooth hover transition */
 }
 
 .github-link:hover {
-    background-color: darkred;
+    background-color:var(--hover-color);
 }
 
 .highlight {
@@ -765,10 +698,8 @@ h3.my-profession {
 .portfolio .portfolio-item-inner .portfolio-img img {
     width: 100%;
     height: auto;
-    /* Preserve aspect ratio */
     display: block;
     object-fit: cover;
-    /* Ensure images cover the area without distortion */
 }
 
 .portfolio-description {
@@ -776,7 +707,6 @@ h3.my-profession {
     color: var(--text-black-900);
     margin-bottom: 15px;
     padding: 15px;
-    /* Add padding for content */
     text-align: justify;
     text-justify: inter-word;
     word-spacing: -2px;
@@ -787,18 +717,15 @@ h3.my-profession {
     color: var(--text-black-900);
     margin-bottom: 15px;
     padding: 0 25px;
-    /* Consistent padding */
 
 }
 
-/* Button styling */
 .dashboard-btn {
     padding: 15px 30px;
     font-size: 18px;
     font-weight: bold;
     color: #fff;
-    background-color: red;
-    /* Power BI blue color */
+    background-color:var(--skin-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -810,8 +737,7 @@ h3.my-profession {
     font-size: 18px;
     font-weight: bold;
     color: #fff;
-    background-color: darkred;
-    /* Power BI blue color */
+    background-color: var(--skin-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -819,13 +745,12 @@ h3.my-profession {
 }
 
 .dashboard-btn:hover {
-    background-color: darkred;
+    background-color:var(--hover-color);
 }
-
-/* Dashboard container (iframe) styling */
+.relatorio-btn:hover {
+    background-color:var(--hover-color);
+}
 .dashboard-container {
-
-
     width: 100%;
     max-width: 100%;
     height: 600px;
@@ -836,18 +761,16 @@ h3.my-profession {
     border-radius: 5px;
 }
 
-/* Make iframe responsive */
+
 .dashboard-container iframe {
     width: 100% !important;
     max-width: 100%;
     height: 600px;
-    /* Default for mobile */
     border: none;
     display: block;
     box-sizing: border-box;
 }
 
-/* Show dashboard when active */
 .dashboard-container.active {
     display: block;
 }
@@ -860,39 +783,12 @@ h3.my-profession {
     box-sizing: border-box;
 }
 
-
-
-
-
-
 @media (max-width: 767px) {
     .aside {
         left: -270px;
         display: flex
     }
-
-    /* .nav-toggler {
-        position: fixed;
-        
-        top: 15px;
-        left: 15px;
-        width: 40px;
-        height: 40px;
-        border: 1px solid var(--bg-black-50);
-        border-radius: 5px;
-        background: var(--bg-black-100);
-        display: flex;
-       
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        z-index: 2000;
-        
-    } */
-
     .main-content {
-
-
         width: 100%;
         max-width: 100%;
         padding-left: 0 !important;
@@ -903,9 +799,6 @@ h3.my-profession {
         left: 0;
     }
 
-    /* .aside .nav-toggler {
-        display: flex !important;
-    } */
 
     .row {
         width: 100%
@@ -919,7 +812,6 @@ h3.my-profession {
 
     .portfolio .portfolio-item {
         flex: 0 0 100%;
-        /* One column on small screens */
         max-width: 100%;
         padding: 0 5px;
     }
@@ -935,23 +827,14 @@ h3.my-profession {
 
     .about .about-content .personal-info {
         flex: 1 !important;
-        /* Take all available space */
         width: 100% !important;
-        /* Ensure full width of row */
         max-width: 100% !important;
-        /* Fill row's width */
         padding: 5px !important;
-        /* Optional: Increase padding for visual size */
         margin-left: -5px !important;
-        /* Extend 20px to the left */
         overflow-wrap: break-word !important;
-        /* Ensure long words break */
         word-wrap: break-word !important;
-        /* Fallback for older browsers */
         white-space: normal !important;
-        /* Allow text to wrap */
-        text-overflow: clip !important;
-        /* Prevent ellipsis, let text wrap */
+         text-overflow: clip !important;
     }
 
     .home {
@@ -965,23 +848,14 @@ h3.my-profession {
 
     .home .home-info {
         flex: 1 !important;
-        /* Take all available space */
         width: 100% !important;
-        /* Ensure full width of row */
         max-width: 100% !important;
-        /* Fill row's width */
         padding: 5px !important;
-        /* Optional: Increase padding for visual size */
         margin-left: 10px !important;
-        /* Extend 20px to the left */
         overflow-wrap: break-word !important;
-        /* Ensure long words break */
         word-wrap: break-word !important;
-        /* Fallback for older browsers */
         white-space: normal !important;
-        /* Allow text to wrap */
         text-overflow: clip !important;
-        /* Prevent ellipsis, let text wrap */
     }
 
     .home .home-img {
@@ -1006,7 +880,6 @@ h3.my-profession {
 
 @media (max-width: 1199px) {
     .main-content {
-        /* padding-left: 270px !important; */
         background: var(--bg-black-900);
         color: var(--text-black-900);
         width: 100%;
@@ -1027,25 +900,6 @@ h3.my-profession {
     .aside.open {
         left: 0;
     }
-
-    /* .aside .nav-toggler {
-        display: flex !important; 
-    } */
-    /* .aside {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 270px;
-        height: 100%;
-        padding: 30px;
-        border-right: 1px solid var(--bg-black-50);
-        background-color: var(--bg-black-100);
-        display: flex !important;
-        justify-content: center;
-        align-items: center;
-        z-index: 10;
-    } */
-
     .container {
         width: 100%;
         max-width: 1100px;
@@ -1073,23 +927,14 @@ h3.my-profession {
 
     .home .home-info {
         flex: 1 !important;
-        /* Take all available space */
         width: 100% !important;
-        /* Ensure full width of row */
         max-width: 100% !important;
-        /* Fill row's width */
         padding: 5px !important;
-        /* Optional: Increase padding for visual size */
         margin-left: 10px !important;
-        /* Extend 20px to the left */
         overflow-wrap: break-word !important;
-        /* Ensure long words break */
         word-wrap: break-word !important;
-        /* Fallback for older browsers */
         white-space: normal !important;
-        /* Allow text to wrap */
         text-overflow: clip !important;
-        /* Prevent ellipsis, let text wrap */
     }
 
     .home .home-img {
@@ -1110,13 +955,9 @@ h3.my-profession {
         max-width: 60%;
         padding: 0 10px;
         overflow-wrap: break-word !important;
-        /* Ensure long words break */
         word-wrap: break-word !important;
-        /* Fallback for older browsers */
         white-space: normal !important;
-        /* Allow text to wrap */
         text-overflow: clip !important;
-        /* Prevent ellipsis, let text wrap */
     }
 
     .about .about-content .skills {
@@ -1189,23 +1030,14 @@ h3.my-profession {
 
     .home .home-info {
         flex: 1 !important;
-        /* Take all available space */
         width: 100% !important;
-        /* Ensure full width of row */
         max-width: 100% !important;
-        /* Fill row's width */
         padding: 5px !important;
-        /* Optional: Increase padding for visual size */
         margin-left: 10px !important;
-        /* Extend 20px to the left */
         overflow-wrap: break-word !important;
-        /* Ensure long words break */
         word-wrap: break-word !important;
-        /* Fallback for older browsers */
         white-space: normal !important;
-        /* Allow text to wrap */
         text-overflow: clip !important;
-        /* Prevent ellipsis, let text wrap */
     }
 
     .home .home-img {
@@ -1226,13 +1058,9 @@ h3.my-profession {
         max-width: 70%;
         padding: 0 10px;
         overflow-wrap: break-word !important;
-        /* Ensure long words break */
         word-wrap: break-word !important;
-        /* Fallback for older browsers */
         white-space: normal !important;
-        /* Allow text to wrap */
         text-overflow: clip !important;
-        /* Prevent ellipsis, let text wrap */
     }
 
     .about .about-content .skills {
@@ -1247,33 +1075,3 @@ h3.my-profession {
         padding: 0 10px;
     }
 }
-
-
-/*
-@media (min-width: 768px) {
-    .dashboard-container iframe {
-        height: 500px;
-    }
-}
-
-@media (max-width: 991px) {
-    .portfolio .portfolio-item {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-
-    .about .about-content .education,
-    .home .home-info {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-
-    .home .home-img {
-        display: none;
-    }
-
-    .dashboard-container iframe {
-        height: 400px;
-    }
-}
-*/
