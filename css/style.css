@@ -6,15 +6,20 @@
     --bg-black-50: #e8dfec;
     --text-black-900: #302e4d;
     --text-black-700: #540e70;
-
+    --skin-color: #ec1839;
+    
+    --hover-color: #b11228;
+    
 }
 
 body.dark {
-    --bg-black900: #151515;
+    --bg-black-900: #151515;
     --bg-black-100: #222222;
     --bg-black-50: #393939;
     --text-black-900: #ffffff;
     --text-black-700: #e9e9e9;
+    --skin-color: #ec1839;
+    --hover-color: #b11228;
 }
 
 
@@ -22,8 +27,8 @@ body.dark {
 html,
 body {
 
-    line-height: 1.7;
-    font-size: 16px;
+    line-height: 1.8;
+    font-size: 18px;
     font-family: Poppins, sans-serif;
     background: var(--bg-black-900);
     color: var(--text-black-900);
@@ -62,7 +67,7 @@ ul {
     min-height: 100vh;
     display: block;
 
-    padding: 0 30px;
+    padding: 60px 0;
     opacity: 1;
 }
 
@@ -77,10 +82,11 @@ ul {
 
 .container {
     width: 100%;
-    max-width: 1100px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: auto;
+    max-width: 1200px;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    padding: 0 20px;
+    margin: 0 auto;
 
 
 
@@ -92,12 +98,13 @@ ul {
     margin-bottom: 10px;
     padding: 10px;
 
+
 }
 
 .section-title h2 {
-    font-size: 40px;
+    font-size: 36px;
     color: var(--text-black-900);
-    font-weight: 700;
+    font-weight: 600;
     position: relative;
     overflow: hidden;
     height: 60px;
@@ -105,6 +112,24 @@ ul {
     text-decoration: underline;
 
 
+}
+
+.footer {
+    background: var(--bg-black-50);
+    color: var(--text-black-900);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.social-links a {
+    color: var(--text-black-900);
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--skin-color);
 }
 
 .section-title h2::before {
@@ -140,10 +165,9 @@ ul {
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -15px;
-    margin-right: -15px;
+    margin: 0;
     position: relative;
-
+    gap: 20px;
 
 }
 
@@ -161,7 +185,7 @@ ul {
 }
 
 .btn:hover {
-    background-color:var(--hover-color);
+    background-color: var(--hover-color);
 }
 
 .shadow-dark {
@@ -182,7 +206,7 @@ ul {
     transition: left 0.3s ease;
     overflow-y: auto;
     scroll-behavior: auto;
-   
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .aside.open {
@@ -239,7 +263,10 @@ ul {
     right: 0;
 
 }
-
+.btn:focus, .dashboard-btn:focus, .relatorio-btn:focus, .github-link:focus {
+    outline: 2px solid var(--skin-color);
+    outline-offset: 2px;
+}
 .nav-toggler {
     position: fixed;
     top: 15px;
@@ -247,14 +274,15 @@ ul {
     width: 40px;
     height: 40px;
     border: 1px solid var(--bg-black-50);
-    border-radius: 2px;
+    border-radius: 5px;
     background: var(--bg-black-100);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     z-index: 2000;
-     
+    padding: 8px;
+    transition: background 0.3s ease;
 }
 
 .nav-toggler .hamburger {
@@ -264,7 +292,12 @@ ul {
 }
 
 .nav-toggler .hamburger .line {
-    stroke: var(--skin-color, var(--text-black-900)); 
+    stroke: var(--skin-color, var(--text-black-900));
+    transition: stroke 0.3s ease;
+}
+
+.nav-toggler:hover .hamburger .line {
+    stroke: var(--skin-color);
 }
 
 .nav-toggler.clicked {
@@ -272,19 +305,25 @@ ul {
 }
 
 @keyframes blink {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
         background: var(--bg-black-100);
     }
+
     50% {
         opacity: 0.5;
         background: var(--skin-color, var(--text-black-900));
     }
 }
-.nav-toggler, .nav-toggler svg {
+
+.nav-toggler,
+.nav-toggler svg {
     width: auto !important;
     overflow: visible !important;
 }
+
 .aside .nav {
     margin-top: 50px;
 
@@ -308,18 +347,25 @@ ul {
     color: var(--skin-color);
 
 }
+
 .aside::-webkit-scrollbar {
-    width: 0px;      
-    background: transparent;  
+    width: 0px;
+    background: transparent;
 }
 
 .aside {
-    scrollbar-width: thin;  
-    scrollbar-color: transparent transparent; 
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
 }
+
 .aside .nav .nav-sub li a {
-    font-size: 12px; 
-    padding-left: 20px; 
+    font-size: 14px;
+    padding-left: 30px;
+    color: var(--text-black-700);
+}
+
+.nav-sub li a:hover {
+    color: var(--skin-color);
 }
 
 .aside .nav li a i {
@@ -331,11 +377,27 @@ ul {
     min-height: 100vh;
     display: flex;
     color: var(--text-black-900);
+    background: linear-gradient(135deg, var(--bg-black-100), var(--skin-color));
+    padding: 80px 0;
+    border-radius: 10px;
 }
 
 .home .home-info {
     flex: 0 0 60%;
     max-width: 60%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 h3.hello {
@@ -366,8 +428,8 @@ h3.my-profession {
 }
 
 .home .home-img {
-    flex: 0 0 50%;         
-    max-width: 50%;
+    flex: 0 0 40%;
+    max-width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -376,11 +438,12 @@ h3.my-profession {
 }
 
 .home .home-img img {
-    height: 400px;          
-    width: auto;            
+    height: 300px;
+    width: auto;
     object-fit: cover;
-    border-radius: 15px;    
-    border: 3px solid var(--skin-color);
+    border-radius: 50%;
+    border: 5px solid var(--skin-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -590,10 +653,11 @@ h3.my-profession {
 }
 
 .nav-sub {
-    list-style: none;       
-    padding-left: 20px;     
+    list-style: none;
+    padding-left: 20px;
 }
-.nav > li > a {
+
+.nav>li>a {
     color: white;
     text-decoration: none;
     font-size: 16px;
@@ -601,25 +665,27 @@ h3.my-profession {
     padding: 8px 0;
 }
 
-.nav > li > a:hover {
+.nav>li>a:hover {
     background-color: #222;
 }
+
 .nav-sub li a {
     color: white;
     font-size: 3px;
     text-decoration: none;
     display: flex;
-    align-items: center;    
-    gap: 8px;               
+    align-items: center;
+    gap: 8px;
 }
 
 .white-ball {
     display: inline-block;
-    width: 6px;             
+    width: 6px;
     height: 6px;
-    background-color: white; 
-    border-radius: 50%;      
+    background-color: white;
+    border-radius: 50%;
 }
+
 .about .about-content .timeline .timeline-text {
     line-height: 25px;
     font-size: 16px;
@@ -627,6 +693,11 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
+.portfolio .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
 
 .portfolio .container {
     padding: 0 15px 30px;
@@ -648,30 +719,35 @@ h3.my-profession {
 }
 
 .portfolio .portfolio-item {
-    flex: 0 0 33.3333%;
-    max-width: 33.3333%;
-    padding: 0 15px;
-    margin-bottom: 30px;
-    box-sizing: border-box;
+    flex: none;
+    max-width: none;
+    padding: 0;
+    
 }
 
 .portfolio .portfolio-item-inner {
-    border: 6px solid var(--bg-black-50);
+    
     border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    background-color: var(--bg-black-50);
-    transition: transform 0.3s ease;
+    background-color: var(--bg-black-100);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio .portfolio-item-inner:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio .portfolio-img img {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
 }
 
 .github-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color:var(--skin-color);
+    background-color: var(--skin-color);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -680,7 +756,7 @@ h3.my-profession {
 }
 
 .github-link:hover {
-    background-color:var(--hover-color);
+    background-color: var(--hover-color);
 }
 
 .highlight {
@@ -691,9 +767,7 @@ h3.my-profession {
 
 }
 
-.ferritems {
-    background-color: red;
-}
+
 
 .portfolio .portfolio-item-inner .portfolio-img img {
     width: 100%;
@@ -703,13 +777,14 @@ h3.my-profession {
 }
 
 .portfolio-description {
-    font-size: 1rem;
+    font-size: 18px;
     color: var(--text-black-900);
     margin-bottom: 15px;
     padding: 15px;
     text-align: justify;
     text-justify: inter-word;
     word-spacing: -2px;
+    line-height: 1.8;
 }
 
 .portfolio-tools {
@@ -725,7 +800,7 @@ h3.my-profession {
     font-size: 18px;
     font-weight: bold;
     color: #fff;
-    background-color:var(--skin-color);
+    background-color: var(--skin-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -745,11 +820,13 @@ h3.my-profession {
 }
 
 .dashboard-btn:hover {
-    background-color:var(--hover-color);
+    background-color: var(--hover-color);
 }
+
 .relatorio-btn:hover {
-    background-color:var(--hover-color);
+    background-color: var(--hover-color);
 }
+
 .dashboard-container {
     width: 100%;
     max-width: 100%;
@@ -786,8 +863,10 @@ h3.my-profession {
 @media (max-width: 767px) {
     .aside {
         left: -270px;
-        display: flex
+        display: flex;
+        transition: left 0.3s ease;
     }
+
     .main-content {
         width: 100%;
         max-width: 100%;
@@ -822,7 +901,10 @@ h3.my-profession {
     }
 
     .about .about-content .skills {
-        display: none;
+        display: block;
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 20px;
     }
 
     .about .about-content .personal-info {
@@ -834,7 +916,7 @@ h3.my-profession {
         overflow-wrap: break-word !important;
         word-wrap: break-word !important;
         white-space: normal !important;
-         text-overflow: clip !important;
+        text-overflow: clip !important;
     }
 
     .home {
@@ -847,7 +929,7 @@ h3.my-profession {
     }
 
     .home .home-info {
-        flex: 1 !important;
+        flex: 0 0 100% !important;
         width: 100% !important;
         max-width: 100% !important;
         padding: 5px !important;
@@ -856,14 +938,23 @@ h3.my-profession {
         word-wrap: break-word !important;
         white-space: normal !important;
         text-overflow: clip !important;
+        text-align: center;
     }
 
     .home .home-img {
-        display: none;
+        display: block;
+
+        flex: 0 0 100%;
+        max-width: 150px;
+        text-align: center;
+    }
+
+    .home .home-img img {
+        max-width: 150px;
     }
 
     .padd-15 {
-        padding: 5px !important;
+        padding: 10px !important;
     }
 
     .row>* {
@@ -885,7 +976,7 @@ h3.my-profession {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
-        padding-left: 0 ;
+        padding-left: 0;
     }
 
     .home .home-img {
@@ -900,6 +991,7 @@ h3.my-profession {
     .aside.open {
         left: 0;
     }
+
     .container {
         width: 100%;
         max-width: 1100px;
@@ -973,7 +1065,7 @@ h3.my-profession {
     }
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
     .main-content {
         padding-left: 270px !important;
         background: var(--bg-black-900);
@@ -1074,4 +1166,4 @@ h3.my-profession {
         max-width: 100%;
         padding: 0 10px;
     }
-}
+} */
