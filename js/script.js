@@ -1,3 +1,5 @@
+console.log('AOS and Typed.js initialized');
+
 AOS.init({
     duration: 800,
     once: true
