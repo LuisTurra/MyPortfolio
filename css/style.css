@@ -2,26 +2,25 @@
 
 /****************************************************************************************************/
 :root {
-    --bg-black900: #f2f2fc;
-    --bg-black-100: #fdf9ff;
-    --bg-black-50: #e8dfec;
-    --text-black-900: #302e4d;
-    --text-black-700: #540e70;
-    --skin-color: #ec1839;
-
-    --hover-color: #b11228;
-
+  --bg-black-900: #f2f2fc;
+  --bg-black-100: #fdf9ff;
+  --bg-black-50: #e8dfec;
+  --text-black-900: #302e4d;
+  --text-black-700: #540e70;
+  --skin-color: #5C6BC0; /* Default primary color */
+  --accent-color: #FFD54F; /* Default accent color */
+  --hover-color: #3F51B5; /* Default hover color */
+  --text-color: #FFFFFF; /* Default text color */
 }
 
 body.dark {
-    --bg-black-900: #151515;
-    --bg-black-100: #222222;
-    --bg-black-50: #393939;
-    --text-black-900: #ffffff;
-    --text-black-700: #e9e9e9;
-
+  --bg-black-900: #151515;
+  --bg-black-100: #222222;
+  --bg-black-50: #393939;
+  --text-black-900: #ffffff;
+  --text-black-700: #e9e9e9;
+  --text-color: #FFFFFF; /* Ensure text color is updated in dark mode */
 }
-
 
 
 html,
@@ -184,8 +183,29 @@ ul {
     outline: 2px solid var(--skin-color);
     outline-offset: 2px;
 }
-
-
+.random-color {
+  color: var(--accent-color);
+}
+body,
+.main-content,
+.section-title h2,
+.portfolio .portfolio-item-inner h2,
+.about .about-text h3,
+.about .personal-info .info-item p,
+.about .skills .skills-item h5 {
+  color: var(--text-black-900);
+}
+.home {
+  background: linear-gradient(135deg, var(--bg-black-100), var(--skin-color));
+}
+.btn,
+.dashboard-btn,
+.relatorio-btn,
+.github-link {
+  background: var(--skin-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
@@ -341,7 +361,7 @@ ul {
 }
 
 .aside .nav li a.active {
-    color: var(--skin-color);
+    color: var(---accent-color);
 
 }
 
@@ -637,7 +657,7 @@ h3.my-profession {
 }
 
 .about .skills .skills-item .progress-in {
-    background: var(--skin-color);
+    background: var(--accent-color);
     height: 100%;
     border-radius: 4px;
     width: 0;
@@ -691,7 +711,7 @@ h3.my-profession {
     height: 100%;
     left: 7px;
     top: 0;
-    background-color: var(--skin-color);
+    background-color: var(--accent-color);
 }
 
 .about .timeline .circle-dot {
@@ -701,7 +721,7 @@ h3.my-profession {
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background-color: var(--skin-color);
+    background-color: var(--accent-color);
 }
 
 .about .timeline .timeline-date {
@@ -853,7 +873,10 @@ h3.my-profession {
     text-align: justify;
     color: var(--text-black-700);
 }
-
+.about .timeline .circle-dot,
+.about .timeline .timeline-item::before {
+  background-color: var(--accent-color);
+}
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
@@ -1057,7 +1080,7 @@ h3.my-profession {
 }
 
 .social-links a:hover {
-    color: var(--skin-color);
+    color: var(--accent-color);
 }
 
 /****************************************************************************************************/
@@ -1406,7 +1429,7 @@ h3.my-profession {
 
     .about .skills .skills-item .progress-in {
         height: 100%;
-        background: var(--skin-color);
+        background: var(--accent-color);
         transition: width 1s ease-in-out;
         /* Ensure animation works */
     }
