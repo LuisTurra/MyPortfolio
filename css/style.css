@@ -501,7 +501,7 @@ h3.my-profession {
 }
 
 .typing {
-    color: var(--skin-color);
+    color: var(--accent-color);
 }
 
 .home-info p {
@@ -530,7 +530,16 @@ h3.my-profession {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
 }
+.home .btn {
+  background: var(--accent-color);
+  color: var(--text-color); 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
+.home .btn:hover {
+  background: var(--hover-color);
+  transform: translateY(-2px);
+}
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
@@ -657,7 +666,7 @@ h3.my-profession {
 }
 
 .about .skills .skills-item .progress-in {
-    background: var(--accent-color);
+    background: var(--skin-color);
     height: 100%;
     border-radius: 4px;
     width: 0;
