@@ -74,9 +74,10 @@ ul {
 
 
 .main-content {
-    padding-left: 170px;
+    padding-left: 270px;
     background: var(--bg-black-900);
     color: var(--text-black-900);
+    box-sizing: border-box;
 }
 
 
@@ -468,139 +469,198 @@ h3.my-profession {
 
 }
 
-
-.about .about-content {
-    flex: 0 0 100%;
-    max-width: 100%;
-
-}
-
-.about .about-content .about-text {
-    flex: 0 0 100%;
-    max-width: 100%;
-
-}
-
-.about .about-content .about-text h3 {
+.about .about-text h3 {
     font-size: 24px;
-    color: var(--text-black-900);
     font-weight: 700;
+    color: var(--text-black-900);
     margin-bottom: 15px;
 }
 
-.about .about-content .about-text h3 span {
+.about .about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-black-700);
+}
 
+.about .about-text h3 span {
     color: var(--skin-color);
 }
 
-.about .about-content .about-text p {
-    font-size: 16px;
-    color: var(--text-black-700);
-    line-height: 25px;
+.about .section-title {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.about .about-content .personal-info {
-    flex: 0 0 70%;
-    max-width: 70%;
-    margin-top: 40px;
+.about .about-text {
+    flex: 0 0 100%;
+    max-width: 100%;
     padding: 0 10px;
 }
 
-.about .about-content .personal-info .info-item {
-    flex: 0 0 50%;
-    max-width: 50%;
 
+
+.about .skills .skills-item {
+    margin-bottom: 20px;
 }
 
-.about .about-content .personal-info .info-item p {
-
-    font-weight: 600;
-    padding: 10px 0;
-    font-size: 16px;
-    color: var(--text-black-900);
-    border-bottom: 1px solid var(--bg-black-50);
-    margin-right: 50px;
-
-}
-
-.about .about-content .personal-info .info-item p span {
-    font-weight: 400;
-    color: var(--text-black-700);
-    margin-left: 4px;
-    display: inline-block;
-
-}
-
-.about .about-content .personal-info .buttons {
-    margin-top: 30px;
-}
-
-.about .about-content .personal-info .buttons .btn {
-    margin-right: 15px;
-    margin-top: 10px;
-}
-
-.about .about-content .skills {
-    flex: 0 0 30%;
-    max-width: 30%;
-
-    margin-top: 45px;
-}
-
-.about .about-content .skills .skills-item {
-    flex: 0 0 100%;
-    max-width: 100%;
-
-
-
-}
-
-.about .about-content .skills .skills-item h5 {
-    line-height: 40px;
-    font-weight: 600;
-    font-size: 16px;
-    color: var(--text-black-900);
-    text-transform: capitalize;
-
-}
-
-.about .about-content .skills .skills-item .progress {
+.about .skills .skills-item .progress {
     background-color: var(--bg-black-50);
     height: 7px;
     border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about .skills .skills-item.animated .progress-in {
+    width: var(--progress-width);
+}
+
+.about .skills .skills-item .progress-in {
+    background: var(--skin-color);
+    height: 100%;
+    border-radius: 4px;
+    width: 0;
+    transition: width 1s ease-in-out;
+
+}
+
+.about .buttons {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.about .education {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+.about .timeline-box {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 20px;
+}
+
+.about .timeline .timeline-item {
+    position: relative;
+    padding-left: 37px;
+    padding-bottom: 50px;
+}
+
+.about .timeline {
+    background-color: var(--bg-black-100);
+    padding: 50px 25px;
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
     width: 100%;
     position: relative;
 }
 
-.about .about-content .skills .skills-item {
-    margin-bottom: 0px;
-
+.about .timeline .timeline-item:last-child {
+    padding-bottom: 0;
 }
 
-.about .about-content .skills .skills-item .progress .progress-in {
+.about .timeline .timeline-item::before {
+    content: '';
+    width: 1px;
+    position: absolute;
+    height: 100%;
+    left: 7px;
+    top: 0;
+    background-color: var(--skin-color);
+}
+
+.about .timeline .circle-dot {
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
-    background: var(--skin-color);
-    border-radius: 4px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: var(--skin-color);
 }
 
-.about .about-content .skills .skills-item .skill-percent {
-    position: absolute;
-    right: 0;
-    top: -40px;
-    color: var(--text-black-900);
+.about .timeline .timeline-date {
     font-weight: 400;
     font-size: 14px;
-    line-height: 40px;
-
+    margin-bottom: 12px;
+    color: var(--text-black-700);
 }
 
+.about .timeline .timeline-date .fa {
+    margin-right: 5px;
+}
+
+.about .timeline .timeline-title {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    color: var(--text-black-900);
+}
+
+.about .timeline .timeline-text {
+    line-height: 25px;
+    font-size: 16px;
+    text-align: justify;
+    color: var(--text-black-700);
+}
+
+.about .buttons .btn {
+    margin: 10px;
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background: var(--skin-color);
+    border-radius: 40px;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.about .buttons .btn:hover {
+    background: var(--hover-color);
+}
+
+.about .buttons .btn:focus {
+    outline: 2px solid var(--skin-color);
+    outline-offset: 2px;
+}
+
+.skills .skills-item.animated .progress-in {
+    width: var(--progress-width);
+}
+
+.about .skills .skills-item .skill-percent {
+    position: absolute;
+    right: 0;
+    top: -30px;
+    font-size: 14px;
+    color: var(--text-black-900);
+}
+
+.about .skills .skills-item h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-black-900);
+    margin-bottom: 10px;
+}
+
+.about .skills {
+    flex: 0 0 40%;
+    max-width: 40%;
+    padding: 0 10px;
+}
+
+
+
 .about .about-content .education {
-    flex: 0 0 100%;
+    flex: 0 0 50%;
     max-width: 100%;
-    margin-top: 30px;
+    padding: 0 10px;
 
 }
 
@@ -692,12 +752,10 @@ h3.my-profession {
 }
 
 .nav-sub li a {
-    color: white;
-    font-size: 3px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 14px;
+    /* Fix from 3px */
+    padding-left: 50px;
+    color: var(--text-black-700);
 }
 
 .white-ball {
@@ -922,24 +980,44 @@ h3.my-profession {
         max-width: 100%;
     }
 
-    .about .about-content .skills {
-        display: block;
-        flex: 0 0 100%;
-        max-width: 100%;
-        margin-top: 20px;
+
+
+    .about .skills {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 10px;
     }
 
-    .about .about-content .personal-info {
-        flex: 1 !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 5px !important;
-        margin-left: -5px !important;
-        overflow-wrap: break-word !important;
-        word-wrap: break-word !important;
-        white-space: normal !important;
-        text-overflow: clip !important;
+    .about .buttons {
+        order: 3;
+        text-align: center;
     }
+
+    .about .personal-info {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 10px;
+    }
+
+    .about .personal-info .info-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .about .personal-info .info-item p {
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--text-black-900);
+        border-bottom: 1px solid var(--bg-black-50);
+    }
+
+    .about .personal-info .info-item p span {
+        font-weight: 400;
+        color: var(--text-black-700);
+        margin-left: 4px;
+        display: inline-block;
+    }
+
 
     .home {
         min-height: 100vh;
@@ -948,6 +1026,14 @@ h3.my-profession {
         max-width: 100%;
         padding-left: 0;
         margin-left: 0;
+    }
+
+
+    .about .container {
+        max-width: 1200px;
+        padding: 60px 20px;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
 
     .home .home-info {
@@ -965,16 +1051,16 @@ h3.my-profession {
     }
 
     .home .home-img {
-        
+
         order: 2;
         flex: 0 0 100%;
-         max-width: 95%;
+        max-width: 95%;
         text-align: center;
     }
 
     .home .row {
         flex-wrap: wrap;
-        
+
         flex-direction: column;
         text-align: center;
     }
@@ -992,10 +1078,57 @@ h3.my-profession {
         padding-right: 5px;
     }
 
+    .about .buttons {
+        flex: 0 0 100%;
+        max-width: 100%;
+        order: 4;
+        text-align: center;
+    }
+
+    .skills .skills-item .progress-in {
+        transition: width 0.8s ease-in-out;
+
+    }
+
+    .about .education {
+        flex: 0 0 100%;
+        max-width: 100%;
+        order: 5;
+        padding: 0 10px;
+    }
+
     .about .about-content .education {
         flex: 0 0 50%;
         max-width: 100%;
         padding: 0 10px;
+    }
+
+    .about .skills .skills-item .progress-in {
+        transition: width 0.8s ease-in-out;
+        /* Faster for mobile */
+    }
+
+    .about .personal-info {
+        flex: 0 0 100%;
+        /* Use full width for better spacing */
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .about .personal-info .info-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+        display: block;
+        /* Ensure items are visible */
+        margin-bottom: 10px;
+    }
+
+    .about .personal-info .info-item p {
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--text-black-900);
+        border-bottom: 1px solid var(--bg-black-50);
+        padding-bottom: 5px;
     }
 }
 
@@ -1022,20 +1155,111 @@ h3.my-profession {
         left: 0;
     }
 
-    .container {
+    .nav-toggler {
+        display: flex;
+
+    }
+
+    .about .row {
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .about .personal-info {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        order: 1;
+    }
+
+    .about .skills {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        order: 2;
+    }
+
+    .about .skills .skills-item {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         width: 100%;
+    }
+
+    .container {
+
         max-width: 1100px;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: 0 10px;
         margin: 0 auto;
         box-sizing: border-box;
     }
 
+    .about .skills .skills-item .progress {
+        display: block;
+        height: 7px;
+        background-color: var(--bg-black-50);
+        border-radius: 4px;
+        overflow: visible;
+        width: 100%;
+        position: relative;
+    }
+
+    .about .skills .skills-item h5 {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text-black-900);
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+        /* Ensure text is above progress bar */
+    }
+
+    .about .skills .skills-item .progress-in {
+        height: 100%;
+        background: var(--skin-color);
+        transition: width 1s ease-in-out;
+        /* Ensure animation works */
+    }
+
+    /* Ensure animation triggers */
+    .about .skills .skills-item.animated .progress-in {
+        width: var(--progress-width);
+    }
+
     .row {
-        margin-left: -5px;
-        margin-right: -5px;
+        margin: 0;
         display: flex;
         flex-wrap: wrap;
+    }
+
+    .about .personal-info {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 10px;
+        display: block;
+        /* Ensure visibility */
+        order: 1;
+        /* Place before skills */
+    }
+
+    .about .personal-info .info-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .about .personal-info .info-item p {
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--text-black-900);
+        border-bottom: 1px solid var(--bg-black-50);
+        padding-bottom: 5px;
     }
 
     .home {
@@ -1045,6 +1269,13 @@ h3.my-profession {
         max-width: 100%;
         padding-left: 0;
         margin-left: 0;
+    }
+
+    .about .skills .skills-item .skill-percent {
+        font-size: 14px;
+        color: var(--text-black-900);
+        margin-top: 5px;
+        position: static;
     }
 
     .home .home-info {
@@ -1064,136 +1295,7 @@ h3.my-profession {
         max-width: 20%;
     }
 
-    .about .about-content {
-        width: 100%;
-        max-width: 100%;
-        padding-left: 5px;
-        margin-left: 5px;
 
-    }
 
-    .about .about-content .personal-info {
-        flex: 0 0 60%;
-        max-width: 60%;
-        padding: 0 10px;
-        overflow-wrap: break-word !important;
-        word-wrap: break-word !important;
-        white-space: normal !important;
-        text-overflow: clip !important;
-    }
 
-    .about .about-content .skills {
-        flex: 0 0 40%;
-        max-width: 40%;
-        padding: 0 5px;
-    }
-
-    .about .about-content .education {
-        flex: 0 0 50%;
-        max-width: 100%;
-        padding: 0 10px;
-    }
 }
-
-/* @media (min-width: 1200px) {
-    .main-content {
-        padding-left: 270px !important;
-        background: var(--bg-black-900);
-        color: var(--text-black-900);
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    .nav-toggler {
-        display: none;
-    }
-
-    .aside {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 270px;
-        height: 100%;
-        padding: 30px;
-        border-right: 1px solid var(--bg-black-50);
-        background-color: var(--bg-black-100);
-        display: flex !important;
-        justify-content: center;
-        align-items: center;
-        z-index: 10;
-    }
-
-    .container {
-        width: 100%;
-        max-width: 1100px;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin: 0 auto;
-        box-sizing: border-box;
-
-    }
-
-    .row {
-        margin-left: -5px;
-        margin-right: -5px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .home {
-        min-height: 100vh;
-        display: flex;
-        width: 100%;
-        max-width: 100%;
-        padding-left: 0;
-        margin-left: 0;
-    }
-
-    .home .home-info {
-        flex: 1 !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 5px !important;
-        margin-left: 10px !important;
-        overflow-wrap: break-word !important;
-        word-wrap: break-word !important;
-        white-space: normal !important;
-        text-overflow: clip !important;
-    }
-
-    .home .home-img {
-        flex: 0 0 40%;
-        max-width: 40%;
-    }
-
-    .about .about-content {
-        width: 100%;
-        max-width: 100%;
-        padding-left: 5px;
-        margin-left: 5px;
-
-    }
-
-    .about .about-content .personal-info {
-        flex: 0 0 70%;
-        max-width: 70%;
-        padding: 0 10px;
-        overflow-wrap: break-word !important;
-        word-wrap: break-word !important;
-        white-space: normal !important;
-        text-overflow: clip !important;
-    }
-
-    .about .about-content .skills {
-        flex: 0 0 30%;
-        max-width: 30%;
-        padding: 0 5px;
-    }
-
-    .about .about-content .education {
-        flex: 0 0 50%;
-        max-width: 100%;
-        padding: 0 10px;
-    }
-} */

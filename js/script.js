@@ -55,3 +55,28 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Skills animation initialized');
+    const skillsItems = document.querySelectorAll('.skills-item');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const progressIn = entry.target.querySelector('.progress-in');
+            const width = progressIn.getAttribute('data-progress-width');
+            if (entry.isIntersecting) {
+                console.log('Animating skills item:', entry.target);
+                entry.target.classList.add('animated');
+                progressIn.style.setProperty('--progress-width', width);
+            } else {
+                console.log('Resetting skills item:', entry.target);
+                entry.target.classList.remove('animated');
+                progressIn.style.setProperty('--progress-width', '0%'); // Reset to 0
+            }
+        });
+    }, {
+        threshold: 0.1, // Trigger when 10% of element is visible
+        rootMargin: '0px' // Ensure consistent triggering
+    });
+
+    skillsItems.forEach(item => observer.observe(item));
+});
