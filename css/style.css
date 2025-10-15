@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;400;500;600;700&display=swap');
-
+/****************************************************************************************************/
 :root {
     --bg-black900: #f2f2fc;
     --bg-black-100: #fdf9ff;
@@ -84,8 +84,7 @@ ul {
 .container {
     width: 100%;
     max-width: 1200px;
-    /* padding-left: 10px;
-    padding-right: 10px; */
+    
     padding: 0 20px;
     margin: 0 auto;
 
@@ -115,23 +114,8 @@ ul {
 
 }
 
-.footer {
-    background: var(--bg-black-50);
-    color: var(--text-black-900);
-    padding: 20px 0;
-    text-align: center;
-}
 
-.social-links a {
-    color: var(--text-black-900);
-    margin: 0 10px;
-    font-size: 20px;
-    transition: color 0.3s ease;
-}
 
-.social-links a:hover {
-    color: var(--skin-color);
-}
 
 .section-title h2::before {
     content: '';
@@ -192,7 +176,19 @@ ul {
 .shadow-dark {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
+.btn:focus,
+.dashboard-btn:focus,
+.relatorio-btn:focus,
+.github-link:focus {
+    outline: 2px solid var(--skin-color);
+    outline-offset: 2px;
+}
 
+
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+/* SIDEBAR */
 .aside {
     position: fixed;
     top: 0;
@@ -265,13 +261,7 @@ ul {
 
 }
 
-.btn:focus,
-.dashboard-btn:focus,
-.relatorio-btn:focus,
-.github-link:focus {
-    outline: 2px solid var(--skin-color);
-    outline-offset: 2px;
-}
+
 
 .nav-toggler {
     position: fixed;
@@ -378,7 +368,40 @@ ul {
     margin-right: 15px;
 
 }
+.nav-sub {
+    list-style: none;
+    padding-left: 20px;
+}
 
+.nav>li>a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 8px 0;
+}
+
+.nav>li>a:hover {
+    background-color: #222;
+}
+
+.nav-sub li a {
+    font-size: 14px;
+    padding-left: 50px;
+    color: var(--text-black-700);
+}
+
+.white-ball {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+}
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+/* HOME */
 .home {
     min-height: 100vh;
     display: flex;
@@ -398,7 +421,6 @@ ul {
 .home .row {
     display: flex;
     flex-wrap: nowrap;
-    /* Keep text and image side by side */
     gap: 20px;
     align-items: center;
 }
@@ -468,7 +490,10 @@ h3.my-profession {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
 }
-
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+/* SOBRE */
 .about .about-text h3 {
     font-size: 24px;
     font-weight: 700;
@@ -734,37 +759,7 @@ h3.my-profession {
     color: var(--text-black-900);
 }
 
-.nav-sub {
-    list-style: none;
-    padding-left: 20px;
-}
 
-.nav>li>a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    display: block;
-    padding: 8px 0;
-}
-
-.nav>li>a:hover {
-    background-color: #222;
-}
-
-.nav-sub li a {
-    font-size: 14px;
-    /* Fix from 3px */
-    padding-left: 50px;
-    color: var(--text-black-700);
-}
-
-.white-ball {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background-color: white;
-    border-radius: 50%;
-}
 
 .about .about-content .timeline .timeline-text {
     line-height: 25px;
@@ -772,7 +767,10 @@ h3.my-profession {
     text-align: justify;
     color: var(--text-black-700);
 }
-
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+/* PORTFOLIO */
 .portfolio .row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -874,7 +872,17 @@ h3.my-profession {
     padding: 0 25px;
 
 }
-
+.portfolio .portfolio-item {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+/* DASHBOARDS */
 .dashboard-btn {
     padding: 15px 30px;
     font-size: 18px;
@@ -932,13 +940,30 @@ h3.my-profession {
     display: block;
 }
 
-.portfolio .portfolio-item {
-    flex: 0 0 33.3333%;
-    max-width: 33.3333%;
-    padding: 0 15px;
-    margin-bottom: 30px;
-    box-sizing: border-box;
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+/* FOOTER */
+.footer {
+    background: var(--bg-black-50);
+    color: var(--text-black-900);
+    padding: 20px 0;
+    text-align: center;
 }
+.social-links a {
+    color: var(--text-black-900);
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--skin-color);
+}
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+/* RESPONSIVE */
 
 @media (max-width: 767px) {
     .aside {
@@ -1131,7 +1156,9 @@ h3.my-profession {
         padding-bottom: 5px;
     }
 }
-
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
 @media (max-width: 1199px) {
     .main-content {
         background: var(--bg-black-900);
