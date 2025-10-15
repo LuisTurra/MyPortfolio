@@ -76,7 +76,8 @@ ul {
     padding-left: 270px;
     background: var(--bg-black-900);
     color: var(--text-black-900);
-
+    width: 100%;
+    box-sizing: border-box;
 }
 
 
@@ -84,7 +85,7 @@ ul {
     width: 100%;
     max-width: 1200px;
     --container-paddong: 20px;
-    padding: 0 20px;
+    padding: 0 10px;
     margin: 0 auto;
 
 
@@ -354,6 +355,22 @@ ul {
     scrollbar-color: transparent transparent;
 }
 
+.aside-img {
+    display: none;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.aside-img img {
+    max-width: 300px;
+
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid var(--skin-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 .aside .nav .nav-sub li a {
     font-size: 14px;
     padding-left: 30px;
@@ -477,16 +494,17 @@ h3.my-profession {
     flex: 0 0 40%;
     max-width: 40%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .home .home-img img {
-    height: 300px;
+    max-width: 100%;
     width: auto;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     border-radius: 50%;
     border: 5px solid var(--skin-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -602,9 +620,7 @@ h3.my-profession {
     margin-bottom: 20px;
 }
 
-.about .skills .skills-item {
-    margin-bottom: 20px;
-}
+
 
 .about .skills .skills-item .progress {
     background-color: var(--bg-black-50);
@@ -612,6 +628,8 @@ h3.my-profession {
     border-radius: 4px;
     position: relative;
     overflow: hidden;
+    margin-top: 10px;
+
 }
 
 .about .skills .skills-item.animated .progress-in {
@@ -727,19 +745,19 @@ h3.my-profession {
     width: var(--progress-width);
 }
 
-.about .skills .skills-item .skill-percent {
-    position: absolute;
-    right: 0;
-    top: -30px;
-    font-size: 14px;
-    color: var(--text-black-900);
-}
 
 .about .skills .skills-item h5 {
     font-size: 16px;
     font-weight: 600;
     color: var(--text-black-900);
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.about .skills .skills-item h5 i {
+    margin-right: 10px;
+    color: var(--skin-color);
 }
 
 .about .skills {
@@ -865,24 +883,35 @@ h3.my-profession {
     font-weight: 500;
 }
 
-.portfolio .portfolio-item {
-    flex: none;
-    max-width: none;
-    padding: 0;
+.portfolio .portfolio-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
 
+.portfolio .portfolio-item {
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 .portfolio .portfolio-item-inner {
-
     border-radius: 10px;
     background-color: var(--bg-black-100);
+    padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
 }
 
 .portfolio .portfolio-item-inner:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio .portfolio-item-inner h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--text-black-900);
 }
 
 .portfolio .portfolio-img img {
@@ -924,31 +953,29 @@ h3.my-profession {
 }
 
 .portfolio-description {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--text-black-900);
     margin-bottom: 15px;
-    padding: 15px;
+    padding: 0;
     text-align: justify;
-    text-justify: inter-word;
-    word-spacing: -2px;
-    line-height: 1.8;
+    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .portfolio-tools {
-    font-size: 1rem;
+    font-size: 14px;
     color: var(--text-black-900);
     margin-bottom: 15px;
-    padding: 0 25px;
 
 }
 
-.portfolio .portfolio-item {
-    flex: 0 0 33.3333%;
-    max-width: 33.3333%;
-    padding: 0 15px;
-    margin-bottom: 30px;
-    box-sizing: border-box;
+.portfolio-tools ul {
+    list-style: disc;
+    padding-left: 20px;
 }
+
+
 
 /****************************************************************************************************/
 /****************************************************************************************************/
@@ -1043,6 +1070,7 @@ h3.my-profession {
         left: -270px;
         display: flex;
         transition: left 0.3s ease;
+        flex-direction: column;
     }
 
     .portfolio .row {
@@ -1073,18 +1101,23 @@ h3.my-profession {
         padding-right: 10px;
     }
 
+    .portfolio .portfolio-items {
+        grid-template-columns: 1fr;
+    }
+
     .portfolio .portfolio-item {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding: 0 10px;
+        padding: 10px;
     }
 
     .portfolio-item-inner {
         width: 100%;
         max-width: 100%;
+        padding: 15px;
     }
 
-
+    .portfolio-description {
+        font-size: 14px;
+    }
 
     .about .skills {
         flex: 0 0 100%;
@@ -1159,10 +1192,24 @@ h3.my-profession {
         display: none;
     }
 
-    .home .row {
-        flex-wrap: wrap;
+    .aside-img {
+        display: block;
+        margin: 60px 0 20px;
+        width: fit-content;
+    }
 
+    .aside .nav {
+        margin-top: 20px;
+    }
+
+    .aside .nav {
+        margin-top: 20px;
+
+    }
+
+    .home .row {
         flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
@@ -1204,6 +1251,11 @@ h3.my-profession {
         padding: 0 10px;
     }
 
+    .about .skills .skills-item .progress {
+        margin-top: 8px;
+        /* Slightly less for mobile */
+    }
+
     .about .skills .skills-item .progress-in {
         transition: width 0.8s ease-in-out;
         /* Faster for mobile */
@@ -1231,6 +1283,11 @@ h3.my-profession {
         padding-bottom: 5px;
     }
 
+    .about .skills .skills-item {
+        margin-bottom: 15px;
+        /* Adjusted for mobile */
+    }
+
     .about .personal-info .info-box,
     .about .skills .skills-box {
         padding: 15px;
@@ -1244,8 +1301,14 @@ h3.my-profession {
         font-size: 14px;
     }
 
-    .about .skills .skills-item .skill-percent {
+    .portfolio-tools {
         font-size: 12px;
+    }
+
+    .github-link,
+    .relatorio-btn {
+        padding: 8px 16px;
+        font-size: 14px;
     }
 }
 
@@ -1268,11 +1331,13 @@ h3.my-profession {
 
     .aside {
         left: -270px;
-        display: flex
+        display: flex;
+        transition: left 0.3s ease;
     }
 
     .aside.open {
         left: 0;
+        z-index: 2000;
     }
 
     .nav-toggler {
@@ -1288,19 +1353,19 @@ h3.my-profession {
     .about .personal-info {
         flex: 0 0 100%;
         max-width: 100%;
-        /* padding: 0 10px;
+        padding: 0 10px;
         display: flex;
         flex-direction: column;
-        order: 1; */
+        order: 1;
     }
 
     .about .skills {
         flex: 0 0 100%;
         max-width: 100%;
-        /* padding: 0 10px;
+        padding: 0 10px;
         display: flex;
         flex-direction: column;
-        order: 2; */
+        order: 2;
     }
 
     .about .skills .skills-item {
@@ -1391,12 +1456,7 @@ h3.my-profession {
         margin-left: 0;
     }
 
-    .about .skills .skills-item .skill-percent {
-        font-size: 14px;
-        color: var(--text-black-900);
-        margin-top: 5px;
-        position: static;
-    }
+
 
     .home .home-info {
         flex: 1 !important;
@@ -1411,11 +1471,166 @@ h3.my-profession {
     }
 
     .home .home-img {
-        flex: 0 0 20%;
-        max-width: 20%;
+        flex: 0 0 30%;
+        max-width: 30%;
+        justify-content: center;
     }
 
+    .home .home-img img {
+        max-width: 100%;
+        width: 200px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .home .row {
+        flex-wrap: nowrap;
+        gap: 15px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .portfolio .portfolio-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio .portfolio-item {
+        padding: 12px;
+    }
+}
 
 
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+@media (max-width: 370px) {
+    .main-content {
+        padding-left: 0;
+        
+    }
 
+    .aside {
+        left: -270px;
+        
+        width: 200px;
+        
+    }
+
+    .aside.open {
+        left: 0;
+        z-index: 2000;
+    }
+
+    .container {
+        padding: 0 5px;
+        
+    }
+
+    .portfolio .portfolio-items {
+        grid-template-columns: 1fr;
+        
+        gap: 5px;
+    }
+
+    .portfolio .portfolio-item {
+        padding: 5px;
+    }
+
+    .portfolio .portfolio-item-inner {
+        padding: 10px;
+    }
+
+    .portfolio-description {
+        font-size: 12px;
+        
+        line-height: 1.5;
+    }
+
+    .portfolio-tools {
+        font-size: 11px;
+    }
+
+    .github-link,
+    .relatorio-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        margin: 5px 5px 0 0;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+        
+    }
+
+    .portfolio .portfolio-heading h2 {
+        font-size: 20px;
+    }
+
+    .row {
+        margin: 0;
+        gap: 5px;
+    }
+
+    .padd-15 {
+        padding: 5px !important;
+    }
+}
+
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+@media (max-width: 340px) {
+    .portfolio .container {
+        padding: 0 2px; 
+    }
+
+    .portfolio .portfolio-items {
+        grid-template-columns: 1fr;
+        gap: 3px; 
+    }
+
+    .portfolio .portfolio-item {
+        padding: 2px; 
+    }
+
+    .portfolio .portfolio-item-inner {
+        padding: 8px;
+        max-width: 100%;
+        overflow: hidden; 
+    }
+
+    .portfolio-description {
+        font-size: 11px;
+        line-height: 1.4;
+        word-break: break-all; 
+    }
+
+    .portfolio-tools {
+        font-size: 10px;
+    }
+
+    .portfolio-tools ul {
+        padding-left: 15px;
+    }
+
+    .github-link,
+    .relatorio-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+        margin: 3px 3px 0 0;
+    }
+
+    .portfolio .portfolio-item-inner h2 {
+        font-size: 20px; 
+    }
+
+    .portfolio .portfolio-heading h2 {
+        font-size: 18px;
+    }
+
+    .portfolio .row {
+        margin: 0;
+        gap: 3px;
+    }
 }
