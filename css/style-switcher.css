@@ -1,6 +1,6 @@
 .day-night {
-    position: fixed;
-    top: 60px;
+    
+    top: calc(20px + 50px + 10px);
     right: 20px;
     height: 40px;
     width: 40px;
