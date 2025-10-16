@@ -1356,8 +1356,13 @@
         <i class="fas fa-moon">
         </i>
     </div>
-    <button id="game-toggle" onclick="window.location.href='game/game.html'">🎮</button>
 
+    <div id="game-modal"
+        style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #2a2a2a; padding: 20px; border-radius: 10px; z-index: 1001;">
+        <iframe src="game/game.html" width="300" height="400" style="border: none;"></iframe>
+        <button onclick="document.getElementById('game-modal').style.display='none'"
+            style="background: #003087; color: #fff; border: none; padding: 10px; border-radius: 5px;">Fechar</button>
+    </div>
 
 
     <!--====JS FFiles====-->
