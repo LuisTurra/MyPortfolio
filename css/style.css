@@ -2,24 +2,24 @@
 
 /****************************************************************************************************/
 :root {
-  --bg-black-900: #f2f2fc;
-  --bg-black-100: #fdf9ff;
-  --bg-black-50: #e8dfec;
-  --text-black-900: #302e4d;
-  --text-black-700: #540e70;
-  --skin-color: #5C6BC0; /* Default primary color */
-  --accent-color: #FFD54F; /* Default accent color */
-  --hover-color: #3F51B5; /* Default hover color */
-  --text-color: #FFFFFF; /* Default text color */
+    --bg-black-900: #f2f2fc;
+    --bg-black-100: #fdf9ff;
+    --bg-black-50: #e8dfec;
+    --text-black-900: #302e4d;
+    --text-black-700: #540e70;
+    --skin-color: #5C6BC0;
+    --accent-color: #FFD54F;
+    --hover-color: #3F51B5;
+    --text-color: #FFFFFF;
 }
 
 body.dark {
-  --bg-black-900: #151515;
-  --bg-black-100: #222222;
-  --bg-black-50: #393939;
-  --text-black-900: #ffffff;
-  --text-black-700: #e9e9e9;
-  --text-color: #FFFFFF; /* Ensure text color is updated in dark mode */
+    --bg-black-900: #151515;
+    --bg-black-100: #222222;
+    --bg-black-50: #393939;
+    --text-black-900: #ffffff;
+    --text-black-700: #e9e9e9;
+    --text-color: #FFFFFF;
 }
 
 
@@ -183,9 +183,11 @@ ul {
     outline: 2px solid var(--skin-color);
     outline-offset: 2px;
 }
+
 .random-color {
-  color: var(--accent-color);
+    color: var(--accent-color);
 }
+
 body,
 .main-content,
 .section-title h2,
@@ -193,19 +195,128 @@ body,
 .about .about-text h3,
 .about .personal-info .info-item p,
 .about .skills .skills-item h5 {
-  color: var(--text-black-900);
+    color: var(--text-black-900);
 }
+
 .home {
-  background: linear-gradient(135deg, var(--bg-black-100), var(--skin-color));
+    background: linear-gradient(135deg, var(--bg-black-100), var(--skin-color), var(--accent-color));
+    background-size: 200% 200%;
+    animation: gradientFlow 10s ease infinite;
 }
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .btn,
 .dashboard-btn,
 .relatorio-btn,
 .github-link {
-  background: var(--skin-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+    background: var(--skin-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+.ripple {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: rippleEffect 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes rippleEffect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.flip-card {
+    perspective: 1000px;
+    width: 100%;
+    height: auto;
+
+
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--bg-black-100);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.flip-card-back .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flip-card-back .relatorio-btn,
+.flip-card-back .github-link,
+.flip-card-back .dashboard-btn {
+    position: relative;
+    z-index: 10;
+
+    margin: 5px;
+    padding: 10px 20px;
+}
+
+.portfolio .flip-card {
+    min-height: 350px;
+}
+
+.portfolio .flip-card-back .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.portfolio .flip-card-back .column {
+    width: 48%;
+
+}
+
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
@@ -220,6 +331,7 @@ body,
     border-right: 1px solid var(--bg-black-50);
     background-color: var(--bg-black-100);
     display: flex;
+    flex-direction: column;
     z-index: 1000;
     transition: left 0.3s ease;
     overflow-y: auto;
@@ -349,6 +461,54 @@ body,
 .aside .nav li {
     margin-bottom: 21px;
     display: block;
+    opacity: 1;
+    transform: translateX(0);
+
+}
+
+.aside.open .nav li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.aside.open .nav li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.aside.open .nav li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.aside.open .nav li:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.aside.open .nav li:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.aside.open .nav li:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.aside.open .nav li:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+.aside.open .nav li:nth-child(7) {
+    transition-delay: 0.7s;
+}
+
+.aside.open .nav li:nth-child(8) {
+    transition-delay: 0.8s;
+}
+
+.aside.open .nav li:nth-child(9) {
+    transition-delay: 0.9s;
+}
+
+.aside.open .nav li:nth-child(10) {
+    transition-delay: 1.0s;
 }
 
 .aside .nav li a {
@@ -528,18 +688,22 @@ h3.my-profession {
     border-radius: 50%;
     border: 5px solid var(--skin-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
 
 }
+
 .home .btn {
-  background: var(--accent-color);
-  color: var(--text-color); 
-  transition: background-color 0.3s ease, transform 0.2s ease;
+    background: var(--accent-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .home .btn:hover {
-  background: var(--hover-color);
-  transform: translateY(-2px);
+    background: var(--hover-color);
+    transform: translateY(-2px);
 }
+
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
@@ -882,10 +1046,30 @@ h3.my-profession {
     text-align: justify;
     color: var(--text-black-700);
 }
+
+.about .timeline .circle-dot {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 .about .timeline .circle-dot,
 .about .timeline .timeline-item::before {
-  background-color: var(--accent-color);
+    background-color: var(--accent-color);
 }
+
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
@@ -926,13 +1110,17 @@ h3.my-profession {
     box-sizing: border-box;
 }
 
-.portfolio .portfolio-item-inner {
+.portfolio .portfolio-item-inner,
+.dashboard .portfolio-item-inner {
     border-radius: 10px;
     background-color: var(--bg-black-100);
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .portfolio .portfolio-item-inner:hover {
@@ -1013,6 +1201,10 @@ h3.my-profession {
 /****************************************************************************************************/
 /****************************************************************************************************/
 /* DASHBOARDS */
+.dashboard {
+    padding: 15px;
+}
+
 .dashboard-btn {
     padding: 15px 30px;
     font-size: 18px;
@@ -1070,6 +1262,145 @@ h3.my-profession {
     display: block;
 }
 
+.dashboard .flip-card {
+    perspective: 1000px;
+    width: 100%;
+    min-height: 400px;
+    height: auto;
+}
+
+.dashboard .flip-card-back .row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.dashboard .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.dashboard .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.dashboard .flip-card-back .column {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.dashboard .flip-card-back .portfolio-tools {
+    font-size: 14px;
+    color: var(--text-black-900);
+}
+
+.dashboard .flip-card-back .portfolio-tools ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+
+.dashboard .flip-card-back .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.dashboard .flip-card-back .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#dashboards .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+.dashboard .flip-card-front,
+.dashboard .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--bg-black-100);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.dashboard .flip-card-front h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--text-black-900);
+}
+
+.dashboard .flip-card-back {
+    transform: rotateY(180deg);
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.dashboard .flip-card-back .scrollable-content {
+    max-height: 250px;
+    overflow-y: auto;
+    width: 100%;
+    padding-right: 10px;
+}
+
+.dashboard .flip-card-back .scrollable-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dashboard .flip-card-back .scrollable-content::-webkit-scrollbar-track {
+    background: var(--bg-black-50);
+    border-radius: 3px;
+}
+
+.dashboard .flip-card-back .scrollable-content::-webkit-scrollbar-thumb {
+    background: var(--skin-color);
+    border-radius: 3px;
+}
+
+.dashboard .flip-card-back .relatorio-btn,
+.dashboard .flip-card-back .dashboard-btn,
+.dashboard .flip-card-back .github-link {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+    background-color: var(--skin-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    flex: 1 1 auto;
+    min-width: 120px;
+}
+
+.dashboard .flip-card-back .relatorio-btn:hover,
+.dashboard .flip-card-back .dashboard-btn:hover,
+.dashboard .flip-card-back .github-link:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
@@ -1086,10 +1417,12 @@ h3.my-profession {
     margin: 0 10px;
     font-size: 20px;
     transition: color 0.3s ease;
+    display: inline-block;
 }
 
 .social-links a:hover {
     color: var(--accent-color);
+    transform: translateY(-5px) scale(1.2);
 }
 
 /****************************************************************************************************/
@@ -1098,19 +1431,6 @@ h3.my-profession {
 /* RESPONSIVE */
 
 @media (max-width: 767px) {
-    .aside {
-        left: -270px;
-        display: flex;
-        transition: left 0.3s ease;
-        flex-direction: column;
-    }
-
-    .portfolio .row {
-
-        flex-direction: column;
-        gap: 20px;
-    }
-
     .main-content {
         width: 100%;
         max-width: 100%;
@@ -1118,13 +1438,17 @@ h3.my-profession {
         box-sizing: border-box
     }
 
-    .aside.open {
-        left: 0;
-    }
-
-
     .row {
         width: 100%
+    }
+
+    .padd-15 {
+        padding: 10px !important;
+    }
+
+    .row>* {
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
     .container {
@@ -1133,23 +1457,94 @@ h3.my-profession {
         padding-right: 10px;
     }
 
-    .portfolio .portfolio-items {
-        grid-template-columns: 1fr;
+    .flip-card {
+        min-height: 400px;
+        /
     }
 
-    .portfolio .portfolio-item {
-        padding: 10px;
-    }
-
-    .portfolio-item-inner {
-        width: 100%;
-        max-width: 100%;
+    .flip-card-front,
+    .flip-card-back {
         padding: 15px;
-    }
-
-    .portfolio-description {
         font-size: 14px;
     }
+
+    .flip-card-back .row {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    /****************************************************************************************************/
+
+    .aside {
+        left: -270px;
+        display: flex;
+        transition: left 0.3s ease;
+        flex-direction: column;
+    }
+
+    .aside.open {
+        left: 0;
+    }
+
+    .aside-img {
+        display: block;
+        margin: 60px 0 20px;
+        width: fit-content;
+    }
+
+    .aside .nav {
+        margin-top: 20px;
+    }
+
+    .aside .nav {
+        margin-top: 20px;
+
+    }
+
+
+
+    /****************************************************************************************************/
+
+    .home {
+        min-height: 100vh;
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .home .home-info {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        padding: 5px;
+        margin-left: 10px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        white-space: normal;
+        text-overflow: clip;
+        text-align: center;
+        order: 1;
+    }
+
+    .home .home-img {
+
+        display: none;
+    }
+
+    .home .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home .home-img img {
+        max-width: 150px;
+    }
+
+    /****************************************************************************************************/
 
     .about .skills {
         flex: 0 0 100%;
@@ -1187,17 +1582,6 @@ h3.my-profession {
         display: inline-block;
     }
 
-
-    .home {
-        min-height: 100vh;
-        display: flex;
-        width: 100%;
-        max-width: 100%;
-        padding-left: 0;
-        margin-left: 0;
-    }
-
-
     .about .container {
         max-width: 1200px;
         padding: 60px 20px;
@@ -1205,69 +1589,11 @@ h3.my-profession {
         box-sizing: border-box;
     }
 
-    .home .home-info {
-        flex: 0 0 100%;
-        width: 100%;
-        max-width: 100%;
-        padding: 5px;
-        margin-left: 10px;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        white-space: normal;
-        text-overflow: clip;
-        text-align: center;
-        order: 1;
-    }
-
-    .home .home-img {
-
-        display: none;
-    }
-
-    .aside-img {
-        display: block;
-        margin: 60px 0 20px;
-        width: fit-content;
-    }
-
-    .aside .nav {
-        margin-top: 20px;
-    }
-
-    .aside .nav {
-        margin-top: 20px;
-
-    }
-
-    .home .row {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .home .home-img img {
-        max-width: 150px;
-    }
-
-    .padd-15 {
-        padding: 10px !important;
-    }
-
-    .row>* {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-
     .about .buttons {
         flex: 0 0 100%;
         max-width: 100%;
         order: 4;
         text-align: center;
-    }
-
-    .skills .skills-item .progress-in {
-        transition: width 0.8s ease-in-out;
-
     }
 
     .about .education {
@@ -1285,12 +1611,12 @@ h3.my-profession {
 
     .about .skills .skills-item .progress {
         margin-top: 8px;
-        /* Slightly less for mobile */
+
     }
 
     .about .skills .skills-item .progress-in {
         transition: width 0.8s ease-in-out;
-        /* Faster for mobile */
+
     }
 
     .about .personal-info {
@@ -1303,7 +1629,7 @@ h3.my-profession {
         flex: 0 0 100%;
         max-width: 100%;
         display: block;
-        /* Ensure items are visible */
+
         margin-bottom: 10px;
     }
 
@@ -1317,7 +1643,7 @@ h3.my-profession {
 
     .about .skills .skills-item {
         margin-bottom: 15px;
-        /* Adjusted for mobile */
+
     }
 
     .about .personal-info .info-box,
@@ -1333,14 +1659,112 @@ h3.my-profession {
         font-size: 14px;
     }
 
+    .skills .skills-item .progress-in {
+        transition: width 0.8s ease-in-out;
+
+    }
+
+    /****************************************************************************************************/
     .portfolio-tools {
         font-size: 12px;
+    }
+
+    .portfolio .row {
+
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .portfolio .portfolio-items {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio .portfolio-item {
+        padding: 10px;
+    }
+
+    .portfolio-item-inner {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .portfolio-description {
+        font-size: 14px;
     }
 
     .github-link,
     .relatorio-btn {
         padding: 8px 16px;
         font-size: 14px;
+    }
+
+
+
+    .portfolio .flip-card {
+        min-height: 300px;
+
+    }
+
+    .portfolio .flip-card-back .row {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .portfolio .flip-card-back .column {
+        width: 48%;
+        min-width: 150px;
+        margin-bottom: 10px;
+    }
+
+    /****************************************************************************************************/
+    .dashboard .flip-card {
+        height: 450px;
+    }
+
+    .dashboard .flip-card-back .row {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .dashboard .flip-card-back .portfolio-tools ul {
+        padding-left: 15px;
+    }
+
+    .dashboard .flip-card-back .column {
+        width: 100%;
+    }
+
+    .dashboard .flip-card-back .scrollable-content {
+        max-height: 200px;
+
+    }
+
+    .dashboard .flip-card-back .relatorio-btn,
+    .dashboard .flip-card-back .dashboard-btn,
+    .dashboard .flip-card-back .github-link {
+        font-size: 12px;
+        padding: 8px 16px;
+        min-width: 100px;
+    }
+
+
+
+    #dashboards .row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+@media (min-width: 768px) {
+    .dashboard .flip-card-back .buttons {
+        flex-direction: row;
+
+        justify-content: center;
     }
 }
 
@@ -1357,10 +1781,21 @@ h3.my-profession {
         padding-left: 0;
     }
 
-    .about .about-content {
-        flex-direction: column;
+    .row {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
     }
 
+    .container {
+
+        max-width: 1100px;
+        padding: 0 10px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    /****************************************************************************************************/
     .aside {
         left: -270px;
         display: flex;
@@ -1377,108 +1812,65 @@ h3.my-profession {
 
     }
 
-    .about .row {
-        flex-wrap: nowrap;
-        gap: 10px;
-    }
-
-    .about .personal-info {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding: 0 10px;
+    .nav-toggler {
         display: flex;
-        flex-direction: column;
-        order: 1;
+
     }
 
-    .about .skills {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding: 0 10px;
-        display: flex;
-        flex-direction: column;
-        order: 2;
+    .aside .nav li {
+        opacity: 0;
+
+        transform: translateX(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    .about .skills .skills-item {
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
+    .aside.open .nav li:nth-child(1) {
+        transition-delay: 0.1s;
     }
 
-    .container {
-
-        max-width: 1100px;
-        padding: 0 10px;
-        margin: 0 auto;
-        box-sizing: border-box;
+    .aside.open .nav li:nth-child(2) {
+        transition-delay: 0.2s;
     }
 
-    .about .skills .skills-item .progress {
-        display: block;
-        height: 7px;
-        background-color: var(--bg-black-50);
-        border-radius: 4px;
-        overflow: visible;
-        width: 100%;
-        position: relative;
+    .aside.open .nav li:nth-child(3) {
+        transition-delay: 0.3s;
     }
 
-    .about .skills .skills-item h5 {
-        font-size: 16px;
-        font-weight: 600;
-        color: var(--text-black-900);
-        margin-bottom: 10px;
-        position: relative;
-        z-index: 1;
-        /* Ensure text is above progress bar */
+    .aside.open .nav li:nth-child(4) {
+        transition-delay: 0.4s;
     }
 
-    .about .skills .skills-item .progress-in {
-        height: 100%;
-        background: var(--accent-color);
-        transition: width 1s ease-in-out;
-        /* Ensure animation works */
+    .aside.open .nav li:nth-child(5) {
+        transition-delay: 0.5s;
     }
 
-    /* Ensure animation triggers */
-    .about .skills .skills-item.animated .progress-in {
-        width: var(--progress-width);
+    .aside.open .nav li:nth-child(6) {
+        transition-delay: 0.6s;
     }
 
-    .row {
-        margin: 0;
-        display: flex;
-        flex-wrap: wrap;
+    .aside.open .nav li:nth-child(7) {
+        transition-delay: 0.7s;
     }
 
-    .about .personal-info {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding: 0 10px;
-        display: block;
-        /* Ensure visibility */
-        order: 1;
-        /* Place before skills */
+    .aside.open .nav li:nth-child(8) {
+        transition-delay: 0.8s;
     }
 
-    .about .personal-info .info-item {
-        flex: 0 0 100%;
-        max-width: 100%;
-        margin-bottom: 10px;
-        display: block;
+    .aside.open .nav li:nth-child(9) {
+        transition-delay: 0.9s;
     }
 
-    .about .personal-info .info-item p {
-        font-weight: 600;
-        font-size: 16px;
-        color: var(--text-black-900);
-        border-bottom: 1px solid var(--bg-black-50);
-        padding-bottom: 5px;
+    .aside.open .nav li:nth-child(10) {
+        transition-delay: 1.0s;
     }
 
+
+    .aside.open .nav li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /****************************************************************************************************/
     .home {
         min-height: 100vh;
         display: flex;
@@ -1520,8 +1912,133 @@ h3.my-profession {
         gap: 15px;
     }
 
+    /****************************************************************************************************/
+    .about .row {
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .about .personal-info {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        order: 1;
+    }
+
+    .about .skills {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        order: 2;
+    }
+
+    .about .skills .skills-item {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+
+
+    .about .skills .skills-item .progress {
+        display: block;
+        height: 7px;
+        background-color: var(--bg-black-50);
+        border-radius: 4px;
+        overflow: visible;
+        width: 100%;
+        position: relative;
+    }
+
+    .about .skills .skills-item h5 {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text-black-900);
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+
+    }
+
+    .about .skills .skills-item .progress-in {
+        height: 100%;
+        background: var(--accent-color);
+        transition: width 1s ease-in-out;
+
+    }
+
+    .about .about-content {
+        flex-direction: column;
+    }
+
+    .about .skills .skills-item.animated .progress-in {
+        width: var(--progress-width);
+    }
+
+
+    .about .personal-info {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 10px;
+        display: block;
+
+        order: 1;
+
+    }
+
+    .about .personal-info .info-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .about .personal-info .info-item p {
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--text-black-900);
+        border-bottom: 1px solid var(--bg-black-50);
+        padding-bottom: 5px;
+    }
+
+
 }
 
+@media (min-width: 1200px) {
+    .aside {
+        left: 0;
+
+        display: flex;
+    }
+
+    .nav-toggler {
+        display: none;
+
+    }
+
+    .main-content {
+        padding-left: 270px;
+
+    }
+
+    .aside .nav li {
+        opacity: 1;
+
+        transform: translateX(0);
+        transition: none;
+
+    }
+}
+
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
 @media (min-width: 768px) and (max-width: 1199px) {
     .portfolio .portfolio-items {
         grid-template-columns: repeat(2, 1fr);
@@ -1539,14 +2056,41 @@ h3.my-profession {
 @media (max-width: 370px) {
     .main-content {
         padding-left: 0;
-        
+
     }
 
+    .container {
+        padding: 0 5px;
+
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+
+    }
+
+    .row {
+        margin: 0;
+        gap: 5px;
+    }
+
+    .padd-15 {
+        padding: 5px !important;
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+
+    /****************************************************************************************************/
     .aside {
         left: -270px;
-        
+
         width: 200px;
-        
+
     }
 
     .aside.open {
@@ -1554,14 +2098,11 @@ h3.my-profession {
         z-index: 2000;
     }
 
-    .container {
-        padding: 0 5px;
-        
-    }
 
+    /****************************************************************************************************/
     .portfolio .portfolio-items {
         grid-template-columns: 1fr;
-        
+
         gap: 5px;
     }
 
@@ -1575,7 +2116,7 @@ h3.my-profession {
 
     .portfolio-description {
         font-size: 12px;
-        
+
         line-height: 1.5;
     }
 
@@ -1590,23 +2131,28 @@ h3.my-profession {
         margin: 5px 5px 0 0;
     }
 
-    .section-title h2 {
-        font-size: 28px;
-        
-    }
+
 
     .portfolio .portfolio-heading h2 {
         font-size: 20px;
     }
 
-    .row {
-        margin: 0;
-        gap: 5px;
+    /****************************************************************************************************/
+    .dashboard .flip-card {
+        min-height: 400px;
     }
 
-    .padd-15 {
-        padding: 5px !important;
+    .dashboard .flip-card-back .scrollable-content {
+        max-height: 180px;
     }
+
+    .dashboard .flip-card-back .relatorio-btn,
+    .dashboard .flip-card-back .dashboard-btn,
+    .dashboard .flip-card-back .github-link {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
 }
 
 /****************************************************************************************************/
@@ -1614,28 +2160,28 @@ h3.my-profession {
 /****************************************************************************************************/
 @media (max-width: 340px) {
     .portfolio .container {
-        padding: 0 2px; 
+        padding: 0 2px;
     }
 
     .portfolio .portfolio-items {
         grid-template-columns: 1fr;
-        gap: 3px; 
+        gap: 3px;
     }
 
     .portfolio .portfolio-item {
-        padding: 2px; 
+        padding: 2px;
     }
 
     .portfolio .portfolio-item-inner {
         padding: 8px;
         max-width: 100%;
-        overflow: hidden; 
+        overflow: hidden;
     }
 
     .portfolio-description {
         font-size: 11px;
         line-height: 1.4;
-        word-break: break-all; 
+        word-break: break-all;
     }
 
     .portfolio-tools {
@@ -1654,7 +2200,7 @@ h3.my-profession {
     }
 
     .portfolio .portfolio-item-inner h2 {
-        font-size: 20px; 
+        font-size: 20px;
     }
 
     .portfolio .portfolio-heading h2 {

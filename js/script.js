@@ -205,3 +205,84 @@ document.addEventListener('DOMContentLoaded', () => {
 
   skillsItems.forEach(item => observer.observe(item));
 });
+const homeImg = document.querySelector('.home-img img');
+homeImg.addEventListener('mousemove', (e) => {
+  const rect = homeImg.getBoundingClientRect();
+  const x = e.clientX - rect.left - rect.width / 2;
+  const y = e.clientY - rect.top - rect.height / 2;
+  const tiltX = (y / rect.height) * 10; // Max 10deg tilt
+  const tiltY = -(x / rect.width) * 10;
+  homeImg.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.05)`;
+});
+homeImg.addEventListener('mouseleave', () => {
+  homeImg.style.transform = 'rotateX(0) rotateY(0) scale(1)';
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const skillsItems = document.querySelectorAll('.skills-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      const progressIn = entry.target.querySelector('.progress-in');
+      const width = progressIn.getAttribute('data-progress-width');
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('animated');
+          progressIn.style.setProperty('--progress-width', width);
+        }, index * 200); // 200ms delay per item
+      } else {
+        entry.target.classList.remove('animated');
+        progressIn.style.setProperty('--progress-width', '0%');
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px'
+  });
+  skillsItems.forEach(item => observer.observe(item));
+});
+const timelineItems = document.querySelectorAll('.timeline-item');
+const timelineObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelector('.circle-dot').style.animationPlayState = 'running';
+    } else {
+      entry.target.querySelector('.circle-dot').style.animationPlayState = 'paused';
+    }
+  });
+}, { threshold: 0.2 });
+timelineItems.forEach(item => timelineObserver.observe(item));
+const buttons = document.querySelectorAll('.dashboard-btn, .relatorio-btn, .github-link');
+buttons.forEach(button => {
+  button.addEventListener('click', function (e) {
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple');
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+    ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+    button.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  });
+});
+function setConsistentCardHeights() {
+    const dashboardCards = document.querySelectorAll('.dashboard .flip-card');
+    let maxHeight = 0;
+
+    // Reset heights to auto to calculate natural height
+    dashboardCards.forEach(card => {
+        card.style.height = 'auto';
+        const height = card.offsetHeight;
+        if (height > maxHeight) {
+            maxHeight = height;
+        }
+    });
+
+    // Apply the maximum height to all cards
+    dashboardCards.forEach(card => {
+        card.style.height = `${maxHeight}px`;
+    });
+}
+
+// Run on load and resize
+window.addEventListener('load', setConsistentCardHeights);
+window.addEventListener('resize', setConsistentCardHeights);
