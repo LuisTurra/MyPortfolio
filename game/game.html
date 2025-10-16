@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio do Caminho de Código</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <section id="game-section">
+    <h2>Desafio do Caminho de Código</h2>
+    <p id="tutorial">
+      Bem-vindo ao Desafio do Caminho de Código! Clique nos botões "Cima", "Baixo", "Esquerda" ou "Direita" para criar uma sequência de comandos que leve o cubo azul do ponto A (verde) ao ponto B (vermelho) pelo caminho branco. Clique em "Iniciar" para mover o cubo. Se a sequência estiver correta, você alcançará o objetivo! Clique em "Reiniciar" para tentar um novo caminho.
+    </p>
+    <div id="game-container">
+      <div id="grid">
+        
+      </div>
+      <div id="cube"></div>
+      <div id="start-point" class="point">A</div>
+      <div id="end-point" class="point">B</div>
+    </div>
+    <div id="controls">
+      <button onclick="addCommand('up')">Cima</button>
+      <button onclick="addCommand('down')">Baixo</button>
+      <button onclick="addCommand('left')">Esquerda</button>
+      <button onclick="addCommand('right')">Direita</button>
+      <button onclick="startGame()">Iniciar</button>
+      <button onclick="resetGame()">Reiniciar</button>
+      <button onclick="window.location.href='../index.html'">Voltar ao Portfólio</button>
+    </div>
+    <div id="command-list"></div>
+    <div id="result-modal" style="display: none;">
+      <p id="result-message"></p>
+      <button onclick="closeModal()">Fechar</button>
+    </div>
+  </section>
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-// Modern color palette for light mode (10 unique accent colors)
+// Cores para fundo Branco
 const colorPalette = [
   { primary: "#5C6BC0", accent: "#FFD54F", text: "#FFFFFF" }, // Indigo with Amber
   { primary: "#26A69A", accent: "#EC407A", text: "#FFFFFF" }, // Teal with Pink
@@ -12,7 +12,7 @@ const colorPalette = [
   { primary: "#455A64", accent: "#FF5722", text: "#FFFFFF" }, // Dark Blue with Deep Orange
 ];
 
-// Dark mode palette (10 unique accent colors)
+//Core para modo Escuro
 const darkColorPalette = [
   { primary: "#3F51B5", accent: "#FFCA28", text: "#FFFFFF" }, // Dark Indigo with Amber
   { primary: "#00897B", accent: "#F06292", text: "#FFFFFF" }, // Dark Teal with Pink
@@ -26,7 +26,7 @@ const darkColorPalette = [
   { primary: "#37474F", accent: "#F4511E", text: "#FFFFFF" }, // Dark Gray with Deep Orange
 ];
 
-// Function to calculate luminance for contrast checking
+// luminosidade
 function getLuminance(hex) {
   hex = hex.replace("#", "");
   const r = parseInt(hex.substr(0, 2), 16) / 255;
@@ -35,7 +35,7 @@ function getLuminance(hex) {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
-// Function to check contrast ratio (WCAG-compliant)
+// contraste
 function getContrastRatio(hex1, hex2) {
   const lum1 = getLuminance(hex1);
   const lum2 = getLuminance(hex2);
@@ -44,7 +44,7 @@ function getContrastRatio(hex1, hex2) {
   return (lightest + 0.05) / (darkest + 0.05);
 }
 
-// Function to adjust color for hover
+// Hover color
 function adjustColor(hex, percent) {
   hex = hex.replace("#", "");
   let r = parseInt(hex.substr(0, 2), 16);
@@ -60,7 +60,7 @@ function adjustColor(hex, percent) {
     .padStart(2, "0")}${Math.round(b).toString(16).padStart(2, "0")}`;
 }
 
-// Apply color scheme
+// Cores função
 function applyColorScheme(palette) {
   const { primary, accent, text } = palette;
   const contrastRatio = getContrastRatio(primary, text);
@@ -72,21 +72,21 @@ function applyColorScheme(palette) {
   document.documentElement.style.setProperty("--hover-color", hoverColor);
   document.documentElement.style.setProperty("--accent-color", accent);
 
-  // Apply accent color to all .random-color elements
+  // accent color
   document.querySelectorAll(".random-color").forEach((element) => {
     element.style.color = accent;
-    console.log(`Applying accent color ${accent} to element:`, element); // Debugging
+    console.log(`Applying accent color ${accent} to element:`, element); 
   });
 }
 
-// Set random skin color on load
+// Cores randomica
 function setRandomSkinColor() {
   const palette = document.body.classList.contains("dark") ? darkColorPalette : colorPalette;
   const selectedPalette = palette[Math.floor(Math.random() * palette.length)];
   applyColorScheme(selectedPalette);
 }
 
-// Day/Night toggle
+// Modo Claro/Escuro
 const dayNight = document.querySelector(".day-night");
 if (dayNight) {
   const toggleTheme = () => {
@@ -97,7 +97,7 @@ if (dayNight) {
       document.body.classList.toggle("dark");
       dayNight.setAttribute("aria-pressed", document.body.classList.contains("dark"));
       localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-      setRandomSkinColor(); // Update colors when theme changes
+      setRandomSkinColor(); 
     }
   };
 
@@ -137,7 +137,7 @@ new Typed('.typing', {
   loop: true
 });
 
-// Sidebar toggle
+// Botão Sidebar
 document.querySelector('.nav-toggler').addEventListener('click', () => {
   const navToggler = document.querySelector('.nav-toggler');
   const aside = document.querySelector('.aside');
@@ -148,7 +148,7 @@ document.querySelector('.nav-toggler').addEventListener('click', () => {
   }, 300);
 });
 
-// Close sidebar on link click
+// Fechar Sidebar
 const navLinks = document.querySelectorAll('.aside .nav li a');
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
@@ -156,7 +156,7 @@ navLinks.forEach(link => {
   });
 });
 
-// Scroll to top on page load
+// Recarregar a pagina
 window.addEventListener('load', () => {
   const sidebar = document.querySelector('.aside');
   if (sidebar) sidebar.scrollTop = 0;
@@ -180,7 +180,7 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Skills animation
+// Barras de Skill
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Skills animation initialized');
   const skillsItems = document.querySelectorAll('.skills-item');
@@ -210,7 +210,7 @@ homeImg.addEventListener('mousemove', (e) => {
   const rect = homeImg.getBoundingClientRect();
   const x = e.clientX - rect.left - rect.width / 2;
   const y = e.clientY - rect.top - rect.height / 2;
-  const tiltX = (y / rect.height) * 10; // Max 10deg tilt
+  const tiltX = (y / rect.height) * 10; 
   const tiltY = -(x / rect.width) * 10;
   homeImg.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.05)`;
 });
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           entry.target.classList.add('animated');
           progressIn.style.setProperty('--progress-width', width);
-        }, index * 200); // 200ms delay per item
+        }, index * 200); 
       } else {
         entry.target.classList.remove('animated');
         progressIn.style.setProperty('--progress-width', '0%');
@@ -268,7 +268,7 @@ function setConsistentCardHeights() {
     const dashboardCards = document.querySelectorAll('.dashboard .flip-card');
     let maxHeight = 0;
 
-    // Reset heights to auto to calculate natural height
+    
     dashboardCards.forEach(card => {
         card.style.height = 'auto';
         const height = card.offsetHeight;
@@ -277,12 +277,12 @@ function setConsistentCardHeights() {
         }
     });
 
-    // Apply the maximum height to all cards
+    
     dashboardCards.forEach(card => {
         card.style.height = `${maxHeight}px`;
     });
 }
 
-// Run on load and resize
+
 window.addEventListener('load', setConsistentCardHeights);
 window.addEventListener('resize', setConsistentCardHeights);
