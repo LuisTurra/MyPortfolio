@@ -136,24 +136,25 @@ new Typed('.typing', {
   backSpeed: 60,
   loop: true
 });
-
 // Botão Sidebar
 document.querySelector('.nav-toggler').addEventListener('click', () => {
-  const navToggler = document.querySelector('.nav-toggler');
-  const aside = document.querySelector('.aside');
-  aside.classList.toggle('open');
-  navToggler.classList.add('clicked');
-  setTimeout(() => {
-    navToggler.classList.remove('clicked');
-  }, 300);
+    const navToggler = document.querySelector('.nav-toggler');
+    const aside = document.querySelector('.aside');
+    aside.classList.toggle('open');
+    navToggler.classList.toggle('active'); // Toggle for hamburger animation
+    navToggler.classList.add('clicked'); // Temporary blink effect
+    setTimeout(() => {
+        navToggler.classList.remove('clicked');
+    }, 300);
 });
 
 // Fechar Sidebar
 const navLinks = document.querySelectorAll('.aside .nav li a');
 navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    document.querySelector('.aside').classList.remove('open');
-  });
+    link.addEventListener('click', () => {
+        document.querySelector('.aside').classList.remove('open');
+        document.querySelector('.nav-toggler').classList.remove('active');
+    });
 });
 
 // Recarregar a pagina

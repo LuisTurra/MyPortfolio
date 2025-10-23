@@ -218,6 +218,59 @@ body,
     }
 }
 
+/****************************************************************************************************/
+/**Button GLOW**/
+.btn {
+    --glow-color: var(--accent-color);
+    --glow-spread-color: var(--accent-color);
+    --enhanced-glow-color: var(--skin-color);
+    --btn-color: var(--skin-color);
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .15em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .15em .15em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+}
+
+.btn::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 110%; 
+    left: 10%;
+    height: 60%; 
+    width: 80%;
+    background-color: var(--glow-spread-color);
+    filter: blur(0.8em); 
+    opacity: 0.2;
+    transform: perspective(1em) rotateX(25deg) scale(1, 0.5);
+    transition: opacity 0.3s ease;
+}
+.btn:hover::after {
+    opacity: 0.4; 
+}
+.btn:hover {
+    color: var(--btn-color);
+    
+    background-color: var(--glow-color);
+    box-shadow: 0 0 0.5em 0.10em var(--glow-color),
+                inset 0 0 0.5em 0.15em var(--glow-color);
+}
+
+.btn:active {
+    box-shadow: 0 0 0.4em 0.1em var(--glow-color),
+                inset 0 0 0.3em 0.1em var(--glow-color);
+}
+
 .btn,
 .dashboard-btn,
 .relatorio-btn,
@@ -227,6 +280,7 @@ body,
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/****************************************************************************************************/
 .ripple {
     position: absolute;
     background: rgba(255, 255, 255, 0.5);
@@ -301,24 +355,11 @@ body,
     padding: 10px 20px;
 }
 
-.portfolio .flip-card {
-    min-height: 350px;
-}
+/****************************************************************************************************/
 
-.portfolio .flip-card-back .row {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-}
-
-.portfolio .flip-card-back .column {
-    width: 48%;
-
-}
 
 .game-toggle {
-    
+
     top: 20px;
     right: 20px;
     width: 40px;
@@ -358,7 +399,7 @@ body,
     display: flex;
     flex-direction: column;
     gap: 10px;
-    
+
     z-index: 1000;
 }
 
@@ -369,7 +410,7 @@ body,
 .aside {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -270px;
     width: 270px;
     height: 100vh;
     padding: 30px;
@@ -386,15 +427,14 @@ body,
 
 .aside.open {
     left: 0;
+
 }
 
 .aside .logo {
-
     position: absolute;
     font-size: 30px;
     top: 50px;
     text-transform: capitalize;
-
 }
 
 .aside .logo a {
@@ -402,17 +442,13 @@ body,
     font-size: 30px;
     letter-spacing: 5px;
     font-weight: 700;
-
     padding: 15px 20px;
     position: relative;
-
 }
 
 .aside .logo a span {
-
     font-family: 'Clicker Script', cursive;
     font-size: 40px;
-
 }
 
 .aside .logo a::before {
@@ -424,7 +460,6 @@ body,
     border-left: 5px solid var(--skin-color);
     bottom: 0;
     left: 0;
-
 }
 
 .aside .logo a::after {
@@ -436,11 +471,9 @@ body,
     border-right: 5px solid var(--skin-color);
     top: 0;
     right: 0;
-
 }
 
-
-
+/****************************************************************************************************/
 .nav-toggler {
     position: fixed;
     top: 15px;
@@ -459,20 +492,63 @@ body,
     transition: background 0.3s ease;
 }
 
-.nav-toggler .hamburger {
-    display: block;
-    width: 28px;
-    height: 28px;
+
+.toggle2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition-duration: 0.5s;
 }
 
-.nav-toggler .hamburger .line {
-    stroke: var(--skin-color, var(--text-black-900));
-    transition: stroke 0.3s ease;
+.bars {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(92, 176, 255);
+    border-radius: 4px;
 }
 
-.nav-toggler:hover .hamburger .line {
-    stroke: var(--skin-color);
+#bar5 {
+    transition-duration: 0.8s;
 }
+
+#bar4,
+#bar6 {
+    width: 80%;
+}
+
+.nav-toggler.active .toggle2 .bars {
+    position: absolute;
+    transition-duration: 0.5s;
+}
+
+.nav-toggler.active .toggle2 #bar5 {
+    transform: scaleX(0);
+    transition-duration: 0.5s;
+}
+
+.nav-toggler.active .toggle2 #bar4 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: 0.5s;
+}
+
+.nav-toggler.active .toggle2 #bar6 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: 0.5s;
+}
+
+.nav-toggler.active .toggle2 {
+    transition-duration: 0.5s;
+    transform: rotate(180deg);
+}
+
 
 .nav-toggler.clicked {
     animation: blink 0.3s ease-in-out;
@@ -492,15 +568,9 @@ body,
     }
 }
 
-.nav-toggler,
-.nav-toggler svg {
-    width: auto !important;
-    overflow: visible !important;
-}
-
+/****************************************************************************************************/
 .aside .nav {
     margin-top: 50px;
-
 }
 
 .aside .nav li {
@@ -508,7 +578,6 @@ body,
     display: block;
     opacity: 1;
     transform: translateX(0);
-
 }
 
 .aside.open .nav li {
@@ -566,8 +635,7 @@ body,
 }
 
 .aside .nav li a.active {
-    color: var(---accent-color);
-
+    color: var(--accent-color);
 }
 
 .aside::-webkit-scrollbar {
@@ -580,6 +648,7 @@ body,
     scrollbar-color: transparent transparent;
 }
 
+/****************************************************************************************************/
 .aside-img {
     display: none;
     text-align: center;
@@ -588,7 +657,6 @@ body,
 
 .aside-img img {
     max-width: 300px;
-
     width: 100%;
     height: auto;
     border-radius: 50%;
@@ -596,6 +664,7 @@ body,
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/****************************************************************************************************/
 .aside .nav .nav-sub li a {
     font-size: 14px;
     padding-left: 30px;
@@ -608,7 +677,6 @@ body,
 
 .aside .nav li a i {
     margin-right: 15px;
-
 }
 
 .nav-sub {
@@ -1131,6 +1199,22 @@ h3.my-profession {
     margin: 0 auto;
 }
 
+.portfolio .flip-card {
+    min-height: 350px;
+}
+
+.portfolio .flip-card-back .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.portfolio .flip-card-back .column {
+    width: 48%;
+
+}
+
 .portfolio .portfolio-heading {
     flex: 0 0 100%;
     max-width: 100%;
@@ -1168,6 +1252,52 @@ h3.my-profession {
     flex-direction: column;
 }
 
+/***********************************************************************************************/
+
+.portfolio .portfolio-item-inner,
+.dashboard .portfolio-item-inner {
+    position: relative;
+    overflow: hidden;
+    border: none; 
+   
+}
+
+
+@keyframes glowBorder {
+    0% {
+        box-shadow: 0 0 5px var(--accent-color),
+                    0 0 10px var(--accent-color),
+                    0 0 15px var(--accent-color);
+    }
+    50% {
+        box-shadow: 0 0 10px var(--accent-color),
+                    0 0 20px var(--accent-color),
+                    0 0 30px var(--accent-color);
+    }
+    100% {
+        box-shadow: 0 0 5px var(--accent-color),
+                    0 0 10px var(--accent-color),
+                    0 0 15px var(--accent-color);
+    }
+}
+
+
+.portfolio .flip-card,
+.dashboard .flip-card {
+    position: relative;
+    animation: glowBorder 3s ease-in-out infinite;
+}
+
+
+.portfolio .portfolio-item-inner:hover,
+.dashboard .portfolio-item-inner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2),
+                0 0 10px var(--skin-color),
+                0 0 20px var(--accent-color);
+}
+
+/****************************************************************************************************/
 .portfolio .portfolio-item-inner:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
@@ -1770,6 +1900,13 @@ h3.my-profession {
         width: 48%;
         min-width: 150px;
         margin-bottom: 10px;
+    }
+
+    .portfolio .portfolio-item-inner,
+    .dashboard .portfolio-item-inner,
+    .portfolio .flip-card,
+    .dashboard .flip-card {
+        animation: glowBorder 2s ease-in-out infinite;
     }
 
     /****************************************************************************************************/
