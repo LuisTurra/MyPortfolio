@@ -43,42 +43,6 @@ function getContrastRatio(hex1, hex2) {
   const darkest = Math.min(lum1, lum2);
   return (lightest + 0.05) / (darkest + 0.05);
 }
-
-// Hover color
-function adjustColor(hex, percent) {
-  hex = hex.replace("#", "");
-  let r = parseInt(hex.substr(0, 2), 16);
-  let g = parseInt(hex.substr(2, 2), 16);
-  let b = parseInt(hex.substr(4, 2), 16);
-
-  r = Math.min(255, Math.max(0, r * (1 + percent)));
-  g = Math.min(255, Math.max(0, g * (1 + percent)));
-  b = Math.min(255, Math.max(0, b * (1 + percent)));
-
-  return `#${Math.round(r).toString(16).padStart(2, "0")}${Math.round(g)
-    .toString(16)
-    .padStart(2, "0")}${Math.round(b).toString(16).padStart(2, "0")}`;
-}
-
-// Cores função
-function applyColorScheme(palette) {
-  const { primary, accent, text } = palette;
-  const contrastRatio = getContrastRatio(primary, text);
-  const textColor = contrastRatio >= 4.5 ? text : "#FFFFFF";
-  const hoverColor = adjustColor(primary, -0.2);
-
-  document.documentElement.style.setProperty("--skin-color", primary);
-  document.documentElement.style.setProperty("--text-color", textColor);
-  document.documentElement.style.setProperty("--hover-color", hoverColor);
-  document.documentElement.style.setProperty("--accent-color", accent);
-
-  // accent color
-  document.querySelectorAll(".random-color").forEach((element) => {
-    element.style.color = accent;
-    console.log(`Applying accent color ${accent} to element:`, element); 
-  });
-}
-
 // Cores randomica
 function setRandomSkinColor() {
   const palette = document.body.classList.contains("dark") ? darkColorPalette : colorPalette;
@@ -97,7 +61,7 @@ if (dayNight) {
       document.body.classList.toggle("dark");
       dayNight.setAttribute("aria-pressed", document.body.classList.contains("dark"));
       localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-      setRandomSkinColor(); 
+      setRandomSkinColor();
     }
   };
 
@@ -138,23 +102,23 @@ new Typed('.typing', {
 });
 // Botão Sidebar
 document.querySelector('.nav-toggler').addEventListener('click', () => {
-    const navToggler = document.querySelector('.nav-toggler');
-    const aside = document.querySelector('.aside');
-    aside.classList.toggle('open');
-    navToggler.classList.toggle('active'); // Toggle for hamburger animation
-    navToggler.classList.add('clicked'); // Temporary blink effect
-    setTimeout(() => {
-        navToggler.classList.remove('clicked');
-    }, 300);
+  const navToggler = document.querySelector('.nav-toggler');
+  const aside = document.querySelector('.aside');
+  aside.classList.toggle('open');
+  navToggler.classList.toggle('active'); 
+  navToggler.classList.add('clicked'); 
+  setTimeout(() => {
+    navToggler.classList.remove('clicked');
+  }, 300);
 });
 
 // Fechar Sidebar
 const navLinks = document.querySelectorAll('.aside .nav li a');
 navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        document.querySelector('.aside').classList.remove('open');
-        document.querySelector('.nav-toggler').classList.remove('active');
-    });
+  link.addEventListener('click', () => {
+    document.querySelector('.aside').classList.remove('open');
+    document.querySelector('.nav-toggler').classList.remove('active');
+  });
 });
 
 // Recarregar a pagina
@@ -211,7 +175,7 @@ homeImg.addEventListener('mousemove', (e) => {
   const rect = homeImg.getBoundingClientRect();
   const x = e.clientX - rect.left - rect.width / 2;
   const y = e.clientY - rect.top - rect.height / 2;
-  const tiltX = (y / rect.height) * 10; 
+  const tiltX = (y / rect.height) * 10;
   const tiltY = -(x / rect.width) * 10;
   homeImg.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.05)`;
 });
@@ -228,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           entry.target.classList.add('animated');
           progressIn.style.setProperty('--progress-width', width);
-        }, index * 200); 
+        }, index * 200);
       } else {
         entry.target.classList.remove('animated');
         progressIn.style.setProperty('--progress-width', '0%');
@@ -266,24 +230,144 @@ buttons.forEach(button => {
   });
 });
 function setConsistentCardHeights() {
-    const dashboardCards = document.querySelectorAll('.dashboard .flip-card');
-    let maxHeight = 0;
+  const dashboardCards = document.querySelectorAll('.dashboard .flip-card');
+  let maxHeight = 0;
 
-    
-    dashboardCards.forEach(card => {
-        card.style.height = 'auto';
-        const height = card.offsetHeight;
-        if (height > maxHeight) {
-            maxHeight = height;
-        }
-    });
 
-    
-    dashboardCards.forEach(card => {
-        card.style.height = `${maxHeight}px`;
-    });
+  dashboardCards.forEach(card => {
+    card.style.height = 'auto';
+    const height = card.offsetHeight;
+    if (height > maxHeight) {
+      maxHeight = height;
+    }
+  });
+
+
+  dashboardCards.forEach(card => {
+    card.style.height = `${maxHeight}px`;
+  });
 }
 
 
 window.addEventListener('load', setConsistentCardHeights);
 window.addEventListener('resize', setConsistentCardHeights);
+
+// Função de Brilho das cores
+function adjustColor(hex, percent) {
+  hex = hex.replace("#", "");
+  let r = parseInt(hex.substr(0, 2), 16);
+  let g = parseInt(hex.substr(2, 2), 16);
+  let b = parseInt(hex.substr(4, 2), 16);
+
+  r = Math.min(255, Math.max(0, r * (1 + percent)));
+  g = Math.min(255, Math.max(0, g * (1 + percent)));
+  b = Math.min(255, Math.max(0, b * (1 + percent)));
+
+  return `#${Math.round(r).toString(16).padStart(2, "0")}${Math.round(g)
+    .toString(16)
+    .padStart(2, "0")}${Math.round(b).toString(16).padStart(2, "0")}`;
+}
+
+// Função de Brilho das cores
+function adjustColor(hex, percent) {
+  hex = hex.replace("#", "");
+  let r = parseInt(hex.substr(0, 2), 16);
+  let g = parseInt(hex.substr(2, 2), 16);
+  let b = parseInt(hex.substr(4, 2), 16);
+
+  r = Math.min(255, Math.max(0, r * (1 + percent)));
+  g = Math.min(255, Math.max(0, g * (1 + percent)));
+  b = Math.min(255, Math.max(0, b * (1 + percent)));
+
+  return `#${Math.round(r).toString(16).padStart(2, "0")}${Math.round(g)
+    .toString(16)
+    .padStart(2, "0")}${Math.round(b).toString(16).padStart(2, "0")}`;
+}
+
+// Função de Brilho das cores
+function adjustColor(hex, percent) {
+  hex = hex.replace("#", "");
+  let r = parseInt(hex.substr(0, 2), 16);
+  let g = parseInt(hex.substr(2, 2), 16);
+  let b = parseInt(hex.substr(4, 2), 16);
+
+  r = Math.min(255, Math.max(0, r * (1 + percent)));
+  g = Math.min(255, Math.max(0, g * (1 + percent)));
+  b = Math.min(255, Math.max(0, b * (1 + percent)));
+
+  return `#${Math.round(r).toString(16).padStart(2, "0")}${Math.round(g)
+    .toString(16)
+    .padStart(2, "0")}${Math.round(b).toString(16).padStart(2, "0")}`;
+}
+
+// Função de Brilho das cores
+function adjustColor(hex, percent) {
+  hex = hex.replace("#", "");
+  let r = parseInt(hex.substr(0, 2), 16);
+  let g = parseInt(hex.substr(2, 2), 16);
+  let b = parseInt(hex.substr(4, 2), 16);
+
+  r = Math.min(255, Math.max(0, r * (1 + percent)));
+  g = Math.min(255, Math.max(0, g * (1 + percent)));
+  b = Math.min(255, Math.max(0, b * (1 + percent)));
+
+  return `#${Math.round(r).toString(16).padStart(2, "0")}${Math.round(g)
+    .toString(16)
+    .padStart(2, "0")}${Math.round(b).toString(16).padStart(2, "0")}`;
+}
+
+// Função de cores
+function adjustColor(hex, percent) {
+  hex = hex.replace("#", "");
+  let r = parseInt(hex.substr(0, 2), 16);
+  let g = parseInt(hex.substr(2, 2), 16);
+  let b = parseInt(hex.substr(4, 2), 16);
+
+  r = Math.min(255, Math.max(0, r * (1 + percent)));
+  g = Math.min(255, Math.max(0, g * (1 + percent)));
+  b = Math.min(255, Math.max(0, b * (1 + percent)));
+
+  return `#${Math.round(r).toString(16).padStart(2, "0")}${Math.round(g)
+    .toString(16)
+    .padStart(2, "0")}${Math.round(b).toString(16).padStart(2, "0")}`;
+}
+
+// ajuste de gradiente de cores
+function applyAnimatedBgColors(animationBaseColor) {
+  const skinVariant_L = adjustColor(animationBaseColor, 0.10);
+
+  // ajuste de cores
+  const skinVariant1 = adjustColor(animationBaseColor, -0.05);
+  const skinVariant2 = adjustColor(animationBaseColor, -0.15);
+  const skinVariant3 = adjustColor(animationBaseColor, -0.25);
+  const skinVariant4 = adjustColor(animationBaseColor, -0.35);
+
+  // Variação
+  document.documentElement.style.setProperty("--skin-variant-1", skinVariant1);
+  document.documentElement.style.setProperty("--skin-variant-2", skinVariant2);
+  document.documentElement.style.setProperty("--skin-variant-3", skinVariant3);
+  document.documentElement.style.setProperty("--skin-variant-4", skinVariant4);
+  document.documentElement.style.setProperty("--skin-variant-5", skinVariant_L);
+}
+
+// esquema de cores
+function applyColorScheme(palette) {
+  const { primary, accent, text } = palette;
+  const contrastRatio = getContrastRatio(primary, text);
+  const textColor = contrastRatio >= 4.5 ? text : "#FFFFFF";
+  const hoverColor = adjustColor(primary, -0.2);
+
+  
+  document.documentElement.style.setProperty("--skin-color", primary);
+  document.documentElement.style.setProperty("--text-color", textColor);
+  document.documentElement.style.setProperty("--hover-color", hoverColor);
+  document.documentElement.style.setProperty("--accent-color", accent);
+  document.documentElement.style.setProperty("--animated-base-color", primary);
+
+  applyAnimatedBgColors(primary);
+
+  document.querySelectorAll(".random-color").forEach((element) => {
+    element.style.color = accent;
+    console.log(`Applying accent color ${accent} to element:`, element);
+  });
+}
