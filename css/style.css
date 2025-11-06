@@ -750,7 +750,7 @@ body,
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg,
-            /* ⭐ CHANGED: Use the dedicated base color variable here */
+            
             var(--animated-base-color),
             var(--skin-variant-1),
             var(--skin-variant-2),
@@ -762,7 +762,7 @@ body,
             var(--skin-variant-2),
             var(--skin-variant-1),
             var(--animated-base-color)
-            /* ⭐ CHANGED: And here */
+            
         );
     background-size: 600% 600%;
     animation: gradientMove 30s ease infinite;

@@ -1,29 +1,29 @@
 // Cores para fundo Branco
 const colorPalette = [
-  { primary: "#5C6BC0", accent: "#FFD54F", text: "#FFFFFF" }, // Indigo with Amber
-  { primary: "#26A69A", accent: "#EC407A", text: "#FFFFFF" }, // Teal with Pink
-  { primary: "#FF7043", accent: "#66BB6A", text: "#212121" }, // Coral with Green
-  { primary: "#78909C", accent: "#AB47BC", text: "#FFFFFF" }, // Slate Blue with Purple
-  { primary: "#0288D1", accent: "#FF4081", text: "#FFFFFF" }, // Blue with Deep Pink
-  { primary: "#7B1FA2", accent: "#4FC3F7", text: "#FFFFFF" }, // Purple with Light Blue
-  { primary: "#D81B60", accent: "#26A69A", text: "#FFFFFF" }, // Magenta with Teal
-  { primary: "#388E3C", accent: "#FFCA28", text: "#212121" }, // Green with Amber
-  { primary: "#FBC02D", accent: "#D81B60", text: "#212121" }, // Yellow with Magenta
-  { primary: "#455A64", accent: "#FF5722", text: "#FFFFFF" }, // Dark Blue with Deep Orange
+  { primary: "#5C6BC0", accent: "#FFD54F", text: "#FFFFFF" },
+  { primary: "#26A69A", accent: "#EC407A", text: "#FFFFFF" },
+  { primary: "#FF7043", accent: "#66BB6A", text: "#212121" },
+
+  { primary: "#0288D1", accent: "#d80c50e0", text: "#FFFFFF" },
+
+
+  { primary: "#388E3C", accent: "#FFCA28", text: "#212121" },
+  { primary: "#FBC02D", accent: "#D81B60", text: "#212121" },
+  { primary: "#85898bff", accent: "#FF5722", text: "#FFFFFF" },
 ];
 
 //Core para modo Escuro
 const darkColorPalette = [
-  { primary: "#3F51B5", accent: "#FFCA28", text: "#FFFFFF" }, // Dark Indigo with Amber
-  { primary: "#00897B", accent: "#F06292", text: "#FFFFFF" }, // Dark Teal with Pink
-  { primary: "#EF5350", accent: "#4CAF50", text: "#212121" }, // Dark Coral with Green
-  { primary: "#546E7A", accent: "#7C4DFF", text: "#FFFFFF" }, // Dark Slate with Purple
-  { primary: "#0277BD", accent: "#FF4081", text: "#FFFFFF" }, // Dark Blue with Deep Pink
-  { primary: "#6A1B9A", accent: "#29B6F6", text: "#FFFFFF" }, // Dark Purple with Light Blue
-  { primary: "#C2185B", accent: "#26A69A", text: "#FFFFFF" }, // Dark Magenta with Teal
-  { primary: "#2E7D32", accent: "#FFD54F", text: "#212121" }, // Dark Green with Amber
-  { primary: "#F9A825", accent: "#C2185B", text: "#212121" }, // Dark Yellow with Magenta
-  { primary: "#37474F", accent: "#F4511E", text: "#FFFFFF" }, // Dark Gray with Deep Orange
+  { primary: "#3F51B5", accent: "#FFCA28", text: "#FFFFFF" },
+  { primary: "#00897B", accent: "#F06292", text: "#FFFFFF" },
+  { primary: "#EF5350", accent: "#4CAF50", text: "#212121" },
+
+  { primary: "#0277BD", accent: "#FF4081", text: "#FFFFFF" },
+  { primary: "#6A1B9A", accent: "#29B6F6", text: "#FFFFFF" },
+  { primary: "#C2185B", accent: "#26A69A", text: "#FFFFFF" },
+  { primary: "#2E7D32", accent: "#FFD54F", text: "#212121" },
+  { primary: "#F9A825", accent: "#C2185B", text: "#212121" },
+  { primary: "#37474F", accent: "#F4511E", text: "#FFFFFF" },
 ];
 
 // luminosidade
@@ -105,8 +105,8 @@ document.querySelector('.nav-toggler').addEventListener('click', () => {
   const navToggler = document.querySelector('.nav-toggler');
   const aside = document.querySelector('.aside');
   aside.classList.toggle('open');
-  navToggler.classList.toggle('active'); 
-  navToggler.classList.add('clicked'); 
+  navToggler.classList.toggle('active');
+  navToggler.classList.add('clicked');
   setTimeout(() => {
     navToggler.classList.remove('clicked');
   }, 300);
@@ -357,7 +357,7 @@ function applyColorScheme(palette) {
   const textColor = contrastRatio >= 4.5 ? text : "#FFFFFF";
   const hoverColor = adjustColor(primary, -0.2);
 
-  
+
   document.documentElement.style.setProperty("--skin-color", primary);
   document.documentElement.style.setProperty("--text-color", textColor);
   document.documentElement.style.setProperty("--hover-color", hoverColor);
