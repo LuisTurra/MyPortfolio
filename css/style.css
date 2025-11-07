@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Poppins:wght@400;600&display=swap');
+
 /****************************************************************************************************/
 :root {
     --bg-black-900: #f2f2fc;
@@ -343,7 +344,7 @@ body,
 .flip-card-back {
     transform: rotateY(180deg);
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .flip-card-back .row {
@@ -360,6 +361,119 @@ body,
 
     margin: 5px;
     padding: 10px 20px;
+}
+
+/* ============================================= */
+/* FLIP CARD BACK: 2 COLUMNS + BUTTONS AT BOTTOM */
+/* ============================================= */
+
+.flip-card-back {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--bg-black-100);
+    border-radius: 10px;
+}
+
+.back-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    flex: 1;
+    overflow: hidden;
+    margin-bottom: 15px;
+    
+}
+
+.back-col {
+    overflow-y: auto;
+    max-height: 100%;
+    padding-right: 8px;
+}
+
+.back-col::-webkit-scrollbar {
+    width: 5px;
+}
+
+.back-col::-webkit-scrollbar-track {
+    background: var(--bg-black-50);
+    border-radius: 10px;
+}
+
+.back-col::-webkit-scrollbar-thumb {
+    background: var(--skin-color);
+    border-radius: 10px;
+}
+
+.back-col::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-color);
+}
+
+.back-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-black-900);
+    font-size: 15px;
+}
+
+.back-list {
+    list-style: disc;
+    padding-left: 18px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-black-900);
+}
+
+.back-list li {
+    margin-bottom: 4px;
+    word-wrap: break-word;
+}
+
+/* BUTTONS AT BOTTOM */
+.card-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.card-buttons button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 110px;
+    max-width: 160px;
+}
+
+.relatorio-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.relatorio-btn:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.dashboard-btn {
+    background: var(--skin-color);
+    color: white;
+}
+
+.dashboard-btn:hover {
+    background: var(--hover-color);
+    transform: translateY(-2px);
 }
 
 /****************************************************************************************************/
@@ -750,7 +864,7 @@ body,
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg,
-            
+
             var(--animated-base-color),
             var(--skin-variant-1),
             var(--skin-variant-2),
@@ -761,9 +875,7 @@ body,
             var(--skin-variant-3),
             var(--skin-variant-2),
             var(--skin-variant-1),
-            var(--animated-base-color)
-            
-        );
+            var(--animated-base-color));
     background-size: 600% 600%;
     animation: gradientMove 30s ease infinite;
 
@@ -984,12 +1096,12 @@ h3.my-profession {
     color: var(--text-black-700);
     margin-left: 10px;
 }
-
+/* 
 .about .skills {
     flex: 0 0 50%;
     max-width: 50%;
     padding: 0 15px;
-}
+} */
 
 .about .skills .skills-box {
     background-color: var(--bg-black-100);
@@ -1688,24 +1800,31 @@ h3.my-profession {
     color: var(--skin-color);
     transform: translateY(-5px) scale(1.2);
 }
+
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
 /* contato*/
 /* ==================== HIRE MODAL ==================== */
 .hire-modal {
-    display: none;                     /* hidden by default */
+    display: none;
+    /* hidden by default */
     position: fixed;
     z-index: 9999;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.65);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
     backdrop-filter: blur(4px);
     align-items: center;
     justify-content: center;
     animation: fadeIn .3s ease;
 }
-.hire-modal.show { display: flex; }
+
+.hire-modal.show {
+    display: flex;
+}
 
 .hire-modal-content {
     background: var(--bg-black-100);
@@ -1715,17 +1834,22 @@ h3.my-profession {
     width: 90%;
     text-align: center;
     position: relative;
-    box-shadow: 0 8px 25px rgba(0,0,0,.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .2);
     animation: slideUp .4s ease;
 }
+
 .hire-close {
     position: absolute;
-    top: 10px; right: 15px;
+    top: 10px;
+    right: 15px;
     font-size: 28px;
     cursor: pointer;
     color: var(--text-black-700);
 }
-.hire-close:hover { color: var(--accent-color); }
+
+.hire-close:hover {
+    color: var(--accent-color);
+}
 
 .hire-modal h3 {
     margin: 0 0 1.5rem;
@@ -1740,6 +1864,7 @@ h3.my-profession {
     gap: 1rem;
     margin-bottom: 1rem;
 }
+
 .hire-btn {
     flex: 1;
     padding: 0.9rem 1.2rem;
@@ -1752,20 +1877,39 @@ h3.my-profession {
     gap: .5rem;
     transition: all .3s ease;
 }
-.hire-linkedin { background: #0077b5; color:#fff; }
-.hire-linkedin:hover { background:#005582; transform:translateY(-2px); }
 
-.hire-email { background: var(--skin-color); color:#fff; }
-.hire-email:hover { background:var(--hover-color); transform:translateY(-2px); }
+.hire-linkedin {
+    background: #0077b5;
+    color: #fff;
+}
+
+.hire-linkedin:hover {
+    background: #005582;
+    transform: translateY(-2px);
+}
+
+.hire-email {
+    background: var(--skin-color);
+    color: #fff;
+}
+
+.hire-email:hover {
+    background: var(--hover-color);
+    transform: translateY(-2px);
+}
 
 /* ----- EMAIL FORM ----- */
 .hire-email-form {
-    display: none;          /* hidden until user clicks “Enviar e‑mail” */
+    display: none;
+    /* hidden until user clicks “Enviar e‑mail” */
     flex-direction: column;
     gap: .8rem;
     margin-top: .5rem;
 }
-.hire-email-form.show { display: flex; }
+
+.hire-email-form.show {
+    display: flex;
+}
 
 .hire-email-form input,
 .hire-email-form textarea {
@@ -1777,36 +1921,65 @@ h3.my-profession {
     background: var(--bg-black-100);
     color: var(--text-black-900);
 }
+
 .hire-email-form input:focus,
 .hire-email-form textarea:focus {
     outline: none;
     border-color: var(--skin-color);
-    box-shadow: 0 0 0 2px rgba(92,176,255,.2);
+    box-shadow: 0 0 0 2px rgba(92, 176, 255, .2);
 }
+
 .hire-submit {
     background: var(--accent-color);
-    color:#fff;
-    border:none;
-    padding:.8rem;
-    border-radius:6px;
-    cursor:pointer;
-    font-weight:600;
+    color: #fff;
+    border: none;
+    padding: .8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
 }
-.hire-submit:hover { background:var(--hover-color); }
+
+.hire-submit:hover {
+    background: var(--hover-color);
+}
+
 .hire-cancel {
     background: #aaa;
-    color:#fff;
-    border:none;
-    padding:.6rem;
-    border-radius:6px;
-    cursor:pointer;
-    margin-top:.4rem;
+    color: #fff;
+    border: none;
+    padding: .6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: .4rem;
 }
-.hire-cancel:hover { background:#888; }
+
+.hire-cancel:hover {
+    background: #888;
+}
 
 /* Animations */
-@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-@keyframes slideUp { from{transform:translateY(30px);opacity:0;} to{transform:translateY(0);opacity:1;} }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
@@ -2121,6 +2294,24 @@ h3.my-profession {
         flex-direction: column;
 
         align-items: center;
+    }
+
+    .back-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card-buttons {
+        flex-direction: column;
+    }
+
+    .card-buttons button {
+        width: 100%;
+        max-width: none;
+    }
+
+    .back-col {
+        max-height: 180px;
     }
 
     .game-toggle.s-icon {
@@ -2459,7 +2650,23 @@ h3.my-profession {
         font-size: 18px;
     }
 }
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+@media (max-width: 480px) {
+    .back-col {
+        max-height: 150px;
+    }
 
+    .back-list {
+        font-size: 13px;
+    }
+
+    .card-buttons button {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
