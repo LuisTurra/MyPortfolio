@@ -309,7 +309,7 @@ body,
     perspective: 1000px;
     width: 100%;
     height: auto;
-
+    cursor: pointer;
 
 }
 
@@ -321,9 +321,6 @@ body,
     transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
 
 .flip-card-front,
 .flip-card-back {
@@ -384,7 +381,7 @@ body,
     flex: 1;
     overflow: hidden;
     margin-bottom: 15px;
-    
+
 }
 
 .back-col {
@@ -437,10 +434,10 @@ body,
 .card-buttons {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
     margin-top: auto;
-    padding-top: 10px;
+    padding-top: 12px;
 }
 
 .card-buttons button {
@@ -454,6 +451,17 @@ body,
     flex: 1;
     min-width: 110px;
     max-width: 160px;
+}
+
+.card-buttons button,
+.card-buttons a {
+    padding: 9px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    min-width: 105px;
+    max-width: 145px;
+    flex: 1;
+    text-align: center;
 }
 
 .relatorio-btn {
@@ -474,6 +482,14 @@ body,
 .dashboard-btn:hover {
     background: var(--hover-color);
     transform: translateY(-2px);
+}
+
+.portfolio .row,
+#dashboards .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 20px;
+    padding: 0 12px;
 }
 
 /****************************************************************************************************/
@@ -1096,6 +1112,7 @@ h3.my-profession {
     color: var(--text-black-700);
     margin-left: 10px;
 }
+
 /* 
 .about .skills {
     flex: 0 0 50%;
@@ -1657,7 +1674,7 @@ h3.my-profession {
     transform-style: preserve-3d;
 }
 
-.dashboard .flip-card:hover .flip-card-inner {
+.flip-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
 
@@ -1771,6 +1788,26 @@ h3.my-profession {
 .dashboard .flip-card-back .github-link:hover {
     background-color: var(--hover-color);
     transform: translateY(-2px);
+}
+
+.tech-badges {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    row-gap: 10px;
+}
+
+.badge {
+    background: var(--accent-color);
+    color: white;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 /****************************************************************************************************/
@@ -2001,14 +2038,12 @@ h3.my-profession {
     }
 
     .container {
-
         max-width: 1100px;
         padding: 0 10px;
         margin: 0 auto;
         box-sizing: border-box;
     }
 
-    /****************************************************************************************************/
     .aside {
         left: -270px;
         display: flex;
@@ -2022,68 +2057,26 @@ h3.my-profession {
 
     .nav-toggler {
         display: flex;
-
-    }
-
-    .nav-toggler {
-        display: flex;
-
     }
 
     .aside .nav li {
         opacity: 0;
-
         transform: translateX(-20px);
         transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    .aside.open .nav li:nth-child(1) {
-        transition-delay: 0.1s;
-    }
+    .aside.open .nav li { opacity: 1; transform: translateX(0); }
+    .aside.open .nav li:nth-child(1) { transition-delay: 0.1s; }
+    .aside.open .nav li:nth-child(2) { transition-delay: 0.2s; }
+    .aside.open .nav li:nth-child(3) { transition-delay: 0.3s; }
+    .aside.open .nav li:nth-child(4) { transition-delay: 0.4s; }
+    .aside.open .nav li:nth-child(5) { transition-delay: 0.5s; }
+    .aside.open .nav li:nth-child(6) { transition-delay: 0.6s; }
+    .aside.open .nav li:nth-child(7) { transition-delay: 0.7s; }
+    .aside.open .nav li:nth-child(8) { transition-delay: 0.8s; }
+    .aside.open .nav li:nth-child(9) { transition-delay: 0.9s; }
+    .aside.open .nav li:nth-child(10) { transition-delay: 1.0s; }
 
-    .aside.open .nav li:nth-child(2) {
-        transition-delay: 0.2s;
-    }
-
-    .aside.open .nav li:nth-child(3) {
-        transition-delay: 0.3s;
-    }
-
-    .aside.open .nav li:nth-child(4) {
-        transition-delay: 0.4s;
-    }
-
-    .aside.open .nav li:nth-child(5) {
-        transition-delay: 0.5s;
-    }
-
-    .aside.open .nav li:nth-child(6) {
-        transition-delay: 0.6s;
-    }
-
-    .aside.open .nav li:nth-child(7) {
-        transition-delay: 0.7s;
-    }
-
-    .aside.open .nav li:nth-child(8) {
-        transition-delay: 0.8s;
-    }
-
-    .aside.open .nav li:nth-child(9) {
-        transition-delay: 0.9s;
-    }
-
-    .aside.open .nav li:nth-child(10) {
-        transition-delay: 1.0s;
-    }
-
-
-    .aside.open .nav li {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    /****************************************************************************************************/
     .home {
         min-height: 100vh;
         display: flex;
@@ -2092,8 +2085,6 @@ h3.my-profession {
         padding-left: 0;
         margin-left: 0;
     }
-
-
 
     .home .home-info {
         flex: 1 !important;
@@ -2125,93 +2116,16 @@ h3.my-profession {
         gap: 15px;
     }
 
-    /****************************************************************************************************/
-    .about .row {
-        flex-wrap: nowrap;
-        gap: 10px;
-    }
-
-    .about .personal-info {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding: 0 10px;
-        display: flex;
-        flex-direction: column;
-        order: 1;
-    }
-
+    .about .row { flex-wrap: nowrap; gap: 10px; }
+    .about .personal-info,
     .about .skills {
         flex: 0 0 100%;
         max-width: 100%;
         padding: 0 10px;
         display: flex;
         flex-direction: column;
-        order: 2;
     }
-
-    .about .skills .skills-item {
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
-
-
-
-    .about .skills .skills-item .progress {
-        display: block;
-        height: 7px;
-        background-color: var(--bg-black-50);
-        border-radius: 4px;
-        overflow: visible;
-        width: 100%;
-        position: relative;
-    }
-
-    .about .skills .skills-item h5 {
-        font-size: 16px;
-        font-weight: 600;
-        color: var(--text-black-900);
-        margin-bottom: 10px;
-        position: relative;
-        z-index: 1;
-
-    }
-
-    .about .skills .skills-item .progress-in {
-        height: 100%;
-        background: var(--accent-color);
-        transition: width 1s ease-in-out;
-
-    }
-
-    .about .about-content {
-        flex-direction: column;
-    }
-
-    .about .skills .skills-item.animated .progress-in {
-        width: var(--progress-width);
-    }
-
-
-    .about .personal-info {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding: 0 10px;
-        display: block;
-
-        order: 1;
-
-    }
-
-    .about .personal-info .info-item {
-        flex: 0 0 100%;
-        max-width: 100%;
-        margin-bottom: 10px;
-        display: block;
-    }
-
+    .about .about-content { flex-direction: column; }
     .about .personal-info .info-item p {
         font-weight: 600;
         font-size: 16px;
@@ -2219,613 +2133,127 @@ h3.my-profession {
         border-bottom: 1px solid var(--bg-black-50);
         padding-bottom: 5px;
     }
-
-
 }
 
 @media (min-width: 1200px) {
-    .aside {
-        left: 0;
-
-        display: flex;
-    }
-
-    .nav-toggler {
-        display: none;
-
-    }
-
-    .main-content {
-        padding-left: 270px;
-
-    }
-
-    .aside .nav li {
-        opacity: 1;
-
-        transform: translateX(0);
-        transition: none;
-
-    }
+    .aside { left: 0; display: flex; }
+    .nav-toggler { display: none; }
+    .main-content { padding-left: 270px; }
+    .aside .nav li { opacity: 1; transform: translateX(0); transition: none; }
 }
 
-/****************************************************************************************************/
-/****************************************************************************************************/
-/****************************************************************************************************/
+
 @media (max-width: 767px) {
-    .main-content {
-        width: 100%;
-        max-width: 100%;
-        padding-left: 0;
-        box-sizing: border-box
-    }
-
-    .row {
-        width: 100%
-    }
-
-    .padd-15 {
-        padding: 10px !important;
-    }
-
-    .row>* {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-
-    .container {
-        max-width: 100%;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .flip-card {
-        min-height: 400px;
-        /
-    }
-
-    .flip-card-front,
-    .flip-card-back {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .flip-card-back .row {
-        flex-direction: column;
-
-        align-items: center;
-    }
-
-    .back-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .card-buttons {
-        flex-direction: column;
-    }
-
-    .card-buttons button {
-        width: 100%;
-        max-width: none;
-    }
-
-    .back-col {
-        max-height: 180px;
-    }
-
-    .game-toggle.s-icon {
-        top: 15px;
-        right: 70px;
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-        line-height: 45px;
-    }
-
-    /****************************************************************************************************/
-
-    .aside {
-        left: -270px;
-        display: flex;
-        transition: left 0.3s ease;
-        flex-direction: column;
-    }
-
-    .aside.open {
-        left: 0;
-    }
-
-    .aside-img {
-        display: block;
-        margin: 60px 0 20px;
-        width: fit-content;
-    }
-
-    .aside .nav {
-        margin-top: 20px;
-    }
-
-    .aside .nav {
-        margin-top: 20px;
-
-    }
-
-
-
-    /****************************************************************************************************/
-
-    .home {
-        min-height: 100vh;
-        display: flex;
-        width: 100%;
-        max-width: 100%;
-        padding-left: 0;
-        margin-left: 0;
-    }
-
-    .home .home-info {
-        flex: 0 0 100%;
-        width: 100%;
-        max-width: 100%;
-        padding: 5px;
-        margin-left: 10px;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        white-space: normal;
-        text-overflow: clip;
-        text-align: center;
-        order: 1;
-    }
-
-    .home .home-img {
-
-        display: none;
-    }
-
-    .home .row {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .home .home-img img {
-        max-width: 150px;
-    }
-
-    /****************************************************************************************************/
-
-    .about .skills {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding: 0 10px;
-    }
-
-    .about .buttons {
-        order: 3;
-        text-align: center;
-    }
-
-    .about .personal-info {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding: 0 10px;
-    }
-
-    .about .personal-info .info-item {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-
-    .about .personal-info .info-item p {
-        font-weight: 600;
-        font-size: 16px;
-        color: var(--text-black-900);
-        border-bottom: 1px solid var(--bg-black-50);
-    }
-
-    .about .personal-info .info-item p span {
-        font-weight: 400;
-        color: var(--text-black-700);
-        margin-left: 4px;
-        display: inline-block;
-    }
-
-    .about .container {
-        max-width: 1200px;
-        padding: 60px 20px;
-        margin: 0 auto;
-        box-sizing: border-box;
-    }
-
-    .about .buttons {
-        flex: 0 0 100%;
-        max-width: 100%;
-        order: 4;
-        text-align: center;
-    }
-
-    .about .education {
-        flex: 0 0 100%;
-        max-width: 100%;
-        order: 5;
-        padding: 0 10px;
-    }
-
-    .about .about-content .education {
-        flex: 0 0 50%;
-        max-width: 100%;
-        padding: 0 10px;
-    }
-
-    .about .skills .skills-item .progress {
-        margin-top: 8px;
-
-    }
-
-    .about .skills .skills-item .progress-in {
-        transition: width 0.8s ease-in-out;
-
-    }
-
-    .about .personal-info {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding: 0 10px;
-    }
-
-    .about .personal-info .info-item {
-        flex: 0 0 100%;
-        max-width: 100%;
-        display: block;
-
-        margin-bottom: 10px;
-    }
-
-    .about .personal-info .info-item p {
-        font-weight: 600;
-        font-size: 16px;
-        color: var(--text-black-900);
-        border-bottom: 1px solid var(--bg-black-50);
-        padding-bottom: 5px;
-    }
-
-    .about .skills .skills-item {
-        margin-bottom: 15px;
-
-    }
-
-    .about .personal-info .info-box,
-    .about .skills .skills-box {
-        padding: 15px;
-    }
-
-    .about .personal-info .info-item p {
-        font-size: 14px;
-    }
-
-    .about .skills .skills-item h5 {
-        font-size: 14px;
-    }
-
-    .skills .skills-item .progress-in {
-        transition: width 0.8s ease-in-out;
-
-    }
-
-    /****************************************************************************************************/
-    .portfolio-tools {
-        font-size: 12px;
-    }
-
-    .portfolio .row {
-
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .portfolio .portfolio-items {
-        grid-template-columns: 1fr;
-    }
-
-    .portfolio .portfolio-item {
-        padding: 10px;
-    }
-
-    .portfolio-item-inner {
-        width: 100%;
-        max-width: 100%;
-        padding: 15px;
-    }
-
-    .portfolio-description {
-        font-size: 14px;
-    }
-
-    .github-link,
-    .relatorio-btn {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-
-
-
-    .portfolio .flip-card {
-        min-height: 300px;
-
-    }
-
-    .portfolio .flip-card-back .row {
-        flex-direction: column;
-
-        align-items: center;
-    }
-
-    .portfolio .flip-card-back .column {
-        width: 48%;
-        min-width: 150px;
-        margin-bottom: 10px;
-    }
-
-    .portfolio .portfolio-item-inner,
-    .dashboard .portfolio-item-inner,
-    .portfolio .flip-card,
-    .dashboard .flip-card {
-        animation: glowBorder 2s ease-in-out infinite;
-    }
-
-    /****************************************************************************************************/
-    .dashboard .flip-card {
-        height: 450px;
-    }
-
-    .dashboard .flip-card-back .row {
-        flex-direction: column;
-        align-items: center;
-
-    }
-
-    .dashboard .flip-card-back .portfolio-tools ul {
-        padding-left: 15px;
-    }
-
-    .dashboard .flip-card-back .column {
-        width: 100%;
-    }
-
-    .dashboard .flip-card-back .scrollable-content {
-        max-height: 200px;
-
-    }
-
-    .dashboard .flip-card-back .relatorio-btn,
-    .dashboard .flip-card-back .dashboard-btn,
-    .dashboard .flip-card-back .github-link {
-        font-size: 12px;
-        padding: 8px 16px;
-        min-width: 100px;
-    }
-
-
-
-    #dashboards .row {
-        grid-template-columns: 1fr;
-    }
+    .main-content { width: 100%; max-width: 100%; padding-left: 0; box-sizing: border-box; }
+    .row { width: 100%; }
+    .padd-15 { padding: 10px !important; }
+    .row > * { padding-left: 5px; padding-right: 5px; }
+    .container { max-width: 100%; padding-left: 10px; padding-right: 10px; }
+
+    .flip-card { min-height: 400px; }
+    .flip-card-front, .flip-card-back { padding: 15px; font-size: 14px; }
+    .flip-card-back .row { flex-direction: column; align-items: center; }
+
+    .back-grid { grid-template-columns: 1fr; gap: 15px; }
+    .back-col { max-height: 180px; }
+
+    .game-toggle.s-icon { top: 15px; right: 70px; width: 45px; height: 45px; font-size: 20px; line-height: 45px; }
+
+    .aside { left: -270px; display: flex; transition: left 0.3s ease; flex-direction: column; }
+    .aside.open { left: 0; }
+    .aside-img { display: block; margin: 60px 0 20px; width: fit-content; }
+    .aside .nav { margin-top: 20px; }
+
+    .home .home-info { flex: 0 0 100%; width: 100%; max-width: 100%; padding: 5px; margin-left: 10px; text-align: center; order: 1; }
+    .home .home-img { display: none; }
+    .home .row { flex-direction: column; align-items: center; text-align: center; }
+
+    .portfolio .row,
+    #dashboards .row { grid-template-columns: 1fr; gap: 14px; }
+
+    .dashboard .flip-card { height: 450px; }
+    .dashboard .flip-card-back .row { flex-direction: column; align-items: center; }
+    .dashboard .flip-card-back .column { width: 100%; }
+    .dashboard .flip-card-back .scrollable-content { max-height: 200px; }
 }
 
-/****************************************************************************************************/
-/****************************************************************************************************/
-/****************************************************************************************************/
-@media (min-width: 768px) {
-    .dashboard .flip-card-back .buttons {
-        flex-direction: row;
-
-        justify-content: center;
-    }
+@media (max-width: 707px) {
+    .tech-badges { gap: 6px; row-gap: 8px; }
+    .badge { font-size: 11px; padding: 5px 10px; }
+    .card-buttons button,
+    .card-buttons a { padding: 8px 14px; font-size: 12.5px; min-width: 98px; }
 }
-
-
-/****************************************************************************************************/
-/****************************************************************************************************/
-/****************************************************************************************************/
-@media (min-width: 768px) and (max-width: 1199px) {
-    .portfolio .portfolio-items {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .portfolio .portfolio-item {
-        padding: 12px;
-    }
+@media (max-width: 560px) {
+    .dashboard .portfolio-description{ padding: 12px;font-size: 12px; }
 }
-
-/****************************************************************************************************/
-/****************************************************************************************************/
-/****************************************************************************************************/
-@media (max-width: 600px) {
-    #game-toggle {
-        top: 10px;
-        right: 10px;
-        width: 36px;
-        height: 36px;
-        font-size: 18px;
-    }
-}
-/****************************************************************************************************/
-/****************************************************************************************************/
-/****************************************************************************************************/
 @media (max-width: 480px) {
-    .back-col {
-        max-height: 150px;
-    }
-
-    .back-list {
-        font-size: 13px;
-    }
-
-    .card-buttons button {
-        font-size: 13px;
-        padding: 10px;
-    }
+    .back-col { max-height: 150px; }
+    .back-list { font-size: 13px; }
+    .section-title h2 { font-size: 28px; }
+    .dashboard .portfolio-description{ padding: 5px;font-size: 12px; }
+    .badge { font-size: 10.5px; padding: 4px 9px; }
+    .card-buttons button,
+    .card-buttons a { font-size: 12px; padding: 7px 12px; min-width: 92px; }
+    .portfolio .portfolio-item-inner h2{font-size: 18px;}
 }
-/****************************************************************************************************/
-/****************************************************************************************************/
-/****************************************************************************************************/
+@media (max-width: 420px) {
+    
+    .dashboard .portfolio-description{ padding: 5px;font-size: 10px; }
+    
+    
+}
+@media (max-width: 399px) {
+    .portfolio .row,
+    #dashboards .row { gap: 14px; padding: 0 8px; }
+    .tech-badges { gap: 5px; }
+    .badge { font-size: 10px; padding: 4px 8px; }
+    .card-buttons { gap: 8px; }
+    .card-buttons button,
+    .card-buttons a { font-size: 11.5px; padding: 6px 10px; min-width: 88px; }
+    .dashboard .portfolio-description{ padding: 5px;font-size: 10px; }
+}
+
+@media (max-width: 340px) {
+    .portfolio .container { padding: 0 2px; }
+    .section-title h2 { font-size: 25px; word-break: break-all; }
+    .badge { font-size: 9.5px; padding: 3px 7px; }
+    .card-buttons button,
+    .card-buttons a { font-size: 11px; padding: 5px 9px; min-width: 82px; }
+}
+
+@media (min-width: 768px) {
+    .dashboard .flip-card-back .buttons { flex-direction: row; justify-content: center; }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .portfolio .portfolio-items { grid-template-columns: repeat(2, 1fr); }
+    .portfolio .portfolio-item { padding: 12px; }
+}
+
+@media (max-width: 600px) {
+    #game-toggle { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 18px; }
+}
+
 @media (max-width: 370px) {
-    .main-content {
-        padding-left: 0;
-
-    }
-
-    .container {
-        padding: 0 5px;
-
-    }
-
-    .section-title h2 {
-        font-size: 28px;
-
-    }
-
-    .row {
-        margin: 0;
-        gap: 5px;
-    }
-
-    .padd-15 {
-        padding: 5px !important;
-    }
-
-    .flip-card-front,
-    .flip-card-back {
-        padding: 10px;
-        font-size: 12px;
-    }
-
-
-    /****************************************************************************************************/
-    .aside {
-        left: -270px;
-
-        width: 200px;
-
-    }
-
-    .aside.open {
-        left: 0;
-        z-index: 2000;
-    }
-
-
-    /****************************************************************************************************/
-    .portfolio .portfolio-items {
-        grid-template-columns: 1fr;
-
-        gap: 5px;
-    }
-
-    .portfolio .portfolio-item {
-        padding: 5px;
-    }
-
-    .portfolio .portfolio-item-inner {
-        padding: 10px;
-    }
-
-    .portfolio-description {
-        font-size: 12px;
-
-        line-height: 1.5;
-    }
-
-    .portfolio-tools {
-        font-size: 11px;
-    }
-
-    .github-link,
-    .relatorio-btn {
-        padding: 6px 12px;
-        font-size: 12px;
-        margin: 5px 5px 0 0;
-    }
-
-
-
-    .portfolio .portfolio-heading h2 {
-        font-size: 20px;
-    }
-
-    /****************************************************************************************************/
-    .dashboard .flip-card {
-        min-height: 400px;
-    }
-
-    .dashboard .flip-card-back .scrollable-content {
-        max-height: 180px;
-    }
-
+    .main-content { padding-left: 0; }
+    .container { padding: 0 5px; }
+    .section-title h2 { font-size: 28px; }
+    .row { margin: 0; gap: 5px; }
+    .padd-15 { padding: 5px !important; }
+    .flip-card-front, .flip-card-back { padding: 10px; font-size: 12px; }
+    .aside { left: -270px; width: 200px; }
+    .aside.open { left: 0; z-index: 2000; }
+    .portfolio .portfolio-items { grid-template-columns: 1fr; gap: 5px; }
+    .portfolio .portfolio-item { padding: 5px; }
+    .portfolio .portfolio-item-inner { padding: 10px; }
+    .portfolio-description { font-size: 12px; line-height: 1.5; }
+    .portfolio-tools { font-size: 11px; }
+    .github-link, .relatorio-btn { padding: 6px 12px; font-size: 12px; margin: 5px 5px 0 0; }
+    .portfolio .portfolio-heading h2 { font-size: 20px; }
+    .dashboard .flip-card { min-height: 400px; }
+    .section-title h2 { font-size: 25px; }
+    .dashboard .flip-card-back .scrollable-content { max-height: 180px; }
     .dashboard .flip-card-back .relatorio-btn,
     .dashboard .flip-card-back .dashboard-btn,
-    .dashboard .flip-card-back .github-link {
-        font-size: 11px;
-        padding: 6px 12px;
-    }
-
-}
-
-/****************************************************************************************************/
-/****************************************************************************************************/
-/****************************************************************************************************/
-@media (max-width: 340px) {
-    .portfolio .container {
-        padding: 0 2px;
-    }
-
-    .portfolio .portfolio-items {
-        grid-template-columns: 1fr;
-        gap: 3px;
-    }
-
-    .portfolio .portfolio-item {
-        padding: 2px;
-    }
-
-    .portfolio .portfolio-item-inner {
-        padding: 8px;
-        max-width: 100%;
-        overflow: hidden;
-    }
-
-    .portfolio-description {
-        font-size: 11px;
-        line-height: 1.4;
-        word-break: break-all;
-    }
-
-    .portfolio-tools {
-        font-size: 10px;
-    }
-
-    .portfolio-tools ul {
-        padding-left: 15px;
-    }
-
-    .github-link,
-    .relatorio-btn {
-        padding: 5px 10px;
-        font-size: 11px;
-        margin: 3px 3px 0 0;
-    }
-
-    .portfolio .portfolio-item-inner h2 {
-        font-size: 20px;
-    }
-
-    .portfolio .portfolio-heading h2 {
-        font-size: 18px;
-    }
-
-    .portfolio .row {
-        margin: 0;
-        gap: 3px;
-    }
+    .dashboard .flip-card-back .github-link { font-size: 11px; padding: 6px 12px; }
 }
