@@ -2136,9 +2136,9 @@ h3.my-profession {
 /* RESPONSIVE */
 @media (min-width: 1300px) {
     .project-background {
-        background-size: contain !important;     
+        background-size: cover !important;     
         background-repeat: no-repeat !important;
-        background-position: center center !important;
+        background-position: center top !important;
         background-color: #000000;              
     }
 
