@@ -373,7 +373,6 @@ function applyColorScheme(palette) {
 }
 // card stuff
 
-// Preview ao hover no botão
 document.querySelectorAll('.hover-indicator-btn').forEach(btn => {
   const overlay = btn.closest('.project-card').querySelector('.project-overlay');
   const background = btn.closest('.project-card').querySelector('.project-background');
@@ -389,16 +388,13 @@ document.querySelectorAll('.hover-indicator-btn').forEach(btn => {
   });
 });
 
-// Virar o card só com clique na frente
 document.querySelectorAll('.flip-trigger').forEach(trigger => {
   trigger.addEventListener('click', () => {
     trigger.closest('.flip-card').classList.toggle('flipped');
   });
 });
-// Voltar para a frente ao clicar no verso (exceto nos botões)
 document.querySelectorAll('.flip-card-back').forEach(back => {
   back.addEventListener('click', (e) => {
-    // Só vira de volta se o clique não for em botão, link ou área de scroll
     if (!e.target.closest('a, button, .scrollable-content')) {
       back.closest('.flip-card').classList.remove('flipped');
     }
