@@ -1583,9 +1583,199 @@ h3.my-profession {
     list-style: disc;
     padding-left: 20px;
 }
+/****************************************************************************************************/
+.flip-card-front.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 0 !important;
+    background: transparent !important;
+    height: 100%;
+}
 
+.project-background {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+    z-index: 1;
+}
 
+.project-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    color: white;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.7s ease;
+}
 
+.project-content h2 {
+    font-size: 24px;
+    margin: 0 0 15px 0;
+    color: white;
+}
+
+.project-content .portfolio-description {
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.hover-indicator-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 22px;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    font-size: 14px;
+    color: white;
+    backdrop-filter: blur(6px);
+    z-index: 4;
+    cursor: default;
+}
+
+.flip-trigger {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3; /* abaixo do botão, acima do resto */
+    cursor: pointer;
+}
+
+/* Exclui o botão do área de clique para virar */
+.hover-indicator-btn ~ .flip-trigger {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 200px 100%, 200px 80px, 0 80px);
+    /* Ajuste os valores se o botão for maior/menor */
+}
+/* Frente do card */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.project-background {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+    z-index: 1;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    color: white;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.7s ease;
+}
+
+.hover-indicator-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 22px;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    font-size: 14px;
+    color: white;
+    backdrop-filter: blur(6px);
+    z-index: 4;
+    cursor: default;
+}
+
+/* Área invisível só na frente para virar o card */
+.flip-trigger {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3; /* acima do overlay, abaixo do botão */
+    cursor: pointer;
+}
+/* CORREÇÃO FINAL PARA O FLIP CARD */
+
+/* Garante altura fixa para todos os cards ficarem iguais */
+.flip-card {
+    height: 500px; /* ajuste se quiser maior/menor */
+}
+
+/* Frente: transparente e sem padding */
+.flip-card-front.project-card {
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+/* Verso: mantém o estilo original, mas com interação livre */
+.flip-card-back {
+    padding: 30px !important;
+    background-color: var(--bg-black-100) !important;
+    pointer-events: auto !important; /* scroll e botões funcionam */
+    overflow: hidden;
+}
+
+/* Scrollable content no verso */
+.flip-card-back .scrollable-content {
+    max-height: 280px; /* aumenta para caber mais conteúdo */
+    overflow-y: auto;
+    padding-right: 10px;
+    width: 100%;
+}
+
+/* Desabilita completamente o trigger quando o card está virado */
+.flip-card.flipped .flip-trigger {
+    pointer-events: none !important;
+}
+
+/* Trigger só ativo na frente */
+.flip-trigger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* Botão de preview fica acima de tudo */
+.hover-indicator-btn {
+    z-index: 20 !important;
+}
+
+/* Quando o card está virado, o verso vem para frente corretamente */
+.flip-card.flipped .flip-card-front {
+    pointer-events: none; /* evita interferência na frente quando virado */
+}
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/

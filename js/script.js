@@ -371,3 +371,36 @@ function applyColorScheme(palette) {
     console.log(`Applying accent color ${accent} to element:`, element);
   });
 }
+// card stuff
+
+// Preview ao hover no botão
+document.querySelectorAll('.hover-indicator-btn').forEach(btn => {
+  const overlay = btn.closest('.project-card').querySelector('.project-overlay');
+  const background = btn.closest('.project-card').querySelector('.project-background');
+
+  btn.addEventListener('mouseenter', () => {
+    overlay.style.opacity = '0';
+    background.style.transform = 'scale(1.1)';
+  });
+
+  btn.addEventListener('mouseleave', () => {
+    overlay.style.opacity = '1';
+    background.style.transform = 'scale(1)';
+  });
+});
+
+// Virar o card só com clique na frente
+document.querySelectorAll('.flip-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    trigger.closest('.flip-card').classList.toggle('flipped');
+  });
+});
+// Voltar para a frente ao clicar no verso (exceto nos botões)
+document.querySelectorAll('.flip-card-back').forEach(back => {
+  back.addEventListener('click', (e) => {
+    // Só vira de volta se o clique não for em botão, link ou área de scroll
+    if (!e.target.closest('a, button, .scrollable-content')) {
+      back.closest('.flip-card').classList.remove('flipped');
+    }
+  });
+});
