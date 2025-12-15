@@ -2136,7 +2136,7 @@ h3.my-profession {
 /* RESPONSIVE */
 @media (min-width: 1300px) {
     .project-background {
-        background-size: contain !important;     
+        background-size: cover !important;     
         background-repeat: no-repeat !important;
         background-position: center center !important;
         background-color: #000000;              
@@ -2324,6 +2324,7 @@ h3.my-profession {
         transform: translateX(0);
         transition: none;
     }
+    
 }
 
 
@@ -2695,5 +2696,114 @@ h3.my-profession {
     .dashboard .flip-card-back .github-link {
         font-size: 11px;
         padding: 6px 12px;
+    }
+}
+/* ============================================= */
+/* RESPONSIVE - APENAS PARA OS NOVOS CARDS (BACKGROUND + HOVER PREVIEW) */
+/* ============================================= */
+
+/* Mobile geral (até 767px) */
+@media (max-width: 767px) {
+    /* Altura do card um pouco maior para caber texto e botão */
+    .flip-card {
+        height: 480px !important;
+    }
+
+    /* Ajuste do GIF/imagem para mostrar melhor o topo (cabeçalho do dashboard) */
+    .project-background {
+        background-position: center 12% !important; /* desce um pouco para evitar corte no cabeçalho */
+        background-size: cover !important;
+    }
+
+    /* Texto menor e mais legível */
+    .project-content h2 {
+        font-size: 20px !important;
+    }
+    .project-content .portfolio-description {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Botão de preview menor e mais centralizado */
+    .hover-indicator-btn {
+        bottom: 12px !important;
+        right: 12px !important;
+        padding: 10px 16px !important;
+        font-size: 13px !important;
+    }
+
+    /* Badges menores */
+    .tech-badges .badge {
+        font-size: 11px !important;
+        padding: 5px 10px !important;
+    }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+    .flip-card {
+        height: 460px !important;
+    }
+
+    .project-content h2 {
+        font-size: 18px !important;
+    }
+    .project-content .portfolio-description {
+        font-size: 13px !important;
+    }
+
+    .hover-indicator-btn {
+        padding: 9px 14px !important;
+        font-size: 12.5px !important;
+    }
+}
+
+/* Mobile muito pequeno */
+@media (max-width: 370px) {
+    .flip-card {
+        height: 440px !important;
+    }
+
+    .project-content h2 {
+        font-size: 17px !important;
+    }
+    .project-content .portfolio-description {
+        font-size: 12.5px !important;
+    }
+
+    .hover-indicator-btn {
+        bottom: 10px !important;
+        right: 10px !important;
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+    }
+}
+/* ============================================= */
+/* BOTÃO DE PREVIEW REDUZIDO EM MOBILE (~70% do tamanho original) */
+/* ============================================= */
+
+@media (max-width: 767px) {
+    .hover-indicator-btn {
+        padding: 8px 14px !important;    /* ~70% do padding original (12px 22px) */
+        font-size: 12.5px !important;    /* ~70% do font-size original (14px) */
+        bottom: 15px !important;
+        right: 15px !important;
+        border-radius: 8px !important;   /* um pouco menor para combinar */
+    }
+}
+
+@media (max-width: 480px) {
+    .hover-indicator-btn {
+        padding: 7px 12px !important;    /* ainda menor em telas pequenas */
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 370px) {
+    .hover-indicator-btn {
+        padding: 6px 10px !important;
+        font-size: 11.5px !important;
+        bottom: 10px !important;
+        right: 10px !important;
     }
 }
