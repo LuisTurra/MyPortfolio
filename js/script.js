@@ -380,7 +380,7 @@ document.querySelectorAll('.hover-indicator-btn').forEach(btn => {
 
   btn.addEventListener('mouseenter', () => {
     overlay.style.opacity = '0';
-    background.style.transform = 'scale(1.1)';
+    background.style.transform = 'scale(1.03)';
   });
 
   btn.addEventListener('mouseleave', () => {

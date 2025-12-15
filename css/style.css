@@ -1583,6 +1583,7 @@ h3.my-profession {
     list-style: disc;
     padding-left: 20px;
 }
+
 /****************************************************************************************************/
 .flip-card-front.project-card {
     position: relative;
@@ -1595,18 +1596,20 @@ h3.my-profession {
 
 .project-background {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.6s ease;
+    background-size: cover !important;
+    background-position: center top !important;
+    transition: transform 0.8s ease;
     z-index: 1;
 }
 
 .project-overlay {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     padding: 30px;
@@ -1650,18 +1653,21 @@ h3.my-profession {
 
 .flip-trigger {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    z-index: 3; /* abaixo do botão, acima do resto */
+    z-index: 3;
+    /* abaixo do botão, acima do resto */
     cursor: pointer;
 }
 
 /* Exclui o botão do área de clique para virar */
-.hover-indicator-btn ~ .flip-trigger {
+.hover-indicator-btn~.flip-trigger {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 200px 100%, 200px 80px, 0 80px);
     /* Ajuste os valores se o botão for maior/menor */
 }
+
 /* Frente do card */
 .project-card {
     position: relative;
@@ -1672,7 +1678,8 @@ h3.my-profession {
 
 .project-background {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -1683,7 +1690,8 @@ h3.my-profession {
 
 .project-overlay {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     padding: 30px;
@@ -1716,17 +1724,21 @@ h3.my-profession {
 /* Área invisível só na frente para virar o card */
 .flip-trigger {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    z-index: 3; /* acima do overlay, abaixo do botão */
+    z-index: 3;
+    /* acima do overlay, abaixo do botão */
     cursor: pointer;
 }
+
 /* CORREÇÃO FINAL PARA O FLIP CARD */
 
 /* Garante altura fixa para todos os cards ficarem iguais */
 .flip-card {
-    height: 500px; /* ajuste se quiser maior/menor */
+    height: 500px;
+    /* ajuste se quiser maior/menor */
 }
 
 /* Frente: transparente e sem padding */
@@ -1739,13 +1751,15 @@ h3.my-profession {
 .flip-card-back {
     padding: 30px !important;
     background-color: var(--bg-black-100) !important;
-    pointer-events: auto !important; /* scroll e botões funcionam */
+    pointer-events: auto !important;
+    /* scroll e botões funcionam */
     overflow: hidden;
 }
 
 /* Scrollable content no verso */
 .flip-card-back .scrollable-content {
-    max-height: 280px; /* aumenta para caber mais conteúdo */
+    max-height: 280px;
+    /* aumenta para caber mais conteúdo */
     overflow-y: auto;
     padding-right: 10px;
     width: 100%;
@@ -1774,8 +1788,10 @@ h3.my-profession {
 
 /* Quando o card está virado, o verso vem para frente corretamente */
 .flip-card.flipped .flip-card-front {
-    pointer-events: none; /* evita interferência na frente quando virado */
+    pointer-events: none;
+    /* evita interferência na frente quando virado */
 }
+
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
@@ -2255,17 +2271,50 @@ h3.my-profession {
         transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    .aside.open .nav li { opacity: 1; transform: translateX(0); }
-    .aside.open .nav li:nth-child(1) { transition-delay: 0.1s; }
-    .aside.open .nav li:nth-child(2) { transition-delay: 0.2s; }
-    .aside.open .nav li:nth-child(3) { transition-delay: 0.3s; }
-    .aside.open .nav li:nth-child(4) { transition-delay: 0.4s; }
-    .aside.open .nav li:nth-child(5) { transition-delay: 0.5s; }
-    .aside.open .nav li:nth-child(6) { transition-delay: 0.6s; }
-    .aside.open .nav li:nth-child(7) { transition-delay: 0.7s; }
-    .aside.open .nav li:nth-child(8) { transition-delay: 0.8s; }
-    .aside.open .nav li:nth-child(9) { transition-delay: 0.9s; }
-    .aside.open .nav li:nth-child(10) { transition-delay: 1.0s; }
+    .aside.open .nav li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .aside.open .nav li:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .aside.open .nav li:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .aside.open .nav li:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+
+    .aside.open .nav li:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+
+    .aside.open .nav li:nth-child(5) {
+        transition-delay: 0.5s;
+    }
+
+    .aside.open .nav li:nth-child(6) {
+        transition-delay: 0.6s;
+    }
+
+    .aside.open .nav li:nth-child(7) {
+        transition-delay: 0.7s;
+    }
+
+    .aside.open .nav li:nth-child(8) {
+        transition-delay: 0.8s;
+    }
+
+    .aside.open .nav li:nth-child(9) {
+        transition-delay: 0.9s;
+    }
+
+    .aside.open .nav li:nth-child(10) {
+        transition-delay: 1.0s;
+    }
 
     .home {
         min-height: 100vh;
@@ -2306,7 +2355,11 @@ h3.my-profession {
         gap: 15px;
     }
 
-    .about .row { flex-wrap: nowrap; gap: 10px; }
+    .about .row {
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
     .about .personal-info,
     .about .skills {
         flex: 0 0 100%;
@@ -2315,7 +2368,11 @@ h3.my-profession {
         display: flex;
         flex-direction: column;
     }
-    .about .about-content { flex-direction: column; }
+
+    .about .about-content {
+        flex-direction: column;
+    }
+
     .about .personal-info .info-item p {
         font-weight: 600;
         font-size: 16px;
@@ -2326,124 +2383,394 @@ h3.my-profession {
 }
 
 @media (min-width: 1200px) {
-    .aside { left: 0; display: flex; }
-    .nav-toggler { display: none; }
-    .main-content { padding-left: 270px; }
-    .aside .nav li { opacity: 1; transform: translateX(0); transition: none; }
+    .aside {
+        left: 0;
+        display: flex;
+    }
+
+    .nav-toggler {
+        display: none;
+    }
+
+    .main-content {
+        padding-left: 270px;
+    }
+
+    .aside .nav li {
+        opacity: 1;
+        transform: translateX(0);
+        transition: none;
+    }
 }
 
 
 @media (max-width: 767px) {
-    .main-content { width: 100%; max-width: 100%; padding-left: 0; box-sizing: border-box; }
-    .row { width: 100%; }
-    .padd-15 { padding: 10px !important; }
-    .row > * { padding-left: 5px; padding-right: 5px; }
-    .container { max-width: 100%; padding-left: 10px; padding-right: 10px; }
+    .main-content {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        box-sizing: border-box;
+    }
 
-    .flip-card { min-height: 400px; }
-    .flip-card-front, .flip-card-back { padding: 15px; font-size: 14px; }
-    .flip-card-back .row { flex-direction: column; align-items: center; }
+    .row {
+        width: 100%;
+    }
 
-    .back-grid { grid-template-columns: 1fr; gap: 15px; }
-    .back-col { max-height: 180px; }
+    .padd-15 {
+        padding: 10px !important;
+    }
 
-    .game-toggle.s-icon { top: 15px; right: 70px; width: 45px; height: 45px; font-size: 20px; line-height: 45px; }
+    .row>* {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 
-    .aside { left: -270px; display: flex; transition: left 0.3s ease; flex-direction: column; }
-    .aside.open { left: 0; }
-    .aside-img { display: block; margin: 60px 0 20px; width: fit-content; }
-    .aside .nav { margin-top: 20px; }
+    .container {
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 
-    .home .home-info { flex: 0 0 100%; width: 100%; max-width: 100%; padding: 5px; margin-left: 10px; text-align: center; order: 1; }
-    .home .home-img { display: none; }
-    .home .row { flex-direction: column; align-items: center; text-align: center; }
+    .flip-card {
+        min-height: 400px;
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .flip-card-back .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .back-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .back-col {
+        max-height: 180px;
+    }
+
+    .game-toggle.s-icon {
+        top: 15px;
+        right: 70px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        line-height: 45px;
+    }
+
+    .aside {
+        left: -270px;
+        display: flex;
+        transition: left 0.3s ease;
+        flex-direction: column;
+    }
+
+    .aside.open {
+        left: 0;
+    }
+
+    .aside-img {
+        display: block;
+        margin: 60px 0 20px;
+        width: fit-content;
+    }
+
+    .aside .nav {
+        margin-top: 20px;
+    }
+
+    .home .home-info {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        padding: 5px;
+        margin-left: 10px;
+        text-align: center;
+        order: 1;
+    }
+
+    .home .home-img {
+        display: none;
+    }
+
+    .home .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
     .portfolio .row,
-    #dashboards .row { grid-template-columns: 1fr; gap: 14px; }
+    #dashboards .row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
 
-    .dashboard .flip-card { height: 450px; }
-    .dashboard .flip-card-back .row { flex-direction: column; align-items: center; }
-    .dashboard .flip-card-back .column { width: 100%; }
-    .dashboard .flip-card-back .scrollable-content { max-height: 200px; }
+    .dashboard .flip-card {
+        height: 450px;
+    }
+
+    .dashboard .flip-card-back .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dashboard .flip-card-back .column {
+        width: 100%;
+    }
+
+    .dashboard .flip-card-back .scrollable-content {
+        max-height: 200px;
+    }
 }
 
 @media (max-width: 707px) {
-    .tech-badges { gap: 6px; row-gap: 8px; }
-    .badge { font-size: 11px; padding: 5px 10px; }
+    .tech-badges {
+        gap: 6px;
+        row-gap: 8px;
+    }
+
+    .badge {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
     .card-buttons button,
-    .card-buttons a { padding: 8px 14px; font-size: 12.5px; min-width: 98px; }
+    .card-buttons a {
+        padding: 8px 14px;
+        font-size: 12.5px;
+        min-width: 98px;
+    }
 }
+
 @media (max-width: 560px) {
-    .dashboard .portfolio-description{ padding: 12px;font-size: 12px; }
+    .dashboard .portfolio-description {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
+
 @media (max-width: 480px) {
-    .back-col { max-height: 150px; }
-    .back-list { font-size: 13px; }
-    .section-title h2 { font-size: 28px; }
-    .dashboard .portfolio-description{ padding: 5px;font-size: 12px; }
-    .badge { font-size: 10.5px; padding: 4px 9px; }
+    .back-col {
+        max-height: 150px;
+    }
+
+    .back-list {
+        font-size: 13px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .dashboard .portfolio-description {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .badge {
+        font-size: 10.5px;
+        padding: 4px 9px;
+    }
+
     .card-buttons button,
-    .card-buttons a { font-size: 12px; padding: 7px 12px; min-width: 92px; }
-    .portfolio .portfolio-item-inner h2{font-size: 18px;}
+    .card-buttons a {
+        font-size: 12px;
+        padding: 7px 12px;
+        min-width: 92px;
+    }
+
+    .portfolio .portfolio-item-inner h2 {
+        font-size: 18px;
+    }
 }
+
 @media (max-width: 420px) {
-    
-    .dashboard .portfolio-description{ padding: 5px;font-size: 10px; }
-    
-    
+
+    .dashboard .portfolio-description {
+        padding: 5px;
+        font-size: 10px;
+    }
+
+
 }
+
 @media (max-width: 399px) {
+
     .portfolio .row,
-    #dashboards .row { gap: 14px; padding: 0 8px; }
-    .tech-badges { gap: 5px; }
-    .badge { font-size: 10px; padding: 4px 8px; }
-    .card-buttons { gap: 8px; }
+    #dashboards .row {
+        gap: 14px;
+        padding: 0 8px;
+    }
+
+    .tech-badges {
+        gap: 5px;
+    }
+
+    .badge {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .card-buttons {
+        gap: 8px;
+    }
+
     .card-buttons button,
-    .card-buttons a { font-size: 11.5px; padding: 6px 10px; min-width: 88px; }
-    .dashboard .portfolio-description{ padding: 5px;font-size: 10px; }
+    .card-buttons a {
+        font-size: 11.5px;
+        padding: 6px 10px;
+        min-width: 88px;
+    }
+
+    .dashboard .portfolio-description {
+        padding: 5px;
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 340px) {
-    .portfolio .container { padding: 0 2px; }
-    .section-title h2 { font-size: 25px; word-break: break-all; }
-    .badge { font-size: 9.5px; padding: 3px 7px; }
+    .portfolio .container {
+        padding: 0 2px;
+    }
+
+    .section-title h2 {
+        font-size: 25px;
+        word-break: break-all;
+    }
+
+    .badge {
+        font-size: 9.5px;
+        padding: 3px 7px;
+    }
+
     .card-buttons button,
-    .card-buttons a { font-size: 11px; padding: 5px 9px; min-width: 82px; }
+    .card-buttons a {
+        font-size: 11px;
+        padding: 5px 9px;
+        min-width: 82px;
+    }
 }
 
 @media (min-width: 768px) {
-    .dashboard .flip-card-back .buttons { flex-direction: row; justify-content: center; }
+    .dashboard .flip-card-back .buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
-    .portfolio .portfolio-items { grid-template-columns: repeat(2, 1fr); }
-    .portfolio .portfolio-item { padding: 12px; }
+    .portfolio .portfolio-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio .portfolio-item {
+        padding: 12px;
+    }
 }
 
 @media (max-width: 600px) {
-    #game-toggle { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 18px; }
+    #game-toggle {
+        top: 10px;
+        right: 10px;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 370px) {
-    .main-content { padding-left: 0; }
-    .container { padding: 0 5px; }
-    .section-title h2 { font-size: 28px; }
-    .row { margin: 0; gap: 5px; }
-    .padd-15 { padding: 5px !important; }
-    .flip-card-front, .flip-card-back { padding: 10px; font-size: 12px; }
-    .aside { left: -270px; width: 200px; }
-    .aside.open { left: 0; z-index: 2000; }
-    .portfolio .portfolio-items { grid-template-columns: 1fr; gap: 5px; }
-    .portfolio .portfolio-item { padding: 5px; }
-    .portfolio .portfolio-item-inner { padding: 10px; }
-    .portfolio-description { font-size: 12px; line-height: 1.5; }
-    .portfolio-tools { font-size: 11px; }
-    .github-link, .relatorio-btn { padding: 6px 12px; font-size: 12px; margin: 5px 5px 0 0; }
-    .portfolio .portfolio-heading h2 { font-size: 20px; }
-    .dashboard .flip-card { min-height: 400px; }
-    .section-title h2 { font-size: 25px; }
-    .dashboard .flip-card-back .scrollable-content { max-height: 180px; }
+    .main-content {
+        padding-left: 0;
+    }
+
+    .container {
+        padding: 0 5px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .row {
+        margin: 0;
+        gap: 5px;
+    }
+
+    .padd-15 {
+        padding: 5px !important;
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .aside {
+        left: -270px;
+        width: 200px;
+    }
+
+    .aside.open {
+        left: 0;
+        z-index: 2000;
+    }
+
+    .portfolio .portfolio-items {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .portfolio .portfolio-item {
+        padding: 5px;
+    }
+
+    .portfolio .portfolio-item-inner {
+        padding: 10px;
+    }
+
+    .portfolio-description {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .portfolio-tools {
+        font-size: 11px;
+    }
+
+    .github-link,
+    .relatorio-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        margin: 5px 5px 0 0;
+    }
+
+    .portfolio .portfolio-heading h2 {
+        font-size: 20px;
+    }
+
+    .dashboard .flip-card {
+        min-height: 400px;
+    }
+
+    .section-title h2 {
+        font-size: 25px;
+    }
+
+    .dashboard .flip-card-back .scrollable-content {
+        max-height: 180px;
+    }
+
     .dashboard .flip-card-back .relatorio-btn,
     .dashboard .flip-card-back .dashboard-btn,
-    .dashboard .flip-card-back .github-link { font-size: 11px; padding: 6px 12px; }
+    .dashboard .flip-card-back .github-link {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
 }
