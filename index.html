@@ -84,10 +84,10 @@
                         <li><a href="#recomendacao-colheita"><span class="white-ball"></span> Sistema de Recomendação de
                                 Cultura
                                 (2025)</a></li>
-
-                        <li><a href="#analise-sentimento-headset"><span class="white-ball"></span> Analise de Sentimento
-                                de Produtos Headset Amazon Kindle Store
+                        <li><a href="#earthquakeai"><span class="white-ball"></span> EarthQuake AI – Analisador Global de Risco Sísmico com Previsão por Inteligência Artificial
                                 (2025)</a></li>
+
+
 
 
 
@@ -103,6 +103,9 @@
                         </li>
                         <li><a href="#analise-eletricidade"><span class="white-ball"></span> Custo de Eletricidade
                                 Dashboard
+                                (2025)</a></li>
+                        <li><a href="#analise-sentimento-headset"><span class="white-ball"></span> Analise de Sentimento
+                                de Produtos Headset Amazon Kindle Store
                                 (2025)</a></li>
                         <li><a href="#analise-shopify"><span class="white-ball"></span> Análise Shopify (2025)</a></li>
                         <li><a href="#analise-netflix"><span class="white-ball"></span> Netflix Análise (2025)</a></li>
@@ -310,7 +313,8 @@
                                         <div class="flip-trigger"></div>
 
                                         <!-- Imagem de background -->
-                                        <div class="project-background" style="background-image: url('image/manutenoPredTUrbofan2.gif');">
+                                        <div class="project-background"
+                                            style="background-image: url('image/manutenoPredTUrbofan2.gif');">
                                         </div>
 
                                         <!-- Overlay com texto e borrão -->
@@ -384,7 +388,7 @@
                                             target="_blank" class="github-link">
                                             View on GitHub
                                         </a>
-                                        
+
                                         <button class="relatorio-btn"
                                             onclick="window.open('https://docs.google.com/document/d/e/2PACX-1vT9RXqbX-qstPNOzdILJOFMaFHgc2lOnX6czq3MU-x2s3DbgFPFzTGYgqlV0lkP-vhNsmUdbOMX5DyD/pub?embedded=true', '_blank')">
                                             📄 Relatório
@@ -423,7 +427,7 @@
                                                     compra e explica cada decisão
                                                     usando valores SHAP. O aplicativo web tambem conten dashboard
                                                     interativo com análise exploratória do dados.
-                                                
+
                                                 </p>
                                                 <div class="tech-badges">
                                                     <span class="badge">Python</span>
@@ -512,7 +516,7 @@
                                                     analise dos dados e predição. Através da biblioteca Streamlit é
                                                     possível host dashboard e site de
                                                     predição em python em página web.
-                                                   </p>
+                                                </p>
                                                 <div class="tech-badges">
                                                     <span class="badge">Python</span>
                                                     <span class="badge">Streamlit</span>
@@ -606,7 +610,7 @@
                                                     aleatórios (demissão, bônus, filho, promoção), retornos de mercado
                                                     com volatilidade, inflação e crescimento salarial real. Utilizando
                                                     Python, Streamlit e APIs REST.
-                                                    
+
                                                 </p>
                                                 <div class="tech-badges">
                                                     <span class="badge">Python</span>
@@ -939,7 +943,7 @@
                     <!-- ****************************************************************************************************************** -->
                     <!-- ****************************************************************************************************************** -->
 
-                    <!--====Projetos end====-->
+
                     <!-- ****************************************************************************************************************** -->
                     <!-- ****************************************************************************************************************** -->
                     <a id="recomendacao-colheita"></a>
@@ -961,7 +965,7 @@
                                                     análise estatística (mínimo, máximo e média), usa solo, clima e
                                                     localização pra indicar a melhor cultura. Tanto utilizando base de
                                                     dados com dados fixos e simulação de uso de API para dados reais.
-                                                    
+
                                                 </p>
                                                 <div class="tech-badges">
                                                     <span class="badge">Python</span>
@@ -1034,7 +1038,7 @@
 
                     <!-- ****************************************************************************************************************** -->
                     <!-- ****************************************************************************************************************** -->
-                    <a id="analise-sentimento-headset"></a>
+                    <a id="earthquakeai"></a>
                     <div class="dashboard padd-15">
                         <div class="portfolio-item-inner shadow-dark">
                             <div class="flip-card">
@@ -1042,23 +1046,28 @@
                                     <div class="flip-card-front project-card">
                                         <div class="flip-trigger"></div>
                                         <div class="project-background"
-                                            style="background-image: url('image/avaliacaoheadset2.png');">
+                                            style="background-image: url('image/earthquakeai.gif');">
                                         </div>
                                         <div class="project-overlay">
                                             <div class="project-content">
-                                                <h2>Analise de Sentimento de Produtos Headset Amazon Kindle Store</h2>
+                                                <h2>EarthQuake AI – Analisador Global de Risco Sísmico com Previsão por
+                                                    Inteligência Artificial</h2>
                                                 <p class="portfolio-description">
-                                                    Análise de sentimento em Python de headsets na Amazon e Kindle
-                                                    Store. Extraí sentimento de cada comentário e identificação de
-                                                    palavras positivas e negativas. Resultados exibidos em dashboard
-                                                    interativo no Power BI.
-                                                    </p>
+                                                    Ferramenta interativa que permita ao usuário estimar o risco sísmico
+                                                    relativo em qualquer localização do mundo, com base em padrões
+                                                    históricos de terremotos registrados pela U.S. Geological Survey
+                                                    (USGS). A limpeza e feature engineering foram realizadas com DuckDB
+                                                    e Polars.
+                                                    Predição de magnitude média por localização utilizando modelo de
+                                                    regressão HistGradientBoostingRegressor
+
+                                                </p>
                                                 <div class="tech-badges">
                                                     <span class="badge">Python</span>
-                                                    <span class="badge">Power BI</span>
-                                                    <span class="badge">NLTK</span>
-                                                    <span class="badge">VADER</span>
-                                                    <span class="badge">NLP</span>
+                                                    <span class="badge">HistGradientBoostingRegressor</span>
+                                                    <span class="badge">DuckDB</span>
+                                                    <span class="badge">Polars</span>
+                                                    <span class="badge">Streamlit</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1071,9 +1080,9 @@
                                                     <div class="portfolio-tools">
                                                         <strong><span class="highlight">Ferramentas:</span></strong>
                                                         <ul>
-                                                            <li>Jupyter Notebook</li>
-                                                            <li>PowerBI</li>
-                                                            <li>Github</li>
+                                                            <li>Visual Code</li>
+                                                            <li>Python</li>
+                                                            <li>Streamlit</li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1082,35 +1091,48 @@
                                                         <strong><span class="highlight">Skills:</span></strong>
                                                         <ul>
                                                             <li>Python</li>
-                                                            <li>DAX</li>
-                                                            <li>Matplotlib</li>
-                                                            <li>Vader</li>
-                                                            <li>Stopwords</li>
-                                                            <li>Wordnet</li>
-                                                            <li>nltk</li>
-                                                            <li>Preprocessamento</li>
-                                                            <li>Dashboard interativo</li>
-                                                            <li>Análise de sentimentos</li>
-                                                            <li>Processamento de Linguagem Natural</li>
+                                                            <li>Scikit-learn</li>
+                                                            <li>HistGradientBoostingRegressor</li>
+                                                            <li>DuckDB</li>
+                                                            <li>Polars</li>
+                                                            <li>Pandas</li>
+                                                            <li>Machine Learning (Regressão)</li>
+                                                            <li>Feature Engineering</li>
+                                                            <li>Pré-processamento de Dados</li>
+                                                            <li>Análise de Séries Temporais</li>
+                                                            <li>Estatística Aplicada</li>
+                                                            <li>Integração de APIs (USGS Earthquake API)</li>
+                                                            <li>Streamlit</li>
+                                                            <li>Folium / Streamlit-Folium</li>
+                                                            <li>Joblib (serialização de modelos)</li>
+                                                            <li>Deploy em Cloud (Streamlit Community Cloud)</li>
+                                                            <li>Gestão de Dependências (requirements.txt)</li>
+                                                            <li>Resolução de Problemas de Compatibilidade</li>
+                                                            <li>Análise Geoespacial</li>
+                                                            <li>Visualização de Dados Interativa</li>
                                                             <li>Pensamento Analítico</li>
-                                                            <li>Dashboard</li>
-                                                            <li>Github</li>
+                                                            <li>Resolução de Problemas</li>
+                                                            <li>Git & GitHub</li>
+                                                            <li>Documentação Técnica</li>
+                                                            <li>Boas Práticas em Projetos de Data Science</li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <a href="https://github.com/LuisTurra/analise_sentimento_avaliacaodeprodutos"
-                                            target="_blank" class="github-link">
+                                        <a href="https://github.com/LuisTurra/EarthQuake-AI" target="_blank"
+                                            class="github-link">
                                             View on GitHub
                                         </a>
                                         <button class="relatorio-btn"
-                                            onclick="window.open('https://docs.google.com/document/d/e/2PACX-1vTO0FyUAg8i6hQRhIzfVEARniItyadhx3EIrxFG6tRN4yYrNVAAfjmpHJnTK1AW_yxRbv318baus8R0/pub?embedded=true', '_blank')">📄
+                                            onclick="window.open('https://docs.google.com/document/d/e/2PACX-1vQs_0gl-5LgatC9-5iaqypL051VgWY0s6nHo1IhkC3yjkjNa-PNeizi8-_oyw2CoObW6NC-7Gf8ch-l/pub?embedded=true', '_blank')">📄
                                             Relatório</button>
                                         <button class="dashboard-btn"
-                                            onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiMDgwMDk1NzEtNDhmZi00YWYzLWEyMzktNzcxNWMxOTViZTU5IiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9&pageName=791ce30a0cd117e0e724', '_blank')">
-                                            Show Dashboard
+                                            onclick="window.open('https://luisturra-earthquake-ai-streamlit-app-9vf7me.streamlit.app/', '_blank')">
+                                            EarthQuake AI – Analisador Global de Risco Sísmico com Previsão por Inteligência Artificial
+
                                         </button>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -1158,7 +1180,7 @@
                                                 <p class="portfolio-description">
                                                     Projeto pessoal, onde desenvolvi um dashboard interativo para
                                                     análise de salários na área de dados, utilizando Power BI.
-                                                   
+
                                                 </p>
                                                 <div class="tech-badges">
                                                     <span class="badge">Power BI</span>
@@ -1230,7 +1252,7 @@
                                                 <p class="portfolio-description">
                                                     Projeto pessoal, onde desenvolvi analise de dados dashboard em
                                                     python streamlit do custo de eletricidade.
-                                                   </p>
+                                                </p>
                                                 <div class="tech-badges">
                                                     <span class="badge">Python</span>
                                                     <span class="badge">Streamlit</span>
@@ -1289,8 +1311,90 @@
 
                     <!-- ****************************************************************************************************************** -->
                     <!-- ****************************************************************************************************************** -->
-
-
+                    <a id="analise-sentimento-headset"></a>
+                    <div class="dashboard padd-15">
+                        <div class="portfolio-item-inner shadow-dark">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front project-card">
+                                        <div class="flip-trigger"></div>
+                                        <div class="project-background"
+                                            style="background-image: url('image/avaliacaoheadset2.png');">
+                                        </div>
+                                        <div class="project-overlay">
+                                            <div class="project-content">
+                                                <h2>Analise de Sentimento de Produtos Headset Amazon Kindle Store</h2>
+                                                <p class="portfolio-description">
+                                                    Análise de sentimento em Python de headsets na Amazon e Kindle
+                                                    Store. Extraí sentimento de cada comentário e identificação de
+                                                    palavras positivas e negativas. Resultados exibidos em dashboard
+                                                    interativo no Power BI.
+                                                </p>
+                                                <div class="tech-badges">
+                                                    <span class="badge">Python</span>
+                                                    <span class="badge">Power BI</span>
+                                                    <span class="badge">NLTK</span>
+                                                    <span class="badge">VADER</span>
+                                                    <span class="badge">NLP</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hover-indicator-btn">👁️ Preview</div>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="scrollable-content">
+                                            <div class="row">
+                                                <div class="column">
+                                                    <div class="portfolio-tools">
+                                                        <strong><span class="highlight">Ferramentas:</span></strong>
+                                                        <ul>
+                                                            <li>Jupyter Notebook</li>
+                                                            <li>PowerBI</li>
+                                                            <li>Github</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="column">
+                                                    <div class="portfolio-tools">
+                                                        <strong><span class="highlight">Skills:</span></strong>
+                                                        <ul>
+                                                            <li>Python</li>
+                                                            <li>DAX</li>
+                                                            <li>Matplotlib</li>
+                                                            <li>Vader</li>
+                                                            <li>Stopwords</li>
+                                                            <li>Wordnet</li>
+                                                            <li>nltk</li>
+                                                            <li>Preprocessamento</li>
+                                                            <li>Dashboard interativo</li>
+                                                            <li>Análise de sentimentos</li>
+                                                            <li>Processamento de Linguagem Natural</li>
+                                                            <li>Pensamento Analítico</li>
+                                                            <li>Dashboard</li>
+                                                            <li>Github</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="https://github.com/LuisTurra/analise_sentimento_avaliacaodeprodutos"
+                                            target="_blank" class="github-link">
+                                            View on GitHub
+                                        </a>
+                                        <button class="relatorio-btn"
+                                            onclick="window.open('https://docs.google.com/document/d/e/2PACX-1vTO0FyUAg8i6hQRhIzfVEARniItyadhx3EIrxFG6tRN4yYrNVAAfjmpHJnTK1AW_yxRbv318baus8R0/pub?embedded=true', '_blank')">📄
+                                            Relatório</button>
+                                        <button class="dashboard-btn"
+                                            onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiMDgwMDk1NzEtNDhmZi00YWYzLWEyMzktNzcxNWMxOTViZTU5IiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9&pageName=791ce30a0cd117e0e724', '_blank')">
+                                            Show Dashboard
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ****************************************************************************************************************** -->
+                    <!-- ****************************************************************************************************************** -->
                     <a id="analise-shopify"></a>
                     <div class="dashboard padd-15">
                         <div class="portfolio-item-inner shadow-dark">
@@ -1306,7 +1410,7 @@
                                                 <p class="portfolio-description">
                                                     Projeto pessoal, onde desenvolvi um dashboard interativo para
                                                     análise de dados da plataforma Shopify, utilizando Power BI.
-                                                    
+
                                                 </p>
                                                 <div class="tech-badges">
                                                     <span class="badge">Power BI</span>
@@ -1379,7 +1483,7 @@
                                                     Projeto pessoal, onde desenvolvi um dashboard interativo para
                                                     análise de dados da plataforma Netflix analisando indivíduos ativos
                                                     e cancelado, utilizando Power BI.
-                                                    </p>
+                                                </p>
                                                 <div class="tech-badges">
                                                     <span class="badge">Power BI</span>
                                                     <span class="badge">DAX</span>
@@ -1448,7 +1552,7 @@
                                                     Projeto pessoal, onde desenvolvi limpeza de dados em MySQL como
                                                     remoção de erros e dados nulos para dashboard interativo para
                                                     análise de dados de demissões de empresas utilizando Power BI.
-                                                     </p>
+                                                </p>
                                                 <div class="tech-badges">
                                                     <span class="badge">MySQL</span>
                                                     <span class="badge">Power BI</span>
@@ -1521,7 +1625,7 @@
                                                 <p class="portfolio-description">
                                                     Projeto pessoal, onde desenvolvi limpeza de dados remoção de erros e
                                                     dados nulos para dashboard interativo utilizando Excel.
-                                                     </p>
+                                                </p>
                                                 <div class="tech-badges">
                                                     <span class="badge">Excel</span>
                                                     <span class="badge">Freelancer</span>
@@ -1581,7 +1685,7 @@
                                                 <p class="portfolio-description">
                                                     Projeto pessoal, onde desenvolvi analise de dados dashboard em Power
                                                     Bi de vendas de bicicletas entre os anos 2013-2023.
-                                                    </p>
+                                                </p>
                                                 <div class="tech-badges">
                                                     <span class="badge">Power BI</span>
                                                     <span class="badge">MySQL</span>
