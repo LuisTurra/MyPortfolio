@@ -977,76 +977,98 @@
             </div>
         </div>
     </div>
+<script>
+  // ===== CONFIGURAÇÕES =====
+  const CHATBOT_URL = 'https://chatbot-portfolio.chatbot-portfolio.workers.dev';
 
-    <script>
-        // ===== CONFIGURAÇÕES ===== (troque só aqui!)
-        const CHATBOT_URL = 'https://chatbot-portfolio.chatbot-portfolio.workers.dev';  // <--- SUA URL EXATA DO DEPLOY!
-        const CHATBOT_GREETING = 'Oi! Sou o assistente IA do portfólio. Pergunte sobre meus projetos de ML, dashboards ou skills! 🚀';
+  // Elementos
+  const toggleBtn = document.getElementById('chat-toggle-btn');
+  const chatWindow = document.getElementById('chat-window');
+  const messages = document.getElementById('chat-messages');
+  const input = document.getElementById('chat-input');
 
-        // Elementos
-        const toggleBtn = document.getElementById('chat-toggle-btn');
-        const chatWindow = document.getElementById('chat-window');
-        const messages = document.getElementById('chat-messages');
-        const input = document.getElementById('chat-input');
+  // Abre/fecha
+  toggleBtn.onclick = () => {
+    chatWindow.classList.toggle('open');
+    if (chatWindow.classList.contains('open') && messages.children.length === 0) {
+      const botMsg = document.createElement('div');
+      botMsg.className = 'msg-bot';
+      botMsg.textContent = 'Oi! Sou o assistente IA do portfólio. Pergunte sobre meus projetos de ML, dashboards ou skills! 🚀';
+      messages.appendChild(botMsg);
+    }
+  };
 
-        // Abre/fecha janela
-        toggleBtn.onclick = () => {
-            chatWindow.classList.toggle('open');
-            if (chatWindow.classList.contains('open') && messages.children.length === 0) {
-                // Adiciona greeting só na primeira abertura
-                const botMsg = document.createElement('div');
-                botMsg.className = 'msg-bot';
-                botMsg.textContent = CHATBOT_GREETING;
-                messages.appendChild(botMsg);
-            }
-        };
+  // Envia mensagem
+  input.addEventListener('keypress', async (e) => {
+    if (e.key === 'Enter' && input.value.trim()) {
+      const userText = input.value.trim();
+      const userMsg = document.createElement('div');
+      userMsg.className = 'msg-user';
+      userMsg.textContent = userText;
+      messages.appendChild(userMsg);
+      input.value = '';
+      messages.scrollTop = messages.scrollHeight;
 
-        // Envia com Enter
-        input.addEventListener('keypress', async (e) => {
-            if (e.key === 'Enter' && input.value.trim()) {
-                const userText = input.value.trim();
-
-                // Mensagem usuário
-                const userMsg = document.createElement('div');
-                userMsg.className = 'msg-user';
-                userMsg.textContent = userText;
-                messages.appendChild(userMsg);
-                input.value = '';
-                messages.scrollTop = messages.scrollHeight;
-
-                // Chama IA
-                try {
-                    const response = await fetch(CHATBOT_URL + '/', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ messages: [{ role: 'user', content: userText }] })
-                    });
-
-                    if (!response.ok) throw new Error('Erro no servidor');
-
-                    const reader = response.body.getReader();
-                    const botMsg = document.createElement('div');
-                    botMsg.className = 'msg-bot';
-                    botMsg.textContent = 'Bot: ';
-                    messages.appendChild(botMsg);
-                    messages.scrollTop = messages.scrollHeight;
-
-                    while (true) {
-                        const { done, value } = await reader.read();
-                        if (done) break;
-                        const text = new TextDecoder().decode(value);
-                        botMsg.textContent += text;
-                        messages.scrollTop = messages.scrollHeight;
-                    }
-                } catch (err) {
-                    const errorMsg = document.createElement('div');
-                    errorMsg.className = 'msg-bot';
-                    errorMsg.textContent = 'Erro: ' + err.message + '. Verifique a URL do worker.';
-                    messages.appendChild(errorMsg);
-                }
-            }
+      try {
+        const response = await fetch(CHATBOT_URL + '/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ messages: [{ role: 'user', content: userText }] })
         });
-    </script>
+
+        if (!response.ok) throw new Error('Erro no servidor: ' + response.status);
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+
+        const botMsg = document.createElement('div');
+        botMsg.className = 'msg-bot';
+        botMsg.textContent = 'Bot: ';
+        messages.appendChild(botMsg);
+        messages.scrollTop = messages.scrollHeight;
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          buffer += decoder.decode(value, { stream: true });
+
+          let lines = buffer.split('\n');
+          buffer = lines.pop() || '';  // Última linha incompleta fica no buffer
+
+          for (let line of lines) {
+            line = line.trim();
+            if (line.startsWith('data: ')) {
+              const dataStr = line.slice(6).trim();
+              if (dataStr === '[DONE]') continue;  // Fim do stream
+
+              try {
+                const json = JSON.parse(dataStr);
+                if (json.response) {
+                  botMsg.textContent += json.response;  // Só adiciona o texto real!
+                  messages.scrollTop = messages.scrollHeight;
+                }
+              } catch (parseErr) {
+                console.warn('Erro ao parsear chunk:', parseErr);
+              }
+            }
+          }
+        }
+
+        // Limpa buffer final
+        if (buffer.trim()) {
+          // Tenta parsear o resto se sobrar
+        }
+      } catch (err) {
+        const errorMsg = document.createElement('div');
+        errorMsg.className = 'msg-bot';
+        errorMsg.textContent = 'Erro: ' + err.message;
+        messages.appendChild(errorMsg);
+      }
+    }
+  });
+</script>
 
 
 
