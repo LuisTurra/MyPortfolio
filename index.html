@@ -866,99 +866,189 @@
                 });
         });
     </script>
-    <!---*************************************************************--> 
-<!--**************ChatBOT***********************************************-->
-<!-- Chatbot Widget com IA (Cloudflare Workers) -->
+    <!---*************************************************************-->
+    <!--**************ChatBOT***********************************************-->
+    <!-- Chatbot Widget com IA (versão com estilos inline - sem Tailwind) -->
+    <style>
+        #chat-widget-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        #chat-toggle-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        #chat-toggle-btn:hover {
+            background: #1d4ed8;
+        }
+
+        #chat-window {
+            display: none;
+            /* começa fechado */
+            width: 380px;
+            height: 500px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            flex-direction: column;
+            margin-top: 10px;
+            border: 1px solid #e5e7eb;
+        }
+
+        #chat-window.open {
+            display: flex;
+        }
+
+        #chat-header {
+            background: #2563eb;
+            color: white;
+            padding: 15px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+            background: #f9fafb;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .msg-bot {
+            background: #e5e7eb;
+            padding: 12px;
+            border-radius: 12px;
+            max-width: 80%;
+            align-self: flex-start;
+        }
+
+        .msg-user {
+            background: #2563eb;
+            color: white;
+            padding: 12px;
+            border-radius: 12px;
+            max-width: 80%;
+            align-self: flex-end;
+        }
+
+        #chat-input-area {
+            padding: 15px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        #chat-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        #chat-input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+    </style>
+
+    <div id="chat-widget-container">
+        <button id="chat-toggle-btn">💬</button>
+        <div id="chat-window">
+            <div id="chat-header">Chat com Luis Turra</div>
+            <div id="chat-messages"></div>
+            <div id="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Digite uma mensagem...">
+            </div>
+        </div>
+    </div>
+
     <script>
         // ===== CONFIGURAÇÕES ===== (troque só aqui!)
-        const CHATBOT_URL = 'https://chatbot-portfolio.workers.dev';  // <--- COLOQUE EXATAMENTE A URL QUE O DEPLOY DEU!
-        const CHATBOT_TITLE = 'Chat com Luis Turra';
+        const CHATBOT_URL = 'https://chatbot-portfolio.workers.dev';  // <--- SUA URL EXATA DO DEPLOY!
         const CHATBOT_GREETING = 'Oi! Sou o assistente IA do portfólio. Pergunte sobre meus projetos de ML, dashboards ou skills! 🚀';
 
-        // ===== WIDGET COMPLETO (não mexa aqui) =====
-        (function () {
-            if (!CHATBOT_URL) {
-                console.error('Erro: Defina CHATBOT_URL corretamente!');
-                return;
+        // Elementos
+        const toggleBtn = document.getElementById('chat-toggle-btn');
+        const chatWindow = document.getElementById('chat-window');
+        const messages = document.getElementById('chat-messages');
+        const input = document.getElementById('chat-input');
+
+        // Abre/fecha janela
+        toggleBtn.onclick = () => {
+            chatWindow.classList.toggle('open');
+            if (chatWindow.classList.contains('open') && messages.children.length === 0) {
+                // Adiciona greeting só na primeira abertura
+                const botMsg = document.createElement('div');
+                botMsg.className = 'msg-bot';
+                botMsg.textContent = CHATBOT_GREETING;
+                messages.appendChild(botMsg);
             }
+        };
 
-            // Adiciona Tailwind CSS para estilo bonito (carrega rápido via CDN)
-            const tailwindLink = document.createElement('link');
-            tailwindLink.href = 'https://cdn.tailwindcss.com';
-            tailwindLink.rel = 'stylesheet';
-            document.head.appendChild(tailwindLink);
+        // Envia com Enter
+        input.addEventListener('keypress', async (e) => {
+            if (e.key === 'Enter' && input.value.trim()) {
+                const userText = input.value.trim();
 
-            // Cria o HTML do widget flutuante
-            const widget = document.createElement('div');
-            widget.innerHTML = `
-      <div class="fixed bottom-4 right-4 z-50">
-        <button id="chat-toggle" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-5 shadow-2xl text-2xl transition-all">💬</button>
-        <div id="chat-window" class="hidden bg-white dark:bg-gray-900 rounded-xl shadow-2xl w-96 max-w-[90vw] h-96 flex flex-col mt-4 border border-gray-300">
-          <div class="bg-blue-600 text-white p-4 rounded-t-xl font-bold text-center">${CHATBOT_TITLE}</div>
-          <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-800"></div>
-          <div class="p-4 border-t dark:border-gray-700">
-            <input id="chat-input" type="text" placeholder="Digite uma mensagem..." class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 dark:bg-gray-700" />
-          </div>
-        </div>
-      </div>
-    `;
-            document.body.appendChild(widget);
+                // Mensagem usuário
+                const userMsg = document.createElement('div');
+                userMsg.className = 'msg-user';
+                userMsg.textContent = userText;
+                messages.appendChild(userMsg);
+                input.value = '';
+                messages.scrollTop = messages.scrollHeight;
 
-            // Elementos do chat
-            const toggle = document.getElementById('chat-toggle');
-            const chatWindow = document.getElementById('chat-window');
-            const messages = document.getElementById('chat-messages');
-            const input = document.getElementById('chat-input');
+                // Chama IA
+                try {
+                    const response = await fetch(CHATBOT_URL + '/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ messages: [{ role: 'user', content: userText }] })
+                    });
 
-            // Abre/fecha o chat
-            toggle.onclick = () => chatWindow.classList.toggle('hidden');
+                    if (!response.ok) throw new Error('Erro no servidor');
 
-            // Mensagem inicial do bot
-            messages.innerHTML = `<div class="bg-gray-200 dark:bg-gray-700 rounded-lg p-4 max-w-xs self-start">${CHATBOT_GREETING}</div>`;
-
-            // Envia mensagem ao pressionar Enter
-            input.addEventListener('keypress', async (e) => {
-                if (e.key === 'Enter' && input.value.trim()) {
-                    const userText = input.value.trim();
-
-                    // Mensagem do usuário
-                    messages.innerHTML += `<div class="bg-blue-600 text-white rounded-lg p-4 max-w-xs self-end">${userText}</div>`;
-                    input.value = '';
+                    const reader = response.body.getReader();
+                    const botMsg = document.createElement('div');
+                    botMsg.className = 'msg-bot';
+                    botMsg.textContent = 'Bot: ';
+                    messages.appendChild(botMsg);
                     messages.scrollTop = messages.scrollHeight;
 
-                    // Chama a IA (seu worker)
-                    try {
-                        const response = await fetch(CHATBOT_URL + '/', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ messages: [{ role: 'user', content: userText }] })
-                        });
-
-                        if (!response.ok) throw new Error('Erro na resposta do servidor');
-
-                        const reader = response.body.getReader();
-                        let botDiv = document.createElement('div');
-                        botDiv.className = 'bg-gray-200 dark:bg-gray-700 rounded-lg p-4 max-w-xs self-start';
-                        botDiv.textContent = 'Bot: ';
-                        messages.appendChild(botDiv);
+                    while (true) {
+                        const { done, value } = await reader.read();
+                        if (done) break;
+                        const text = new TextDecoder().decode(value);
+                        botMsg.textContent += text;
                         messages.scrollTop = messages.scrollHeight;
-
-                        while (true) {
-                            const { done, value } = await reader.read();
-                            if (done) break;
-                            const text = new TextDecoder().decode(value);
-                            botDiv.textContent += text;
-                            messages.scrollTop = messages.scrollHeight;
-                        }
-                    } catch (err) {
-                        messages.innerHTML += `<div class="bg-red-500 text-white rounded-lg p-4 max-w-xs self-start">Erro: ${err.message}. Verifique a URL do worker.</div>`;
                     }
+                } catch (err) {
+                    const errorMsg = document.createElement('div');
+                    errorMsg.className = 'msg-bot';
+                    errorMsg.textContent = 'Erro: ' + err.message + '. Verifique a URL do worker.';
+                    messages.appendChild(errorMsg);
                 }
-            });
-        })();
+            }
+        });
     </script>
 
-    
+
 
 </body>
 
