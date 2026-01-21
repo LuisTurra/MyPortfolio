@@ -965,6 +965,58 @@
             outline: none;
             border-color: #2563eb;
         }
+
+        /* Adaptação para telas pequenas (≤ 420px de largura) */
+        @media (max-width: 420px) {
+            #chat-widget-container {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            #chat-toggle-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 28px;
+            }
+
+            #chat-window {
+                width: 90vw;
+                /* Usa quase toda a largura da tela */
+                max-width: 360px;
+                /* limite para não ficar gigante em tablets pequenos */
+                height: 70vh;
+                /* altura relativa à tela (70% da viewport) */
+                margin-top: 8px;
+                border-radius: 10px;
+            }
+
+            #chat-header {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            #chat-messages {
+                padding: 10px;
+            }
+
+            .msg-bot,
+            .msg-user {
+                padding: 10px;
+                font-size: 14px;
+                /* texto um pouco menor, mas ainda legível */
+                max-width: 85%;
+                /* aproveita mais espaço horizontal */
+            }
+
+            #chat-input-area {
+                padding: 10px;
+            }
+
+            #chat-input {
+                padding: 10px;
+                font-size: 15px;
+            }
+        }
     </style>
 
     <div id="chat-widget-container">
