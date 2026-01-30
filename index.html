@@ -92,10 +92,20 @@
 
                 </li>
                 <li>
+                    <a href="#dashboards"><i class="fa fa-chart-line"></i>Projetos SQL</a>
+                    <ul class="nav-sub">
+                        <li></li>
+                        <li><a href="#sql1"><span class="white-ball"></span> Data Warehouse com Star Schema no Dataset Olist
+                                (2026)</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
                     <a href="#dashboards"><i class="fa fa-chart-line"></i>Todos os Projetos</a>
                     <ul class="nav-sub">
                         <li></li>
-                        <li><a href="#chatbot"><span class="white-ball"></span> Chatbot IA Integrado ao Portfólio Pessoal
+                        <li><a href="#chatbot"><span class="white-ball"></span> Chatbot IA Integrado ao Portfólio
+                                Pessoal
                                 (2026)</a>
                         </li>
                         <li><a href="#analise-salario"><span class="white-ball"></span> DashBoard Salários de Dados
@@ -315,7 +325,24 @@
                     </div>
                 </div>
             </section>
+            <!-- ****************************************************************************************************************** -->
+            <!-- Projetos SQL items start-->
+            <section class="portfolio section bg-dark text-white" id="dashboards">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Projetos SQL</h2>
+                        </div>
+                    </div>
+                    <div id="projetos-sql-container">
 
+                    </div>
+                </div>
+            </section>
+
+            <!--====Projetos SQL items end====-->
+            <!-- ****************************************************************************************************************** -->
+            <!-- ****************************************************************************************************************** -->
             <!-- ****************************************************************************************************************** -->
             <!-- DASHBOARD items start-->
             <section class="portfolio section bg-dark text-white" id="dashboards">
@@ -775,10 +802,12 @@
         document.addEventListener('DOMContentLoaded', function () {
             const destaqueContainer = document.getElementById('projetos-destaque-container');
             const todosContainer = document.getElementById('todos-projetos-container');
+            const sqlContainer = document.getElementById('projetos-sql-container');
 
             // Mensagem de loading
             destaqueContainer.innerHTML = '<p style="text-align:center; padding:50px;">Carregando projetos em destaque...</p>';
             todosContainer.innerHTML = '<p style="text-align:center; padding:50px;">Carregando todos os projetos...</p>';
+            sqlContainer.innerHTML = '<p style="text-align:center; padding:50px;">Carregando projetos SQL...</p>';
 
             // Função para inicializar TODOS os efeitos nos cards novos
             function initCards(container) {
@@ -866,6 +895,18 @@
                 })
                 .catch(err => {
                     todosContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
+                });
+            fetch('sql-projetos.html' + cacheBuster)
+                .then(response => {
+                    if (!response.ok) throw new Error('Arquivo não encontrado');
+                    return response.text();
+                })
+                .then(data => {
+                    sqlContainer.innerHTML = data;
+                    initCards(sqlContainer);
+                })
+                .catch(err => {
+                    sqlContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
                 });
         });
     </script>
