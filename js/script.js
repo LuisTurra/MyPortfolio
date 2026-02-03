@@ -1,32 +1,20 @@
-// Cores para fundo Branco
+// Modo claro
 const colorPalette = [
-  { primary: "#5C6BC0", accent: "#FFD54F", text: "#FFFFFF" },
-  { primary: "#26A69A", accent: "#EC407A", text: "#FFFFFF" },
-  { primary: "#FF7043", accent: "#66BB6A", text: "#212121" },
-
-  { primary: "#0288D1", accent: "#d80c50e0", text: "#FFFFFF" },
-
-
-  { primary: "#388E3C", accent: "#FFCA28", text: "#212121" },
-  { primary: "#FBC02D", accent: "#D81B60", text: "#212121" },
-  { primary: "#85898bff", accent: "#FF5722", text: "#FFFFFF" },
+  { primary: "#1e293b", accent: "#6366f1", text: "#1e293b" },  
+  { primary: "#0f172a", accent: "#818cf8", text: "#1e293b" },  
+  { primary: "#334155", accent: "#a5b4fc", text: "#1e293b" },  
+  { primary: "#1e3a8a", accent: "#60a5fa", text: "#1e293b" },  
 ];
 
-//Core para modo Escuro
+// Modo escuro
 const darkColorPalette = [
-  { primary: "#3F51B5", accent: "#FFCA28", text: "#FFFFFF" },
-  { primary: "#00897B", accent: "#F06292", text: "#FFFFFF" },
-  { primary: "#EF5350", accent: "#4CAF50", text: "#212121" },
-
-  { primary: "#0277BD", accent: "#FF4081", text: "#FFFFFF" },
-  { primary: "#6A1B9A", accent: "#29B6F6", text: "#FFFFFF" },
-  { primary: "#C2185B", accent: "#26A69A", text: "#FFFFFF" },
-  { primary: "#2E7D32", accent: "#FFD54F", text: "#212121" },
-  { primary: "#F9A825", accent: "#C2185B", text: "#212121" },
-  { primary: "#37474F", accent: "#F4511E", text: "#FFFFFF" },
+  { primary: "#0f172a", accent: "#818cf8", text: "#f1f5f9" },  
+  { primary: "#1e293b", accent: "#a5b4fc", text: "#e2e8f0" },  
+  { primary: "#111827", accent: "#6366f1", text: "#f8fafc" },  
+  { primary: "#1e40af", accent: "#c7d2fe", text: "#ffffff" },  
 ];
 
-// luminosidade
+// Luminância
 function getLuminance(hex) {
   hex = hex.replace("#", "");
   const r = parseInt(hex.substr(0, 2), 16) / 255;
@@ -35,7 +23,7 @@ function getLuminance(hex) {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
-// contraste
+// Contraste
 function getContrastRatio(hex1, hex2) {
   const lum1 = getLuminance(hex1);
   const lum2 = getLuminance(hex2);
@@ -43,14 +31,108 @@ function getContrastRatio(hex1, hex2) {
   const darkest = Math.min(lum1, lum2);
   return (lightest + 0.05) / (darkest + 0.05);
 }
-// Cores randomica
+
+// Ajuste de luminosidade 
+function adjustLightness(hex, amount) {
+  let usePound = false;
+  if (hex[0] === "#") {
+    hex = hex.slice(1);
+    usePound = true;
+  }
+  let num = parseInt(hex, 16);
+  let r = (num >> 16) / 255;
+  let g = (num >> 8 & 255) / 255;
+  let b = (num & 255) / 255;
+
+  let max = Math.max(r, g, b), min = Math.min(r, g, b);
+  let h, s, l = (max + min) / 2;
+
+  if (max === min) {
+    h = s = 0;
+  } else {
+    let d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+    h /= 6;
+  }
+
+  l += amount;
+  l = Math.max(0, Math.min(1, l));
+
+  if (s === 0) {
+    r = g = b = l;
+  } else {
+    const hue2rgb = (p, q, t) => {
+      if (t < 0) t += 1;
+      if (t > 1) t -= 1;
+      if (t < 1/6) return p + (q - p) * 6 * t;
+      if (t < 1/2) return q;
+      if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+      return p;
+    };
+    let q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+    let p = 2 * l - q;
+    r = hue2rgb(p, q, h + 1/3);
+    g = hue2rgb(p, q, h);
+    b = hue2rgb(p, q, h - 1/3);
+  }
+
+  r = Math.round(r * 255);
+  g = Math.round(g * 255);
+  b = Math.round(b * 255);
+
+  return (usePound ? "#" : "") + r.toString(16).padStart(2, "0") + g.toString(16).padStart(2, "0") + b.toString(16).padStart(2, "0");
+}
+
+// Gradientes 
+function applyAnimatedBgColors(animationBaseColor) {
+  const skinVariant_L = adjustLightness(animationBaseColor, 0.08);   
+  const skinVariant1 = adjustLightness(animationBaseColor, -0.05);
+  const skinVariant2 = adjustLightness(animationBaseColor, -0.10);
+  const skinVariant3 = adjustLightness(animationBaseColor, -0.15);
+  const skinVariant4 = adjustLightness(animationBaseColor, -0.20);
+
+  document.documentElement.style.setProperty("--skin-variant-1", skinVariant1);
+  document.documentElement.style.setProperty("--skin-variant-2", skinVariant2);
+  document.documentElement.style.setProperty("--skin-variant-3", skinVariant3);
+  document.documentElement.style.setProperty("--skin-variant-4", skinVariant4);
+  document.documentElement.style.setProperty("--skin-variant-5", skinVariant_L);
+}
+
+// Esquema de cores
+function applyColorScheme(palette) {
+  const { primary, accent } = palette;
+
+ 
+  const textOnPrimary = getContrastRatio(primary, "#FFFFFF") >= 4.5 ? "#FFFFFF" : "#000000";
+
+  const hoverColor = adjustLightness(primary, -0.15);  
+
+  document.documentElement.style.setProperty("--skin-color", primary);
+  document.documentElement.style.setProperty("--accent-color", accent);
+  document.documentElement.style.setProperty("--hover-color", hoverColor);
+  document.documentElement.style.setProperty("--text-color", textOnPrimary);
+  document.documentElement.style.setProperty("--animated-base-color", primary);
+
+  applyAnimatedBgColors(primary);
+
+  document.querySelectorAll(".random-color").forEach((element) => {
+    element.style.color = accent;
+  });
+}
+
+// Cor aleatória
 function setRandomSkinColor() {
   const palette = document.body.classList.contains("dark") ? darkColorPalette : colorPalette;
   const selectedPalette = palette[Math.floor(Math.random() * palette.length)];
   applyColorScheme(selectedPalette);
 }
 
-// Modo Claro/Escuro
+// Modo dia/noite
 const dayNight = document.querySelector(".day-night");
 if (dayNight) {
   const toggleTheme = () => {
@@ -85,34 +167,25 @@ if (dayNight) {
     }
   });
 }
-
-// Initialize AOS
-console.log('AOS and Typed.js initialized');
-AOS.init({
-  duration: 800,
-  once: true
-});
-
-// Typed.js for hero section
+// Inicialização de AOS
+AOS.init({ duration: 800, once: true });
+// Efeito de digitação
 new Typed('.typing', {
   strings: ['Cientista de Dados', 'Analista de Dados', 'Entusiasta de Machine Learning'],
   typeSpeed: 100,
   backSpeed: 60,
   loop: true
 });
-// Botão Sidebar
+// Navegação
 document.querySelector('.nav-toggler').addEventListener('click', () => {
   const navToggler = document.querySelector('.nav-toggler');
   const aside = document.querySelector('.aside');
   aside.classList.toggle('open');
   navToggler.classList.toggle('active');
   navToggler.classList.add('clicked');
-  setTimeout(() => {
-    navToggler.classList.remove('clicked');
-  }, 300);
+  setTimeout(() => navToggler.classList.remove('clicked'), 300);
 });
-
-// Fechar Sidebar
+// Fechar sidebar ao clicar em um link
 const navLinks = document.querySelectorAll('.aside .nav li a');
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
@@ -121,13 +194,11 @@ navLinks.forEach(link => {
   });
 });
 
-// Recarregar a pagina
 window.addEventListener('load', () => {
   const sidebar = document.querySelector('.aside');
   if (sidebar) sidebar.scrollTop = 0;
 });
 
-// Active link on scroll
 const sections = document.querySelectorAll('.section');
 window.addEventListener('scroll', () => {
   let current = '';
@@ -145,43 +216,7 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Barras de Skill
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('Skills animation initialized');
-  const skillsItems = document.querySelectorAll('.skills-item');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const progressIn = entry.target.querySelector('.progress-in');
-      const width = progressIn.getAttribute('data-progress-width');
-      if (entry.isIntersecting) {
-        console.log('Animating skills item:', entry.target);
-        entry.target.classList.add('animated');
-        progressIn.style.setProperty('--progress-width', width);
-      } else {
-        console.log('Resetting skills item:', entry.target);
-        entry.target.classList.remove('animated');
-        progressIn.style.setProperty('--progress-width', '0%');
-      }
-    });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px'
-  });
-
-  skillsItems.forEach(item => observer.observe(item));
-});
-const homeImg = document.querySelector('.home-img img');
-homeImg.addEventListener('mousemove', (e) => {
-  const rect = homeImg.getBoundingClientRect();
-  const x = e.clientX - rect.left - rect.width / 2;
-  const y = e.clientY - rect.top - rect.height / 2;
-  const tiltX = (y / rect.height) * 10;
-  const tiltY = -(x / rect.width) * 10;
-  homeImg.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.05)`;
-});
-homeImg.addEventListener('mouseleave', () => {
-  homeImg.style.transform = 'rotateX(0) rotateY(0) scale(1)';
-});
+// Animação da Skills 
 document.addEventListener('DOMContentLoaded', () => {
   const skillsItems = document.querySelectorAll('.skills-item');
   const observer = new IntersectionObserver((entries) => {
@@ -198,12 +233,26 @@ document.addEventListener('DOMContentLoaded', () => {
         progressIn.style.setProperty('--progress-width', '0%');
       }
     });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px'
-  });
+  }, { threshold: 0.1 });
+
   skillsItems.forEach(item => observer.observe(item));
 });
+// Efeito 3D na imagem inicial
+const homeImg = document.querySelector('.home-img img');
+if (homeImg) {
+  homeImg.addEventListener('mousemove', (e) => {
+    const rect = homeImg.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    const tiltX = (y / rect.height) * 10;
+    const tiltY = -(x / rect.width) * 10;
+    homeImg.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.05)`;
+  });
+  homeImg.addEventListener('mouseleave', () => {
+    homeImg.style.transform = 'rotateX(0) rotateY(0) scale(1)';
+  });
+}
+// Animação da linha do tempo
 const timelineItems = document.querySelectorAll('.timeline-item');
 const timelineObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -215,6 +264,8 @@ const timelineObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.2 });
 timelineItems.forEach(item => timelineObserver.observe(item));
+
+// Efeito ripple nos botões
 const buttons = document.querySelectorAll('.dashboard-btn, .relatorio-btn, .github-link');
 buttons.forEach(button => {
   button.addEventListener('click', function (e) {
@@ -229,150 +280,26 @@ buttons.forEach(button => {
     setTimeout(() => ripple.remove(), 600);
   });
 });
+// Altura consistente dos cards do dashboard
 function setConsistentCardHeights() {
   const dashboardCards = document.querySelectorAll('.dashboard .flip-card');
   let maxHeight = 0;
 
-
   dashboardCards.forEach(card => {
     card.style.height = 'auto';
     const height = card.offsetHeight;
-    if (height > maxHeight) {
-      maxHeight = height;
-    }
+    if (height > maxHeight) maxHeight = height;
   });
-
 
   dashboardCards.forEach(card => {
     card.style.height = `${maxHeight}px`;
   });
 }
 
-
 window.addEventListener('load', setConsistentCardHeights);
 window.addEventListener('resize', setConsistentCardHeights);
 
-// Função de Brilho das cores
-function adjustColor(hex, percent) {
-  hex = hex.replace("#", "");
-  let r = parseInt(hex.substr(0, 2), 16);
-  let g = parseInt(hex.substr(2, 2), 16);
-  let b = parseInt(hex.substr(4, 2), 16);
-
-  r = Math.min(255, Math.max(0, r * (1 + percent)));
-  g = Math.min(255, Math.max(0, g * (1 + percent)));
-  b = Math.min(255, Math.max(0, b * (1 + percent)));
-
-  return `#${Math.round(r).toString(16).padStart(2, "0")}${Math.round(g)
-    .toString(16)
-    .padStart(2, "0")}${Math.round(b).toString(16).padStart(2, "0")}`;
-}
-
-// Função de Brilho das cores
-function adjustColor(hex, percent) {
-  hex = hex.replace("#", "");
-  let r = parseInt(hex.substr(0, 2), 16);
-  let g = parseInt(hex.substr(2, 2), 16);
-  let b = parseInt(hex.substr(4, 2), 16);
-
-  r = Math.min(255, Math.max(0, r * (1 + percent)));
-  g = Math.min(255, Math.max(0, g * (1 + percent)));
-  b = Math.min(255, Math.max(0, b * (1 + percent)));
-
-  return `#${Math.round(r).toString(16).padStart(2, "0")}${Math.round(g)
-    .toString(16)
-    .padStart(2, "0")}${Math.round(b).toString(16).padStart(2, "0")}`;
-}
-
-// Função de Brilho das cores
-function adjustColor(hex, percent) {
-  hex = hex.replace("#", "");
-  let r = parseInt(hex.substr(0, 2), 16);
-  let g = parseInt(hex.substr(2, 2), 16);
-  let b = parseInt(hex.substr(4, 2), 16);
-
-  r = Math.min(255, Math.max(0, r * (1 + percent)));
-  g = Math.min(255, Math.max(0, g * (1 + percent)));
-  b = Math.min(255, Math.max(0, b * (1 + percent)));
-
-  return `#${Math.round(r).toString(16).padStart(2, "0")}${Math.round(g)
-    .toString(16)
-    .padStart(2, "0")}${Math.round(b).toString(16).padStart(2, "0")}`;
-}
-
-// Função de Brilho das cores
-function adjustColor(hex, percent) {
-  hex = hex.replace("#", "");
-  let r = parseInt(hex.substr(0, 2), 16);
-  let g = parseInt(hex.substr(2, 2), 16);
-  let b = parseInt(hex.substr(4, 2), 16);
-
-  r = Math.min(255, Math.max(0, r * (1 + percent)));
-  g = Math.min(255, Math.max(0, g * (1 + percent)));
-  b = Math.min(255, Math.max(0, b * (1 + percent)));
-
-  return `#${Math.round(r).toString(16).padStart(2, "0")}${Math.round(g)
-    .toString(16)
-    .padStart(2, "0")}${Math.round(b).toString(16).padStart(2, "0")}`;
-}
-
-// Função de cores
-function adjustColor(hex, percent) {
-  hex = hex.replace("#", "");
-  let r = parseInt(hex.substr(0, 2), 16);
-  let g = parseInt(hex.substr(2, 2), 16);
-  let b = parseInt(hex.substr(4, 2), 16);
-
-  r = Math.min(255, Math.max(0, r * (1 + percent)));
-  g = Math.min(255, Math.max(0, g * (1 + percent)));
-  b = Math.min(255, Math.max(0, b * (1 + percent)));
-
-  return `#${Math.round(r).toString(16).padStart(2, "0")}${Math.round(g)
-    .toString(16)
-    .padStart(2, "0")}${Math.round(b).toString(16).padStart(2, "0")}`;
-}
-
-// ajuste de gradiente de cores
-function applyAnimatedBgColors(animationBaseColor) {
-  const skinVariant_L = adjustColor(animationBaseColor, 0.10);
-
-  // ajuste de cores
-  const skinVariant1 = adjustColor(animationBaseColor, -0.05);
-  const skinVariant2 = adjustColor(animationBaseColor, -0.15);
-  const skinVariant3 = adjustColor(animationBaseColor, -0.25);
-  const skinVariant4 = adjustColor(animationBaseColor, -0.35);
-
-  // Variação
-  document.documentElement.style.setProperty("--skin-variant-1", skinVariant1);
-  document.documentElement.style.setProperty("--skin-variant-2", skinVariant2);
-  document.documentElement.style.setProperty("--skin-variant-3", skinVariant3);
-  document.documentElement.style.setProperty("--skin-variant-4", skinVariant4);
-  document.documentElement.style.setProperty("--skin-variant-5", skinVariant_L);
-}
-
-// esquema de cores
-function applyColorScheme(palette) {
-  const { primary, accent, text } = palette;
-  const contrastRatio = getContrastRatio(primary, text);
-  const textColor = contrastRatio >= 4.5 ? text : "#FFFFFF";
-  const hoverColor = adjustColor(primary, -0.2);
-
-
-  document.documentElement.style.setProperty("--skin-color", primary);
-  document.documentElement.style.setProperty("--text-color", textColor);
-  document.documentElement.style.setProperty("--hover-color", hoverColor);
-  document.documentElement.style.setProperty("--accent-color", accent);
-  document.documentElement.style.setProperty("--animated-base-color", primary);
-
-  applyAnimatedBgColors(primary);
-
-  document.querySelectorAll(".random-color").forEach((element) => {
-    element.style.color = accent;
-    console.log(`Applying accent color ${accent} to element:`, element);
-  });
-}
-// card stuff
-
+// Cards e flips
 document.querySelectorAll('.hover-indicator-btn').forEach(btn => {
   const overlay = btn.closest('.project-card').querySelector('.project-overlay');
   const background = btn.closest('.project-card').querySelector('.project-background');
@@ -393,6 +320,7 @@ document.querySelectorAll('.flip-trigger').forEach(trigger => {
     trigger.closest('.flip-card').classList.toggle('flipped');
   });
 });
+
 document.querySelectorAll('.flip-card-back').forEach(back => {
   back.addEventListener('click', (e) => {
     if (!e.target.closest('a, button, .scrollable-content')) {

@@ -2,31 +2,34 @@
 
 /****************************************************************************************************/
 :root {
-    --bg-black-900: #f2f2fc;
-    --bg-black-100: #fdf9ff;
-    --bg-black-50: #e8dfec;
-    --text-black-900: #302e4d;
-    --text-black-700: #540e70;
-    --skin-color: #5C6BC0;
-    --accent-color: #FFD54F;
-    --hover-color: #3F51B5;
-    --text-color: #FFFFFF;
+    --bg-black-900: #f8fafc;     
+    --bg-black-100: #ffffff;
+    --bg-black-50: #e2e8f0;
+    --text-black-900: #1e293b;   
+    --text-black-700: #475569;
+    --skin-color: #1e293b;      
+    --accent-color: #6366f1;    
+    --hover-color: #4f46e5;     
+    --text-color: #ffffff;      
     --liquid-color1: var(--skin-color);
     --liquid-color2: var(--accent-color);
     --liquid-color3: var(--hover-color);
 }
 
 body.dark {
-    --bg-black-900: #151515;
-    --bg-black-100: #222222;
-    --bg-black-50: #393939;
-    --text-black-900: #ffffff;
-    --text-black-700: #e9e9e9;
-    --text-color: #FFFFFF;
-    --liquid-color1: var(--skin-color);
-    --liquid-color2: var(--accent-color);
-    --liquid-color3: var(--hover-color);
+    --bg-black-900: #0f172a;     
+    --bg-black-100: #1e293b;
+    --bg-black-50: #334155;
+    --text-black-900: #f1f5f9;
+    --text-black-700: #cbd5e1;
+    --skin-color: #1e293b;
+    --accent-color: #818cf8;    
+    --hover-color: #6366f1;
+    --text-color: #0f172a;      
 }
+
+
+
 
 
 html,
@@ -191,7 +194,7 @@ ul {
 }
 
 .random-color {
-    color: var(--accent-color);
+    color: var(--skin-color);
 }
 
 body,
@@ -203,7 +206,9 @@ body,
 .about .skills .skills-item h5 {
     color: var(--text-black-900);
 }
+/**********************************/
 
+/*********************************/
 .home {
     background: linear-gradient(135deg, var(--bg-black-100), var(--skin-color), var(--accent-color));
     background-size: 200% 200%;
@@ -936,6 +941,7 @@ body,
     max-width: 60%;
     text-align: left;
     animation: fadeIn 1s ease-in-out;
+    
 }
 
 @keyframes fadeIn {
@@ -1638,7 +1644,7 @@ h3.my-profession {
 .project-content h2 {
     font-size: 24px;
     margin: 0 0 15px 0;
-    color: white;
+    color:  var(--bg-black-900);
 }
 
 .project-content .portfolio-description {
@@ -1958,7 +1964,6 @@ h3.my-profession {
 /* ==================== HIRE MODAL ==================== */
 .hire-modal {
     display: none;
-    /* hidden by default */
     position: fixed;
     z-index: 9999;
     left: 0;
@@ -2048,10 +2053,10 @@ h3.my-profession {
     transform: translateY(-2px);
 }
 
-/* ----- EMAIL FORM ----- */
+/* EMAIL FORM */
 .hire-email-form {
     display: none;
-    /* hidden until user clicks “Enviar e‑mail” */
+    
     flex-direction: column;
     gap: .8rem;
     margin-top: .5rem;
@@ -2128,6 +2133,118 @@ h3.my-profession {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+
+/*************************************************************************************/
+/* Ajustes de textos - garantir legibilidade sobre fundos variados */
+/*************************************************************************************/
+.home .home-info h3,
+.home .home-info h2,
+.home .home-info p {
+    color: #f8fafc !important; 
+    text-shadow: 
+        0 2px 6px rgba(0, 0, 0, 0.95),
+        0 4px 12px rgba(0, 0, 0, 0.85),
+        0 8px 20px rgba(0, 0, 0, 0.75);  
+}
+
+/* Nome e typing */
+.home .random-color,
+.home .typing {
+    color: var(--accent-color) !important;
+    text-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.95),
+        0 0 15px rgba(0, 0, 0, 0.8); 
+}
+
+/* Parágrafo um pouco mais suave */
+.home-info p {
+    opacity: 0.92;
+    font-size: 19px; 
+}
+
+/* Botão */
+.home .btn,
+.about .btn{
+    color: #ffffff !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+/* Front dos cards*/
+.project-overlay .project-content h2,
+.project-overlay .project-content .portfolio-description {
+    color: #ffffff !important; 
+    text-shadow: 
+        0 2px 6px rgba(0, 0, 0, 0.9),
+        0 4px 12px rgba(0, 0, 0, 0.7); 
+}
+
+.project-overlay .project-content h2 {
+    font-weight: 700;
+    font-size: 26px;  
+}
+
+/* Hover indicator */
+.hover-indicator-btn {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+/* Botões no back dos cards*/
+body.dark .flip-card-back .dashboard-btn,
+body.dark .flip-card-back .relatorio-btn,
+body.dark .flip-card-back .github-link {
+    color: #ffffff !important;           
+    background: var(--accent-color);     
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .flip-card-back .dashboard-btn:hover,
+body.dark .flip-card-back .relatorio-btn:hover,
+body.dark .flip-card-back .github-link:hover {
+    background: var(--hover-color);      
+    transform: translateY(-3px);
+}
+
+/* Skills bars */
+body.dark .about .skills .progress-in {
+    background: var(--accent-color) !important;  
+    box-shadow: 0 0 10px rgba(129, 140, 248, 0.6); 
+}
+
+/* skills*/
+body.dark .about .skills .progress {
+    background-color: #1e293b;  
+}
+/* Botões nos cards */
+.flip-card-back .dashboard-btn,
+.flip-card-back .relatorio-btn,
+.flip-card-back .github-link,
+.card-buttons button {
+    color: #ffffff !important;           
+    background: var(--skin-color);      
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);  
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.flip-card-back .dashboard-btn:hover,
+.flip-card-back .relatorio-btn:hover,
+.flip-card-back .github-link:hover {
+    background: var(--hover-color) !important;  
+    transform: translateY(-3px);
+}
+
+/* Texto nos Cards */
+.flip-card-back .dashboard-btn,
+.flip-card-back .github-link {
+    background: var(--accent-color);     
+}
+
+body:not(.dark) .flip-card-back .dashboard-btn,
+body:not(.dark) .flip-card-back .github-link {
+    background: var(--accent-color);     
 }
 
 /****************************************************************************************************/
@@ -2699,19 +2816,19 @@ h3.my-profession {
     }
 }
 /* ============================================= */
-/* RESPONSIVE - APENAS PARA OS NOVOS CARDS (BACKGROUND + HOVER PREVIEW) */
+/* RESPONSIVE - APENAS PARA OS NOVOS CARDS  */
 /* ============================================= */
 
 /* Mobile geral (até 767px) */
 @media (max-width: 767px) {
-    /* Altura do card um pouco maior para caber texto e botão */
+    
     .flip-card {
         height: 480px !important;
     }
 
-    /* Ajuste do GIF/imagem para mostrar melhor o topo (cabeçalho do dashboard) */
+    
     .project-background {
-        background-position: center 12% !important; /* desce um pouco para evitar corte no cabeçalho */
+        background-position: center 12% !important; 
         background-size: cover !important;
     }
 
@@ -2779,22 +2896,22 @@ h3.my-profession {
     }
 }
 /* ============================================= */
-/* BOTÃO DE PREVIEW REDUZIDO EM MOBILE (~70% do tamanho original) */
+/* BOTÃO DE PREVIEW REDUZIDO EM MOBILE  */
 /* ============================================= */
 
 @media (max-width: 767px) {
     .hover-indicator-btn {
-        padding: 8px 14px !important;    /* ~70% do padding original (12px 22px) */
-        font-size: 12.5px !important;    /* ~70% do font-size original (14px) */
+        padding: 8px 14px !important;    
+        font-size: 12.5px !important;    
         bottom: 15px !important;
         right: 15px !important;
-        border-radius: 8px !important;   /* um pouco menor para combinar */
+        border-radius: 8px !important;   
     }
 }
 
 @media (max-width: 480px) {
     .hover-indicator-btn {
-        padding: 7px 12px !important;    /* ainda menor em telas pequenas */
+        padding: 7px 12px !important;   
         font-size: 12px !important;
     }
 }
