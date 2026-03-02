@@ -99,9 +99,11 @@
                                 Olist
                                 (2026)</a>
                         </li>
-                        <li><a href="#sql2"><span class="white-ball"></span> Análise de Viagens de Táxi em Nova York com DuckDB + Python</a>
+                        <li><a href="#sql2"><span class="white-ball"></span> Análise de Viagens de Táxi em Nova York com
+                                DuckDB + Python</a>
                         </li>
-                        <li><a href="#sql3"><span class="white-ball"></span> Otimização de Queries SQL: Performance e Consumo de Recursos</a>
+                        <li><a href="#sql3"><span class="white-ball"></span> Otimização de Queries SQL: Performance e
+                                Consumo de Recursos</a>
                         </li>
                     </ul>
                 </li>
@@ -113,9 +115,10 @@
                                 Pessoal
                                 (2026)</a>
                         </li>
-                        <li><a href="#manupred"><span class="white-ball"></span> Sistema de Manutenção Preditiva de Máquinas Industriais</a>
+                        <li><a href="#manupred"><span class="white-ball"></span> Sistema de Manutenção Preditiva de
+                                Máquinas Industriais</a>
                         </li>
-                         <li><a href="#xgchutes"><span class="white-ball"></span> xG Model - Brasileirão Série A 2025</a>
+                        <li><a href="#xgchutes"><span class="white-ball"></span> xG Model - Brasileirão Série A 2025</a>
                         </li>
                         <li><a href="#analise-salario"><span class="white-ball"></span> DashBoard Salários de Dados
                                 (2025)</a>
@@ -699,6 +702,8 @@
             </form>
         </div>
     </div>
+    <!-- TOAST DE AVISO DE CARREGAMENTO -->
+
     <!--====JS FFiles====-->
     <script src="js/script.js"></script>
     <!-- <script src="js/style-switcher.js"></script> -->
@@ -873,6 +878,7 @@
                 if (typeof setConsistentCardHeights === 'function') {
                     setConsistentCardHeights();
                 }
+                setupDashboardButtons();
             }
 
             // Cache buster (resolve o problema do refresh normal)
@@ -1178,8 +1184,62 @@
             }
         });
     </script>
+    <!-- TOAST DE AVISO DE CARREGAMENTO -->
+    <div id="project-toast" class="project-toast">
+        
+        <div class="toast-info">
+            <strong>⚠️ Carregando projeto...</strong>
+            <p>Projetos em plano gratuito podem demorar <strong>10 a 40 segundos</strong> para abrir.</p>
+            <small>Uma nova aba vai abrir em instantes. Aguarde um pouco! ☕</small>
+        </div>
+    </div>
 
+    <script>
+        // Função que configura os botões (será chamada depois de cada carregamento)
+        function setupDashboardButtons() {
+            document.querySelectorAll('.dashboard-btn').forEach(btn => {
+                const onclickText = btn.getAttribute('onclick');
+                if (!onclickText) return;
 
+                const match = onclickText.match(/window\.open\(['"]([^'"]+)['"]/i);
+                if (!match || !match[1]) return;
+
+                const url = match[1];
+
+                // Remove o onclick antigo (isso resolve o problema!)
+                btn.removeAttribute('onclick');
+
+                // Novo comportamento limpo
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+
+                    const toast = document.getElementById('project-toast');
+                    toast.classList.add('show');
+
+                    // Toast aparece PRIMEIRO → depois abre a aba
+                    setTimeout(() => {
+                        window.open(url, '_blank');
+                    }, 2000);
+
+                    // Toast some automaticamente
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 9000);
+                });
+            });
+        }
+
+        // Quando voltar para a aba, esconde o toast imediatamente
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                const toast = document.getElementById('project-toast');
+                if (toast) toast.classList.remove('show');
+            }
+        });
+
+        console.log('✅ Setup de toast preparado!');
+    </script>
 
 </body>
 
