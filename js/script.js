@@ -323,6 +323,7 @@ document.querySelectorAll('.flip-trigger').forEach(trigger => {
 
 document.querySelectorAll('.flip-card-back').forEach(back => {
   back.addEventListener('click', (e) => {
+    e.stopPropagation();  
     if (!e.target.closest('a, button, .scrollable-content')) {
       back.closest('.flip-card').classList.remove('flipped');
     }
