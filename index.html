@@ -107,7 +107,8 @@
                         <li><a href="#sql3"><span class="white-ball"></span> Otimização de Queries SQL: Performance e
                                 Consumo de Recursos</a>
                         </li>
-                        <li><a href="#sql4"><span class="white-ball"></span> DuckGuard: Avaliação de Saúde e Otimização de Queries</a>
+                        <li><a href="#sql4"><span class="white-ball"></span> DuckGuard: Avaliação de Saúde e Otimização
+                                de Queries</a>
                         </li>
                     </ul>
                 </li>
@@ -124,9 +125,7 @@
                         </li>
                         <li><a href="#xgchutes"><span class="white-ball"></span> xG Model - Brasileirão Série A 2025</a>
                         </li>
-                        <li><a href="#analise-salario"><span class="white-ball"></span> DashBoard Salários de Dados
-                                (2025)</a>
-                        </li>
+                    
                         <li><a href="#analisehidro"><span class="white-ball"></span> Análise de Eficiência Hidráulica
                                 com Regressão (2026)</a>
                         </li>
@@ -144,6 +143,18 @@
                         <li><a href="#analise-eletricidade"><span class="white-ball"></span> Custo de Eletricidade
                                 Dashboard
                                 (2025)</a></li>
+                        
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#dashboards"><i class="fa fa-chart-line"></i>Power BI e Excel</a>
+                    <ul class="nav-sub">
+                        
+                        <li><a href="#analise-salario"><span class="white-ball"></span> DashBoard Salários de Dados
+                                (2025)</a>
+                        </li>
+                    
                         <li><a href="#analise-sentimento-headset"><span class="white-ball"></span> Analise de Sentimento
                                 de Produtos Headset Amazon Kindle Store
                                 (2025)</a></li>
@@ -365,10 +376,30 @@
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
-                            <h2>Todos os Projetos</h2>
+                            <h2>Outros Projetos</h2>
                         </div>
                     </div>
                     <div id="todos-projetos-container">
+
+                    </div>
+                </div>
+            </section>
+
+            
+            <!-- ****************************************************************************************************************** -->
+            <!--====todos projetos end====-->
+            <!-- ****************************************************************************************************************** -->
+            <!-- ****************************************************************************************************************** -->
+            <!-- ****************************************************************************************************************** -->
+            <!-- DASHBOARD items start-->
+            <section class="portfolio section bg-dark text-white" id="dashboards">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Power Bi e Excel</h2>
+                        </div>
+                    </div>
+                    <div id="excelPBI-container">
 
                     </div>
                 </div>
@@ -378,6 +409,7 @@
             <!-- ****************************************************************************************************************** -->
             <!-- ****************************************************************************************************************** -->
             <!-- ****************************************************************************************************************** -->
+            
             <!-- ****************************************************************************************************************** -->
             <!-- ****************************************************************************************************************** -->
             <!-- ****************************************************************************************************************** -->
@@ -821,11 +853,13 @@
             const destaqueContainer = document.getElementById('projetos-destaque-container');
             const todosContainer = document.getElementById('todos-projetos-container');
             const sqlContainer = document.getElementById('projetos-sql-container');
+            const excelPBIContainer = document.getElementById('excelPBI-container');
 
             // Mensagem de loading
             destaqueContainer.innerHTML = '<p style="text-align:center; padding:50px;">Carregando projetos em destaque...</p>';
             todosContainer.innerHTML = '<p style="text-align:center; padding:50px;">Carregando todos os projetos...</p>';
             sqlContainer.innerHTML = '<p style="text-align:center; padding:50px;">Carregando projetos SQL...</p>';
+            excelPBIContainer.innerHTML = '<p style="text-align:center; padding:50px;">Carregando projetos Excel e PBI...</p>';
 
             // Função para inicializar TODOS os efeitos nos cards novos
             function initCards(container) {
@@ -915,6 +949,7 @@
                 .catch(err => {
                     todosContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
                 });
+            // Carrega Projetos SQL
             fetch('sql-projetos.html' + cacheBuster)
                 .then(response => {
                     if (!response.ok) throw new Error('Arquivo não encontrado');
@@ -926,6 +961,19 @@
                 })
                 .catch(err => {
                     sqlContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
+                });
+            // Carrega Projetos excelPBI
+            fetch('excelPBI.html' + cacheBuster)
+                .then(response => {
+                    if (!response.ok) throw new Error('Arquivo não encontrado');
+                    return response.text();
+                })
+                .then(data => {
+                    excelPBIContainer.innerHTML = data;
+                    initCards(excelPBIContainer);
+                })
+                .catch(err => {
+                    excelPBIContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
                 });
         });
     </script>
