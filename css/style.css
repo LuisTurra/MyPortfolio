@@ -2,30 +2,30 @@
 
 /****************************************************************************************************/
 :root {
-    --bg-black-900: #f8fafc;     
+    --bg-black-900: #f8fafc;
     --bg-black-100: #ffffff;
     --bg-black-50: #e2e8f0;
-    --text-black-900: #1e293b;   
+    --text-black-900: #1e293b;
     --text-black-700: #475569;
-    --skin-color: #1e293b;      
-    --accent-color: #6366f1;    
-    --hover-color: #4f46e5;     
-    --text-color: #ffffff;      
+    --skin-color: #1e293b;
+    --accent-color: #6366f1;
+    --hover-color: #4f46e5;
+    --text-color: #ffffff;
     --liquid-color1: var(--skin-color);
     --liquid-color2: var(--accent-color);
     --liquid-color3: var(--hover-color);
 }
 
 body.dark {
-    --bg-black-900: #0f172a;     
+    --bg-black-900: #0f172a;
     --bg-black-100: #1e293b;
     --bg-black-50: #334155;
     --text-black-900: #f1f5f9;
     --text-black-700: #cbd5e1;
     --skin-color: #1e293b;
-    --accent-color: #818cf8;    
+    --accent-color: #818cf8;
     --hover-color: #6366f1;
-    --text-color: #0f172a;      
+    --text-color: #0f172a;
 }
 
 
@@ -206,6 +206,7 @@ body,
 .about .skills .skills-item h5 {
     color: var(--text-black-900);
 }
+
 /**********************************/
 
 /*********************************/
@@ -720,12 +721,44 @@ body,
     display: block;
     opacity: 1;
     transform: translateX(0);
+    position: relative;
 }
-
 .aside.open .nav li {
     opacity: 1;
     transform: translateX(0);
 }
+
+.aside .nav-sub {
+    display: none !important;
+    padding-left: 10px !important;     
+    margin: 10px 0 0 0 !important;
+    list-style: none;
+    background: rgba(255, 255, 255, 0.06);
+    
+}
+.aside .nav li.open>.nav-sub {
+    display: block !important;
+    
+}
+.aside .nav li:not(.open)>a .dropdown-arrow {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.aside .nav li.open>a .dropdown-arrow {
+    transform: rotate(180deg);
+}
+.aside .nav-sub li {
+    margin: 10px 0;
+}
+
+.aside .nav-sub li a {
+    color: #ddd;
+    text-decoration: none;
+    display: block;
+    padding: 20px 0;
+}
+
 
 .aside.open .nav li:nth-child(1) {
     transition-delay: 0.1s;
@@ -777,7 +810,7 @@ body,
 }
 
 .aside .nav li a.active {
-    color: var(--accent-color);
+    color: rgb(240, 96, 96);
 }
 
 .aside::-webkit-scrollbar {
@@ -941,7 +974,7 @@ body,
     max-width: 60%;
     text-align: left;
     animation: fadeIn 1s ease-in-out;
-    
+
 }
 
 @keyframes fadeIn {
@@ -1410,9 +1443,11 @@ h3.my-profession {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
-.portfolio .section-title h2{
+
+.portfolio .section-title h2 {
     color: var(--hover-color);
 }
+
 .portfolio .container {
     padding: 0 15px 30px;
     max-width: 1200px;
@@ -1595,7 +1630,7 @@ h3.my-profession {
 /****************************************************************************************************/
 
 .flip-card {
-    height: 500px; 
+    height: 500px;
     perspective: 1000px;
 }
 
@@ -1617,7 +1652,7 @@ h3.my-profession {
     width: 100%;
     height: 100%;
     background-size: cover !important;
-    background-position: center top !important; 
+    background-position: center top !important;
     background-repeat: no-repeat;
     transition: transform 0.8s ease;
     z-index: 1;
@@ -1635,7 +1670,7 @@ h3.my-profession {
     flex-direction: column;
     justify-content: space-between;
     background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(20px); 
+    backdrop-filter: blur(20px);
     color: white;
     z-index: 2;
     opacity: 1;
@@ -1646,7 +1681,7 @@ h3.my-profession {
 .project-content h2 {
     font-size: 24px;
     margin: 0 0 15px 0;
-    color:  var(--bg-black-900);
+    color: var(--bg-black-900);
 }
 
 .project-content .portfolio-description {
@@ -1678,7 +1713,7 @@ h3.my-profession {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10; 
+    z-index: 10;
     cursor: pointer;
 }
 
@@ -2058,7 +2093,7 @@ h3.my-profession {
 /* EMAIL FORM */
 .hire-email-form {
     display: none;
-    
+
     flex-direction: column;
     gap: .8rem;
     margin-top: .5rem;
@@ -2144,46 +2179,47 @@ h3.my-profession {
 .home .home-info h3,
 .home .home-info h2,
 .home .home-info p {
-    color: #f8fafc !important; 
-    text-shadow: 
+    color: #f8fafc !important;
+    text-shadow:
         0 2px 6px rgba(0, 0, 0, 0.95),
         0 4px 12px rgba(0, 0, 0, 0.85),
-        0 8px 20px rgba(0, 0, 0, 0.75);  
+        0 8px 20px rgba(0, 0, 0, 0.75);
 }
 
 /* Nome e typing */
 .home .random-color,
 .home .typing {
     color: var(--accent-color) !important;
-    text-shadow: 
+    text-shadow:
         0 2px 8px rgba(0, 0, 0, 0.95),
-        0 0 15px rgba(0, 0, 0, 0.8); 
+        0 0 15px rgba(0, 0, 0, 0.8);
 }
 
 /* Parágrafo um pouco mais suave */
 .home-info p {
     opacity: 0.92;
-    font-size: 19px; 
+    font-size: 19px;
 }
 
 /* Botão */
 .home .btn,
-.about .btn{
+.about .btn {
     color: #ffffff !important;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 }
+
 /* Front dos cards*/
 .project-overlay .project-content h2,
 .project-overlay .project-content .portfolio-description {
-    color: #ffffff !important; 
-    text-shadow: 
+    color: #ffffff !important;
+    text-shadow:
         0 2px 6px rgba(0, 0, 0, 0.9),
-        0 4px 12px rgba(0, 0, 0, 0.7); 
+        0 4px 12px rgba(0, 0, 0, 0.7);
 }
 
 .project-overlay .project-content h2 {
     font-weight: 700;
-    font-size: 26px;  
+    font-size: 26px;
 }
 
 /* Hover indicator */
@@ -2193,12 +2229,13 @@ h3.my-profession {
     border: 1px solid rgba(255, 255, 255, 0.4);
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
+
 /* Botões no back dos cards*/
 body.dark .flip-card-back .dashboard-btn,
 body.dark .flip-card-back .relatorio-btn,
 body.dark .flip-card-back .github-link {
-    color: #ffffff !important;           
-    background: var(--accent-color);     
+    color: #ffffff !important;
+    background: var(--accent-color);
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
@@ -2206,47 +2243,48 @@ body.dark .flip-card-back .github-link {
 body.dark .flip-card-back .dashboard-btn:hover,
 body.dark .flip-card-back .relatorio-btn:hover,
 body.dark .flip-card-back .github-link:hover {
-    background: var(--hover-color);      
+    background: var(--hover-color);
     transform: translateY(-3px);
 }
 
 /* Skills bars */
 body.dark .about .skills .progress-in {
-    background: var(--accent-color) !important;  
-    box-shadow: 0 0 10px rgba(129, 140, 248, 0.6); 
+    background: var(--accent-color) !important;
+    box-shadow: 0 0 10px rgba(129, 140, 248, 0.6);
 }
 
 /* skills*/
 body.dark .about .skills .progress {
-    background-color: #1e293b;  
+    background-color: #1e293b;
 }
+
 /* Botões nos cards */
 .flip-card-back .dashboard-btn,
 .flip-card-back .relatorio-btn,
 .flip-card-back .github-link,
 .card-buttons button {
-    color: #ffffff !important;           
-    background: var(--skin-color);      
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);  
+    color: #ffffff !important;
+    background: var(--skin-color);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .flip-card-back .dashboard-btn:hover,
 .flip-card-back .relatorio-btn:hover,
 .flip-card-back .github-link:hover {
-    background: var(--hover-color) !important;  
+    background: var(--hover-color) !important;
     transform: translateY(-3px);
 }
 
 /* Texto nos Cards */
 .flip-card-back .dashboard-btn,
 .flip-card-back .github-link {
-    background: var(--accent-color);     
+    background: var(--accent-color);
 }
 
 body:not(.dark) .flip-card-back .dashboard-btn,
 body:not(.dark) .flip-card-back .github-link {
-    background: var(--accent-color);     
+    background: var(--accent-color);
 }
 
 /**************************************************************/
@@ -2260,7 +2298,7 @@ body:not(.dark) .flip-card-back .github-link {
     color: #e2e8f0;
     padding: 18px 26px;
     border-radius: 14px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
     display: none;
     gap: 16px;
     max-width: 410px;
@@ -2275,11 +2313,21 @@ body:not(.dark) .flip-card-back .github-link {
 }
 
 @keyframes toastPop {
-    from { transform: translate(-50%, 80px); opacity: 0; }
-    to   { transform: translate(-50%, 0);   opacity: 1; }
+    from {
+        transform: translate(-50%, 80px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
 }
 
-.toast-icon { font-size: 36px; flex-shrink: 0; }
+.toast-icon {
+    font-size: 36px;
+    flex-shrink: 0;
+}
 
 
 /****************************************************************************************************/
@@ -2288,19 +2336,19 @@ body:not(.dark) .flip-card-back .github-link {
 /* RESPONSIVE */
 @media (min-width: 1300px) {
     .project-background {
-        background-size: cover !important;     
+        background-size: cover !important;
         background-repeat: no-repeat !important;
         background-position: center top !important;
-        background-color: #000000;              
+        background-color: #000000;
     }
 
-    
+
     .project-background {
         transition: transform 0.8s ease;
     }
 
 
- }
+}
 
 @media (max-width: 1199px) {
     .main-content {
@@ -2476,7 +2524,7 @@ body:not(.dark) .flip-card-back .github-link {
         transform: translateX(0);
         transition: none;
     }
-    
+
 }
 
 
@@ -2850,20 +2898,21 @@ body:not(.dark) .flip-card-back .github-link {
         padding: 6px 12px;
     }
 }
+
 /* ============================================= */
 /* RESPONSIVE - APENAS PARA OS NOVOS CARDS  */
 /* ============================================= */
 
 /* Mobile geral (até 767px) */
 @media (max-width: 767px) {
-    
+
     .flip-card {
         height: 480px !important;
     }
 
-    
+
     .project-background {
-        background-position: center 12% !important; 
+        background-position: center 12% !important;
         background-size: cover !important;
     }
 
@@ -2871,6 +2920,7 @@ body:not(.dark) .flip-card-back .github-link {
     .project-content h2 {
         font-size: 20px !important;
     }
+
     .project-content .portfolio-description {
         font-size: 14px !important;
         line-height: 1.5 !important;
@@ -2900,6 +2950,7 @@ body:not(.dark) .flip-card-back .github-link {
     .project-content h2 {
         font-size: 18px !important;
     }
+
     .project-content .portfolio-description {
         font-size: 13px !important;
     }
@@ -2919,6 +2970,7 @@ body:not(.dark) .flip-card-back .github-link {
     .project-content h2 {
         font-size: 17px !important;
     }
+
     .project-content .portfolio-description {
         font-size: 12.5px !important;
     }
@@ -2930,27 +2982,28 @@ body:not(.dark) .flip-card-back .github-link {
         font-size: 12px !important;
     }
 }
+
 /* ============================================= */
 /* BOTÃO DE PREVIEW REDUZIDO EM MOBILE  */
 /* ============================================= */
 
 @media (max-width: 767px) {
     .hover-indicator-btn {
-        padding: 8px 14px !important;    
-        font-size: 12.5px !important;    
+        padding: 8px 14px !important;
+        font-size: 12.5px !important;
         bottom: 15px !important;
         right: 15px !important;
-        border-radius: 8px !important;   
+        border-radius: 8px !important;
     }
 }
 
 @media (max-width: 480px) {
     .hover-indicator-btn {
-        padding: 7px 12px !important;   
+        padding: 7px 12px !important;
         font-size: 12px !important;
     }
-    
-    
+
+
 }
 
 @media (max-width: 370px) {
@@ -2961,6 +3014,7 @@ body:not(.dark) .flip-card-back .github-link {
         right: 10px !important;
     }
 }
+
 /* ============================================= */
 /* RESPONSIVIDADE DO TOAST - MOBILE              */
 /* ============================================= */
@@ -2973,20 +3027,20 @@ body:not(.dark) .flip-card-back .github-link {
         border-radius: 16px;
         gap: 14px;
     }
-    
+
     .toast-icon {
         font-size: 32px;
     }
-    
+
     .toast-info strong {
         font-size: 1.05rem;
     }
-    
+
     .toast-info p {
         font-size: 0.92rem;
         line-height: 1.35;
     }
-    
+
     .toast-info small {
         font-size: 0.82rem;
     }
@@ -3000,19 +3054,19 @@ body:not(.dark) .flip-card-back .github-link {
         border-radius: 14px;
         gap: 12px;
     }
-    
+
     .toast-icon {
         font-size: 30px;
     }
-    
+
     .toast-info strong {
         font-size: 1rem;
     }
-    
+
     .toast-info p {
         font-size: 0.88rem;
     }
-    
+
     .toast-info small {
         font-size: 0.8rem;
     }
@@ -3026,20 +3080,20 @@ body:not(.dark) .flip-card-back .github-link {
         border-radius: 12px;
         gap: 10px;
     }
-    
+
     .toast-icon {
         font-size: 28px;
     }
-    
+
     .toast-info strong {
         font-size: 0.95rem;
     }
-    
+
     .toast-info p {
         font-size: 0.85rem;
         line-height: 1.3;
     }
-    
+
     .toast-info small {
         font-size: 0.78rem;
     }
