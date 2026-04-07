@@ -23,6 +23,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <!-- <script src="js/LiquidEther.js" defer></script> -->
 </head>
 
@@ -272,44 +273,20 @@
                             </div>
                         </div>
 
-                        <!-- Skills -->
-                        <div class="skills padd-15" data-aos="fade-left">
-                            <h3 class="title">Habilidades</h3>
-                            <div class="skills-box shadow-dark">
-                                <div class="skills-item">
-                                    <h5><i class="fab fa-python"></i> Python</h5>
-                                    <div class="progress">
-                                        <div class="progress-in" data-progress-width="90%"></div>
+                    </div>
+                    <div class="about-charts ">
+                        <h2 class="charts-title ">Tecnologias e Skills mais utilizadas</h2>
 
-                                    </div>
+                        <div class="charts-grid">
+                            <div class="chart-card">
+                                <div class="chart-container">
+                                    <canvas id="techChart"></canvas>
                                 </div>
-                                <div class="skills-item">
-                                    <h5><i class="fab fa-powerbi"></i> Power BI</h5>
-                                    <div class="progress">
-                                        <div class="progress-in" data-progress-width="90%"></div>
+                            </div>
 
-                                    </div>
-                                </div>
-                                <div class="skills-item">
-                                    <h5><i class="fas fa-database"></i> MySQL</h5>
-                                    <div class="progress">
-                                        <div class="progress-in" data-progress-width="70%"></div>
-
-                                    </div>
-                                </div>
-                                <div class="skills-item">
-                                    <h5><i class="fas fa-brain"></i> Machine Learning</h5>
-                                    <div class="progress">
-                                        <div class="progress-in" data-progress-width="90%"></div>
-
-                                    </div>
-                                </div>
-                                <div class="skills-item">
-                                    <h5><i class="fas fa-table"></i> Excel</h5>
-                                    <div class="progress">
-                                        <div class="progress-in" data-progress-width="80%"></div>
-
-                                    </div>
+                            <div class="chart-card">
+                                <div class="chart-container">
+                                    <canvas id="skillsChart"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -1378,6 +1355,137 @@
             });
         });
     </script>
+    <script>
+        let techChartInstance = null;
+        let skillsChartInstance = null;
+
+        const techData = {
+            "GitHub": 20, "Python": 18, "VS Code": 18, "Streamlit": 10, "SQL": 6,
+            "XGBoost": 5, "Excel": 5, "Pandas": 4, "Power BI": 4, "Render.com": 4,
+            "API": 4, "Scikit-learn": 4, "Random Forest": 4, "Plotly": 3, "Dash": 3
+        };
+
+        const skillData = {
+            "Git & GitHub": 15, "Machine Learning": 12, "Data Analysis": 10,
+            "Resolução de Problemas": 10, "Dashboard Interativo": 9, "Programação": 8,
+            "Preprocessamento": 8, "Séries Temporais": 4, "SQL Avançado": 4
+        };
+
+        function initCharts() {
+            const isDarkMode = document.body.classList.contains('dark');
+
+            // Cores bem visíveis
+            const textColor = isDarkMode ? '#ffffff' : '#222222';
+            const gridColor = isDarkMode ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.08)';
+            const tickColor = isDarkMode ? '#eeeeee' : '#555555';
+            const titleColorTech = isDarkMode ? '#00ff88' : '#00aa66';
+            const titleColorSkill = isDarkMode ? '#e066ff' : '#8800cc';
+
+            const getGradient = (ctx, chartArea) => {
+                const gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
+                gradient.addColorStop(0, isDarkMode ? '#00ccff' : '#0099cc');
+                gradient.addColorStop(1, isDarkMode ? '#00ff88' : '#00cc77');
+                return gradient;
+            };
+
+            const commonOptions = {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: isDarkMode ? 'rgba(30,30,30,0.95)' : 'rgba(255,255,255,0.95)',
+                        titleColor: isDarkMode ? '#fff' : '#000',
+                        bodyColor: isDarkMode ? '#fff' : '#000',
+                        borderColor: isDarkMode ? '#00ff88' : '#00aa66',
+                        borderWidth: 1
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: { color: gridColor },
+                        ticks: { color: tickColor, font: { size: 12 } }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: textColor, font: { size: 13, weight: '600' } }
+                    }
+                },
+                borderRadius: 6,
+                borderSkipped: false
+            };
+
+            if (techChartInstance) techChartInstance.destroy();
+            if (skillsChartInstance) skillsChartInstance.destroy();
+
+            // Grafico ferramentas 
+            const ctxTech = document.getElementById('techChart').getContext('2d');
+            techChartInstance = new Chart(ctxTech, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(techData),
+                    datasets: [{
+                        data: Object.values(techData),
+                        backgroundColor: (context) => {
+                            const chart = context.chart;
+                            const { ctx, chartArea } = chart;
+                            if (!chartArea) return '#00ccff';
+                            return getGradient(ctx, chartArea);
+                        },
+                        hoverBackgroundColor: isDarkMode ? '#ffffff' : '#111111'
+                    }]
+                },
+                options: {
+                    ...commonOptions,
+                    plugins: {
+                        ...commonOptions.plugins,
+                        title: { display: true, text: 'TOP FERRAMENTAS', color: titleColorTech, font: { size: 19, weight: 'bold' }, padding: 20 }
+                    }
+                }
+            });
+
+            // Grafico skills
+            const ctxSkills = document.getElementById('skillsChart').getContext('2d');
+            skillsChartInstance = new Chart(ctxSkills, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(skillData),
+                    datasets: [{
+                        data: Object.values(skillData),
+                        backgroundColor: isDarkMode ? '#e066ff' : '#8800cc',
+                        hoverBackgroundColor: isDarkMode ? '#f08cff' : '#aa00ff'
+                    }]
+                },
+                options: {
+                    ...commonOptions,
+                    plugins: {
+                        ...commonOptions.plugins,
+                        title: { display: true, text: 'COMPETÊNCIAS CHAVE', color: titleColorSkill, font: { size: 19, weight: 'bold' }, padding: 20 }
+                    }
+                }
+            });
+        }
+
+        // ====================== INICIALIZAÇÃO ======================
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                initCharts();
+            }, 100);
+            const dayNightBtn = document.querySelector('.day-night');
+            if (dayNightBtn) {
+                dayNightBtn.addEventListener('click', () => {
+                    setTimeout(initCharts, 180);
+                });
+            }
+            const observer = new MutationObserver(() => {
+                initCharts();
+            });
+            observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+        });
+    </script>
+
 
 </body>
 

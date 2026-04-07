@@ -1,8 +1,8 @@
 // Modo claro
 const colorPalette = [
   { primary: "#1e293b", accent: "#6366f1", text: "#1e293b" },  
-  { primary: "#0f172a", accent: "#818cf8", text: "#1e293b" },  
-  { primary: "#334155", accent: "#a5b4fc", text: "#1e293b" },  
+  { primary: "#0f172a", accent: "#5665e6", text: "#1e293b" },  
+  { primary: "#334155", accent: "#637aee", text: "#1e293b" },  
   { primary: "#1e3a8a", accent: "#60a5fa", text: "#1e293b" },  
 ];
 
@@ -185,12 +185,20 @@ document.querySelector('.nav-toggler').addEventListener('click', () => {
   navToggler.classList.add('clicked');
   setTimeout(() => navToggler.classList.remove('clicked'), 300);
 });
-// Fechar sidebar ao clicar em um link
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Fechar menu ao clicar em um link
 const navLinks = document.querySelectorAll('.aside .nav li a');
+
 navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    document.querySelector('.aside').classList.remove('open');
-    document.querySelector('.nav-toggler').classList.remove('active');
+  link.addEventListener('click', (e) => {
+    const hasSubmenu = 
+      (link.nextElementSibling && link.nextElementSibling.tagName === 'UL') ||
+      link.parentElement.querySelector(':scope > ul');
+    if (!hasSubmenu) {
+      document.querySelector('.aside').classList.remove('open');
+      const toggler = document.querySelector('.nav-toggler');
+      if (toggler) toggler.classList.remove('active');
+    }
   });
 });
 
@@ -198,7 +206,6 @@ window.addEventListener('load', () => {
   const sidebar = document.querySelector('.aside');
   if (sidebar) sidebar.scrollTop = 0;
 });
-
 const sections = document.querySelectorAll('.section');
 window.addEventListener('scroll', () => {
   let current = '';
@@ -215,7 +222,7 @@ window.addEventListener('scroll', () => {
     }
   });
 });
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 // Animação da Skills 
 document.addEventListener('DOMContentLoaded', () => {
   const skillsItems = document.querySelectorAll('.skills-item');
