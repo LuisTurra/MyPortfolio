@@ -336,22 +336,25 @@ document.querySelectorAll('.flip-card-back').forEach(back => {
     }
   });
 });
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-// Deep Linking via PATH (/projeto)
-// Exemplo: /MyPortfolio/manutencao-preditiva-turbofan
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// Deep Linking via HASH (#projeto)
+// Exemplo:
+// https://luisturra.github.io/MyPortfolio/#manutencao-preditiva-turbofan
 
 window.addEventListener('load', () => {
-    const pathParts = window.location.pathname.split('#');
-    const projectId = pathParts[pathParts.length - 1];
 
-    // Evita tentar abrir quando estiver só em /MyPortfolio/
-    if (projectId && projectId !== 'MyPortfolio') {
+    // Pegamos o hash removendo o #
+    const projectId = window.location.hash.substring(1);
 
-        // Pequeno delay para AOS/Typed terminarem
+    if (projectId) {
+
+        // Delay para AOS / Typed terminarem
         setTimeout(() => {
+
             const targetElement = document.getElementById(projectId);
 
             if (targetElement) {
+
                 // Flip automático
                 if (targetElement.classList.contains('flip-card')) {
                     targetElement.classList.add('flipped');
@@ -362,52 +365,50 @@ window.addEventListener('load', () => {
                     behavior: 'smooth',
                     block: 'center'
                 });
-
-                // Limpa URL para evitar problemas futuros
-                history.replaceState(
-                    null,
-                    null,
-                    '/MyPortfolio/' + projectId
-                );
             }
+
         }, 800);
     }
 });
 
-// //////////////////////////////////////////////////////////////////////////////////////////////////////
-// // Interceptar cliques internos e transformar #id em /id
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// Intercepta cliques internos e transforma em #id
 
-// navLinks.forEach(link => {
-//     link.addEventListener('click', function(e) {
-//         const href = this.getAttribute('href');
+navLinks.forEach(link => {
 
-//         if (href.startsWith('#')) {
-//             const targetId = href.substring(1);
-//             const targetElement = document.getElementById(targetId);
+    link.addEventListener('click', function(e) {
 
-//             if (targetElement) {
-//                 e.preventDefault();
+        const href = this.getAttribute('href');
 
-//                 // Atualiza URL para /projeto
-//                 const newUrl = '/MyPortfolio/' + targetId;
+        // Verifica se é âncora interna
+        if (href.startsWith('#')) {
 
-//                 history.pushState(
-//                     { id: targetId },
-//                     '',
-//                     newUrl
-//                 );
+            const targetId = href.substring(1);
 
-//                 // Scroll suave
-//                 targetElement.scrollIntoView({
-//                     behavior: 'smooth',
-//                     block: 'center'
-//                 });
+            const targetElement = document.getElementById(targetId);
 
-//                 // Flip automático
-//                 if (targetElement.classList.contains('flip-card')) {
-//                     targetElement.classList.add('flipped');
-//                 }
-//             }
-//         }
-//     });
-// });
+            if (targetElement) {
+
+                e.preventDefault();
+
+                // Atualiza URL para #id
+                history.pushState(
+                    { id: targetId },
+                    '',
+                    window.location.pathname + '#' + targetId
+                );
+
+                // Scroll suave
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+
+                // Flip automático
+                if (targetElement.classList.contains('flip-card')) {
+                    targetElement.classList.add('flipped');
+                }
+            }
+        }
+    });
+});
