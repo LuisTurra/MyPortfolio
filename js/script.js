@@ -365,3 +365,34 @@ window.addEventListener('load', () => {
         }, 800);
     }
 });
+// Interceptar cliques na sidebar para usar ?p= em vez de #
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+
+        // Verificamos se o link é uma âncora interna (começa com #)
+        if (href.startsWith('#')) {
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                e.preventDefault(); // Impede o navegador de adicionar o # na URL e pular
+
+                // 1. Atualiza a URL para o formato ?p=
+                const newUrl = window.location.pathname + '?p=' + targetId;
+                history.pushState({ id: targetId }, '', newUrl);
+
+                // 2. Faz o scroll suave até o elemento
+                targetElement.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+
+                // 3. Se for um flip-card, ativa o efeito de virar
+                if (targetElement.classList.contains('flip-card')) {
+                    targetElement.classList.add('flipped');
+                }
+            }
+        }
+    });
+});
