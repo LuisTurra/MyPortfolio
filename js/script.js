@@ -336,59 +336,74 @@ document.querySelectorAll('.flip-card-back').forEach(back => {
     }
   });
 });
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-// Lógica para Deep Linking via Query Parameter (?p=id-do-projeto)
-// Útil para links vindos de redes sociais como LinkedIn
-window.addEventListener('load', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const projectId = urlParams.get('p');
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+// Deep Linking via PATH (/projeto)
+// Exemplo: /MyPortfolio/manutencao-preditiva-turbofan
 
-    if (projectId) {
-        // Damos um pequeno delay (800ms) para garantir que o AOS e o Typed 
-        // já calcularam as posições iniciais dos elementos
+window.addEventListener('load', () => {
+    const pathParts = window.location.pathname.split('/');
+    const projectId = pathParts[pathParts.length - 1];
+
+    // Evita tentar abrir quando estiver só em /MyPortfolio/
+    if (projectId && projectId !== 'MyPortfolio') {
+
+        // Pequeno delay para AOS/Typed terminarem
         setTimeout(() => {
             const targetElement = document.getElementById(projectId);
+
             if (targetElement) {
-                // Se o projeto for um flip-card, podemos até disparar o flip automaticamente
+                // Flip automático
                 if (targetElement.classList.contains('flip-card')) {
                     targetElement.classList.add('flipped');
                 }
 
-                targetElement.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'center' // 'center' garante que o card fique bem no meio da tela
+                // Scroll suave
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
                 });
 
-                // Limpa a URL para manter o visual limpo, substituindo ?p= por #id
-                history.replaceState(null, null, window.location.pathname + '#' + projectId);
+                // Limpa URL para evitar problemas futuros
+                history.replaceState(
+                    null,
+                    null,
+                    '/MyPortfolio/' + projectId
+                );
             }
         }, 800);
     }
 });
-// Interceptar cliques na sidebar para usar ?p= em vez de #
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// Interceptar cliques internos e transformar #id em /id
+
 navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
 
-        // Verificamos se o link é uma âncora interna (começa com #)
         if (href.startsWith('#')) {
             const targetId = href.substring(1);
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
-                e.preventDefault(); // Impede o navegador de adicionar o # na URL e pular
+                e.preventDefault();
 
-                // 1. Atualiza a URL para o formato ?p=
-                const newUrl = window.location.pathname + '?p=' + targetId;
-                history.pushState({ id: targetId }, '', newUrl);
+                // Atualiza URL para /projeto
+                const newUrl = '/MyPortfolio/' + targetId;
 
-                // 2. Faz o scroll suave até o elemento
-                targetElement.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'center' 
+                history.pushState(
+                    { id: targetId },
+                    '',
+                    newUrl
+                );
+
+                // Scroll suave
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
                 });
 
-                // 3. Se for um flip-card, ativa o efeito de virar
+                // Flip automático
                 if (targetElement.classList.contains('flip-card')) {
                     targetElement.classList.add('flipped');
                 }
