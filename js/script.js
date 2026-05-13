@@ -374,40 +374,40 @@ window.addEventListener('load', () => {
     }
 });
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-// Interceptar cliques internos e transformar #id em /id
+// //////////////////////////////////////////////////////////////////////////////////////////////////////
+// // Interceptar cliques internos e transformar #id em /id
 
-navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
+// navLinks.forEach(link => {
+//     link.addEventListener('click', function(e) {
+//         const href = this.getAttribute('href');
 
-        if (href.startsWith('#')) {
-            const targetId = href.substring(1);
-            const targetElement = document.getElementById(targetId);
+//         if (href.startsWith('#')) {
+//             const targetId = href.substring(1);
+//             const targetElement = document.getElementById(targetId);
 
-            if (targetElement) {
-                e.preventDefault();
+//             if (targetElement) {
+//                 e.preventDefault();
 
-                // Atualiza URL para /projeto
-                const newUrl = '/MyPortfolio/' + targetId;
+//                 // Atualiza URL para /projeto
+//                 const newUrl = '/MyPortfolio/' + targetId;
 
-                history.pushState(
-                    { id: targetId },
-                    '',
-                    newUrl
-                );
+//                 history.pushState(
+//                     { id: targetId },
+//                     '',
+//                     newUrl
+//                 );
 
-                // Scroll suave
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
+//                 // Scroll suave
+//                 targetElement.scrollIntoView({
+//                     behavior: 'smooth',
+//                     block: 'center'
+//                 });
 
-                // Flip automático
-                if (targetElement.classList.contains('flip-card')) {
-                    targetElement.classList.add('flipped');
-                }
-            }
-        }
-    });
-});
+//                 // Flip automático
+//                 if (targetElement.classList.contains('flip-card')) {
+//                     targetElement.classList.add('flipped');
+//                 }
+//             }
+//         }
+//     });
+// });
