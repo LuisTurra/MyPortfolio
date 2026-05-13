@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script>
-const path = window.location.pathname;
-const repo = "/MyPortfolio/";
-const projectId = path.replace(repo, "");
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
 
-window.location.replace(repo + "/" + projectId);
-</script>
+    <script>
+        // Pega o caminho atual
+        const path = window.location.pathname;
+
+        // Nome do repositório
+        const repo = "/MyPortfolio";
+
+        // Remove o nome do repo do caminho
+        const projectId = path.replace(repo + "/", "");
+
+        // Redireciona para formato #id
+        window.location.replace(
+            window.location.origin +
+            repo +
+            "/#" +
+            projectId
+        );
+    </script>
 </head>
-<body></body>
+<body>
+</body>
 </html>
