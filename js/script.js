@@ -336,3 +336,32 @@ document.querySelectorAll('.flip-card-back').forEach(back => {
     }
   });
 });
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// Lógica para Deep Linking via Query Parameter (?p=id-do-projeto)
+// Útil para links vindos de redes sociais como LinkedIn
+window.addEventListener('load', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('p');
+
+    if (projectId) {
+        // Damos um pequeno delay (800ms) para garantir que o AOS e o Typed 
+        // já calcularam as posições iniciais dos elementos
+        setTimeout(() => {
+            const targetElement = document.getElementById(projectId);
+            if (targetElement) {
+                // Se o projeto for um flip-card, podemos até disparar o flip automaticamente
+                if (targetElement.classList.contains('flip-card')) {
+                    targetElement.classList.add('flipped');
+                }
+
+                targetElement.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' // 'center' garante que o card fique bem no meio da tela
+                });
+
+                // Limpa a URL para manter o visual limpo, substituindo ?p= por #id
+                history.replaceState(null, null, window.location.pathname + '#' + projectId);
+            }
+        }, 800);
+    }
+});
