@@ -341,7 +341,7 @@ document.querySelectorAll('.flip-card-back').forEach(back => {
 // Exemplo: /MyPortfolio/manutencao-preditiva-turbofan
 
 window.addEventListener('load', () => {
-    const pathParts = window.location.pathname.split('/');
+    const pathParts = window.location.pathname.split('#');
     const projectId = pathParts[pathParts.length - 1];
 
     // Evita tentar abrir quando estiver só em /MyPortfolio/
