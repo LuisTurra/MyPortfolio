@@ -187,41 +187,49 @@ document.querySelector('.nav-toggler').addEventListener('click', () => {
 });
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Fechar menu ao clicar em um link
+// ==================== SCROLL SPY MELHORADO ====================
+const sections = document.querySelectorAll('.section');
 const navLinks = document.querySelectorAll('.aside .nav li a');
 
-navLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    const hasSubmenu = 
-      (link.nextElementSibling && link.nextElementSibling.tagName === 'UL') ||
-      link.parentElement.querySelector(':scope > ul');
-    if (!hasSubmenu) {
-      document.querySelector('.aside').classList.remove('open');
-      const toggler = document.querySelector('.nav-toggler');
-      if (toggler) toggler.classList.remove('active');
-    }
-  });
-});
-
-window.addEventListener('load', () => {
-  const sidebar = document.querySelector('.aside');
-  if (sidebar) sidebar.scrollTop = 0;
-});
-const sections = document.querySelectorAll('.section');
-window.addEventListener('scroll', () => {
+function updateActiveSection() {
   let current = '';
+  let maxVisiblePercentage = 0;
+
   sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    if (window.pageYOffset >= sectionTop - 60) {
-      current = section.getAttribute('id');
+    const rect = section.getBoundingClientRect();
+    const id = section.getAttribute('id');
+    
+    // Calcula quanto da seção está visível na tela
+    const visibleHeight = Math.max(0, 
+      Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0)
+    );
+    const visiblePercentage = visibleHeight / rect.height;
+
+    // Seção no topo ou com maior parte visível
+    if (rect.top <= 120 && visiblePercentage > maxVisiblePercentage) {
+      maxVisiblePercentage = visiblePercentage;
+      current = id;
     }
   });
+
   navLinks.forEach(link => {
     link.classList.remove('active');
-    if (link.getAttribute('href').substring(1) === current) {
+    if (link.getAttribute('href') === `#${current}`) {
       link.classList.add('active');
     }
   });
+}
+
+// Debounce para melhor performance
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(updateActiveSection, 10);
 });
+
+// Atualiza também no load e resize
+window.addEventListener('load', updateActiveSection);
+window.addEventListener('resize', updateActiveSection);
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Animação da Skills 
 document.addEventListener('DOMContentLoaded', () => {
@@ -341,34 +349,30 @@ document.querySelectorAll('.flip-card-back').forEach(back => {
 // Exemplo:
 // https://luisturra.github.io/MyPortfolio/#manutencao-preditiva-turbofan
 
+// Deep Linking + Flip automático
 window.addEventListener('load', () => {
+  const hash = window.location.hash.substring(1);
+  if (!hash) return;
 
-    // Pegamos o hash removendo o #
-    const projectId = window.location.hash.substring(1);
+  setTimeout(() => {
+    const target = document.getElementById(hash);
+    if (!target) return;
 
-    if (projectId) {
-
-        // Delay para AOS / Typed terminarem
-        setTimeout(() => {
-
-            const targetElement = document.getElementById(projectId);
-
-            if (targetElement) {
-
-                // Flip automático
-                if (targetElement.classList.contains('flip-card')) {
-                    targetElement.classList.add('flipped');
-                }
-
-                // Scroll suave
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
-            }
-
-        }, 800);
+    // Flip automático em cards
+    if (target.classList.contains('flip-card')) {
+      target.classList.add('flipped');
     }
+
+    // Scroll suave com offset
+    const headerOffset = 80;
+    const elementPosition = target.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }, 1000); // delay maior por causa do AOS + Typed
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -411,4 +415,30 @@ navLinks.forEach(link => {
             }
         }
     });
+});
+// Smooth scroll para todos os links âncora
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      e.preventDefault();
+
+      const headerOffset = 80; // ajuste conforme sua navbar
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Fecha menu mobile
+      const aside = document.querySelector('.aside');
+      const toggler = document.querySelector('.nav-toggler');
+      if (aside) aside.classList.remove('open');
+      if (toggler) toggler.classList.remove('active');
+    }
+  });
 });
