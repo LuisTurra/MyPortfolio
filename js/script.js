@@ -1,17 +1,17 @@
 // Modo claro
 const colorPalette = [
-  { primary: "#1e293b", accent: "#6366f1", text: "#1e293b" },  
-  { primary: "#0f172a", accent: "#5665e6", text: "#1e293b" },  
-  { primary: "#334155", accent: "#637aee", text: "#1e293b" },  
-  { primary: "#1e3a8a", accent: "#60a5fa", text: "#1e293b" },  
+  { primary: "#1e293b", accent: "#6366f1", text: "#1e293b" },
+  { primary: "#0f172a", accent: "#5665e6", text: "#1e293b" },
+  { primary: "#334155", accent: "#637aee", text: "#1e293b" },
+  { primary: "#1e3a8a", accent: "#60a5fa", text: "#1e293b" },
 ];
 
 // Modo escuro
 const darkColorPalette = [
-  { primary: "#0f172a", accent: "#818cf8", text: "#f1f5f9" },  
-  { primary: "#1e293b", accent: "#a5b4fc", text: "#e2e8f0" },  
-  { primary: "#111827", accent: "#6366f1", text: "#f8fafc" },  
-  { primary: "#1e40af", accent: "#c7d2fe", text: "#ffffff" },  
+  { primary: "#0f172a", accent: "#818cf8", text: "#f1f5f9" },
+  { primary: "#1e293b", accent: "#a5b4fc", text: "#e2e8f0" },
+  { primary: "#111827", accent: "#6366f1", text: "#f8fafc" },
+  { primary: "#1e40af", accent: "#c7d2fe", text: "#ffffff" },
 ];
 
 // Luminância
@@ -32,7 +32,7 @@ function getContrastRatio(hex1, hex2) {
   return (lightest + 0.05) / (darkest + 0.05);
 }
 
-// Ajuste de luminosidade 
+// Ajuste de luminosidade
 function adjustLightness(hex, amount) {
   let usePound = false;
   if (hex[0] === "#") {
@@ -41,11 +41,14 @@ function adjustLightness(hex, amount) {
   }
   let num = parseInt(hex, 16);
   let r = (num >> 16) / 255;
-  let g = (num >> 8 & 255) / 255;
+  let g = ((num >> 8) & 255) / 255;
   let b = (num & 255) / 255;
 
-  let max = Math.max(r, g, b), min = Math.min(r, g, b);
-  let h, s, l = (max + min) / 2;
+  let max = Math.max(r, g, b),
+    min = Math.min(r, g, b);
+  let h,
+    s,
+    l = (max + min) / 2;
 
   if (max === min) {
     h = s = 0;
@@ -53,9 +56,15 @@ function adjustLightness(hex, amount) {
     let d = max - min;
     s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
     switch (max) {
-      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-      case g: h = (b - r) / d + 2; break;
-      case b: h = (r - g) / d + 4; break;
+      case r:
+        h = (g - b) / d + (g < b ? 6 : 0);
+        break;
+      case g:
+        h = (b - r) / d + 2;
+        break;
+      case b:
+        h = (r - g) / d + 4;
+        break;
     }
     h /= 6;
   }
@@ -69,32 +78,37 @@ function adjustLightness(hex, amount) {
     const hue2rgb = (p, q, t) => {
       if (t < 0) t += 1;
       if (t > 1) t -= 1;
-      if (t < 1/6) return p + (q - p) * 6 * t;
-      if (t < 1/2) return q;
-      if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+      if (t < 1 / 6) return p + (q - p) * 6 * t;
+      if (t < 1 / 2) return q;
+      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
       return p;
     };
     let q = l < 0.5 ? l * (1 + s) : l + s - l * s;
     let p = 2 * l - q;
-    r = hue2rgb(p, q, h + 1/3);
+    r = hue2rgb(p, q, h + 1 / 3);
     g = hue2rgb(p, q, h);
-    b = hue2rgb(p, q, h - 1/3);
+    b = hue2rgb(p, q, h - 1 / 3);
   }
 
   r = Math.round(r * 255);
   g = Math.round(g * 255);
   b = Math.round(b * 255);
 
-  return (usePound ? "#" : "") + r.toString(16).padStart(2, "0") + g.toString(16).padStart(2, "0") + b.toString(16).padStart(2, "0");
+  return (
+    (usePound ? "#" : "") +
+    r.toString(16).padStart(2, "0") +
+    g.toString(16).padStart(2, "0") +
+    b.toString(16).padStart(2, "0")
+  );
 }
 
-// Gradientes 
+// Gradientes
 function applyAnimatedBgColors(animationBaseColor) {
-  const skinVariant_L = adjustLightness(animationBaseColor, 0.08);   
+  const skinVariant_L = adjustLightness(animationBaseColor, 0.08);
   const skinVariant1 = adjustLightness(animationBaseColor, -0.05);
-  const skinVariant2 = adjustLightness(animationBaseColor, -0.10);
+  const skinVariant2 = adjustLightness(animationBaseColor, -0.1);
   const skinVariant3 = adjustLightness(animationBaseColor, -0.15);
-  const skinVariant4 = adjustLightness(animationBaseColor, -0.20);
+  const skinVariant4 = adjustLightness(animationBaseColor, -0.2);
 
   document.documentElement.style.setProperty("--skin-variant-1", skinVariant1);
   document.documentElement.style.setProperty("--skin-variant-2", skinVariant2);
@@ -107,10 +121,10 @@ function applyAnimatedBgColors(animationBaseColor) {
 function applyColorScheme(palette) {
   const { primary, accent } = palette;
 
- 
-  const textOnPrimary = getContrastRatio(primary, "#FFFFFF") >= 4.5 ? "#FFFFFF" : "#000000";
+  const textOnPrimary =
+    getContrastRatio(primary, "#FFFFFF") >= 4.5 ? "#FFFFFF" : "#000000";
 
-  const hoverColor = adjustLightness(primary, -0.15);  
+  const hoverColor = adjustLightness(primary, -0.15);
 
   document.documentElement.style.setProperty("--skin-color", primary);
   document.documentElement.style.setProperty("--accent-color", accent);
@@ -127,7 +141,9 @@ function applyColorScheme(palette) {
 
 // Cor aleatória
 function setRandomSkinColor() {
-  const palette = document.body.classList.contains("dark") ? darkColorPalette : colorPalette;
+  const palette = document.body.classList.contains("dark")
+    ? darkColorPalette
+    : colorPalette;
   const selectedPalette = palette[Math.floor(Math.random() * palette.length)];
   applyColorScheme(selectedPalette);
 }
@@ -141,8 +157,14 @@ if (dayNight) {
       icon.classList.toggle("fa-sun");
       icon.classList.toggle("fa-moon");
       document.body.classList.toggle("dark");
-      dayNight.setAttribute("aria-pressed", document.body.classList.contains("dark"));
-      localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+      dayNight.setAttribute(
+        "aria-pressed",
+        document.body.classList.contains("dark"),
+      );
+      localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark") ? "dark" : "light",
+      );
       setRandomSkinColor();
     }
   };
@@ -170,38 +192,43 @@ if (dayNight) {
 // Inicialização de AOS
 AOS.init({ duration: 800, once: true });
 // Efeito de digitação
-new Typed('.typing', {
-  strings: ['Cientista de Dados', 'Analista de Dados', 'Entusiasta de Machine Learning'],
+new Typed(".typing", {
+  strings: [
+    "Cientista de Dados",
+    "Analista de Dados",
+    "Entusiasta de Machine Learning",
+  ],
   typeSpeed: 100,
   backSpeed: 60,
-  loop: true
+  loop: true,
 });
 // Navegação
-document.querySelector('.nav-toggler').addEventListener('click', () => {
-  const navToggler = document.querySelector('.nav-toggler');
-  const aside = document.querySelector('.aside');
-  aside.classList.toggle('open');
-  navToggler.classList.toggle('active');
-  navToggler.classList.add('clicked');
-  setTimeout(() => navToggler.classList.remove('clicked'), 300);
+document.querySelector(".nav-toggler").addEventListener("click", () => {
+  const navToggler = document.querySelector(".nav-toggler");
+  const aside = document.querySelector(".aside");
+  aside.classList.toggle("open");
+  navToggler.classList.toggle("active");
+  navToggler.classList.add("clicked");
+  setTimeout(() => navToggler.classList.remove("clicked"), 300);
 });
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Fechar menu ao clicar em um link
 // ==================== SCROLL SPY MELHORADO ====================
-const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('.aside .nav li a');
+const sections = document.querySelectorAll(".section");
+const navLinks = document.querySelectorAll(".aside .nav li a");
 
 function updateActiveSection() {
-  let current = '';
+  let current = "";
   let maxVisiblePercentage = 0;
 
-  sections.forEach(section => {
+  sections.forEach((section) => {
     const rect = section.getBoundingClientRect();
-    const id = section.getAttribute('id');
-    
+    const id = section.getAttribute("id");
+
     // Calcula quanto da seção está visível na tela
-    const visibleHeight = Math.max(0, 
-      Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0)
+    const visibleHeight = Math.max(
+      0,
+      Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0),
     );
     const visiblePercentage = visibleHeight / rect.height;
 
@@ -212,50 +239,53 @@ function updateActiveSection() {
     }
   });
 
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
     }
   });
 }
 
 // Debounce para melhor performance
 let scrollTimeout;
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   clearTimeout(scrollTimeout);
   scrollTimeout = setTimeout(updateActiveSection, 10);
 });
 
 // Atualiza também no load e resize
-window.addEventListener('load', updateActiveSection);
-window.addEventListener('resize', updateActiveSection);
+window.addEventListener("load", updateActiveSection);
+window.addEventListener("resize", updateActiveSection);
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-// Animação da Skills 
-document.addEventListener('DOMContentLoaded', () => {
-  const skillsItems = document.querySelectorAll('.skills-item');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      const progressIn = entry.target.querySelector('.progress-in');
-      const width = progressIn.getAttribute('data-progress-width');
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('animated');
-          progressIn.style.setProperty('--progress-width', width);
-        }, index * 200);
-      } else {
-        entry.target.classList.remove('animated');
-        progressIn.style.setProperty('--progress-width', '0%');
-      }
-    });
-  }, { threshold: 0.1 });
+// Animação da Skills
+document.addEventListener("DOMContentLoaded", () => {
+  const skillsItems = document.querySelectorAll(".skills-item");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        const progressIn = entry.target.querySelector(".progress-in");
+        const width = progressIn.getAttribute("data-progress-width");
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add("animated");
+            progressIn.style.setProperty("--progress-width", width);
+          }, index * 200);
+        } else {
+          entry.target.classList.remove("animated");
+          progressIn.style.setProperty("--progress-width", "0%");
+        }
+      });
+    },
+    { threshold: 0.1 },
+  );
 
-  skillsItems.forEach(item => observer.observe(item));
+  skillsItems.forEach((item) => observer.observe(item));
 });
 // Efeito 3D na imagem inicial
-const homeImg = document.querySelector('.home-img img');
+const homeImg = document.querySelector(".home-img img");
 if (homeImg) {
-  homeImg.addEventListener('mousemove', (e) => {
+  homeImg.addEventListener("mousemove", (e) => {
     const rect = homeImg.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
@@ -263,29 +293,36 @@ if (homeImg) {
     const tiltY = -(x / rect.width) * 10;
     homeImg.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.05)`;
   });
-  homeImg.addEventListener('mouseleave', () => {
-    homeImg.style.transform = 'rotateX(0) rotateY(0) scale(1)';
+  homeImg.addEventListener("mouseleave", () => {
+    homeImg.style.transform = "rotateX(0) rotateY(0) scale(1)";
   });
 }
 // Animação da linha do tempo
-const timelineItems = document.querySelectorAll('.timeline-item');
-const timelineObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelector('.circle-dot').style.animationPlayState = 'running';
-    } else {
-      entry.target.querySelector('.circle-dot').style.animationPlayState = 'paused';
-    }
-  });
-}, { threshold: 0.2 });
-timelineItems.forEach(item => timelineObserver.observe(item));
+const timelineItems = document.querySelectorAll(".timeline-item");
+const timelineObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.querySelector(".circle-dot").style.animationPlayState =
+          "running";
+      } else {
+        entry.target.querySelector(".circle-dot").style.animationPlayState =
+          "paused";
+      }
+    });
+  },
+  { threshold: 0.2 },
+);
+timelineItems.forEach((item) => timelineObserver.observe(item));
 
 // Efeito ripple nos botões
-const buttons = document.querySelectorAll('.dashboard-btn, .relatorio-btn, .github-link');
-buttons.forEach(button => {
-  button.addEventListener('click', function (e) {
-    const ripple = document.createElement('span');
-    ripple.classList.add('ripple');
+const buttons = document.querySelectorAll(
+  ".dashboard-btn, .relatorio-btn, .github-link",
+);
+buttons.forEach((button) => {
+  button.addEventListener("click", function (e) {
+    const ripple = document.createElement("span");
+    ripple.classList.add("ripple");
     const rect = button.getBoundingClientRect();
     const size = Math.max(rect.width, rect.height);
     ripple.style.width = ripple.style.height = `${size}px`;
@@ -297,50 +334,54 @@ buttons.forEach(button => {
 });
 // Altura consistente dos cards do dashboard
 function setConsistentCardHeights() {
-  const dashboardCards = document.querySelectorAll('.dashboard .flip-card');
+  const dashboardCards = document.querySelectorAll(".dashboard .flip-card");
   let maxHeight = 0;
 
-  dashboardCards.forEach(card => {
-    card.style.height = 'auto';
+  dashboardCards.forEach((card) => {
+    card.style.height = "auto";
     const height = card.offsetHeight;
     if (height > maxHeight) maxHeight = height;
   });
 
-  dashboardCards.forEach(card => {
+  dashboardCards.forEach((card) => {
     card.style.height = `${maxHeight}px`;
   });
 }
 
-window.addEventListener('load', setConsistentCardHeights);
-window.addEventListener('resize', setConsistentCardHeights);
+window.addEventListener("load", setConsistentCardHeights);
+window.addEventListener("resize", setConsistentCardHeights);
 
 // Cards e flips
-document.querySelectorAll('.hover-indicator-btn').forEach(btn => {
-  const overlay = btn.closest('.project-card').querySelector('.project-overlay');
-  const background = btn.closest('.project-card').querySelector('.project-background');
+document.querySelectorAll(".hover-indicator-btn").forEach((btn) => {
+  const overlay = btn
+    .closest(".project-card")
+    .querySelector(".project-overlay");
+  const background = btn
+    .closest(".project-card")
+    .querySelector(".project-background");
 
-  btn.addEventListener('mouseenter', () => {
-    overlay.style.opacity = '0';
-    background.style.transform = 'scale(1.03)';
+  btn.addEventListener("mouseenter", () => {
+    overlay.style.opacity = "0";
+    background.style.transform = "scale(1.03)";
   });
 
-  btn.addEventListener('mouseleave', () => {
-    overlay.style.opacity = '1';
-    background.style.transform = 'scale(1)';
-  });
-});
-
-document.querySelectorAll('.flip-trigger').forEach(trigger => {
-  trigger.addEventListener('click', () => {
-    trigger.closest('.flip-card').classList.toggle('flipped');
+  btn.addEventListener("mouseleave", () => {
+    overlay.style.opacity = "1";
+    background.style.transform = "scale(1)";
   });
 });
 
-document.querySelectorAll('.flip-card-back').forEach(back => {
-  back.addEventListener('click', (e) => {
-    e.stopPropagation();  
-    if (!e.target.closest('a, button, .scrollable-content')) {
-      back.closest('.flip-card').classList.remove('flipped');
+document.querySelectorAll(".flip-trigger").forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    trigger.closest(".flip-card").classList.toggle("flipped");
+  });
+});
+
+document.querySelectorAll(".flip-card-back").forEach((back) => {
+  back.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (!e.target.closest("a, button, .scrollable-content")) {
+      back.closest(".flip-card").classList.remove("flipped");
     }
   });
 });
@@ -350,7 +391,7 @@ document.querySelectorAll('.flip-card-back').forEach(back => {
 // https://luisturra.github.io/MyPortfolio/#manutencao-preditiva-turbofan
 
 // Deep Linking + Flip automático
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
   const hash = window.location.hash.substring(1);
   if (!hash) return;
 
@@ -359,8 +400,8 @@ window.addEventListener('load', () => {
     if (!target) return;
 
     // Flip automático em cards
-    if (target.classList.contains('flip-card')) {
-      target.classList.add('flipped');
+    if (target.classList.contains("flip-card")) {
+      target.classList.add("flipped");
     }
 
     // Scroll suave com offset
@@ -370,7 +411,7 @@ window.addEventListener('load', () => {
 
     window.scrollTo({
       top: offsetPosition,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   }, 1000); // delay maior por causa do AOS + Typed
 });
@@ -378,48 +419,44 @@ window.addEventListener('load', () => {
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Intercepta cliques internos e transforma em #id
 
-navLinks.forEach(link => {
+navLinks.forEach((link) => {
+  link.addEventListener("click", function (e) {
+    const href = this.getAttribute("href");
 
-    link.addEventListener('click', function(e) {
+    // Verifica se é âncora interna
+    if (href.startsWith("#")) {
+      const targetId = href.substring(1);
 
-        const href = this.getAttribute('href');
+      const targetElement = document.getElementById(targetId);
 
-        // Verifica se é âncora interna
-        if (href.startsWith('#')) {
+      if (targetElement) {
+        e.preventDefault();
 
-            const targetId = href.substring(1);
+        // Atualiza URL para #id
+        history.pushState(
+          { id: targetId },
+          "",
+          window.location.pathname + "#" + targetId,
+        );
 
-            const targetElement = document.getElementById(targetId);
+        // Scroll suave
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
 
-            if (targetElement) {
-
-                e.preventDefault();
-
-                // Atualiza URL para #id
-                history.pushState(
-                    { id: targetId },
-                    '',
-                    window.location.pathname + '#' + targetId
-                );
-
-                // Scroll suave
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
-
-                // Flip automático
-                if (targetElement.classList.contains('flip-card')) {
-                    targetElement.classList.add('flipped');
-                }
-            }
+        // Flip automático
+        if (targetElement.classList.contains("flip-card")) {
+          targetElement.classList.add("flipped");
         }
-    });
+      }
+    }
+  });
 });
 // Smooth scroll para todos os links âncora
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const targetId = this.getAttribute('href').substring(1);
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    const targetId = this.getAttribute("href").substring(1);
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
@@ -431,14 +468,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
 
       // Fecha menu mobile
-      const aside = document.querySelector('.aside');
-      const toggler = document.querySelector('.nav-toggler');
-      if (aside) aside.classList.remove('open');
-      if (toggler) toggler.classList.remove('active');
+      const aside = document.querySelector(".aside");
+      const toggler = document.querySelector(".nav-toggler");
+      if (aside) aside.classList.remove("open");
+      if (toggler) toggler.classList.remove("active");
     }
   });
 });

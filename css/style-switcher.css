@@ -1,21 +1,20 @@
 .day-night {
-    
-    top: calc(20px + 50px + 10px);
-    right: 20px;
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    font-size: 20px;
-    background: var(--bg-black-100);
-    color: var(--text-black-700);
-    border: 1px solid var(--bg-black-50);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 50%;
-    z-index: 101;
-    overflow: hidden;
+  top: calc(20px + 50px + 10px);
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  font-size: 20px;
+  background: var(--bg-black-100);
+  color: var(--text-black-700);
+  border: 1px solid var(--bg-black-50);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  z-index: 101;
+  overflow: hidden;
 }
 
 .day-night i {
-    line-height: 40px;
+  line-height: 40px;
 }

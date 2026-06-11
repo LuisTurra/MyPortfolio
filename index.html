@@ -1,766 +1,1011 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Luis Turra | Projetos e Experiência</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <title>Document</title>
     <!--====CSS files-->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="css/style-switcher.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style-switcher.css" />
     <!-- <link rel=" stylesheet" href="css/LiquidEther.css"> -->
-    <meta property="og:title" content="Luis Turra's Portfolio - AI & Data Projects">
-    <meta property="og:description" content="Explore my work in sentiment analysis, machine learning, and more.">
-    <meta property="og:image" content="https://luisturra.github.io/MyPortfolio/images/portfolio.jpg">
+    <meta
+      property="og:title"
+      content="Luis Turra's Portfolio - AI & Data Projects"
+    />
+    <meta
+      property="og:description"
+      content="Explore my work in sentiment analysis, machine learning, and more."
+    />
+    <meta
+      property="og:image"
+      content="https://luisturra.github.io/MyPortfolio/images/portfolio.jpg"
+    />
     <!-- Use a relevant image URL from your repo -->
-    <meta property="og:url" content="https://luisturra.github.io/MyPortfolio/">
-    <meta property="og:type" content="website">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta
+      property="og:url"
+      content="https://luisturra.github.io/MyPortfolio/"
+    />
+    <meta property="og:type" content="website" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <!-- <script src="js/LiquidEther.js" defer></script> -->
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- ****************************************************************************************************************** -->
     <!-- ****************************************************************************************************************** -->
     <!-- ****************************************************************************************************************** -->
     <!--====Main Container start====-->
     <div class="main-container">
-        <!-- ****************************************************************************************************************** -->
-        <!-- ****************************************************************************************************************** -->
-        <!-- ****************************************************************************************************************** -->
-        <!--====aside start====-->
-        <div class="aside">
-            <div class="nav-toggler">
+      <!-- ****************************************************************************************************************** -->
+      <!-- ****************************************************************************************************************** -->
+      <!-- ****************************************************************************************************************** -->
+      <!--====aside start====-->
+      <div class="aside">
+        <div class="nav-toggler">
+          <label class="toggle toggle2">
+            <div id="bar4" class="bars"></div>
+            <div id="bar5" class="bars"></div>
+            <div id="bar6" class="bars"></div>
+          </label>
+        </div>
+        <div class="image-wrapper">
+          <div class="aside-img">
+            <img
+              src="image/me.jpg"
+              alt="Luis Turra profile picture"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <ul class="nav">
+          <li>
+            <a href="#home"><i class="fa fa-home"></i>Home</a>
+          </li>
+          <li>
+            <a href="#about"><i class="fa fa-user"></i>Sobre</a>
+          </li>
+          <!-- <li><a href="game/game.html">Jogar Desafio do Caminho</a></li> -->
+          <li class="open">
+            <!--Projetos Destaques--------------------------------------------------->
+            <a href="#dashboards"
+              ><i class="fa fa-chart-line"></i>Projetos em Destaque</a
+            >
+            <ul class="nav-sub">
+              <li>
+                <a href="#churnsight"
+                  ><span class="white-ball"></span> ChurnSight AI (2026)</a
+                >
+              </li>
 
-                <label class="toggle toggle2">
-                    <div id="bar4" class="bars"></div>
-                    <div id="bar5" class="bars"></div>
-                    <div id="bar6" class="bars"></div>
-                </label>
-            </div>
-            <div class="image-wrapper">
-                <div class="aside-img">
-                    <img src="image/me.jpg" alt="Luis Turra profile picture" loading="lazy">
-                </div>
-            </div>
-            <ul class="nav">
+              <li>
+                <a href="#manutencao-preditiva-turbofan"
+                  ><span class="white-ball"></span> Manutenção Preditiva
+                  Turbofan (2025)</a
+                >
+              </li>
 
-                <li><a href="#home"><i class="fa fa-home"></i>Home</a></li>
-                <li><a href="#about"><i class="fa fa-user"></i>Sobre</a></li>
-                <!-- <li><a href="game/game.html">Jogar Desafio do Caminho</a></li> -->
-                <li class="open">
-                    <!--Projetos Destaques--------------------------------------------------->
-                    <a href="#dashboards"><i class="fa fa-chart-line"></i>Projetos em Destaque</a>
-                    <ul class="nav-sub">
-                        <li><a href="#manutencao-preditiva-turbofan"><span class="white-ball"></span> Manutenção
-                                Preditiva Turbofan
-                                (2025)</a></li>
+              <li>
+                <a href="#orsco"
+                  ><span class="white-ball"></span> Otimização de Rotas
+                  (SupplyChain Optimazer) (2025)</a
+                >
+              </li>
 
-
-
-
-                        <li><a href="#orsco"><span class="white-ball"></span> Otimização de
-                                Rotas
-                                (SupplyChain
-                                Optimazer)
-                                (2025)</a></li>
-
-                        <li><a href="#datb"><span class="white-ball"></span> Detecção de Anomalias em Transações Bitcoin
-                                (2026)</a></li>
-
-
-
-
-                    </ul>
-
-                </li>
-
-                <li>
-                    <!--Todos Projetos Destaques--------------------------------------------------->
-                    <a href="#dashboards"><i class="fa fa-chart-line"></i>Outros Projetos</a>
-                    <ul class="nav-sub">
-                        <li></li>
-
-                        <li><a href="#fraudecartãocred"><span class="white-ball"></span> Detecção de Fraude em Cartão de
-                                Crédito (2025)
-                            </a></li>
-                        <li><a href="#chicago-crime"><span class="white-ball"></span> Análise Criminal: Cidade de
-                                Chicago (2001–2025)</a></li>
-                        <li><a href="#giran"><span class="white-ball"></span> Impacto Financeiro: Conflito Irã 2026
-                                (2025)</a></li>
-                        <li><a href="#trafego-urbanosp"><span class="white-ball"></span> Otimização de
-                                Análise de Dados
-                                de Tráfego Urbano
-                                com ML</a></li>
-
-                        <li><a href="#earthquakeai"><span class="white-ball"></span> EarthQuake AI – Analisador Global
-                                de Risco Sísmico com Previsão por Inteligência Artificial
-                                (2025)</a></li>
-                        <li><a href="#ptcrnn"><span class="white-ball"></span> Previsão de Taxas de Câmbio com RNN
-                                (2026)</a></li>
-                        <li><a href="#chatbot"><span class="white-ball"></span> Chatbot IA Integrado ao Portfólio
-                                Pessoal
-                                (2026)</a>
-                        </li>
-                        <li><a href="#manupred"><span class="white-ball"></span> Sistema de Manutenção Preditiva de
-                                Máquinas Industriais</a>
-                        </li>
-                        <li><a href="#xgchutes"><span class="white-ball"></span> xG Model - Brasileirão Série A 2025</a>
-                        </li>
-
-                        <li><a href="#analisehidro"><span class="white-ball"></span> Análise de Eficiência Hidráulica
-                                com Regressão (2026)</a>
-                        </li>
-                        <li><a href="#analise-carros-usados"><span class="white-ball"></span> Dashboard e Predição de
-                                Carro Usados
-                                (2025)</a></li>
-                        <li><a href="#sistema-financeiro"><span class="white-ball"></span> Simulação FInanceira
-                                (2025)</a></li>
-                        <li><a href="#invest"><span class="white-ball"></span> Otimização de Portfólio de Investimentos
-                                - Teoria Moderna de Markowitz
-                                (2026)</a></li>
-                        <li><a href="#recomendacao-colheita"><span class="white-ball"></span> Sistema de Recomendação de
-                                Cultura
-                                (2025)</a></li>
-                        <li><a href="#precoboi"><span class="white-ball"></span> PreçoBoiBR - Preço do Boi Gordo no
-                                Brasil
-                            </a></li>
-                        <li><a href="#analise-eletricidade"><span class="white-ball"></span> Custo de Eletricidade
-                                Dashboard
-                                (2025)</a></li>
-
-
-                    </ul>
-                </li>
-                <li>
-                    <!--Projetos SQL--------------------------------------------------->
-                    <a href="#dashboards"><i class="fa fa-chart-line"></i>Projetos SQL</a>
-                    <ul class="nav-sub">
-                        <li></li>
-                        <li><a href="#sql5"><span class="white-ball"></span> Northwind Business Intelligence
-                                (2026)</a>
-                        </li>
-                        <li><a href="#sql1"><span class="white-ball"></span> Data Warehouse com Star Schema no Dataset
-                                Olist
-                                (2026)</a>
-                        </li>
-                        <li><a href="#sql2"><span class="white-ball"></span> Análise de Viagens de Táxi em Nova York com
-                                DuckDB + Python</a>
-                        </li>
-                        <li><a href="#sql3"><span class="white-ball"></span> Otimização de Queries SQL: Performance e
-                                Consumo de Recursos</a>
-                        </li>
-                        <li><a href="#sql4"><span class="white-ball"></span> DuckGuard: Avaliação de Saúde e Otimização
-                                de Queries</a>
-                        </li>
-                        <li><a href="#sql6"><span class="white-ball"></span> Dashboard de Análise Financeira: Análise de Risco de Crédito</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <!--Projetos Jogos--------------------------------------------------->
-                    <a href="#dashboards"><i class="fa fa-chart-line"></i>Jogos</a>
-                    <ul class="nav-sub">
-                        <li></li>
-                        <li><a href="#jogo1"><span class="white-ball"></span> Code Path Challenge/Caminho Codificado</a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li>
-                    <!--Projetos PBI e Excel--------------------------------------------------->
-                    <a href="#dashboards"><i class="fa fa-chart-line"></i>Power BI e Excel</a>
-                    <ul class="nav-sub">
-
-                        <li><a href="#analise-salario"><span class="white-ball"></span> DashBoard Salários de Dados
-                                (2025)</a>
-                        </li>
-
-                        <li><a href="#analise-sentimento-headset"><span class="white-ball"></span> Analise de Sentimento
-                                de Produtos Headset Amazon Kindle Store
-                                (2025)</a></li>
-                        <li><a href="#analise-shopify"><span class="white-ball"></span> Análise Shopify (2025)</a></li>
-                        <li><a href="#analise-netflix"><span class="white-ball"></span> Netflix Análise (2025)</a></li>
-                        <li><a href="#analise-demissoes"><span class="white-ball"></span> Demissões Dashboard (2025)</a>
-                        </li>
-                        <li><a href="#analise-contratacao"><span class="white-ball"></span> Contratação Dashboard
-                                (2025)</a></li>
-                        <li><a href="#analise-bicicle"><span class="white-ball"></span> Análise de Vendas de Bicicletas
-                                (2025)</a></li>
-
-                    </ul>
-                </li>
-                <li><a href="#portfolio"><i class="fa fa-briefcase"></i>Projetos Acadêmicos</a></li>
-
+              <li>
+                <a href="#datb"
+                  ><span class="white-ball"></span> Detecção de Anomalias em
+                  Transações Bitcoin (2026)</a
+                >
+              </li>
             </ul>
-        </div>
-        <!--====aside END====-->
+          </li>
+
+          <li>
+            <!--Todos Projetos Destaques--------------------------------------------------->
+            <a href="#dashboards"
+              ><i class="fa fa-chart-line"></i>Outros Projetos</a
+            >
+            <ul class="nav-sub">
+              <li></li>
+
+              <li>
+                <a href="#fraudecartãocred"
+                  ><span class="white-ball"></span> Detecção de Fraude em Cartão
+                  de Crédito (2025)
+                </a>
+              </li>
+              <li>
+                <a href="#chicago-crime"
+                  ><span class="white-ball"></span> Análise Criminal: Cidade de
+                  Chicago (2001–2025)</a
+                >
+              </li>
+              <li>
+                <a href="#giran"
+                  ><span class="white-ball"></span> Impacto Financeiro: Conflito
+                  Irã 2026 (2025)</a
+                >
+              </li>
+              <li>
+                <a href="#trafego-urbanosp"
+                  ><span class="white-ball"></span> Otimização de Análise de
+                  Dados de Tráfego Urbano com ML</a
+                >
+              </li>
+
+              <li>
+                <a href="#earthquakeai"
+                  ><span class="white-ball"></span> EarthQuake AI – Analisador
+                  Global de Risco Sísmico com Previsão por Inteligência
+                  Artificial (2025)</a
+                >
+              </li>
+              <li>
+                <a href="#ptcrnn"
+                  ><span class="white-ball"></span> Previsão de Taxas de Câmbio
+                  com RNN (2026)</a
+                >
+              </li>
+              <li>
+                <a href="#chatbot"
+                  ><span class="white-ball"></span> Chatbot IA Integrado ao
+                  Portfólio Pessoal (2026)</a
+                >
+              </li>
+              <li>
+                <a href="#manupred"
+                  ><span class="white-ball"></span> Sistema de Manutenção
+                  Preditiva de Máquinas Industriais</a
+                >
+              </li>
+              <li>
+                <a href="#xgchutes"
+                  ><span class="white-ball"></span> xG Model - Brasileirão Série
+                  A 2025</a
+                >
+              </li>
+
+              <li>
+                <a href="#analisehidro"
+                  ><span class="white-ball"></span> Análise de Eficiência
+                  Hidráulica com Regressão (2026)</a
+                >
+              </li>
+              <li>
+                <a href="#analise-carros-usados"
+                  ><span class="white-ball"></span> Dashboard e Predição de
+                  Carro Usados (2025)</a
+                >
+              </li>
+              <li>
+                <a href="#sistema-financeiro"
+                  ><span class="white-ball"></span> Simulação FInanceira
+                  (2025)</a
+                >
+              </li>
+              <li>
+                <a href="#invest"
+                  ><span class="white-ball"></span> Otimização de Portfólio de
+                  Investimentos - Teoria Moderna de Markowitz (2026)</a
+                >
+              </li>
+              <li>
+                <a href="#recomendacao-colheita"
+                  ><span class="white-ball"></span> Sistema de Recomendação de
+                  Cultura (2025)</a
+                >
+              </li>
+              <li>
+                <a href="#precoboi"
+                  ><span class="white-ball"></span> PreçoBoiBR - Preço do Boi
+                  Gordo no Brasil
+                </a>
+              </li>
+              <li>
+                <a href="#analise-eletricidade"
+                  ><span class="white-ball"></span> Custo de Eletricidade
+                  Dashboard (2025)</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <!--Projetos SQL--------------------------------------------------->
+            <a href="#dashboards"
+              ><i class="fa fa-chart-line"></i>Projetos SQL</a
+            >
+            <ul class="nav-sub">
+              <li></li>
+              <li>
+                <a href="#sql5"
+                  ><span class="white-ball"></span> Northwind Business
+                  Intelligence (2026)</a
+                >
+              </li>
+              <li>
+                <a href="#sql1"
+                  ><span class="white-ball"></span> Data Warehouse com Star
+                  Schema no Dataset Olist (2026)</a
+                >
+              </li>
+              <li>
+                <a href="#sql2"
+                  ><span class="white-ball"></span> Análise de Viagens de Táxi
+                  em Nova York com DuckDB + Python</a
+                >
+              </li>
+              <li>
+                <a href="#sql3"
+                  ><span class="white-ball"></span> Otimização de Queries SQL:
+                  Performance e Consumo de Recursos</a
+                >
+              </li>
+              <li>
+                <a href="#sql4"
+                  ><span class="white-ball"></span> DuckGuard: Avaliação de
+                  Saúde e Otimização de Queries</a
+                >
+              </li>
+              <li>
+                <a href="#sql6"
+                  ><span class="white-ball"></span> Dashboard de Análise
+                  Financeira: Análise de Risco de Crédito</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <!--Projetos Jogos--------------------------------------------------->
+            <a href="#dashboards"><i class="fa fa-chart-line"></i>Jogos</a>
+            <ul class="nav-sub">
+              <li></li>
+              <li>
+                <a href="#jogo1"
+                  ><span class="white-ball"></span> Code Path Challenge/Caminho
+                  Codificado</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <!--Projetos PBI e Excel--------------------------------------------------->
+            <a href="#dashboards"
+              ><i class="fa fa-chart-line"></i>Power BI e Excel</a
+            >
+            <ul class="nav-sub">
+              <li>
+                <a href="#analise-salario"
+                  ><span class="white-ball"></span> DashBoard Salários de Dados
+                  (2025)</a
+                >
+              </li>
+
+              <li>
+                <a href="#analise-sentimento-headset"
+                  ><span class="white-ball"></span> Analise de Sentimento de
+                  Produtos Headset Amazon Kindle Store (2025)</a
+                >
+              </li>
+              <li>
+                <a href="#analise-shopify"
+                  ><span class="white-ball"></span> Análise Shopify (2025)</a
+                >
+              </li>
+              <li>
+                <a href="#analise-netflix"
+                  ><span class="white-ball"></span> Netflix Análise (2025)</a
+                >
+              </li>
+              <li>
+                <a href="#analise-demissoes"
+                  ><span class="white-ball"></span> Demissões Dashboard
+                  (2025)</a
+                >
+              </li>
+              <li>
+                <a href="#analise-contratacao"
+                  ><span class="white-ball"></span> Contratação Dashboard
+                  (2025)</a
+                >
+              </li>
+              <li>
+                <a href="#analise-bicicle"
+                  ><span class="white-ball"></span> Análise de Vendas de
+                  Bicicletas (2025)</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#portfolio"
+              ><i class="fa fa-briefcase"></i>Projetos Acadêmicos</a
+            >
+          </li>
+        </ul>
+      </div>
+      <!--====aside END====-->
+      <!-- ****************************************************************************************************************** -->
+      <!-- ****************************************************************************************************************** -->
+      <!-- ****************************************************************************************************************** -->
+      <!--====Main Content start====-->
+      <div class="main-content">
+        <!--====home section start====-->
+        <section class="home section" id="home" data-aos="fade-up">
+          <div class="animated-bg"></div>
+          <div class="container">
+            <div class="row">
+              <div class="home-info padd-15" data-aos="fade-right">
+                <h3 class="hello">
+                  Olá meu nome é <span class="random-color"> Luis Turra</span>
+                </h3>
+                <h2 class="profession">
+                  Eu sou <span class="typing">Cientista de Dados</span>
+                </h2>
+                <p>
+                  Sou cientista de dados com paixão por descobrir insights em
+                  conjuntos de dados. Adoro transformar dados em soluções
+                  práticas por meio de análises e modelagem inovadora.
+                </p>
+                <a href="#" class="btn hire-trigger">Contratar</a>
+              </div>
+
+              <div class="home-img padd-15" data-aos="fade-left">
+                <img
+                  src="image/me.jpg"
+                  alt="Luis Turra profile picture"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--====home section end====-->
         <!-- ****************************************************************************************************************** -->
         <!-- ****************************************************************************************************************** -->
         <!-- ****************************************************************************************************************** -->
-        <!--====Main Content start====-->
-        <div class="main-content">
-            <!--====home section start====-->
-            <section class="home section" id="home" data-aos="fade-up">
-                <div class="animated-bg"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="home-info padd-15" data-aos="fade-right">
-                            <h3 class="hello">
-                                Olá meu nome é <span class="random-color"> Luis Turra</span></h3>
-                            <h2 class="profession">Eu sou <span class="typing">Cientista de Dados</span></h2>
-                            <p>Sou cientista de dados com paixão por descobrir insights em conjuntos de dados. Adoro
-                                transformar dados em soluções práticas por meio de análises e modelagem inovadora.
+        <!--====About section start====-->
+        <section class="about section" id="about" data-aos="fade-up">
+          <div class="container">
+            <!-- About Me Title and Description -->
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Sobre Mim</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="about-text padd-15" data-aos="fade-up">
+                <h3>
+                  Eu sou Luis Turra e
+                  <span class="random-color">Cientista de Dados</span>
+                </h3>
+                <p>
+                  Tenho 30 anos, nasci e cresci na cidade de Adamantina-SP.
+                  Gosto de Programação e Estatística.
+                </p>
+              </div>
+            </div>
 
-                            </p>
-                            <a href="#" class="btn hire-trigger">Contratar</a>
-                        </div>
-
-                        <div class="home-img padd-15" data-aos="fade-left">
-                            <img src="image/me.jpg" alt="Luis Turra profile picture" loading="lazy">
-                        </div>
-                    </div>
+            <!-- Personal Info and Skills Container -->
+            <div class="row about-content">
+              <!-- Personal Info -->
+              <div class="personal-info padd-15" data-aos="fade-right">
+                <h3 class="title">informações</h3>
+                <div class="info-box shadow-dark">
+                  <div class="info-item">
+                    <p>
+                      <strong>Data de Nascimento:</strong>
+                      <span>23 Novembro 1994</span>
+                    </p>
+                  </div>
+                  <div class="info-item">
+                    <p>
+                      <strong>Email:</strong> <span>luisturraef@gmail.com</span>
+                    </p>
+                  </div>
+                  <div class="info-item">
+                    <p>
+                      <strong>Formação:</strong> <span>Ciência de Dados</span>
+                    </p>
+                  </div>
+                  <div class="info-item">
+                    <p>
+                      <strong>Fone:</strong> <span> (18) 99639 - 8298 </span>
+                    </p>
+                  </div>
+                  <div class="info-item">
+                    <p><strong>Cidade:</strong> <span>Adamantina-SP</span></p>
+                  </div>
+                  <div class="info-item">
+                    <p>
+                      <strong>Trabalho:</strong> <span>Buscando emprego</span>
+                    </p>
+                  </div>
                 </div>
-            </section>
-            <!--====home section end====-->
-            <!-- ****************************************************************************************************************** -->
-            <!-- ****************************************************************************************************************** -->
-            <!-- ****************************************************************************************************************** -->
-            <!--====About section start====-->
-            <section class="about section" id="about" data-aos="fade-up">
-                <div class="container">
-                    <!-- About Me Title and Description -->
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>Sobre Mim</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="about-text padd-15" data-aos="fade-up">
-                            <h3>Eu sou Luis Turra e <span class="random-color">Cientista de Dados</span></h3>
-                            <p>Tenho 30 anos, nasci e cresci na cidade de Adamantina-SP. Gosto de Programação e
-                                Estatística.</p>
-                        </div>
-                    </div>
+              </div>
+            </div>
+            <div class="about-charts">
+              <h2 class="charts-title">Tecnologias e Skills mais utilizadas</h2>
 
-                    <!-- Personal Info and Skills Container -->
-                    <div class="row about-content">
-                        <!-- Personal Info -->
-                        <div class="personal-info padd-15" data-aos="fade-right">
-                            <h3 class="title">informações</h3>
-                            <div class="info-box shadow-dark">
-                                <div class="info-item">
-                                    <p><strong>Data de Nascimento:</strong> <span>23 Novembro 1994</span></p>
-                                </div>
-                                <div class="info-item">
-                                    <p><strong>Email:</strong> <span>luisturraef@gmail.com</span></p>
-                                </div>
-                                <div class="info-item">
-                                    <p><strong>Formação:</strong> <span>Ciência de Dados</span></p>
-                                </div>
-                                <div class="info-item">
-                                    <p><strong>Fone:</strong> <span> (18) 99639 - 8298 </span></p>
-                                </div>
-                                <div class="info-item">
-                                    <p><strong>Cidade:</strong> <span>Adamantina-SP</span></p>
-                                </div>
-                                <div class="info-item">
-                                    <p><strong>Trabalho:</strong> <span>Buscando emprego</span></p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="about-charts ">
-                        <h2 class="charts-title ">Tecnologias e Skills mais utilizadas</h2>
-
-                        <div class="charts-grid">
-                            <div class="chart-card">
-                                <div class="chart-container">
-                                    <canvas id="techChart"></canvas>
-                                </div>
-                            </div>
-
-                            <div class="chart-card">
-                                <div class="chart-container">
-                                    <canvas id="skillsChart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Buttons -->
-                    <div class="row">
-                        <div class="buttons padd-15" data-aos="fade-up">
-                            <a href="download/CV.pdf" class="btn"><i class="fas fa-download"></i>
-                                Baixar CV</a>
-                            <a href="#" class="btn hire-trigger">Contratar</a>
-                        </div>
-                    </div>
-
-                    <!-- Education -->
-                    <div class="row">
-                        <div class="education padd-15">
-                            <h3 class="title">Educação</h3>
-                            <div class="timeline-box padd-15">
-                                <div class="timeline shadow-dark">
-                                    <div class="timeline-item">
-                                        <div class="circle-dot"></div>
-                                        <h3 class="timeline-date">
-                                            <i class="fa fa-calendar"></i> 2019 - 2020
-                                        </h3>
-                                        <h4 class="timeline-title">Técnico Desenvolvimento de Sistemas</h4>
-                                        <p class="timeline-text">Curso Técnico de Desenvolvimento de Sistemas pela ETEC
-                                            Eudécio Luiz Vicente na cidade de Adamantina-SP, onde tive aprendizado em
-                                            desenvolvimento de websites, aplicações desktop, mobile e servidor nas
-                                            linguagens de programação Java, C#, HTML, CSS, Javascript, PHP e MySQL.</p>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="circle-dot"></div>
-                                        <h3 class="timeline-date">
-                                            <i class="fa fa-calendar"></i> 2020 - 2023
-                                        </h3>
-                                        <h4 class="timeline-title">Ciência de Dados</h4>
-                                        <p class="timeline-text">Graduado em Ciência de Dados pela FATEC Adamantina-SP,
-                                            onde adquiriu conhecimentos em análise de dados, machine learning e
-                                            estatística. Ferramentas como Power BI, Excel, Jupyter Notebook, Python e R
-                                            foram utilizadas durante o curso.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              <div class="charts-grid">
+                <div class="chart-card">
+                  <div class="chart-container">
+                    <canvas id="techChart"></canvas>
+                  </div>
                 </div>
-            </section>
-            <!--====About section end====-->
-            <!-- ****************************************************************************************************************** -->
-            <!-- ****************************************************************************************************************** -->
-            <!-- ****************************************************************************************************************** -->
-            <!--====Projetos em Destaque start====-->
-            <section class="portfolio section" id="dashboards">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>Projetos em Destaque</h2>
-                        </div>
-                    </div>
-                    <div id="projetos-destaque-container">
 
-                    </div>
+                <div class="chart-card">
+                  <div class="chart-container">
+                    <canvas id="skillsChart"></canvas>
+                  </div>
                 </div>
-            </section>
+              </div>
+            </div>
 
+            <!-- Buttons -->
+            <div class="row">
+              <div class="buttons padd-15" data-aos="fade-up">
+                <a href="download/CV.pdf" class="btn"
+                  ><i class="fas fa-download"></i> Baixar CV</a
+                >
+                <a href="#" class="btn hire-trigger">Contratar</a>
+              </div>
+            </div>
 
-            <!-- ****************************************************************************************************************** -->
-            <!-- DASHBOARD items start-->
-            <section class="portfolio section bg-dark text-white" id="dashboards">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>Outros Projetos</h2>
-                        </div>
+            <!-- Education -->
+            <div class="row">
+              <div class="education padd-15">
+                <h3 class="title">Educação</h3>
+                <div class="timeline-box padd-15">
+                  <div class="timeline shadow-dark">
+                    <div class="timeline-item">
+                      <div class="circle-dot"></div>
+                      <h3 class="timeline-date">
+                        <i class="fa fa-calendar"></i> 2019 - 2020
+                      </h3>
+                      <h4 class="timeline-title">
+                        Técnico Desenvolvimento de Sistemas
+                      </h4>
+                      <p class="timeline-text">
+                        Curso Técnico de Desenvolvimento de Sistemas pela ETEC
+                        Eudécio Luiz Vicente na cidade de Adamantina-SP, onde
+                        tive aprendizado em desenvolvimento de websites,
+                        aplicações desktop, mobile e servidor nas linguagens de
+                        programação Java, C#, HTML, CSS, Javascript, PHP e
+                        MySQL.
+                      </p>
                     </div>
-                    <div id="todos-projetos-container">
-
+                    <div class="timeline-item">
+                      <div class="circle-dot"></div>
+                      <h3 class="timeline-date">
+                        <i class="fa fa-calendar"></i> 2020 - 2023
+                      </h3>
+                      <h4 class="timeline-title">Ciência de Dados</h4>
+                      <p class="timeline-text">
+                        Graduado em Ciência de Dados pela FATEC Adamantina-SP,
+                        onde adquiriu conhecimentos em análise de dados, machine
+                        learning e estatística. Ferramentas como Power BI,
+                        Excel, Jupyter Notebook, Python e R foram utilizadas
+                        durante o curso.
+                      </p>
                     </div>
+                  </div>
                 </div>
-            </section>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--====About section end====-->
+        <!-- ****************************************************************************************************************** -->
+        <!-- ****************************************************************************************************************** -->
+        <!-- ****************************************************************************************************************** -->
+        <!--====Projetos em Destaque start====-->
+        <section class="portfolio section" id="dashboards">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Projetos em Destaque</h2>
+              </div>
+            </div>
+            <div id="projetos-destaque-container"></div>
+          </div>
+        </section>
 
+        <!-- ****************************************************************************************************************** -->
+        <!-- DASHBOARD items start-->
+        <section class="portfolio section bg-dark text-white" id="dashboards">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Outros Projetos</h2>
+              </div>
+            </div>
+            <div id="todos-projetos-container"></div>
+          </div>
+        </section>
 
-            <!-- ****************************************************************************************************************** -->
-            <!--====todos projetos end====-->
-            <!-- ****************************************************************************************************************** -->
-            <!-- Projetos SQL items start-->
-            <section class="portfolio section bg-dark text-white" id="dashboards">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>Projetos SQL</h2>
+        <!-- ****************************************************************************************************************** -->
+        <!--====todos projetos end====-->
+        <!-- ****************************************************************************************************************** -->
+        <!-- Projetos SQL items start-->
+        <section class="portfolio section bg-dark text-white" id="dashboards">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Projetos SQL</h2>
+              </div>
+            </div>
+            <div id="projetos-sql-container"></div>
+          </div>
+        </section>
+
+        <!--====Projetos SQL items end====-->
+        <!-- ****************************************************************************************************************** -->
+        <!-- ****************************************************************************************************************** -->
+        <!-- ****************************************************************************************************************** -->
+        <!-- Jogos items start-->
+        <section class="portfolio section bg-dark text-white" id="dashboards">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Jogos</h2>
+              </div>
+            </div>
+            <div id="jogos-container"></div>
+          </div>
+        </section>
+
+        <!--====Jogos items end====-->
+        <!-- ****************************************************************************************************************** -->
+        <!-- ****************************************************************************************************************** -->
+        <!-- ****************************************************************************************************************** -->
+        <!-- ****************************************************************************************************************** -->
+        <!-- DASHBOARD items start-->
+        <section class="portfolio section bg-dark text-white" id="dashboards">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Power Bi e Excel</h2>
+              </div>
+            </div>
+            <div id="excelPBI-container"></div>
+          </div>
+        </section>
+
+        <!--====DASHBOARD section end====-->
+        <!-- ****************************************************************************************************************** -->
+        <!-- ****************************************************************************************************************** -->
+        <!-- ****************************************************************************************************************** -->
+
+        <!-- ****************************************************************************************************************** -->
+        <!-- ****************************************************************************************************************** -->
+        <!-- ****************************************************************************************************************** -->
+        <!--====portifolio section start====-->
+        <section class="portfolio section" id="portfolio">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Projetos Acadêmicos</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="portfolio-heading padd-15">
+                <h2>Meus últimos projetos:</h2>
+              </div>
+            </div>
+            <div class="row portfolio-items">
+              <!-- Portfolio Item 1 -->
+              <div class="portfolio-item padd-15" data-aos="fade-up">
+                <div class="portfolio-item-inner shadow-dark">
+                  <div
+                    class="flip-card"
+                    onclick="this.classList.toggle('flipped')"
+                  >
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <h2>Web Climático (2021)</h2>
+                        <p class="portfolio-description">
+                          Desenvolvimento de um site para análise de dados de
+                          temperatura e CO₂ no campus, utilizando algoritmos
+                          matemáticos e estatísticos para visualização de
+                          padrões climáticos. Projeto desenvolvido como parte do
+                          meu curso de Ciência de Dados.
+                        </p>
+                      </div>
+                      <div class="flip-card-back">
+                        <div class="row">
+                          <div class="column">
+                            <div class="portfolio-tools">
+                              <strong
+                                ><span class="highlight"
+                                  >Ferramentas:</span
+                                ></strong
+                              >
+                              <ul>
+                                <li>Visual Code</li>
+                                <li>Jupyter Notebook</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="column">
+                            <div class="portfolio-tools">
+                              <strong
+                                ><span class="highlight">Skills:</span></strong
+                              >
+                              <ul>
+                                <li>PHP</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>Python</li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
+                        <button
+                          class="relatorio-btn"
+                          onclick="
+                            window.open(
+                              'relatoriopdf/Projeto Integrador 2.pdf',
+                              '_blank',
+                            )
+                          "
+                        >
+                          📄 Relatório
+                        </button>
+                        <a
+                          href="https://github.com/LuisTurra/Web_Climatico.git"
+                          target="_blank"
+                          class="github-link"
+                        >
+                          View on GitHub
+                        </a>
+                      </div>
                     </div>
-                    <div id="projetos-sql-container">
-
-                    </div>
+                  </div>
                 </div>
-            </section>
-
-            <!--====Projetos SQL items end====-->
-            <!-- ****************************************************************************************************************** -->
-            <!-- ****************************************************************************************************************** -->
-            <!-- ****************************************************************************************************************** -->
-            <!-- Jogos items start-->
-            <section class="portfolio section bg-dark text-white" id="dashboards">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>Jogos</h2>
+              </div>
+              <!-- Portfolio Item 2 -->
+              <div class="portfolio-item padd-15" data-aos="fade-up">
+                <div class="portfolio-item-inner shadow-dark">
+                  <div
+                    class="flip-card"
+                    onclick="this.classList.toggle('flipped')"
+                  >
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <h2>Searcher (2022)</h2>
+                        <p class="portfolio-description">
+                          Software de mecanismo de busca para pesquisar
+                          informações em um banco de dados MySQL, com uso de
+                          processamento de linguagem natural para filtrar as
+                          informações. Projeto desenvolvido como parte do meu
+                          curso de Ciência de Dados.
+                        </p>
+                      </div>
+                      <div class="flip-card-back">
+                        <div class="row">
+                          <div class="column">
+                            <div class="portfolio-tools">
+                              <strong
+                                ><span class="highlight"
+                                  >Ferramentas:</span
+                                ></strong
+                              >
+                              <ul>
+                                <li>Jupyter Notebook</li>
+                                <li>MySQL</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="column">
+                            <div class="portfolio-tools">
+                              <strong
+                                ><span class="highlight">Skills:</span></strong
+                              >
+                              <ul>
+                                <li>Python</li>
+                                <li>MySQL</li>
+                                <li>Pandas</li>
+                                <li>NLTK</li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
+                        <a
+                          href="https://github.com/LuisTurra/MotorDeBusca.git"
+                          target="_blank"
+                          class="github-link"
+                        >
+                          View on GitHub
+                        </a>
+                      </div>
                     </div>
-                    <div id="jogos-container">
-
-                    </div>
+                  </div>
                 </div>
-            </section>
-
-            <!--====Jogos items end====-->
-            <!-- ****************************************************************************************************************** -->
-            <!-- ****************************************************************************************************************** -->
-            <!-- ****************************************************************************************************************** -->
-            <!-- ****************************************************************************************************************** -->
-            <!-- DASHBOARD items start-->
-            <section class="portfolio section bg-dark text-white" id="dashboards">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>Power Bi e Excel</h2>
+              </div>
+              <!-- Portfolio Item 3 -->
+              <div class="portfolio-item padd-15" data-aos="fade-up">
+                <div class="portfolio-item-inner shadow-dark">
+                  <div
+                    class="flip-card"
+                    onclick="this.classList.toggle('flipped')"
+                  >
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <h2>Sistema de Recomendação (2023)</h2>
+                        <p class="portfolio-description">
+                          Utilização de um banco de dados com livros e aplicação
+                          de pré-processamento de dados. Projeto desenvolvido
+                          como parte do meu curso de Ciência de Dados.
+                        </p>
+                      </div>
+                      <div class="flip-card-back">
+                        <div class="row">
+                          <div class="column">
+                            <div class="portfolio-tools">
+                              <strong
+                                ><span class="highlight"
+                                  >Ferramentas:</span
+                                ></strong
+                              >
+                              <ul>
+                                <li>Jupyter Notebook</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="column">
+                            <div class="portfolio-tools">
+                              <strong
+                                ><span class="highlight">Skills:</span></strong
+                              >
+                              <ul>
+                                <li>Python</li>
+                                <li>Pandas</li>
+                                <li>NLTK</li>
+                                <li>Machine Learning</li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
+                        <a
+                          href="https://github.com/LuisTurra/SistemaRecomendacao.git"
+                          target="_blank"
+                          class="github-link"
+                        >
+                          View on GitHub
+                        </a>
+                      </div>
                     </div>
-                    <div id="excelPBI-container">
-
-                    </div>
+                  </div>
                 </div>
-            </section>
+              </div>
 
-            <!--====DASHBOARD section end====-->
-            <!-- ****************************************************************************************************************** -->
-            <!-- ****************************************************************************************************************** -->
-            <!-- ****************************************************************************************************************** -->
-
-            <!-- ****************************************************************************************************************** -->
-            <!-- ****************************************************************************************************************** -->
-            <!-- ****************************************************************************************************************** -->
-            <!--====portifolio section start====-->
-            <section class="portfolio section" id="portfolio">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>Projetos Acadêmicos</h2>
+              <!-- Portfolio Item 4 -->
+              <div class="portfolio-item padd-15" data-aos="fade-up">
+                <div class="portfolio-item-inner shadow-dark">
+                  <div
+                    class="flip-card"
+                    onclick="this.classList.toggle('flipped')"
+                  >
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <h2>Trabalho de Graduação (2023)</h2>
+                        <p class="portfolio-description">
+                          Uso de Redes Neurais Convolucionais para o
+                          Reconhecimento de LIBRAS: Dissertação utilizando uma
+                          Rede Neural Convolucional para classificar imagens de
+                          identificação de sinais gestuais. Projeto desenvolvido
+                          como parte do meu curso de Ciência de Dados.
+                        </p>
+                      </div>
+                      <div class="flip-card-back">
+                        <div class="row">
+                          <div class="column">
+                            <div class="portfolio-tools">
+                              <strong
+                                ><span class="highlight"
+                                  >Ferramentas:</span
+                                ></strong
+                              >
+                              <ul>
+                                <li>Jupyter Notebook</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="column">
+                            <div class="portfolio-tools">
+                              <strong
+                                ><span class="highlight">Skills:</span></strong
+                              >
+                              <ul>
+                                <li>Python</li>
+                                <li>Deep Learning</li>
+                                <li>Tensorflow</li>
+                                <li>Matplotlib</li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
+                        <button
+                          class="relatorio-btn"
+                          onclick="
+                            window.open(
+                              'relatoriopdf/TCC_Anderson_Luis_FINAL_IMPRES.pdf',
+                              '_blank',
+                            )
+                          "
+                        >
+                          📄 Relatório
+                        </button>
+                        <a
+                          href="https://github.com/LuisTurra/convolutionary-neural-networks-for-hand-signs.git"
+                          target="_blank"
+                          class="github-link"
+                        >
+                          View on GitHub
+                        </a>
+                      </div>
                     </div>
-                    <div class="row">
-                        <div class="portfolio-heading padd-15">
-                            <h2>Meus últimos projetos:</h2>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item 5 -->
+              <div class="portfolio-item padd-15" data-aos="fade-up">
+                <div class="portfolio-item-inner shadow-dark">
+                  <div
+                    class="flip-card"
+                    onclick="this.classList.toggle('flipped')"
+                  >
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <h2>Meu Portfólio (2025)</h2>
+                        <p class="portfolio-description">
+                          Meu portfólio pessoal, onde apresento meus projetos e
+                          habilidades. Este site foi desenvolvido para mostrar
+                          meu trabalho e facilitar o contato com potenciais
+                          empregadores.
+                        </p>
+                      </div>
+                      <div class="flip-card-back">
+                        <div class="row">
+                          <div class="column">
+                            <div class="portfolio-tools">
+                              <strong
+                                ><span class="highlight"
+                                  >Ferramentas:</span
+                                ></strong
+                              >
+                              <ul>
+                                <li>Visual Code</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="column">
+                            <div class="portfolio-tools">
+                              <strong
+                                ><span class="highlight">Skills:</span></strong
+                              >
+                              <ul>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
+                        <a
+                          href="https://github.com/LuisTurra/MyPortfolio.git"
+                          target="_blank"
+                          class="github-link"
+                        >
+                          View on GitHub
+                        </a>
+                      </div>
                     </div>
-                    <div class="row portfolio-items">
-                        <!-- Portfolio Item 1 -->
-                        <div class="portfolio-item padd-15" data-aos="fade-up">
-                            <div class="portfolio-item-inner shadow-dark">
-                                <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="flip-card-inner">
-                                        <div class="flip-card-front">
-                                            <h2>Web Climático (2021)</h2>
-                                            <p class="portfolio-description">
-                                                Desenvolvimento de um site para análise de dados de temperatura e
-                                                CO₂ no
-                                                campus,
-                                                utilizando algoritmos matemáticos e estatísticos para visualização
-                                                de
-                                                padrões
-                                                climáticos. Projeto desenvolvido como parte do meu curso de Ciência
-                                                de
-                                                Dados.
-                                            </p>
-                                        </div>
-                                        <div class="flip-card-back">
-                                            <div class="row">
-                                                <div class="column">
-                                                    <div class="portfolio-tools">
-                                                        <strong><span class="highlight">Ferramentas:</span></strong>
-                                                        <ul>
-                                                            <li>Visual Code</li>
-                                                            <li>Jupyter Notebook</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="column">
-                                                    <div class="portfolio-tools">
-                                                        <strong><span class="highlight">Skills:</span></strong>
-                                                        <ul>
-                                                            <li>PHP</li>
-                                                            <li>HTML</li>
-                                                            <li>CSS</li>
-                                                            <li>Python</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="relatorio-btn"
-                                                onclick="window.open('relatoriopdf/Projeto Integrador 2.pdf', '_blank')">📄
-                                                Relatório</button>
-                                            <a href="https://github.com/LuisTurra/Web_Climatico.git" target="_blank"
-                                                class="github-link">
-                                                View on GitHub
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Portfolio Item 2 -->
-                        <div class="portfolio-item padd-15" data-aos="fade-up">
-                            <div class="portfolio-item-inner shadow-dark">
-                                <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="flip-card-inner">
-                                        <div class="flip-card-front">
-                                            <h2>Searcher (2022)</h2>
-                                            <p class="portfolio-description">
-                                                Software de mecanismo de busca para
-                                                pesquisar informações em um banco de dados MySQL, com
-                                                uso de processamento de linguagem natural para filtrar as
-                                                informações. Projeto desenvolvido como parte do meu curso de Ciência
-                                                de
-                                                Dados.
-                                            </p>
-                                        </div>
-                                        <div class="flip-card-back">
-                                            <div class="row">
-                                                <div class="column">
-                                                    <div class="portfolio-tools">
-                                                        <strong><span class="highlight">Ferramentas:</span></strong>
-                                                        <ul>
-                                                            <li>Jupyter Notebook</li>
-                                                            <li>MySQL</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="column">
-                                                    <div class="portfolio-tools">
-                                                        <strong><span class="highlight">Skills:</span></strong>
-                                                        <ul>
-                                                            <li>Python</li>
-                                                            <li>MySQL</li>
-                                                            <li>Pandas</li>
-                                                            <li>NLTK</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <a href="https://github.com/LuisTurra/MotorDeBusca.git" target="_blank"
-                                                class="github-link">
-                                                View on GitHub
-                                            </a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Portfolio Item 3 -->
-                        <div class="portfolio-item padd-15" data-aos="fade-up">
-                            <div class="portfolio-item-inner shadow-dark">
-                                <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="flip-card-inner">
-                                        <div class="flip-card-front">
-                                            <h2>Sistema de Recomendação (2023)</h2>
-                                            <p class="portfolio-description">
-                                                Utilização de um banco
-                                                de dados com livros e aplicação de pré-processamento de
-                                                dados. Projeto desenvolvido como parte do meu curso de Ciência de
-                                                Dados.
-                                            </p>
-                                        </div>
-                                        <div class="flip-card-back">
-                                            <div class="row">
-                                                <div class="column">
-                                                    <div class="portfolio-tools">
-                                                        <strong><span class="highlight">Ferramentas:</span></strong>
-                                                        <ul>
-                                                            <li>Jupyter Notebook</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="column">
-                                                    <div class="portfolio-tools">
-                                                        <strong><span class="highlight">Skills:</span></strong>
-                                                        <ul>
-                                                            <li>Python</li>
-                                                            <li>Pandas</li>
-                                                            <li>NLTK</li>
-                                                            <li>Machine Learning</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <a href="https://github.com/LuisTurra/SistemaRecomendacao.git"
-                                                target="_blank" class="github-link">
-                                                View on GitHub
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Portfolio Item 4 -->
-                        <div class="portfolio-item padd-15" data-aos="fade-up">
-                            <div class="portfolio-item-inner shadow-dark">
-                                <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="flip-card-inner">
-                                        <div class="flip-card-front">
-                                            <h2>Trabalho de Graduação (2023)</h2>
-                                            <p class="portfolio-description">
-                                                Uso de Redes Neurais Convolucionais para o
-                                                Reconhecimento de LIBRAS: Dissertação utilizando uma
-                                                Rede Neural Convolucional para classificar imagens de
-                                                identificação de sinais gestuais. Projeto desenvolvido como parte do
-                                                meu
-                                                curso
-                                                de
-                                                Ciência de Dados.
-                                            </p>
-                                        </div>
-                                        <div class="flip-card-back">
-                                            <div class="row">
-                                                <div class="column">
-                                                    <div class="portfolio-tools">
-                                                        <strong><span class="highlight">Ferramentas:</span></strong>
-                                                        <ul>
-                                                            <li>Jupyter Notebook</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="column">
-                                                    <div class="portfolio-tools">
-                                                        <strong><span class="highlight">Skills:</span></strong>
-                                                        <ul>
-                                                            <li>Python</li>
-                                                            <li>Deep Learning</li>
-                                                            <li>Tensorflow</li>
-                                                            <li>Matplotlib</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="relatorio-btn"
-                                                onclick="window.open('relatoriopdf/TCC_Anderson_Luis_FINAL_IMPRES.pdf', '_blank')">📄
-                                                Relatório</button>
-                                            <a href="https://github.com/LuisTurra/convolutionary-neural-networks-for-hand-signs.git"
-                                                target="_blank" class="github-link">
-                                                View on GitHub
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Portfolio Item 5 -->
-                        <div class="portfolio-item padd-15" data-aos="fade-up">
-                            <div class="portfolio-item-inner shadow-dark">
-                                <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="flip-card-inner">
-                                        <div class="flip-card-front">
-                                            <h2>Meu Portfólio (2025)</h2>
-                                            <p class="portfolio-description">
-                                                Meu portfólio pessoal, onde apresento meus projetos e habilidades.
-                                                Este site foi desenvolvido para mostrar meu trabalho e facilitar o
-                                                contato com
-                                                potenciais empregadores.
-                                            </p>
-                                        </div>
-                                        <div class="flip-card-back">
-                                            <div class="row">
-                                                <div class="column">
-                                                    <div class="portfolio-tools">
-                                                        <strong><span class="highlight">Ferramentas:</span></strong>
-                                                        <ul>
-                                                            <li>Visual Code</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="column">
-                                                    <div class="portfolio-tools">
-                                                        <strong><span class="highlight">Skills:</span></strong>
-                                                        <ul>
-                                                            <li>HTML</li>
-                                                            <li>CSS</li>
-                                                            <li>JavaScript</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <a href="https://github.com/LuisTurra/MyPortfolio.git" target="_blank"
-                                                class="github-link">
-                                                View on GitHub
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </section>
-            <!-- portfolio section end-->
-            <!-- ****************************************************************************************************************** -->
-            <!-- ****************************************************************************************************************** -->
-
-        </div>
-        <!--====Main Content end====-->
-        <!--====FOOTER START====-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- portfolio section end-->
+        <!-- ****************************************************************************************************************** -->
+        <!-- ****************************************************************************************************************** -->
+      </div>
+      <!--====Main Content end====-->
+      <!--====FOOTER START====-->
     </div>
     <footer class="footer">
-        <div class="container">
-
-            <div class="footer-content padd-15">
-                <p>&copy; 2025 Luis Turra. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/luis-turra-786442251/" target="_blank"><i
-                            class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/LuisTurra" target="_blank"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-
+      <div class="container">
+        <div class="footer-content padd-15">
+          <p>&copy; 2025 Luis Turra. All rights reserved.</p>
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/luis-turra-786442251/"
+              target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://github.com/LuisTurra" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
         </div>
+      </div>
     </footer>
     <!--====FOOTER end====-->
     <!-- ****************************************************************************************************************** -->
     <!-- ****************************************************************************************************************** -->
     <!-- ****************************************************************************************************************** -->
     <div class="fixed-buttons">
-        <div class="day-night s-icon" role="button" tabindex="0">
-            <i class="fas fa-moon">
-            </i>
-        </div>
-        <div class="game-toggle s-icon" role="button" tabindex="0" onclick="window.location.href='game/game.html'">
-            <i class="fas fa-gamepad"></i>
-        </div>
-
-
+      <div class="day-night s-icon" role="button" tabindex="0">
+        <i class="fas fa-moon"> </i>
+      </div>
+      <div
+        class="game-toggle s-icon"
+        role="button"
+        tabindex="0"
+        onclick="window.location.href = 'game/game.html'"
+      >
+        <i class="fas fa-gamepad"></i>
+      </div>
     </div>
     <!-- ==================== CONTACT MODAL ==================== -->
     <div id="hireModal" class="hire-modal">
-        <div class="hire-modal-content">
-            <span class="hire-close">×</span>
-            <h3>Como você quer me contratar?</h3>
+      <div class="hire-modal-content">
+        <span class="hire-close">×</span>
+        <h3>Como você quer me contratar?</h3>
 
-            <div class="hire-buttons">
-                <a href="https://www.linkedin.com/in/luis-turra-786442251/" target="_blank"
-                    class="hire-btn hire-linkedin">
-                    <i class="fab fa-linkedin"></i> Ver LinkedIn
-                </a>
+        <div class="hire-buttons">
+          <a
+            href="https://www.linkedin.com/in/luis-turra-786442251/"
+            target="_blank"
+            class="hire-btn hire-linkedin"
+          >
+            <i class="fab fa-linkedin"></i> Ver LinkedIn
+          </a>
 
-                <button type="button" class="hire-btn hire-email" id="openEmailForm">
-                    <i class="fas fa-envelope"></i> Enviar e‑mail
-                </button>
-            </div>
-
-            <!-- ----- EMAIL FORM (hidden at first) ----- -->
-            <form id="emailForm" class="hire-email-form" action="https://formspree.io/f/meovjjeq" method="POST">
-                <input type="text" name="name" placeholder="Seu nome" required>
-                <input type="email" name="_replyto" placeholder="Seu e‑mail" required>
-                <textarea name="message" rows="4" placeholder="Mensagem (projeto, vaga…)" required></textarea>
-                <button type="submit" class="hire-submit">Enviar</button>
-                <button type="button" class="hire-cancel">Cancelar</button>
-            </form>
+          <button type="button" class="hire-btn hire-email" id="openEmailForm">
+            <i class="fas fa-envelope"></i> Enviar e‑mail
+          </button>
         </div>
+
+        <!-- ----- EMAIL FORM (hidden at first) ----- -->
+        <form
+          id="emailForm"
+          class="hire-email-form"
+          action="https://formspree.io/f/meovjjeq"
+          method="POST"
+        >
+          <input type="text" name="name" placeholder="Seu nome" required />
+          <input
+            type="email"
+            name="_replyto"
+            placeholder="Seu e‑mail"
+            required
+          />
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="Mensagem (projeto, vaga…)"
+            required
+          ></textarea>
+          <button type="submit" class="hire-submit">Enviar</button>
+          <button type="button" class="hire-cancel">Cancelar</button>
+        </form>
+      </div>
     </div>
     <!-- TOAST DE AVISO DE CARREGAMENTO -->
 
@@ -769,730 +1014,923 @@
     <!-- <script src="js/style-switcher.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
     <script>
-        // JavaScript to toggle dashboard visibility
-        function toggleDashboard(dashboardId) {
-            const dashboard = document.getElementById(dashboardId);
-            if (dashboard.style.display === "none" || dashboard.style.display === "") {
-                dashboard.style.display = "block";
-            } else {
-                dashboard.style.display = "none";
+      // JavaScript to toggle dashboard visibility
+      function toggleDashboard(dashboardId) {
+        const dashboard = document.getElementById(dashboardId);
+        if (
+          dashboard.style.display === "none" ||
+          dashboard.style.display === ""
+        ) {
+          dashboard.style.display = "block";
+        } else {
+          dashboard.style.display = "none";
+        }
+        const button = document.querySelector(".dashboard-btn");
+        dashboard.classList.toggle("active");
+        button.textContent = dashboard.classList.contains("active")
+          ? "Hide Dashboard"
+          : "Show Dashboard";
+      }
+
+      document.querySelector(".nav-toggler").addEventListener("click", () => {
+        const navToggler = document.querySelector(".nav-toggler");
+        const aside = document.querySelector(".aside");
+
+        // Toggle sidebar
+        aside.classList.toggle("open");
+
+        // Add .clicked class to trigger blink, then remove after animation
+        navToggler.classList.add("clicked");
+        setTimeout(() => {
+          navToggler.classList.remove("clicked");
+        }, 300); // Match animation duration (0.3s)
+      });
+      const navLinks = document.querySelectorAll(".aside .nav li a");
+
+      // Close aside when any link is clicked
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          document.querySelector(".aside").classList.remove("open");
+        });
+      });
+      window.addEventListener("load", function () {
+        const sidebar = document.querySelector(".sidebar");
+        if (sidebar) sidebar.scrollTop = 0;
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hireModal = document.getElementById("hireModal");
+        const closeBtn = document.querySelector(".hire-close");
+        const openEmail = document.getElementById("openEmailForm");
+        const emailForm = document.getElementById("emailForm");
+        const cancelEmail = document.querySelector(".hire-cancel");
+
+        // Open modal
+        document.querySelectorAll(".hire-trigger").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            hireModal.classList.add("show");
+            document.body.style.overflow = "hidden";
+          });
+        });
+
+        // Close modal
+        function closeModal() {
+          hireModal.classList.remove("show");
+          document.body.style.overflow = "";
+          emailForm.classList.remove("show");
+          emailForm.reset(); // clear form
+        }
+        closeBtn.onclick = closeModal;
+        hireModal.onclick = (e) => {
+          if (e.target === hireModal) closeModal();
+        };
+
+        // Show email form
+        openEmail.onclick = () => emailForm.classList.add("show");
+
+        // Cancel email
+        cancelEmail.onclick = () => emailForm.classList.remove("show");
+
+        // === AJAX SUBMISSION (NO REDIRECT) ===
+        emailForm.addEventListener("submit", function (e) {
+          e.preventDefault(); // Stop normal submit
+
+          const submitBtn = emailForm.querySelector(".hire-submit");
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Enviando...";
+
+          fetch(emailForm.action, {
+            method: "POST",
+            body: new FormData(emailForm),
+            headers: { Accept: "application/json" },
+          })
+            .then((response) => {
+              if (response.ok) {
+                alert(
+                  "Mensagem enviada com sucesso! Entrarei em contato em até 24h.",
+                );
+                closeModal();
+              } else {
+                throw new Error("Erro no envio");
+              }
+            })
+            .catch(() => {
+              alert(
+                "Erro ao enviar. Tente novamente ou me contate pelo LinkedIn.",
+              );
+            })
+            .finally(() => {
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Enviar";
+            });
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const destaqueContainer = document.getElementById(
+          "projetos-destaque-container",
+        );
+        const todosContainer = document.getElementById(
+          "todos-projetos-container",
+        );
+        const sqlContainer = document.getElementById("projetos-sql-container");
+        const excelPBIContainer = document.getElementById("excelPBI-container");
+        const jogosContainer = document.getElementById("jogos-container");
+
+        // Mensagem de loading
+        destaqueContainer.innerHTML =
+          '<p style="text-align:center; padding:50px;">Carregando projetos em destaque...</p>';
+        todosContainer.innerHTML =
+          '<p style="text-align:center; padding:50px;">Carregando todos os projetos...</p>';
+        sqlContainer.innerHTML =
+          '<p style="text-align:center; padding:50px;">Carregando projetos SQL...</p>';
+        excelPBIContainer.innerHTML =
+          '<p style="text-align:center; padding:50px;">Carregando projetos Excel e PBI...</p>';
+        jogosContainer.innerHTML =
+          '<p style="text-align:center; padding:50px;">Carregando projetos Excel e PBI...</p>';
+
+        // Função para inicializar TODOS os efeitos nos cards novos
+        function initCards(container) {
+          // 1. Reinicia AOS (animações de entrada)
+          if (typeof AOS !== "undefined") {
+            AOS.refresh();
+          }
+
+          // 2. Flip cards (clique no trigger da frente)
+          container.querySelectorAll(".flip-trigger").forEach((trigger) => {
+            trigger.addEventListener("click", (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              trigger.closest(".flip-card").classList.toggle("flipped");
+            });
+          });
+
+          // 3. Virar de volta ao clicar no verso (exceto em links/botões)
+          container.querySelectorAll(".flip-card-back").forEach((back) => {
+            back.addEventListener("click", (e) => {
+              if (!e.target.closest("a, button, .scrollable-content")) {
+                back.closest(".flip-card").classList.remove("flipped");
+              }
+            });
+          });
+
+          // 4. Efeito de preview/hover no botão 👁️ Preview (o que estava faltando!)
+          container.querySelectorAll(".hover-indicator-btn").forEach((btn) => {
+            const overlay = btn
+              .closest(".project-card")
+              .querySelector(".project-overlay");
+            const background = btn
+              .closest(".project-card")
+              .querySelector(".project-background");
+
+            btn.addEventListener("mouseenter", () => {
+              if (overlay) overlay.style.opacity = "0";
+              if (background) background.style.transform = "scale(1.03)";
+            });
+
+            btn.addEventListener("mouseleave", () => {
+              if (overlay) overlay.style.opacity = "1";
+              if (background) background.style.transform = "scale(1)";
+            });
+          });
+
+          // 5. Força animação dos GIFs no background (comum em background-image)
+          container.querySelectorAll(".project-background").forEach((bg) => {
+            const current = bg.style.backgroundImage;
+            if (current) {
+              bg.style.backgroundImage = "none";
+              bg.offsetHeight; // reflow
+              bg.style.backgroundImage = current;
             }
-            const button = document.querySelector('.dashboard-btn');
-            dashboard.classList.toggle('active');
-            button.textContent = dashboard.classList.contains('active') ? 'Hide Dashboard' : 'Show Dashboard';
+          });
+
+          // 6. Altura consistente dos cards (função que já existe no seu script.js)
+          if (typeof setConsistentCardHeights === "function") {
+            setConsistentCardHeights();
+          }
+          setupDashboardButtons();
         }
 
-        document.querySelector('.nav-toggler').addEventListener('click', () => {
-            const navToggler = document.querySelector('.nav-toggler');
-            const aside = document.querySelector('.aside');
+        // Cache buster (resolve o problema do refresh normal)
+        const cacheBuster = "?v=" + Date.now();
 
-            // Toggle sidebar
-            aside.classList.toggle('open');
+        // Carrega Destaque
+        fetch("projetos-destaque.html" + cacheBuster)
+          .then((response) => {
+            if (!response.ok) throw new Error("Arquivo não encontrado");
+            return response.text();
+          })
+          .then((data) => {
+            destaqueContainer.innerHTML = data;
+            initCards(destaqueContainer);
+          })
+          .catch((err) => {
+            destaqueContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
+          });
 
-            // Add .clicked class to trigger blink, then remove after animation
-            navToggler.classList.add('clicked');
-            setTimeout(() => {
-                navToggler.classList.remove('clicked');
-            }, 300); // Match animation duration (0.3s)
-        });
-        const navLinks = document.querySelectorAll('.aside .nav li a');
-
-        // Close aside when any link is clicked
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.aside').classList.remove('open');
-            });
-        });
-        window.addEventListener('load', function () {
-            const sidebar = document.querySelector('.sidebar');
-            if (sidebar) sidebar.scrollTop = 0;
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const hireModal = document.getElementById('hireModal');
-            const closeBtn = document.querySelector('.hire-close');
-            const openEmail = document.getElementById('openEmailForm');
-            const emailForm = document.getElementById('emailForm');
-            const cancelEmail = document.querySelector('.hire-cancel');
-
-            // Open modal
-            document.querySelectorAll('.hire-trigger').forEach(btn => {
-                btn.addEventListener('click', e => {
-                    e.preventDefault();
-                    hireModal.classList.add('show');
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-
-            // Close modal
-            function closeModal() {
-                hireModal.classList.remove('show');
-                document.body.style.overflow = '';
-                emailForm.classList.remove('show');
-                emailForm.reset(); // clear form
-            }
-            closeBtn.onclick = closeModal;
-            hireModal.onclick = e => { if (e.target === hireModal) closeModal(); };
-
-            // Show email form
-            openEmail.onclick = () => emailForm.classList.add('show');
-
-            // Cancel email
-            cancelEmail.onclick = () => emailForm.classList.remove('show');
-
-            // === AJAX SUBMISSION (NO REDIRECT) ===
-            emailForm.addEventListener('submit', function (e) {
-                e.preventDefault(); // Stop normal submit
-
-                const submitBtn = emailForm.querySelector('.hire-submit');
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Enviando...';
-
-                fetch(emailForm.action, {
-                    method: 'POST',
-                    body: new FormData(emailForm),
-                    headers: { 'Accept': 'application/json' }
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            alert('Mensagem enviada com sucesso! Entrarei em contato em até 24h.');
-                            closeModal();
-                        } else {
-                            throw new Error('Erro no envio');
-                        }
-                    })
-                    .catch(() => {
-                        alert('Erro ao enviar. Tente novamente ou me contate pelo LinkedIn.');
-                    })
-                    .finally(() => {
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = 'Enviar';
-                    });
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const destaqueContainer = document.getElementById('projetos-destaque-container');
-            const todosContainer = document.getElementById('todos-projetos-container');
-            const sqlContainer = document.getElementById('projetos-sql-container');
-            const excelPBIContainer = document.getElementById('excelPBI-container');
-            const jogosContainer = document.getElementById('jogos-container');
-
-            // Mensagem de loading
-            destaqueContainer.innerHTML = '<p style="text-align:center; padding:50px;">Carregando projetos em destaque...</p>';
-            todosContainer.innerHTML = '<p style="text-align:center; padding:50px;">Carregando todos os projetos...</p>';
-            sqlContainer.innerHTML = '<p style="text-align:center; padding:50px;">Carregando projetos SQL...</p>';
-            excelPBIContainer.innerHTML = '<p style="text-align:center; padding:50px;">Carregando projetos Excel e PBI...</p>';
-            jogosContainer.innerHTML = '<p style="text-align:center; padding:50px;">Carregando projetos Excel e PBI...</p>';
-
-            // Função para inicializar TODOS os efeitos nos cards novos
-            function initCards(container) {
-                // 1. Reinicia AOS (animações de entrada)
-                if (typeof AOS !== 'undefined') {
-                    AOS.refresh();
-                }
-
-                // 2. Flip cards (clique no trigger da frente)
-                container.querySelectorAll('.flip-trigger').forEach(trigger => {
-                    trigger.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        trigger.closest('.flip-card').classList.toggle('flipped');
-                    });
-                });
-
-                // 3. Virar de volta ao clicar no verso (exceto em links/botões)
-                container.querySelectorAll('.flip-card-back').forEach(back => {
-                    back.addEventListener('click', (e) => {
-                        if (!e.target.closest('a, button, .scrollable-content')) {
-                            back.closest('.flip-card').classList.remove('flipped');
-                        }
-                    });
-                });
-
-                // 4. Efeito de preview/hover no botão 👁️ Preview (o que estava faltando!)
-                container.querySelectorAll('.hover-indicator-btn').forEach(btn => {
-                    const overlay = btn.closest('.project-card').querySelector('.project-overlay');
-                    const background = btn.closest('.project-card').querySelector('.project-background');
-
-                    btn.addEventListener('mouseenter', () => {
-                        if (overlay) overlay.style.opacity = '0';
-                        if (background) background.style.transform = 'scale(1.03)';
-                    });
-
-                    btn.addEventListener('mouseleave', () => {
-                        if (overlay) overlay.style.opacity = '1';
-                        if (background) background.style.transform = 'scale(1)';
-                    });
-                });
-
-                // 5. Força animação dos GIFs no background (comum em background-image)
-                container.querySelectorAll('.project-background').forEach(bg => {
-                    const current = bg.style.backgroundImage;
-                    if (current) {
-                        bg.style.backgroundImage = 'none';
-                        bg.offsetHeight; // reflow
-                        bg.style.backgroundImage = current;
-                    }
-                });
-
-                // 6. Altura consistente dos cards (função que já existe no seu script.js)
-                if (typeof setConsistentCardHeights === 'function') {
-                    setConsistentCardHeights();
-                }
-                setupDashboardButtons();
-            }
-
-            // Cache buster (resolve o problema do refresh normal)
-            const cacheBuster = '?v=' + Date.now();
-
-            // Carrega Destaque
-            fetch('projetos-destaque.html' + cacheBuster)
-                .then(response => {
-                    if (!response.ok) throw new Error('Arquivo não encontrado');
-                    return response.text();
-                })
-                .then(data => {
-                    destaqueContainer.innerHTML = data;
-                    initCards(destaqueContainer);
-                })
-                .catch(err => {
-                    destaqueContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
-                });
-
-            // Carrega Todos os Projetos
-            fetch('todos-projetos.html' + cacheBuster)
-                .then(response => {
-                    if (!response.ok) throw new Error('Arquivo não encontrado');
-                    return response.text();
-                })
-                .then(data => {
-                    todosContainer.innerHTML = data;
-                    initCards(todosContainer);
-                })
-                .catch(err => {
-                    todosContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
-                });
-            // Carrega Projetos SQL
-            fetch('sql-projetos.html' + cacheBuster)
-                .then(response => {
-                    if (!response.ok) throw new Error('Arquivo não encontrado');
-                    return response.text();
-                })
-                .then(data => {
-                    sqlContainer.innerHTML = data;
-                    initCards(sqlContainer);
-                })
-                .catch(err => {
-                    sqlContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
-                });
-            // Carrega Projetos excelPBI
-            fetch('excelPBI.html' + cacheBuster)
-                .then(response => {
-                    if (!response.ok) throw new Error('Arquivo não encontrado');
-                    return response.text();
-                })
-                .then(data => {
-                    excelPBIContainer.innerHTML = data;
-                    initCards(excelPBIContainer);
-                })
-                .catch(err => {
-                    excelPBIContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
-                });
-            // Carrega Projetos Jogos
-            fetch('jogos.html' + cacheBuster)
-                .then(response => {
-                    if (!response.ok) throw new Error('Arquivo não encontrado');
-                    return response.text();
-                })
-                .then(data => {
-                    jogosContainer.innerHTML = data;
-                    initCards(jogosContainer);
-                })
-                .catch(err => {
-                    jogosContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
-                });
-        });
+        // Carrega Todos os Projetos
+        fetch("todos-projetos.html" + cacheBuster)
+          .then((response) => {
+            if (!response.ok) throw new Error("Arquivo não encontrado");
+            return response.text();
+          })
+          .then((data) => {
+            todosContainer.innerHTML = data;
+            initCards(todosContainer);
+          })
+          .catch((err) => {
+            todosContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
+          });
+        // Carrega Projetos SQL
+        fetch("sql-projetos.html" + cacheBuster)
+          .then((response) => {
+            if (!response.ok) throw new Error("Arquivo não encontrado");
+            return response.text();
+          })
+          .then((data) => {
+            sqlContainer.innerHTML = data;
+            initCards(sqlContainer);
+          })
+          .catch((err) => {
+            sqlContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
+          });
+        // Carrega Projetos excelPBI
+        fetch("excelPBI.html" + cacheBuster)
+          .then((response) => {
+            if (!response.ok) throw new Error("Arquivo não encontrado");
+            return response.text();
+          })
+          .then((data) => {
+            excelPBIContainer.innerHTML = data;
+            initCards(excelPBIContainer);
+          })
+          .catch((err) => {
+            excelPBIContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
+          });
+        // Carrega Projetos Jogos
+        fetch("jogos.html" + cacheBuster)
+          .then((response) => {
+            if (!response.ok) throw new Error("Arquivo não encontrado");
+            return response.text();
+          })
+          .then((data) => {
+            jogosContainer.innerHTML = data;
+            initCards(jogosContainer);
+          })
+          .catch((err) => {
+            jogosContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
+          });
+      });
     </script>
     <!---*************************************************************-->
     <!--**************ChatBOT***********************************************-->
     <!-- Chatbot Widget com IA (versão com estilos inline - sem Tailwind) -->
     <style>
+      #chat-widget-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        font-family: Arial, sans-serif;
+      }
+
+      #chat-toggle-btn {
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      #chat-toggle-btn:hover {
+        background: #1d4ed8;
+      }
+
+      #chat-window {
+        display: none;
+        /* começa fechado */
+        width: 380px;
+        height: 500px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        flex-direction: column;
+        margin-top: 10px;
+        border: 1px solid #e5e7eb;
+      }
+
+      #chat-window.open {
+        display: flex;
+      }
+
+      #chat-header {
+        background: #2563eb;
+        color: white;
+        padding: 15px;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      #chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 15px;
+        background: #f9fafb;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .msg-bot {
+        background: #064bd6;
+        padding: 12px;
+        border-radius: 12px;
+        max-width: 80%;
+        align-self: flex-start;
+      }
+
+      .msg-user {
+        background: #2563eb;
+        color: white;
+        padding: 12px;
+        border-radius: 12px;
+        max-width: 80%;
+        align-self: flex-end;
+      }
+
+      #chat-input-area {
+        padding: 15px;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      #chat-input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 16px;
+      }
+
+      #chat-input:focus {
+        outline: none;
+        border-color: #2563eb;
+      }
+
+      /* Adaptação para telas pequenas (≤ 420px de largura) */
+      @media (max-width: 420px) {
         #chat-widget-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            font-family: Arial, sans-serif;
+          bottom: 15px;
+          right: 15px;
         }
 
         #chat-toggle-btn {
-            background: #2563eb;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 30px;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        #chat-toggle-btn:hover {
-            background: #1d4ed8;
+          width: 55px;
+          height: 55px;
+          font-size: 28px;
         }
 
         #chat-window {
-            display: none;
-            /* começa fechado */
-            width: 380px;
-            height: 500px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            flex-direction: column;
-            margin-top: 10px;
-            border: 1px solid #e5e7eb;
-        }
-
-        #chat-window.open {
-            display: flex;
+          width: 90vw;
+          /* Usa quase toda a largura da tela */
+          max-width: 360px;
+          /* limite para não ficar gigante em tablets pequenos */
+          height: 70vh;
+          /* altura relativa à tela (70% da viewport) */
+          margin-top: 8px;
+          border-radius: 10px;
         }
 
         #chat-header {
-            background: #2563eb;
-            color: white;
-            padding: 15px;
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-            font-weight: bold;
-            text-align: center;
+          padding: 12px;
+          font-size: 16px;
         }
 
         #chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 15px;
-            background: #f9fafb;
-            gap: 10px;
-            display: flex;
-            flex-direction: column;
+          padding: 10px;
         }
 
-        .msg-bot {
-            background: #064bd6;
-            padding: 12px;
-            border-radius: 12px;
-            max-width: 80%;
-            align-self: flex-start;
-        }
-
+        .msg-bot,
         .msg-user {
-            background: #2563eb;
-            color: white;
-            padding: 12px;
-            border-radius: 12px;
-            max-width: 80%;
-            align-self: flex-end;
+          padding: 10px;
+          font-size: 14px;
+          /* texto um pouco menor, mas ainda legível */
+          max-width: 85%;
+          /* aproveita mais espaço horizontal */
         }
 
         #chat-input-area {
-            padding: 15px;
-            border-top: 1px solid #e5e7eb;
+          padding: 10px;
         }
 
         #chat-input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 16px;
+          padding: 10px;
+          font-size: 15px;
         }
-
-        #chat-input:focus {
-            outline: none;
-            border-color: #2563eb;
-        }
-
-        /* Adaptação para telas pequenas (≤ 420px de largura) */
-        @media (max-width: 420px) {
-            #chat-widget-container {
-                bottom: 15px;
-                right: 15px;
-            }
-
-            #chat-toggle-btn {
-                width: 55px;
-                height: 55px;
-                font-size: 28px;
-            }
-
-            #chat-window {
-                width: 90vw;
-                /* Usa quase toda a largura da tela */
-                max-width: 360px;
-                /* limite para não ficar gigante em tablets pequenos */
-                height: 70vh;
-                /* altura relativa à tela (70% da viewport) */
-                margin-top: 8px;
-                border-radius: 10px;
-            }
-
-            #chat-header {
-                padding: 12px;
-                font-size: 16px;
-            }
-
-            #chat-messages {
-                padding: 10px;
-            }
-
-            .msg-bot,
-            .msg-user {
-                padding: 10px;
-                font-size: 14px;
-                /* texto um pouco menor, mas ainda legível */
-                max-width: 85%;
-                /* aproveita mais espaço horizontal */
-            }
-
-            #chat-input-area {
-                padding: 10px;
-            }
-
-            #chat-input {
-                padding: 10px;
-                font-size: 15px;
-            }
-        }
+      }
     </style>
 
     <div id="chat-widget-container">
-        <button id="chat-toggle-btn">💬</button>
-        <div id="chat-window">
-            <div id="chat-header">Chat com Luis Turra</div>
-            <div id="chat-messages"></div>
-            <div id="chat-input-area">
-                <input type="text" id="chat-input" placeholder="Digite uma mensagem...">
-            </div>
+      <button id="chat-toggle-btn">💬</button>
+      <div id="chat-window">
+        <div id="chat-header">Chat com Luis Turra</div>
+        <div id="chat-messages"></div>
+        <div id="chat-input-area">
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Digite uma mensagem..."
+          />
         </div>
+      </div>
     </div>
     <script>
-        // ===== CONFIGURAÇÕES =====
-        const CHATBOT_URL = 'https://chatbot-portfolio.chatbot-portfolio.workers.dev';
+      // ===== CONFIGURAÇÕES =====
+      const CHATBOT_URL =
+        "https://chatbot-portfolio.chatbot-portfolio.workers.dev";
 
-        // Elementos
-        const toggleBtn = document.getElementById('chat-toggle-btn');
-        const chatWindow = document.getElementById('chat-window');
-        const messages = document.getElementById('chat-messages');
-        const input = document.getElementById('chat-input');
+      // Elementos
+      const toggleBtn = document.getElementById("chat-toggle-btn");
+      const chatWindow = document.getElementById("chat-window");
+      const messages = document.getElementById("chat-messages");
+      const input = document.getElementById("chat-input");
 
-        // Abre/fecha
-        toggleBtn.onclick = () => {
-            chatWindow.classList.toggle('open');
-            if (chatWindow.classList.contains('open') && messages.children.length === 0) {
-                const botMsg = document.createElement('div');
-                botMsg.className = 'msg-bot';
-                botMsg.textContent = 'Oi! Sou o assistente IA do portfólio. Pergunte sobre meus projetos de ML, dashboards ou skills! 🚀';
-                messages.appendChild(botMsg);
-            }
-        };
+      // Abre/fecha
+      toggleBtn.onclick = () => {
+        chatWindow.classList.toggle("open");
+        if (
+          chatWindow.classList.contains("open") &&
+          messages.children.length === 0
+        ) {
+          const botMsg = document.createElement("div");
+          botMsg.className = "msg-bot";
+          botMsg.textContent =
+            "Oi! Sou o assistente IA do portfólio. Pergunte sobre meus projetos de ML, dashboards ou skills! 🚀";
+          messages.appendChild(botMsg);
+        }
+      };
 
-        // Envia mensagem
-        input.addEventListener('keypress', async (e) => {
-            if (e.key === 'Enter' && input.value.trim()) {
-                const userText = input.value.trim();
-                const userMsg = document.createElement('div');
-                userMsg.className = 'msg-user';
-                userMsg.textContent = userText;
-                messages.appendChild(userMsg);
-                input.value = '';
-                messages.scrollTop = messages.scrollHeight;
+      // Envia mensagem
+      input.addEventListener("keypress", async (e) => {
+        if (e.key === "Enter" && input.value.trim()) {
+          const userText = input.value.trim();
+          const userMsg = document.createElement("div");
+          userMsg.className = "msg-user";
+          userMsg.textContent = userText;
+          messages.appendChild(userMsg);
+          input.value = "";
+          messages.scrollTop = messages.scrollHeight;
 
-                try {
-                    const response = await fetch(CHATBOT_URL + '/', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ messages: [{ role: 'user', content: userText }] })
-                    });
+          try {
+            const response = await fetch(CHATBOT_URL + "/", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                messages: [{ role: "user", content: userText }],
+              }),
+            });
 
-                    if (!response.ok) throw new Error('Erro no servidor: ' + response.status);
+            if (!response.ok)
+              throw new Error("Erro no servidor: " + response.status);
 
-                    const reader = response.body.getReader();
-                    const decoder = new TextDecoder();
-                    let buffer = '';
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            let buffer = "";
 
-                    const botMsg = document.createElement('div');
-                    botMsg.className = 'msg-bot';
-                    botMsg.textContent = 'Bot: ';
-                    messages.appendChild(botMsg);
-                    messages.scrollTop = messages.scrollHeight;
+            const botMsg = document.createElement("div");
+            botMsg.className = "msg-bot";
+            botMsg.textContent = "Bot: ";
+            messages.appendChild(botMsg);
+            messages.scrollTop = messages.scrollHeight;
 
-                    while (true) {
-                        const { done, value } = await reader.read();
-                        if (done) break;
+            while (true) {
+              const { done, value } = await reader.read();
+              if (done) break;
 
-                        buffer += decoder.decode(value, { stream: true });
+              buffer += decoder.decode(value, { stream: true });
 
-                        let lines = buffer.split('\n');
-                        buffer = lines.pop() || '';
+              let lines = buffer.split("\n");
+              buffer = lines.pop() || "";
 
-                        for (let line of lines) {
-                            line = line.trim();
-                            if (line.startsWith('data: ')) {
-                                const dataStr = line.slice(6).trim();
-                                if (dataStr === '[DONE]') continue;
+              for (let line of lines) {
+                line = line.trim();
+                if (line.startsWith("data: ")) {
+                  const dataStr = line.slice(6).trim();
+                  if (dataStr === "[DONE]") continue;
 
-                                try {
-                                    const json = JSON.parse(dataStr);
-                                    if (json.response) {
-                                        // Adiciona caractere por caractere com atraso
-                                        for (let char of json.response) {
-                                            botMsg.textContent += char;
-                                            messages.scrollTop = messages.scrollHeight;
-                                            await new Promise(resolve => setTimeout(resolve, 30));  // 30ms por caractere → ajustável
-                                        }
-                                    }
-                                } catch (parseErr) {
-                                    console.warn('Erro ao parsear chunk:', parseErr);
-                                }
-                            }
-                        }
+                  try {
+                    const json = JSON.parse(dataStr);
+                    if (json.response) {
+                      // Adiciona caractere por caractere com atraso
+                      for (let char of json.response) {
+                        botMsg.textContent += char;
+                        messages.scrollTop = messages.scrollHeight;
+                        await new Promise((resolve) => setTimeout(resolve, 30)); // 30ms por caractere → ajustável
+                      }
                     }
-
-                    // Limpa buffer final
-                    if (buffer.trim()) {
-                        // Tenta parsear o resto se sobrar
-                    }
-                } catch (err) {
-                    const errorMsg = document.createElement('div');
-                    errorMsg.className = 'msg-bot';
-                    errorMsg.textContent = 'Erro: ' + err.message;
-                    messages.appendChild(errorMsg);
+                  } catch (parseErr) {
+                    console.warn("Erro ao parsear chunk:", parseErr);
+                  }
                 }
+              }
             }
-        });
+
+            // Limpa buffer final
+            if (buffer.trim()) {
+              // Tenta parsear o resto se sobrar
+            }
+          } catch (err) {
+            const errorMsg = document.createElement("div");
+            errorMsg.className = "msg-bot";
+            errorMsg.textContent = "Erro: " + err.message;
+            messages.appendChild(errorMsg);
+          }
+        }
+      });
     </script>
     <!-- TOAST DE AVISO DE CARREGAMENTO -->
     <div id="project-toast" class="project-toast">
-
-        <div class="toast-info">
-            <strong>⚠️ Carregando projeto...</strong>
-            <p>Projetos em plano gratuito podem demorar <strong>10 a 40 segundos</strong> para abrir.</p>
-            <small>Uma nova aba vai abrir em instantes. Aguarde um pouco! ☕</small>
-        </div>
+      <div class="toast-info">
+        <strong>⚠️ Carregando projeto...</strong>
+        <p>
+          Projetos em plano gratuito podem demorar
+          <strong>10 a 40 segundos</strong> para abrir.
+        </p>
+        <small>Uma nova aba vai abrir em instantes. Aguarde um pouco! ☕</small>
+      </div>
     </div>
 
     <script>
-        // Função que configura os botões (será chamada depois de cada carregamento)
-        function setupDashboardButtons() {
-            document.querySelectorAll('.dashboard-btn').forEach(btn => {
-                const onclickText = btn.getAttribute('onclick');
-                if (!onclickText) return;
+      // Função que configura os botões (será chamada depois de cada carregamento)
+      function setupDashboardButtons() {
+        document.querySelectorAll(".dashboard-btn").forEach((btn) => {
+          const onclickText = btn.getAttribute("onclick");
+          if (!onclickText) return;
 
-                const match = onclickText.match(/window\.open\(['"]([^'"]+)['"]/i);
-                if (!match || !match[1]) return;
+          const match = onclickText.match(/window\.open\(['"]([^'"]+)['"]/i);
+          if (!match || !match[1]) return;
 
-                const url = match[1];
+          const url = match[1];
 
-                // Remove o onclick antigo (isso resolve o problema!)
-                btn.removeAttribute('onclick');
+          // Remove o onclick antigo (isso resolve o problema!)
+          btn.removeAttribute("onclick");
 
-                // Novo comportamento limpo
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
+          // Novo comportamento limpo
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopImmediatePropagation();
 
-                    const toast = document.getElementById('project-toast');
-                    toast.classList.add('show');
+            const toast = document.getElementById("project-toast");
+            toast.classList.add("show");
 
-                    // Toast aparece PRIMEIRO → depois abre a aba
-                    setTimeout(() => {
-                        window.open(url, '_blank');
-                    }, 2000);
-
-                    // Toast some automaticamente
-                    setTimeout(() => {
-                        toast.classList.remove('show');
-                    }, 9000);
-                });
-            });
-        }
-
-        // Quando voltar para a aba, esconde o toast imediatamente
-        document.addEventListener('visibilitychange', () => {
-            if (document.visibilityState === 'visible') {
-                const toast = document.getElementById('project-toast');
-                if (toast) toast.classList.remove('show');
-            }
-        });
-
-        console.log('✅ Setup de toast preparado!');
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuItems = document.querySelectorAll('.aside .nav > li');
-
-            menuItems.forEach(item => {
-                const link = item.querySelector('a');
-                const subMenu = item.querySelector('.nav-sub');
-
-                // Pula o "Projetos em Destaque" (não queremos dropdown nele)
-                if (link && link.textContent.trim().includes('Projetos em Destaque')) {
-                    return;
-                }
-
-                // Só continua se tiver submenu
-                if (subMenu) {
-                    // Cria a seta (ícone Font Awesome)
-                    const arrow = document.createElement('i');
-                    arrow.className = 'fa fa-chevron-down dropdown-arrow';
-                    link.appendChild(arrow);
-
-                    // Clique abre/fecha
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();           // evita pular para #dashboards
-                        item.classList.toggle('open');
-                    });
-                }
-            });
-        });
-    </script>
-    <script>
-        let techChartInstance = null;
-        let skillsChartInstance = null;
-
-        const techData = {
-            "GitHub": 22, "Python": 20, "VS Code": 20, "Streamlit": 12, "SQL": 8,
-            "XGBoost": 5, "Excel": 5, "Pandas": 4, "Power BI": 4, "Render.com": 4,
-            "API": 4, "Scikit-learn": 4, "Random Forest": 4, "Plotly": 3, "Dash": 3
-        };
-
-        const skillData = {
-            "Git & GitHub": 17, "Machine Learning": 12, "Data Analysis": 12,
-            "Resolução de Problemas": 12, "Dashboard Interativo": 9, "Programação": 8,
-            "Preprocessamento": 8, "SQL Avançado": 6, "Séries Temporais": 4
-        };
-
-        function initCharts() {
-            const isDarkMode = document.body.classList.contains('dark');
-
-            // Cores bem visíveis
-            const textColor = isDarkMode ? '#ffffff' : '#222222';
-            const gridColor = isDarkMode ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.08)';
-            const tickColor = isDarkMode ? '#eeeeee' : '#555555';
-            const titleColorTech = isDarkMode ? '#00ff88' : '#00aa66';
-            const titleColorSkill = isDarkMode ? '#e066ff' : '#8800cc';
-
-            const getGradient = (ctx, chartArea) => {
-                const gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
-                gradient.addColorStop(0, isDarkMode ? '#00ccff' : '#0099cc');
-                gradient.addColorStop(1, isDarkMode ? '#00ff88' : '#00cc77');
-                return gradient;
-            };
-
-            const commonOptions = {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        backgroundColor: isDarkMode ? 'rgba(30,30,30,0.95)' : 'rgba(255,255,255,0.95)',
-                        titleColor: isDarkMode ? '#fff' : '#000',
-                        bodyColor: isDarkMode ? '#fff' : '#000',
-                        borderColor: isDarkMode ? '#00ff88' : '#00aa66',
-                        borderWidth: 1
-                    }
-                },
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        grid: { color: gridColor },
-                        ticks: { color: tickColor, font: { size: 12 } }
-                    },
-                    y: {
-                        grid: { display: false },
-                        ticks: { color: textColor, font: { size: 13, weight: '600' } }
-                    }
-                },
-                borderRadius: 6,
-                borderSkipped: false
-            };
-
-            if (techChartInstance) techChartInstance.destroy();
-            if (skillsChartInstance) skillsChartInstance.destroy();
-
-            // Grafico ferramentas 
-            const ctxTech = document.getElementById('techChart').getContext('2d');
-            techChartInstance = new Chart(ctxTech, {
-                type: 'bar',
-                data: {
-                    labels: Object.keys(techData),
-                    datasets: [{
-                        data: Object.values(techData),
-                        backgroundColor: (context) => {
-                            const chart = context.chart;
-                            const { ctx, chartArea } = chart;
-                            if (!chartArea) return '#00ccff';
-                            return getGradient(ctx, chartArea);
-                        },
-                        hoverBackgroundColor: isDarkMode ? '#ffffff' : '#111111'
-                    }]
-                },
-                options: {
-                    ...commonOptions,
-                    plugins: {
-                        ...commonOptions.plugins,
-                        title: { display: true, text: 'TOP FERRAMENTAS', color: titleColorTech, font: { size: 19, weight: 'bold' }, padding: 20 }
-                    }
-                }
-            });
-
-            // Grafico skills
-            const ctxSkills = document.getElementById('skillsChart').getContext('2d');
-            skillsChartInstance = new Chart(ctxSkills, {
-                type: 'bar',
-                data: {
-                    labels: Object.keys(skillData),
-                    datasets: [{
-                        data: Object.values(skillData),
-                        backgroundColor: isDarkMode ? '#e066ff' : '#8800cc',
-                        hoverBackgroundColor: isDarkMode ? '#f08cff' : '#aa00ff'
-                    }]
-                },
-                options: {
-                    ...commonOptions,
-                    plugins: {
-                        ...commonOptions.plugins,
-                        title: { display: true, text: 'COMPETÊNCIAS CHAVE', color: titleColorSkill, font: { size: 19, weight: 'bold' }, padding: 20 }
-                    }
-                }
-            });
-        }
-
-        // ====================== INICIALIZAÇÃO ======================
-        document.addEventListener('DOMContentLoaded', () => {
+            // Toast aparece PRIMEIRO → depois abre a aba
             setTimeout(() => {
-                initCharts();
-            }, 100);
-            const dayNightBtn = document.querySelector('.day-night');
-            if (dayNightBtn) {
-                dayNightBtn.addEventListener('click', () => {
-                    setTimeout(initCharts, 180);
-                });
-            }
-            const observer = new MutationObserver(() => {
-                initCharts();
-            });
-            observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+              window.open(url, "_blank");
+            }, 2000);
+
+            // Toast some automaticamente
+            setTimeout(() => {
+              toast.classList.remove("show");
+            }, 9000);
+          });
         });
+      }
+
+      // Quando voltar para a aba, esconde o toast imediatamente
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+          const toast = document.getElementById("project-toast");
+          if (toast) toast.classList.remove("show");
+        }
+      });
+
+      console.log("✅ Setup de toast preparado!");
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuItems = document.querySelectorAll(".aside .nav > li");
 
+        menuItems.forEach((item) => {
+          const link = item.querySelector("a");
+          const subMenu = item.querySelector(".nav-sub");
 
-</body>
+          // Pula o "Projetos em Destaque" (não queremos dropdown nele)
+          if (
+            link &&
+            link.textContent.trim().includes("Projetos em Destaque")
+          ) {
+            return;
+          }
 
+          // Só continua se tiver submenu
+          if (subMenu) {
+            // Cria a seta (ícone Font Awesome)
+            const arrow = document.createElement("i");
+            arrow.className = "fa fa-chevron-down dropdown-arrow";
+            link.appendChild(arrow);
 
+            // Clique abre/fecha
+            link.addEventListener("click", (e) => {
+              e.preventDefault(); // evita pular para #dashboards
+              item.classList.toggle("open");
+            });
+          }
+        });
+      });
+    </script>
+    <script>
+      let techChartInstance = null;
+      let skillsChartInstance = null;
+
+      const techData = {
+        Python: 14,
+        GitHub: 18,
+        "VS Code": 16,
+        SQL: 12,
+        Streamlit: 9,
+        "Power BI": 8,
+        DuckDB: 7,
+        Plotly: 5,
+        XGBoost: 4,
+        Pandas: 5,
+        "Scikit-learn": 4,
+        Dash: 3,
+        Render: 3,
+        "Looker Studio": 3,
+        MySQL: 3,
+        Firebase: 1,
+        JavaScript: 1,
+        "HTML/CSS": 1,
+        "Groq API": 1,
+        LLM: 1,
+        dbt: 1,
+        BigQuery: 1,
+        PyTorch: 1,
+        Gradio: 1,
+        Folium: 1,
+        "Hugging Face": 1,
+        Excel: 2,
+        "Jupyter Notebook": 2,
+      };
+
+      const skillData = {
+        "Data Analysis": 16,
+        "Python Programming": 14,
+        SQL: 12,
+        "Dashboard Development": 12,
+        "Data Visualization": 11,
+        "Machine Learning": 8,
+        "ETL / Data Cleaning": 8,
+        "Problem Solving": 12,
+        "Analytical Thinking": 12,
+        "Data Modeling": 7,
+        "Business Intelligence": 7,
+        "Feature Engineering": 5,
+        "Predictive Analytics": 5,
+        "Model Evaluation": 4,
+        "XGBoost Modeling": 4,
+        "Time Series Analysis": 3,
+        NLP: 2,
+        "Sentiment Analysis": 1,
+        "Explainable AI (SHAP)": 1,
+        "Generative AI": 1,
+        "LLM Integration": 1,
+        "Reinforcement Learning": 1,
+        "Deep Learning": 1,
+        "Data Warehouse": 1,
+        "Star Schema": 1,
+        "Cloud Deployment": 4,
+        "Production Deployment": 4,
+        "Financial Analytics": 2,
+        "Risk Analysis": 2,
+        "Optimization Algorithms": 1,
+        "IoT / Sensor Analytics": 1,
+      };
+
+      // ============================================================
+      // Ordenação automática dos gráficos
+      // Maior valor aparece primeiro
+      // ============================================================
+
+      function sortChartData(data, limit = 15) {
+        return Object.fromEntries(
+          Object.entries(data)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, limit),
+        );
+      }
+
+      function initCharts() {
+        const isDarkMode = document.body.classList.contains("dark");
+
+        // Dados já ordenados
+        const sortedTechData = sortChartData(techData, 15);
+        const sortedSkillData = sortChartData(skillData, 15);
+
+        const textColor = isDarkMode ? "#ffffff" : "#222222";
+        const gridColor = isDarkMode
+          ? "rgba(255,255,255,0.12)"
+          : "rgba(0,0,0,0.08)";
+
+        const tickColor = isDarkMode ? "#eeeeee" : "#555555";
+        const titleColorTech = isDarkMode ? "#00ff88" : "#00aa66";
+        const titleColorSkill = isDarkMode ? "#e066ff" : "#8800cc";
+
+        const getGradient = (ctx, chartArea) => {
+          const gradient = ctx.createLinearGradient(
+            0,
+            chartArea.bottom,
+            0,
+            chartArea.top,
+          );
+
+          gradient.addColorStop(0, isDarkMode ? "#00ccff" : "#0099cc");
+          gradient.addColorStop(1, isDarkMode ? "#00ff88" : "#00cc77");
+
+          return gradient;
+        };
+
+        const commonOptions = {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+
+          plugins: {
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              backgroundColor: isDarkMode
+                ? "rgba(30,30,30,0.95)"
+                : "rgba(255,255,255,0.95)",
+              titleColor: isDarkMode ? "#fff" : "#000",
+              bodyColor: isDarkMode ? "#fff" : "#000",
+              borderColor: isDarkMode ? "#00ff88" : "#00aa66",
+              borderWidth: 1,
+            },
+          },
+
+          scales: {
+            x: {
+              beginAtZero: true,
+              grid: {
+                color: gridColor,
+              },
+
+              ticks: {
+                color: tickColor,
+                font: {
+                  size: 12,
+                },
+              },
+            },
+
+            y: {
+              grid: {
+                display: false,
+              },
+
+              ticks: {
+                color: textColor,
+
+                font: {
+                  size: 13,
+                  weight: "600",
+                },
+              },
+            },
+          },
+
+          borderRadius: 6,
+          borderSkipped: false,
+        };
+        if (techChartInstance) techChartInstance.destroy();
+        if (skillsChartInstance) skillsChartInstance.destroy();
+
+        // ============================================================
+        // GRÁFICO DE TECNOLOGIAS
+        // ============================================================
+
+        const ctxTech = document.getElementById("techChart").getContext("2d");
+
+        techChartInstance = new Chart(ctxTech, {
+          type: "bar",
+          data: {
+            labels: Object.keys(sortedTechData),
+            datasets: [
+              {
+                data: Object.values(sortedTechData),
+
+                backgroundColor: (context) => {
+                  const chart = context.chart;
+                  const { ctx, chartArea } = chart;
+                  if (!chartArea) return "#00ccff";
+                  return getGradient(ctx, chartArea);
+                },
+                hoverBackgroundColor: isDarkMode ? "#ffffff" : "#111111",
+              },
+            ],
+          },
+
+          options: {
+            ...commonOptions,
+
+            plugins: {
+              ...commonOptions.plugins,
+
+              title: {
+                display: true,
+                text: "TOP FERRAMENTAS",
+                color: titleColorTech,
+                font: {
+                  size: 19,
+                  weight: "bold",
+                },
+                padding: 20,
+              },
+            },
+          },
+        });
+
+        // ============================================================
+        // GRÁFICO DE SKILLS
+        // ============================================================
+
+        const ctxSkills = document
+          .getElementById("skillsChart")
+          .getContext("2d");
+
+        skillsChartInstance = new Chart(ctxSkills, {
+          type: "bar",
+          data: {
+            labels: Object.keys(sortedSkillData),
+            datasets: [
+              {
+                data: Object.values(sortedSkillData),
+
+                backgroundColor: isDarkMode ? "#e066ff" : "#8800cc",
+
+                hoverBackgroundColor: isDarkMode ? "#f08cff" : "#aa00ff",
+              },
+            ],
+          },
+
+          options: {
+            ...commonOptions,
+            plugins: {
+              ...commonOptions.plugins,
+              title: {
+                display: true,
+                text: "COMPETÊNCIAS CHAVE",
+                color: titleColorSkill,
+                font: {
+                  size: 19,
+                  weight: "bold",
+                },
+                padding: 20,
+              },
+            },
+          },
+        });
+      }
+
+      // ============================================================
+      // INICIALIZAÇÃO
+      // ============================================================
+
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(initCharts, 100);
+
+        const dayNightBtn = document.querySelector(".day-night");
+
+        if (dayNightBtn) {
+          dayNightBtn.addEventListener("click", () => {
+            setTimeout(initCharts, 180);
+          });
+        }
+
+        const observer = new MutationObserver(() => {
+          initCharts();
+        });
+
+        observer.observe(
+          document.body,
+
+          {
+            attributes: true,
+
+            attributeFilter: ["class"],
+          },
+        );
+      });
+    </script>
+  </body>
 </html>
