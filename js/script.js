@@ -203,14 +203,15 @@ new Typed(".typing", {
   loop: true,
 });
 // Navegação
-document.querySelector(".nav-toggler").addEventListener("click", () => {
-  const navToggler = document.querySelector(".nav-toggler");
-  const aside = document.querySelector(".aside");
-  aside.classList.toggle("open");
-  navToggler.classList.toggle("active");
-  navToggler.classList.add("clicked");
-  setTimeout(() => navToggler.classList.remove("clicked"), 300);
-});
+const navToggler = document.querySelector(".nav-toggler");
+const aside = document.querySelector(".aside");
+console.log("clicou");
+if (navToggler && aside) {
+  navToggler.addEventListener("click", () => {
+    aside.classList.toggle("open");
+    navToggler.classList.toggle("active");
+  });
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Fechar menu ao clicar em um link
 // ==================== SCROLL SPY MELHORADO ====================
@@ -462,7 +463,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     if (targetElement) {
       e.preventDefault();
 
-      const headerOffset = 80; // ajuste conforme sua navbar
+      const headerOffset = 80;
       const elementPosition = targetElement.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
@@ -471,11 +472,35 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         behavior: "smooth",
       });
 
-      // Fecha menu mobile
-      const aside = document.querySelector(".aside");
-      const toggler = document.querySelector(".nav-toggler");
-      if (aside) aside.classList.remove("open");
-      if (toggler) toggler.classList.remove("active");
+      // fecha apenas se o clique veio de um link da navegação
+      if (this.closest(".nav")) {
+        const aside = document.querySelector(".aside");
+        const toggler = document.querySelector(".nav-toggler");
+
+        if (aside) aside.classList.remove("open");
+        if (toggler) toggler.classList.remove("active");
+      }
     }
   });
+});
+document.querySelector(".aside").addEventListener("click", (e) => {
+  // Ignora cliques em dropdowns/seletores
+  if (
+    e.target.closest("select") ||
+    e.target.closest(".dropdown") ||
+    e.target.closest(".dropdown-toggle") ||
+    e.target.closest(".dropdown-menu")
+  ) {
+    return;
+  }
+
+  const link = e.target.closest("a");
+
+  if (link) {
+    const aside = document.querySelector(".aside");
+    const navToggler = document.querySelector(".nav-toggler");
+
+    if (aside) aside.classList.remove("open");
+    if (navToggler) navToggler.classList.remove("active");
+  }
 });

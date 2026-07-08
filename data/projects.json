@@ -1,0 +1,1372 @@
+{
+  "projects": [
+    {
+      "_section1": "🚀 ==================== OTHER ==================== 🚀",
+      "_section2": "🚀 ==================== OTHER ==================== 🚀",
+      "_section3": "🚀 ==================== OTHER ==================== 🚀",
+      "_section4": "🚀 ==================== OTHER ==================== 🚀"
+    },
+    {
+      "id": "churnsight",
+      "category": "featured",
+      "title": "ChurnSight AI",
+      "description": "O projeto tem como objetivo transformar dados de clientes em decisões estratégicas de retenção, combinando análise preditiva, inteligência artificial generativa e simulações financeiras.",
+      "imagePath": "image/churnsight.gif",
+      "tags": [
+        "Python",
+        "XGBoost",
+        "Streamlit",
+        "LLM",
+        "Groq API"
+      ],
+      "tools": [
+        "Visual Code",
+        "Python",
+        "Streamlit",
+        "Groq API",
+        "GitHub"
+      ],
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "XGBoost Classifier",
+        "Feature Engineering",
+        "Probability Calibration",
+        "Class Imbalance Handling",
+        "Model Evaluation (ROC AUC)",
+        "Explainable AI (SHAP)",
+        "Predictive Analytics",
+        "Customer Churn Prediction",
+        "Risk Segmentation",
+        "Business Intelligence",
+        "KPIs Estratégicos",
+        "Data Visualization",
+        "Streamlit Dashboard",
+        "Plotly",
+        "Generative AI",
+        "LLMs Integration",
+        "Groq API",
+        "Automated Reporting",
+        "PDF Report Generation",
+        "Financial Simulation",
+        "ROI Analysis",
+        "Decision Intelligence",
+        "Software Architecture",
+        "Layered Architecture",
+        "Production Environment"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Multi-Agent-Data-Analyst/tree/main",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vTISBqQCP1JUo7A8wcroqv0cjzyRX1b0Vol_6T8qF9IggT3EEHxmuBDwA-AUlD8SWzrMQOF-JWncSMl/pub?embedded=true",
+      "demoLink": "https://luisturra-multi-agent-data-analyst-streamlit-app-jiwynq.streamlit.app/"
+    },
+    {
+      "id": "investA",
+      "category": "featured",
+      "title": "InvestAgent",
+      "description": "O InvestAgent é um sistema híbrido de análise de ativos financeiros que combina modelos quantitativos desenvolvidos em Python com interpretação contextual por meio de um modelo de linguagem (LLM). O sistema coleta dados de mercado, calcula indicadores técnicos e gera scores quantitativos para avaliar tendência, momentum, risco e qualidade técnica de um ativo. Esses resultados são apresentados em um dashboard interativo desenvolvido em Streamlit, onde uma IA interpreta os sinais e fornece uma recomendação estruturada de investimento acompanhada de justificativa em linguagem natural.",
+      "imagePath": "image/investagent.gif",
+      "tags": [
+        "Python",
+        "Yahoo Finance",
+        "Streamlit",
+        "LLM",
+        "Groq API"
+      ],
+      "tools": [
+        "Visual Code",
+        "Python",
+        "Streamlit",
+        "Groq API",
+        "GitHub"
+      ],
+      "skills": [
+        "Python",
+        "Engenharia de Features",
+        "Análise de Dados Financeiros",
+        "Integração de APIs",
+        "Modelagem de Scores e Métricas",
+        "Integração de Modelos de Linguagem",
+        "Visualização de Dados"
+      ],
+      "githubLink": "https://github.com/LuisTurra/InvestAgent",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vQtPX66W3g-Si5nHLmpsA-M7lZPh71vrwepgXL4QL75EzfjtSyrYDvZFrfk-Wbx3jZwNLfNrKcpV0fH/pub?embedded=true",
+      "demoLink": "https://luisturra-investagent-streamlit-app-6ughqf.streamlit.app/"
+    },
+    {
+      "id": "manutencao-preditiva-turbofan",
+      "category": "featured",
+      "title": "Manutenção Preditiva Turbofan",
+      "description": "Este projeto tem como objetivo transformar dados brutos de sensores de turbinas (NASA CMAPSS) em uma ferramenta operacional que permita prever com precisão quantos ciclos restam até a falha da máquina, visualizar o estado de saúde da turbina em tempo real e gerar alertas automáticos para manutenção preventiva.",
+      "imagePath": "image/manutenoPredTUrbofan2.gif",
+      "tags": [
+        "Python",
+        "Dash",
+        "XGBoost",
+        "Render.com",
+        "NASA"
+      ],
+      "tools": [
+        "Visual Code",
+        "Python",
+        "Render.com",
+        "GitHub"
+      ],
+      "skills": [
+        "Python",
+        "XGBoost",
+        "Regressão",
+        "Dash",
+        "DashBoard interativo",
+        "Preprocessamento",
+        "Render",
+        "Ambiente de Produção",
+        "Manutenção Preditiva",
+        "Indústria 4.0",
+        "Resolução de Problemas",
+        "IoT Simulado",
+        "NASA CMAPSS",
+        "Aviation PHM"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Manutencao-Preditiva-de-Maquinas",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vT9RXqbX-qstPNOzdILJOFMaFHgc2lOnX6czq3MU-x2s3DbgFPFzTGYgqlV0lkP-vhNsmUdbOMX5DyD/pub?embedded=true",
+      "demoLink": "https://manutencao-preditiva-de-maquinas.onrender.com/"
+    },
+    {
+      "id": "orsco",
+      "category": "featured",
+      "title": "Otimização de Rotas (SupplyChain Optimizer)",
+      "description": "O objetivo principal dessa análise é avaliar a eficiência de algoritmos de Reinforcement Learning na otimização de rotas logísticas em São Paulo, comparando Q-Learning e Deep Q-Network (DQN) para minimizar custos de transporte e atendimento de demandas. Usando Folium para geração do mapa das rotas e Gradio para interface visual.",
+      "imagePath": "image/supplychain2.gif",
+      "tags": [
+        "Python",
+        "Reinforcement Learning",
+        "Gradio",
+        "Folium",
+        "Hugging Face"
+      ],
+      "tools": [
+        "Visual Code",
+        "Python",
+        "PyTorch",
+        "Folium",
+        "Gradio",
+        "Google Colab",
+        "Hugging Face"
+      ],
+      "skills": [
+        "Python",
+        "Programação",
+        "Machine Learning",
+        "Deep Learning",
+        "Preprocessamento",
+        "Gestão de Bases de Dados",
+        "Pensamento Analítico",
+        "Otimização de Sistemas",
+        "Resolução de Problemas",
+        "Google Colab",
+        "Planejamento e Execução de Projetos",
+        "Github",
+        "Hugging Face"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Otimizacao-de-rotas-logisticas-Reinforcement-Learning",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vRBYgGCyyjTyycVEKwZKl9-rxnyZbZepaq3JgLCMUvonnL2V6rtojKCphYMF-jAvWZHB1ctFDKXIpVM/pub?embedded=true",
+      "demoLink": "https://huggingface.co/spaces/luisturra/otimizacao_supplaychain"
+    },
+    {
+      "id": "datb",
+      "category": "featured",
+      "title": "Detecção de Anomalias em Transações Bitcoin",
+      "description": "Desenvolvi um pipeline completo de detecção de anomalias em transações do blockchain Bitcoin usando apenas recursos gratuitos do Google Cloud Platform. Com dbt, criei models de staging e feature engineering para transformar dados públicos do BigQuery em atributos relevantes como valor da transação, contagem de inputs/outputs e razão da taxa. Implementei uma solução rule-based avançada com thresholds dinâmicos e anomaly score composto devido às limitações do Sandbox. O resultado é um sistema explicável e reproduzível para identificar padrões suspeitos como mixing e transações de alto risco.",
+      "imagePath": "image/deteccaoanamolia.png",
+      "tags": [
+        "dbt",
+        "Google BigQuery",
+        "SQL avançado",
+        "GitHub"
+      ],
+      "tools": [
+        "Visual Code",
+        "Google BigQuery",
+        "GitHub"
+      ],
+      "skills": [
+        "dbt (Data Build Tool)",
+        "Google BigQuery",
+        "BigQuery ML",
+        "SQL",
+        "Engenharia de features",
+        "Anomaly detection rule-based",
+        "GitHub",
+        "Google Cloud Platform (Sandbox)",
+        "Pré-processamento de Dados",
+        "Resolução de problemas técnicos"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Deteccao-de-Anomalias-em-Transacoes-de-Cripto",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vQpn9Z9zRR3pm4SI7PLcMoTzEH8Yv3j6fT4aUoZZuo-BgeTTGTpe2dbt8gAorjbXlNwZq1TwWI2GsT4/pub?embedded=true",
+      "demoLink": "https://luisturra.github.io/Deteccao-de-Anomalias-em-Transacoes-de-Cripto/#!/overview"
+    },
+    {
+      "_section1": "🚀 ==================== OTHER ==================== 🚀",
+      "_section2": "🚀 ==================== OTHER ==================== 🚀",
+      "_section3": "🚀 ==================== OTHER ==================== 🚀",
+      "_section4": "🚀 ==================== OTHER ==================== 🚀"
+    },
+    {
+      "category": "other",
+      "id": "fraudecartãocred",
+      "imagePath": "image/detecfraudecartaocred.gif",
+      "title": "Detecção de Fraude em Cartão de Crédito",
+      "description": "Este projeto tem como objetivo detecta fraudes em transações de cartão de credito. Aplicativo web calcula probabilidade de fraude atraves do valor e horario da compra e explica cada decisão usando valores SHAP. O aplicativo web tambem conten dashboard interativo com análise exploratória do dados.",
+      "tags": [
+        "Python",
+        "Streamlit",
+        "XGBoost",
+        "SHAP",
+        "Plotly"
+      ],
+      "tools": [
+        "Visual Code",
+        "Python",
+        "Streamlit",
+        "Hugging Face Datasets",
+        "GitHub"
+      ],
+      "skills": [
+        "Python",
+        "XGBoost",
+        "SHAP",
+        "Streamlit",
+        "DashBoard interativo",
+        "Preprocessamento",
+        "balanceamento de dados",
+        "Machine Learning",
+        "Resolução de Problemas",
+        "Financeiro",
+        "Detecção de Fraude"
+      ],
+      "githubLink": "https://github.com/LuisTurra/deteccao-fraude-cartao-credito",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vRQmVjGE6q9MSf1Zn32evu-B3793nXIL9fDCFnYujWsx7xv1Jm58408mfH81QQsFK-BikoufkNG4Thd/pub?embedded=true",
+      "demoLink": "https://luisturra-deteccao-fraude-cartao-credito-streamlit-app-99a0gz.streamlit.app/"
+    },
+    {
+      "category": "other",
+      "id": "chicago-crime",
+      "imagePath": "image/chicagocrime.gif",
+      "title": "Análise Criminal: Cidade de Chicago (2001–2025)",
+      "description": "Análise completa da criminalidade em Chicago (2001–2025) usando apenas dados públicos oficiais. Pipeline 100 % automatizado com modern data stack (dbt + BigQuery + GitHub Actions + Looker Studio). Mais de 8,2 milhões de registros transformados em um dashboard interativo com mapa de crimes, evolução temporal, taxa de homicídios por 100 k habitantes e ranking das áreas mais críticas.",
+      "tags": [
+        "dbt-core",
+        "Google BigQuery",
+        "GitHub Actions",
+        "Looker Studio",
+        "GitHub"
+      ],
+      "tools": [
+        "Visual Code",
+        "dbt",
+        "Looker Studio",
+        "SQL",
+        "Google Cloud",
+        "Github"
+      ],
+      "skills": [
+        "dbt",
+        "Google BigQuery",
+        "Engenharia de Analytics",
+        "Looker Studio",
+        "SQL",
+        "GitHub",
+        "Pensamento Analítico",
+        "Modelagem de Dados",
+        "Limpeza de Dados",
+        "Transformação de Dados"
+      ],
+      "githubLink": "https://github.com/LuisTurra/chicago-crime-dbt2",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vQYJOlZw3Gw0eWc1Dv3o6vALQTqC-eNRm7LSy9PMoaBSHStjTBXw9z_OZOCFoLd8j90g3W-rjr60jGC/pub?embedded=true",
+      "demoLink": "https://lookerstudio.google.com/reporting/2e137245-51e8-4121-86ec-aa45754fcf76"
+    },
+    {
+      "category": "other",
+      "id": "giran",
+      "imagePath": "image/impactosfinIran.gif",
+      "title": "Impacto Financeiro: Conflito Irã 2026",
+      "description": "O objetivo principal desta análise é avaliar as consequências financeiras do conflito no Irã iniciado no dia 28 fevereiro de 2026, com ênfase no impacto no preço do petróleo Brent, ações da Petrobras, o índice Ibovespa e o dólar comercial. A análise busca projetar cenários futuros considerando a continuação ou o término da guerra, utilizando modelagem preditiva para estimar variações de preços.",
+      "tags": [
+        "Python",
+        "Streamlit",
+        "Holt-Winters",
+        "Github",
+        "SQLlite"
+      ],
+      "tools": [
+        "Visual Code",
+        "Python",
+        "Streamlit",
+        "Yahoo Finance",
+        "GitHub"
+      ],
+      "skills": [
+        "Python",
+        "Séries temporais",
+        "Holt-Winters",
+        "Streamlit",
+        "DashBoard interativo",
+        "Preprocessamento",
+        "Financeiro",
+        "Geopolítica",
+        "Yahoo Finance",
+        "Regressão Linear",
+        "Resolução de Problemas"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Consequencias-Financeiras-da-Guerra-no-Ira-2026-",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vQVMR_aF3_rLquOlSmXT1emkQTh5MGOFhKQHXDkwtype1Es_yLr_9ulGD35M-oKjze6izePv7-8402A/pub?embedded=true",
+      "demoLink": "https://luisturra-consequencias-financeiras-da-gue-streamlit-app-fqyl0q.streamlit.app/"
+    },
+    {
+      "category": "other",
+      "id": "trafego-urbanosp",
+      "imagePath": "image/congestionamentourb2.gif",
+      "title": "Análise de Dados de Tráfego Urbano com ML",
+      "description": "Modelo Random Forest que prevê a lentidão do trânsito a partir de incidentes. Dashboard online 24h com gráfico real × previsto, heatmap interativo e métricas ao vivo. Treino com PySpark offline + inferência leve com Pandas. Deploy no Render.",
+      "tags": [
+        "Python",
+        "PySpark",
+        "Pandas",
+        "Dash",
+        "Render"
+      ],
+      "tools": [
+        "Visual Code",
+        "Python",
+        "PySpark",
+        "Dash",
+        "Random Forest Regressor",
+        "Render.com",
+        "GitHub"
+      ],
+      "skills": [
+        "Python",
+        "Programação",
+        "Machine Learning",
+        "ETL com PySpark",
+        "Pensamento Analítico",
+        "Otimização de Sistemas",
+        "Resolução de Problemas",
+        "Planejamento e Execução de Projetos",
+        "Github",
+        "Render.com"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Analise-de-Dados-de-Trafego-Urbano-com-ML",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vRdMiNj69PmWE_17DNZrdJXnhpuZ9Okd9gNwPg10CxDPoDbX7Tusl_An1w4-Drjf6SO2G_AAue0wgu4/pub?embedded=true",
+      "demoLink": "https://analise-de-dados-de-trafego-urbano-com-ml.onrender.com"
+    },
+    {
+      "category": "other",
+      "id": "earthquakeai",
+      "imagePath": "image/earthquakeai.gif",
+      "title": "EarthQuake AI – Analisador Global de Risco Sísmico com Previsão por Inteligência Artificial",
+      "description": "Ferramenta interativa que permita ao usuário estimar o risco sísmico relativo em qualquer localização do mundo, com base em padrões históricos de terremotos registrados pela U.S. Geological Survey (USGS). A limpeza e feature engineering foram realizadas com DuckDB e Polars. Predição de magnitude média por localização utilizando modelo de regressão HistGradientBoostingRegressor",
+      "tags": [
+        "Python",
+        "HistGradientBoostingRegressor",
+        "DuckDB",
+        "Polars",
+        "Streamlit"
+      ],
+      "tools": [
+        "Visual Code",
+        "Python",
+        "Streamlit"
+      ],
+      "skills": [
+        "Python",
+        "Scikit-learn",
+        "HistGradientBoostingRegressor",
+        "DuckDB",
+        "Polars",
+        "Pandas",
+        "Machine Learning (Regressão)",
+        "Feature Engineering",
+        "Pré-processamento de Dados",
+        "Análise de Séries Temporais",
+        "Estatística Aplicada",
+        "Integração de APIs (USGS Earthquake API)",
+        "Streamlit",
+        "Folium / Streamlit-Folium",
+        "Joblib (serialização de modelos)",
+        "Deploy em Cloud (Streamlit Community Cloud)",
+        "Gestão de Dependências (requirements.txt)",
+        "Resolução de Problemas de Compatibilidade",
+        "Análise Geoespacial",
+        "Visualização de Dados Interativa",
+        "Pensamento Analítico",
+        "Resolução de Problemas",
+        "Git & GitHub",
+        "Documentação Técnica",
+        "Boas Práticas em Projetos de Data Science"
+      ],
+      "githubLink": "https://github.com/LuisTurra/EarthQuake-AI",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vQs_0gl-5LgatC9-5iaqypL051VgWY0s6nHo1IhkC3yjkjNa-PNeizi8-_oyw2CoObW6NC-7Gf8ch-l/pub?embedded=true",
+      "demoLink": "https://luisturra-earthquake-ai-streamlit-app-9vf7me.streamlit.app/"
+    },
+    {
+      "category": "other",
+      "id": "ptcrnn",
+      "imagePath": "image/previtaxcamrnn.gif",
+      "title": "Previsão de Taxas de Câmbio com RNN",
+      "description": "Sistema de previsão de taxas de câmbio, focando em pares como USD/BRL, utilizando modelos de redes neurais recorrentes como LSTM, GRU e variantes para analisar séries temporais financeiras. Os dados são obtidos via API Alpha Vantage com cache local, pré-processados com normalização e sequências temporais, e treinados com TensorFlow/Keras para comparar desempenhos via MSE, selecionando o melhor modelo. Uma interface web interativa é criada com Streamlit, permitindo seleção de moedas, previsão de até 90 dias e visualizações dinâmicas com Plotly. No geral, demonstra aplicação de ML em finanças, com salvamento de modelos e relatórios visuais para análise comparativa.",
+      "tags": [
+        "Python",
+        "Visual Code",
+        "RNN",
+        "Streamlit",
+        "GitHub"
+      ],
+      "tools": [
+        "Visual Code",
+        "Python",
+        "API",
+        "Streamlit",
+        "GitHub"
+      ],
+      "skills": [
+        "Python",
+        "Visual Code",
+        "Streamlit",
+        "Redes Neurais Recorrentes",
+        "TensorFlow",
+        "Pré-processamento de Dados",
+        "GitHub",
+        "Séries Temporais",
+        "Plotly",
+        "APIs REST",
+        "Financeiras",
+        "Métricas de Desempenho"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Previsao-de-Taxas-de-Cambio-com-RNN-LSTM",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vRDgNz2hm-izM9G6Ho_KT-z5KE1ZCtcYpcgAPCfoBBSFCuBP1Mf-YWM8XbMAU-RGz9a_7i4tN1JmdWJ/pub?embedded=true",
+      "demoLink": "https://luisturra-previsao-de-taxas-de-cambio-com--streamlit-app-93pqrb.streamlit.app/"
+    },
+    {
+      "category": "other",
+      "id": "chatbot",
+      "imagePath": "image/chatbot.gif",
+      "title": "Chatbot IA Integrado ao Portfólio Pessoal",
+      "description": "Desenvolvi e integrei um chatbot inteligente diretamente a meu site portfólio, permitindo que visitantes interajam em tempo real e façam perguntas sobre meus projetos, habilidades e experiência profissional. O bot usa IA generativa real, prompt personalizado com meu background completo e widget flutuante responsivo.",
+      "tags": [
+        "JavaScript",
+        "Cloudflare Workers",
+        "IA generativa",
+        "Nodejs",
+        "ChatBot"
+      ],
+      "tools": [
+        "JavaScript",
+        "Cloudflare Workers",
+        "Nodejs"
+      ],
+      "skills": [
+        "JavaScript",
+        "Cloudflare Workers",
+        "IA generativa",
+        "Programação",
+        "Nodejs",
+        "Large Language Models (LLM)",
+        "Processamento de Linguagem Natural",
+        "Github"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Chatbot-IA-para-Portfolio-Pessoal"
+    },
+    {
+      "category": "other",
+      "id": "manupred",
+      "imagePath": "image/manupredmaq.gif",
+      "title": "Sistema de Manutenção Preditiva de Máquinas Industriais",
+      "description": "Este projeto implementa um sistema completo de manutenção preditiva. O objetivo é prever falhas em máquinas industriais antes que elas ocorram, reduzindo paradas não planejadas e custos de manutenção. Projeto é o dashboard interativo em Streamlit que simula monitoramento em tempo real de 4 máquinas, com gauges circulares, alertas coloridos, parâmetros visíveis.",
+      "tags": [
+        "Python",
+        "Streamlit",
+        "Machine Learning",
+        "Industria 4.0"
+      ],
+      "tools": [
+        "Visual Code",
+        "Python",
+        "Streamlit"
+      ],
+      "skills": [
+        "Python",
+        "Pensamento analítico",
+        "Programação",
+        "Manutenção Preditiva",
+        "Resolução de problemas",
+        "ETL básico",
+        "Atenção a detalhes",
+        "Industria 4.0"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Manutencao-Preditiva",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vRCbi6X7UgzLgQkZWNYJw1a_LO93-5x1lEFvlYCaSjvRX4FPwQEWlJWf4PkF7xdU9MhT0yGkIMeNeaB/pub?embedded=true",
+      "demoLink": "https://luisturra-manutencao-preditiva-streamlit-app-4ew73b.streamlit.app/"
+    },
+    {
+      "category": "other",
+      "id": "xgchutes",
+      "imagePath": "image/xgfutebol.png",
+      "title": "xG Model - Brasileirão Série A 2025",
+      "description": "Este projeto é um modelo de Expected Goals (xG), utilizando apenas dados públicos do Sofascore, capaz de estimar a probabilidade de um chute que resultou em gol com precisão comparável ao modelo oficial da plataforma.",
+      "tags": [
+        "Python",
+        "Streamlit",
+        "XGBoost",
+        "Futebol",
+        "Sofascore"
+      ],
+      "tools": [
+        "Visual Code",
+        "Python",
+        "Streamlit"
+      ],
+      "skills": [
+        "Python",
+        "streamlit",
+        "XGBoost",
+        "Futebol",
+        "Sofascore",
+        "Web Scrapping",
+        "Dashboard",
+        "Esporte"
+      ],
+      "githubLink": "https://github.com/LuisTurra/brasileirao_xg_model",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vSHh_M8H1ffLsUYA0npUpLQ-cDgY9F4gLHxUSkif1YQqSo5YVMzmP52F8EgddSAjXGxJOlkpwwXbOdT/pub?embedded=true",
+      "demoLink": "https://luisturra-brasileirao-xg-model-streamlit-app-snhlbh.streamlit.app/"
+    },
+    {
+      "category": "other",
+      "id": "analisehidro",
+      "imagePath": "image/analisehidro.png",
+      "title": "Análise de Eficiência Hidráulica com Regressão (2026)",
+      "description": "A análise foi avaliar a capacidade de modelos de regressão linear com os modelos Ridge, Lasso e Linear em prever a eficiência hidráulica a partir de dados de sensores do sistema, utilizando o dataset UCI “Condition Monitoring of Hydraulic Systems”. Utilizando streamlit mostrar os resultados de forma interativa.",
+      "tags": [
+        "Python",
+        "Machine Learning",
+        "Regressão",
+        "Análise Hidráulica",
+        "Streamlit"
+      ],
+      "tools": [
+        "Python",
+        "Visual Code",
+        "Streamlit",
+        "Github"
+      ],
+      "skills": [
+        "Python",
+        "Pensamento analítico",
+        "Machine Learning",
+        "Regressão",
+        "Resolução de problemas",
+        "Pytorch",
+        "Atenção a detalhes",
+        "Github",
+        "Dashboard",
+        "Streamlit",
+        "Engenharia Hidráulica"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Analise-de-Eficiencia-Hidraulica-com-Regressao",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vTQErOFAsDccXrmjWUd4RBJJuFfNMxyHuI6Z0-Fc_d90_KndTrzsSImzbkIyvim2g0kOdmjoQGqBhL-/pub?embedded=true",
+      "demoLink": "https://luisturra-analise-de-eficiencia-hidraulica-streamlit-app-ont94j.streamlit.app/"
+    },
+    {
+      "category": "other",
+      "id": "analise-carros-usados",
+      "imagePath": "image/dashpredcarrosusado3.gif",
+      "title": "Dashboard e Predição de Carro Usados",
+      "description": "Projeto pessoal, onde foi realizado a inserção de dados no mysql, limpeza dos dados, analise dos dados e predição. Através da biblioteca Streamlit é possível host dashboard e site de predição em python em página web.",
+      "tags": [
+        "Python",
+        "Streamlit",
+        "MySQL",
+        "Random Forest",
+        "Plotly"
+      ],
+      "tools": [
+        "Visual Code",
+        "Jupyter Notebook",
+        "Streamlit",
+        "Github"
+      ],
+      "skills": [
+        "Python",
+        "Streamlit",
+        "Matplotlib",
+        "Plotly",
+        "Numpy",
+        "Random Forest",
+        "Atenção a detalhes",
+        "Preprocessamento",
+        "Tratamento de Dados",
+        "Predição de Dados",
+        "Dashboard",
+        "Github"
+      ],
+      "githubLink": "https://github.com/LuisTurra/carros_usados_dashboard_pred",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vRjna2qjghpKqqC7LYD9rSFyo1ERG8PyTzbWHXPa0dVURRSoyeLuEYLnri0PdXjidT0iHWS_L9fgkaQ/pub?embedded=true",
+      "demoLink": "https://luisturra-carros-usados-dashboard-pred-streamlit-app-lp6wnw.streamlit.app/"
+    },
+    {
+      "category": "other",
+      "id": "sistema-financeiro",
+      "imagePath": "image/simulfinan.gif",
+      "title": "Simulação Financeira",
+      "description": "Este projeto simula o crescimento patrimonial de um indivíduo com salário inicial de R$ 3.000 ou mais, considerando Escolhas mensais (moradia, transporte, lazer, educação, investimento), eventos aleatórios (demissão, bônus, filho, promoção), retornos de mercado com volatilidade, inflação e crescimento salarial real. Utilizando Python, Streamlit e APIs REST.",
+      "tags": [
+        "Python",
+        "Streamlit",
+        "API",
+        "Yahoo Finance",
+        "BCB"
+      ],
+      "tools": [
+        "Visual Code",
+        "Python",
+        "Streamlit"
+      ],
+      "skills": [
+        "Python",
+        "Programação",
+        "Integração de APIs",
+        "Preprocessamento",
+        "Gestão de Bases de Dados",
+        "Pensamento Analítico",
+        "Integração de APIs",
+        "Resolução de Problemas",
+        "Financeiro",
+        "Planejamento e Execução de Projetos",
+        "Github"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Jogo_de_Finan-as_Pessoais-_Simula--o_de_Vida/tree/main",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vRH2CIib_58h0m6WslALdRKOj5h4Yfcxnkgfh2KIU7l4Xdg0SMZVaoXzTsAUFi5Eizn3hgtGbaLgTwz/pub?embedded=true",
+      "demoLink": "https://luisturra-jogo-de-finan-as-pessoais--simul-streamlit-app-isw5b2.streamlit.app/"
+    },
+    {
+      "category": "other",
+      "id": "invest",
+      "imagePath": "image/portfolioinvest.gif",
+      "title": "Otimização de Portfólio de Investimentos - Teoria Moderna de Markowitz",
+      "description": "Projeto pessoal Desenvolvi um dashboard interativo em Streamlit para otimização de portfólios de ações brasileiras com base na Teoria Moderna de Markowitz, incluindo Fronteira Eficiente, máximo Sharpe Ratio, Sortino, backtesting e análise de drawdown vs. Ibovespa. Versão avançada integra Machine Learning (Random Forest + XGBoost) para prever retornos, com validação walk-forward e comparação direta",
+      "tags": [
+        "Python",
+        "Random Forest",
+        "Streamlit",
+        "XGBoost",
+        "Teoria Moderna de Markowitz"
+      ],
+      "tools": [
+        "Jupyter Notebook",
+        "Python",
+        "Streamlit"
+      ],
+      "skills": [
+        "Python",
+        "Sklearn",
+        "Random Forest",
+        "Programação",
+        "Machine Learning",
+        "yfinance",
+        "pandas",
+        "XGBoost",
+        "Finanças Quantitativas",
+        "Processamento de Linguagem Natural",
+        "Pensamento Analítico",
+        "Resolução de Problemas",
+        "Otimização Matemática",
+        "ML em Séries Temporais",
+        "Github"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Otimizacao-de-Portfolio-de-Investimentos---Teoria-Moderna-de-Markowitz",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vTNDBvEDKPWgPv6VEV3zrPTThnv7mLN3mQctrPdivS7LH7YXIAd6TgYxsq455YC9xHzKknIosJqcd9X/pub?embedded=true",
+      "demoLink": "https://luisturra-otimizacao-de-portfolio-de-inves-streamlit-app-4bj7xl.streamlit.app/"
+    },
+    {
+      "category": "other",
+      "id": "recomendacao-colheita",
+      "imagePath": "image/recomendacolheita.gif",
+      "title": "Sistema de Recomendação de Cultura",
+      "description": "Projeto pessoal para sistemas de recomendação de colheita. Utilizando algoritmo de machine learning Floresta Aleatória e análise estatística (mínimo, máximo e média), usa solo, clima e localização pra indicar a melhor cultura. Tanto utilizando base de dados com dados fixos e simulação de uso de API para dados reais.",
+      "tags": [
+        "Python",
+        "Random Forest",
+        "Streamlit",
+        "API",
+        "Scikit-learn"
+      ],
+      "tools": [
+        "Jupyter Notebook",
+        "Python",
+        "Streamlit"
+      ],
+      "skills": [
+        "Python",
+        "Sklearn",
+        "Random Forest",
+        "Programação",
+        "Machine Learning",
+        "Integração de APIs",
+        "Preprocessamento",
+        "Gestão de Bases de Dados",
+        "Análise de Variáveis Ambientais",
+        "Processamento de Linguagem Natural",
+        "Pensamento Analítico",
+        "Resolução de Problemas",
+        "Domínio em Agricultura de Precisão",
+        "Planejamento e Execução de Projetos",
+        "Github"
+      ],
+      "githubLink": "https://github.com/LuisTurra/recomendacao-colheita",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vS6xRzYtsdIenUqgnBbfJ3Y1xH344i9HRzf78Mt1dd9RTp8E-PcU1_ABFxqsplGzWHa6G8k-gJGFvg3/pub?embedded=true",
+      "demoLink": "https://luisturra-recomendacao-colheita-streamlit-app-tf5dnb.streamlit.app/"
+    },
+    {
+      "category": "other",
+      "id": "precoboi",
+      "imagePath": "image/precoboi.png",
+      "title": "PreçoBoiBR - Preço do Boi Gordo no Brasil",
+      "description": "O objetivo principal deste projeto foi desenvolver uma ferramenta prática e acessível que permita aos produtores rurais e profissionais do setor pecuário estimar rapidamente o valor de venda de bovinos com base no peso vivo, visualizar a evolução histórica dos preços da arroba e obter previsões confiáveis para os próximos 90 dias.",
+      "tags": [
+        "Python",
+        "Streamlit",
+        "Statsmodels",
+        "yfinance",
+        "Cepea/ESALQ"
+      ],
+      "tools": [
+        "Visual Code",
+        "Streamlit",
+        "Github"
+      ],
+      "skills": [
+        "Python",
+        "Streamlit",
+        "Statsmodels",
+        "yfinance",
+        "Cepea/ESALQ",
+        "Atenção a detalhes",
+        "Pecuária",
+        "Indústria",
+        "Github"
+      ],
+      "githubLink": "https://github.com/LuisTurra/PrecoBoiBR",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vT5lEjblp6t7poS5R6nA8mtw4HJ9e2sInpwYXgEZOZQ4fkb6KZ629RuqUwqmPgGrmckJbd1NLdAMIOm/pub?embedded=true",
+      "demoLink": "https://luisturra-precoboibr-streamlit-app-kfypku.streamlit.app/"
+    },
+    {
+      "category": "other",
+      "id": "analise-eletricidade",
+      "imagePath": "image/custoeletricidade.gif",
+      "title": "Custo de Eletricidade Dashboard",
+      "description": "Projeto pessoal, onde desenvolvi analise de dados dashboard em python streamlit do custo de eletricidade.",
+      "tags": [
+        "Python",
+        "Streamlit",
+        "Matplotlib",
+        "NumPy",
+        "Scipy"
+      ],
+      "tools": [
+        "Visual Code",
+        "Streamlit",
+        "Github"
+      ],
+      "skills": [
+        "Python",
+        "Streamlit",
+        "Matplotlib",
+        "Numpy",
+        "Scipy",
+        "Atenção a detalhes",
+        "Preprocessamento",
+        "Tratamento de Dados",
+        "Github"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Custo_Eletricidade_Dashboard",
+      "demoLink": "https://custoeletricidadedashboard-etwdqehueon6ralkboywpq.streamlit.app/"
+    },
+    {
+      "_section1": "🚀 ==================== OTHER ==================== 🚀",
+      "_section2": "🚀 ==================== OTHER ==================== 🚀",
+      "_section3": "🚀 ==================== OTHER ==================== 🚀",
+      "_section4": "🚀 ==================== OTHER ==================== 🚀"
+    },
+    {
+      "category": "sql",
+      "id": "sql5",
+      "imagePath": "image/northwind.gif",
+      "title": "Northwind Business Intelligence",
+      "description": "Sistema completo de Business Intelligence capaz de transformar dados operacionais em informações estratégicas, buscou-se compreender o comportamento dos clientes, identificar padrões de vendas ao longo do tempo, avaliar a eficiência dos funcionários e analisar a rentabilidade dos produtos. Como resultado, foi possível destacar grupos de clientes com alto valor e risco de perda, identificar padrões sazonais relevantes, evidenciar diferenças significativas de performance entre funcionários e compreender quais produtos realmente contribuem para o lucro do negócio.",
+      "tags": [
+        "SQL",
+        "Python",
+        "Streamlit",
+        "Visual Code"
+      ],
+      "tools": [
+        "Visual Code",
+        "Streamlit",
+        "Github"
+      ],
+      "skills": [
+        "Visual Code",
+        "SQL",
+        "Streamlit",
+        "Programação",
+        "python",
+        "SQL",
+        "Análise de Dados",
+        "Análise Exploratória de Dados",
+        "Pensamento Analítico",
+        "Visualização de Dados",
+        "Otimização de Performance",
+        "Qualidade de Dados",
+        "Github"
+      ],
+      "githubLink": "https://github.com/LuisTurra/northwind-analysis",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vSmBjZUFcggHLkEhq_Vbv0oMlfHwQiQ07BC9G2uphRYXDqX-pNm-pipcwQJ4r7CMKTx-5SL0KGaV7Fn/pub",
+      "demoLink": "https://luisturra-northwind-analysis-streamlit-app-hutlfx.streamlit.app/"
+    },
+    {
+      "category": "sql",
+      "id": "sql1",
+      "imagePath": "image/star_schema_olist.png",
+      "title": "Data Warehouse com Star Schema no Dataset Olist",
+      "description": "Construí um data warehouse completo com Star Schema usando DuckDB no dataset Olist. Apliquei queries SQL avançadas: window functions (running total, ranking, LAG, NTILE), CTEs múltiplas, cohort analysis e técnica gaps & islands.",
+      "tags": [
+        "DuckDB",
+        "SQL",
+        "Python",
+        "Looker Studio",
+        "Visual Code"
+      ],
+      "tools": [
+        "Visual Code",
+        "DuckDB",
+        "Looker Studio"
+      ],
+      "skills": [
+        "Visual Code",
+        "DuckDB",
+        "Looker Studio",
+        "Programação",
+        "python",
+        "SQL",
+        "Github"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Data-Warehouse-com-Star-Schema---Analises-Temporais-Avancadas",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vS0_R5Vy4q4POPImNhtztzWLf4gva4xI7OiA8CQoE-mmpgU4UHcE1g2SZYJX6QqPlsgBpEasbtiCXdd/pub?embedded=true",
+      "demoLink": "https://lookerstudio.google.com/reporting/aeb25a21-c707-4a41-bbd6-c99966b8666e"
+    },
+    {
+      "category": "sql",
+      "id": "sql2",
+      "imagePath": "image/viagensTaxi.png",
+      "title": "Análise de Viagens de Táxi em Nova York com DuckDB + Python",
+      "description": "Análise exploratória de +3 milhões de viagens de táxi amarelo em NYC usando DuckDB para consultas SQL eficientes diretamente em arquivo Parquet remoto e Python + Pandas para resumo estatístico e visualizações com consulta via HTTP com zero armazenamento local",
+      "tags": [
+        "DuckDB",
+        "SQL",
+        "Python",
+        "Jupyter Notebook",
+        "Visual Code"
+      ],
+      "tools": [
+        "Visual Code",
+        "DuckDB",
+        "Jupyter Notebook"
+      ],
+      "skills": [
+        "Visual Code",
+        "DuckDB",
+        "Programação",
+        "python",
+        "SQL",
+        "Github"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Analise-de-Viagens-de-Taxi-em-Nova-York-com-DuckDB"
+    },
+    {
+      "category": "sql",
+      "id": "sql3",
+      "imagePath": "image/sqltesteperfo.png",
+      "title": "Otimização de Queries SQL: Performance e Consumo de Recursos",
+      "description": "O projeto compara o desempenho de consultas SQL em um dataset real de aproximadamente 3 milhões de linhas (viagens de táxi amarelo em NYC – Janeiro/2023), utilizando o DuckDB como engine de processamento in-memory. Para cada par de consultas, a versão simples representa uma abordagem direta, enquanto a versão otimizada incorpora boas práticas recomendadas para reduzir o consumo de recursos e melhorar a eficiência.",
+      "tags": [
+        "DuckDB",
+        "SQL",
+        "Python",
+        "Streamlit",
+        "Visual Code"
+      ],
+      "tools": [
+        "Visual Code",
+        "DuckDB",
+        "Streamlit",
+        "Github"
+      ],
+      "skills": [
+        "Visual Code",
+        "DuckDB",
+        "Streamlit",
+        "Programação",
+        "python",
+        "SQL",
+        "Github"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Boas-Praticas-SQL-Protegendo-Recursos-contra-Sobrecarga-e-Crash",
+      "demoLink": "https://luisturra-boas-praticas-sql-protegendo-rec-streamlit-app-5ohvtd.streamlit.app/"
+    },
+    {
+      "category": "sql",
+      "id": "sql4",
+      "imagePath": "image/sql4.gif",
+      "title": "DuckGuard: Avaliação de Saúde e Otimização de Queries",
+      "description": "Aplicação Streamlit projetada para diagnosticar e classificar a qualidade de desempenho de consultas SQL executadas no DuckDB, usando base de dados TPC-H. A análise destaca os resultados obtidos na implementação da funcionalidade de “saúde da query”, incluindo o cálculo de score, detecção de padrões problemáticos e geração de recomendações práticas.",
+      "tags": [
+        "DuckDB",
+        "SQL",
+        "Python",
+        "Streamlit",
+        "Visual Code"
+      ],
+      "tools": [
+        "Visual Code",
+        "DuckDB",
+        "Streamlit",
+        "Github"
+      ],
+      "skills": [
+        "Visual Code",
+        "DuckDB",
+        "Streamlit",
+        "Programação",
+        "python",
+        "SQL",
+        "Github"
+      ],
+      "githubLink": "https://github.com/LuisTurra/DuckGuard",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vSIEQZQDMU3SsSKJYgv4J5Sx2SdBHEDunlwRujgVBseVyfd4ozfVxah6Xsy2rSvsNeThv4OR1jVi_hN/pub?embedded=true",
+      "demoLink": "https://luisturra-duckguard-streamlit-app-zbrf10.streamlit.app/"
+    },
+    {
+      "category": "sql",
+      "id": "sql6",
+      "imagePath": "image/dashboard_preview.png",
+      "title": "Dashboard de Análise Financeira: Análise de Risco de Crédito",
+      "description": "Projeto de análise financeira desenvolvido utilizando SQL avançado, DuckDB e Streamlit com foco em analytics engineering e análise de risco de crédito. O projeto simula um ambiente real de analytics financeiro encontrado em fintechs, bancos digitais e empresas orientadas a dados, utilizando arquitetura analítica moderna baseada em SQL.",
+      "tags": [
+        "DuckDB",
+        "SQL",
+        "Python",
+        "Streamlit",
+        "Visual Code"
+      ],
+      "tools": [
+        "Visual Code",
+        "DuckDB",
+        "Streamlit",
+        "Github"
+      ],
+      "skills": [
+        "Visual Code",
+        "DuckDB",
+        "Streamlit",
+        "Programação",
+        "python",
+        "SQL",
+        "Github"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Financial-Risk-Revenue-Analytics-com-DuckDB",
+      "demoLink": "https://luisturra-financial-risk-revenue-analytics-streamlit-app-bghsjr.streamlit.app/"
+    },
+    {
+      "_section1": "🚀 ==================== SQL ==================== 🚀",
+      "_section2": "🚀 ==================== SQL ==================== 🚀",
+      "_section3": "🚀 ==================== SQL ==================== 🚀",
+      "_section4": "🚀 ==================== SQL ==================== 🚀"
+    },
+    {
+      "category": "ACADEMICOS",
+      "id": "jogo1",
+      "imagePath": "image/jogo1.gif",
+      "title": "Code Path Challenge/Caminho Codificado",
+      "description": "O jogo é um puzzle de pathfinding onde o jogador guia um cubo do ponto inicial ao ponto final vermelho usando apenas caminhos brancos, com o objetivo de usar o menor número possível de comandos.",
+      "tags": [
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Firebase Firestore",
+        "Github"
+      ],
+      "tools": [
+        "Visual Code",
+        "github",
+        "Firebase Firestore",
+        "GitHub"
+      ],
+      "skills": [
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Firebase Firestore",
+        "Github",
+        "Programação",
+        "Educativo",
+        "Web"
+      ],
+      "githubLink": "https://github.com/LuisTurra/code-path-challenge",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vTyNybGCT2Q3r5ygAwD7In_LRt8Q1uOUzlD28uZYZiaYkOX8UhfMjFaNMphZ9Wl_Rk9_Zznr35GU-pp/pub?embedded=true",
+      "demoLink": "https://luisturra.github.io/code-path-challenge/"
+    },
+    {
+      "_section1": "🚀 ==================== ACADEMICOS ==================== 🚀",
+      "_section2": "🚀 ==================== ACADEMICOS ==================== 🚀",
+      "_section3": "🚀 ==================== ACADEMICOS ==================== 🚀",
+      "_section4": "🚀 ==================== ACADEMICOS ==================== 🚀"
+    },
+    {
+      "category": "excel",
+      "id": "analise-salario",
+      "imagePath": "image/salariodedados.png",
+      "title": "DashBoard Salários de Dados (2025)",
+      "description": "Projeto pessoal, onde desenvolvi um dashboard interativo para análise de salários na área de dados, utilizando Power BI.",
+      "tags": [
+        "Power BI",
+        "DAX",
+        "ETL",
+        "Análise Salarial"
+      ],
+      "tools": [
+        "Power BI",
+        "Powerpoint"
+      ],
+      "skills": [
+        "DAX",
+        "Pensamento analítico",
+        "Comunicação",
+        "Modelagem de dados",
+        "Resolução de problemas",
+        "ETL básico",
+        "Atenção a detalhes"
+      ],
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vTi458E9X7e6FlPUphZPYXgYiDgSkJNwGkFTz2hwSnJwU_BmfMfcElB4Mi-g05WWstxWFNmKCnVscGW/pub?embedded=true",
+      "demoLink": "https://app.powerbi.com/view?r=eyJrIjoiODNlOTZkM2EtN2YwYy00ODI4LTgzZTctNTY3ZTMzMmYwNzU1IiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9&pageName=069c2afd845301422361"
+    },
+    {
+      "category": "excel",
+      "id": "analise-sentimento-headset",
+      "imagePath": "image/avaliacaoheadset3.png",
+      "title": "Análise de Sentimento de Produtos Headset Amazon Kindle Store",
+      "description": "Análise de sentimento em Python de headsets na Amazon e Kindle Store. Extraí sentimento de cada comentário e identificação de palavras positivas e negativas. Resultados exibidos em dashboard interativo no Power BI e Looker Studio.",
+      "tags": [
+        "Python",
+        "Power BI",
+        "Looker Studio",
+        "NLTK",
+        "VADER",
+        "NLP"
+      ],
+      "tools": [
+        "Jupyter Notebook",
+        "PowerBI",
+        "Looker Studio",
+        "Github"
+      ],
+      "skills": [
+        "Python",
+        "DAX",
+        "Matplotlib",
+        "Vader",
+        "Stopwords",
+        "Wordnet",
+        "nltk",
+        "Preprocessamento",
+        "Dashboard interativo",
+        "Análise de sentimentos",
+        "Processamento de Linguagem Natural",
+        "Pensamento Analítico",
+        "Dashboard",
+        "Github"
+      ],
+      "githubLink": "https://github.com/LuisTurra/analise_sentimento_avaliacaodeprodutos",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vTO0FyUAg8i6hQRhIzfVEARniItyadhx3EIrxFG6tRN4yYrNVAAfjmpHJnTK1AW_yxRbv318baus8R0/pub?embedded=true",
+      "demoLink": "https://app.powerbi.com/view?r=eyJrIjoiMDgwMDk1NzEtNDhmZi00YWYzLWEyMzktNzcxNWMxOTViZTU5IiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9&pageName=791ce30a0cd117e0e724"
+    },
+    {
+      "category": "excel",
+      "id": "analise-shopify",
+      "imagePath": "image/shopifydashboard2.png",
+      "title": "Análise Shopify (2025)",
+      "description": "Projeto pessoal, onde desenvolvi um dashboard interativo para análise de dados da plataforma Shopify, utilizando Power BI.",
+      "tags": [
+        "Power BI",
+        "DAX",
+        "E-commerce",
+        "Modelagem"
+      ],
+      "tools": [
+        "Power BI"
+      ],
+      "skills": [
+        "DAX",
+        "Pensamento analítico",
+        "Comunicação",
+        "Modelagem de dados",
+        "Resolução de problemas",
+        "ETL básico",
+        "Atenção a detalhes"
+      ],
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vTmJBO3OV1xh9ulygU2_-hZ8AwYOlWfysr_qhYFUEpTRVQl_spAgl2lKH0OHgRCer5T3M5lkzUaeiUZ/pub?embedded=true",
+      "demoLink": "https://app.powerbi.com/view?r=eyJrIjoiMDIxZWFkMjUtMWY4My00MzhkLTllZjgtNTFhNzI0ZWExMDYyIiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9&pageName=d9f70f06e243722aafc7"
+    },
+    {
+      "category": "excel",
+      "id": "analise-netflix",
+      "imagePath": "image/netflixdashbo.png",
+      "title": "Netflix Análise (2025)",
+      "description": "Projeto pessoal, onde desenvolvi um dashboard interativo para análise de dados da plataforma Netflix analisando indivíduos ativos e cancelado, utilizando Power BI.",
+      "tags": [
+        "Power BI",
+        "DAX",
+        "Churn",
+        "Streaming"
+      ],
+      "tools": [
+        "Power BI"
+      ],
+      "skills": [
+        "DAX",
+        "Pensamento analítico",
+        "Comunicação",
+        "Modelagem de dados",
+        "Resolução de problemas",
+        "ETL básico",
+        "Atenção a detalhes"
+      ],
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vR60aYAA0Cnq7Od9VovCQ5KXtgGz_A8Pc0js--MWRnlj1pZNSe_29z5tYQySpPPSWZjcLLEduIS_OCI/pub?embedded=true",
+      "demoLink": "https://app.powerbi.com/view?r=eyJrIjoiOGM1ODU5ZDAtZGZmMy00MDdlLWFlNjctOWJlOWM5ZWQ3YzUwIiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9&pageName=ee6b7190c33aa64a50ee"
+    },
+    {
+      "category": "excel",
+      "id": "analise-demissoes",
+      "imagePath": "image/demissaodashb.png",
+      "title": "Demissões Dashboard (2025)",
+      "description": "Projeto pessoal, onde desenvolvi limpeza de dados em MySQL como remoção de erros e dados nulos para dashboard interativo para análise de dados de demissões de empresas utilizando Power BI.",
+      "tags": [
+        "MySQL",
+        "Power BI",
+        "SQL",
+        "Limpeza"
+      ],
+      "tools": [
+        "MySQL Workbench",
+        "Power BI"
+      ],
+      "skills": [
+        "SQL",
+        "DAX",
+        "Pensamento analítico",
+        "Comunicação",
+        "Modelagem de dados",
+        "Resolução de problemas",
+        "ETL básico",
+        "Atenção a detalhes"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Demiss-es-MySQLDashboard",
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vQXQAZShnqGL5GllryXDa7267VhGUdZv4H1MhCYamqtGyjE5XF6ixN6uXVPXRBoN0gaMPc9E88WkXBK/pub?embedded=true",
+      "demoLink": "https://app.powerbi.com/view?r=eyJrIjoiMWZhM2U0NmUtOGNmOC00NDZiLWFiMWYtOGNkZDVhNWQyODg1IiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9"
+    },
+    {
+      "category": "excel",
+      "id": "analise-contratacao",
+      "imagePath": "image/contratacaofreel.png",
+      "title": "Contratação Dashboard (2025)",
+      "description": "Projeto pessoal, onde desenvolvi limpeza de dados remoção de erros e dados nulos para dashboard interativo utilizando Excel.",
+      "tags": [
+        "Excel",
+        "Freelancer",
+        "Análise"
+      ],
+      "tools": [
+        "Excel"
+      ],
+      "skills": [
+        "Excel"
+      ],
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vR_mXbocaQU8b3OJt8OTw5npgak-fIJXPOss_13P8JqTHRuzPvGDBnfhGeC4MFA6ijDmOAMZh5yQJhw/pub?embedded=true",
+      "demoLink": "https://1drv.ms/x/c/0472c20a7b379144/IQTy5NAyyKlKRLQWXM24RhmeAT9eIytJQm4jnQeDq2uJNQU?em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+    },
+    {
+      "category": "excel",
+      "id": "analise-bicicle",
+      "imagePath": "image/dashboardbike.png",
+      "title": "Análise de Vendas de Bicicletas (2025)",
+      "description": "Projeto pessoal, onde desenvolvi analise de dados dashboard em Power Bi de vendas de bicicletas entre os anos 2013-2023.",
+      "tags": [
+        "Power BI",
+        "MySQL",
+        "DAX",
+        "SQL"
+      ],
+      "tools": [
+        "Power BI",
+        "MySQL"
+      ],
+      "skills": [
+        "SQL",
+        "DAX",
+        "Pensamento analítico",
+        "Comunicação",
+        "Modelagem de dados",
+        "Resolução de problemas",
+        "ETL básico",
+        "Atenção a detalhes"
+      ],
+      "reportPath": "https://docs.google.com/document/d/e/2PACX-1vSaERGTy2bKWIosYTA4FhZhOBXrn84padHSTM5jkTz9LHEJpaeBca5IMSS3eS0VUJUiaiZd7jRqBAKS/pub?embedded=true",
+      "demoLink": "https://app.powerbi.com/view?r=eyJrIjoiODgzYWI4YzAtYjYyZS00ZDU1LTliNjUtMzkzMWZlNDQzMDBjIiwidCI6ImNmNzJlMmJkLTdhMmItNDc4My1iZGViLTM5ZDU3YjA3Zjc2ZiIsImMiOjR9&pageName=cd65a36ce6141bbc1166"
+    },
+    {
+      "_section1": "🚀 ==================== ACADEMICOS ==================== 🚀",
+      "_section2": "🚀 ==================== ACADEMICOS ==================== 🚀",
+      "_section3": "🚀 ==================== ACADEMICOS ==================== 🚀",
+      "_section4": "🚀 ==================== ACADEMICOS ==================== 🚀"
+    },
+    {
+      "category": "academic",
+      "id": "acad1",
+      "imagePath": "",
+      "title": "Web Climático (2021)",
+      "description": "Desenvolvimento de um site para análise de dados de temperatura e CO₂ no campus, utilizando algoritmos matemáticos e estatísticos para visualização de padrões climáticos. Projeto desenvolvido como parte do meu curso de Ciência de Dados.",
+      "tags": [
+        "Python",
+        "Streamlit",
+        "XGBoost",
+        "SHAP",
+        "Plotly"
+      ],
+      "tools": [
+        "Visual Code",
+        "Jupyter Notebook",
+        "PHP",
+        "ESP-WROOM-32"
+      ],
+      "skills": [
+        "Python",
+        "PHP",
+        "HTML",
+        "CSS",
+        "Python",
+        "Visualização de Dados",
+        "Preprocessamento",
+        "Pensamento analítico",
+        "Resolução de Problemas"
+      ],
+      "githubLink": "https://github.com/LuisTurra/Web_Climatico.git"
+    },
+    {
+      "category": "academic",
+      "id": "acad2",
+      "imagePath": "",
+      "title": "Searcher (2022)",
+      "description": "Software de mecanismo de busca para pesquisar informações em um banco de dados MySQL, com uso de processamento de linguagem natural para filtrar as informações. Projeto desenvolvido como parte do meu curso de Ciência de Dados.",
+      "tags": [
+        "MySQL",
+        "Jupyter Notebook",
+        "NLP"
+      ],
+      "tools": [
+        "Jupyter Notebook",
+        "MySQL",
+        "NLP",
+        "GitHub"
+      ],
+      "skills": [
+        "Python",
+        "MySQL",
+        "Pandas",
+        "NLTK"
+      ],
+      "githubLink": "https://github.com/LuisTurra/MotorDeBusca.git"
+    },
+    {
+      "category": "academic",
+      "id": "acad3",
+      "imagePath": "",
+      "title": "Sistema de Recomendação (2023)",
+      "description": "Utilização de um banco de dados com livros e aplicação de pré-processamento de dados. Projeto desenvolvido como parte do meu curso de Ciência de Dados.",
+      "tags": [
+        "Python",
+        "Pandas",
+        "NLTK",
+        "Machine Learning"
+      ],
+      "tools": [
+        "Jupyter Notebook",
+        "GitHub"
+      ],
+      "skills": [
+        "Python",
+        "Pandas",
+        "NLTK",
+        "Machine Learning"
+      ],
+      "githubLink": "https://github.com/LuisTurra/SistemaRecomendacao.git"
+    },
+    {
+      "category": "academic",
+      "id": "acad4",
+      "imagePath": "",
+      "title": "Trabalho de Graduação (2023)",
+      "description": "Uso de Redes Neurais Convolucionais para o Reconhecimento de LIBRAS: Dissertação utilizando uma Rede Neural Convolucional para classificar imagens de identificação de sinais gestuais. Projeto desenvolvido como parte do meu curso de Ciência de Dados.",
+      "tags": [
+        "Python",
+        "Rede Neural Convolucional",
+        "LIBRAS"
+      ],
+      "tools": [
+        "Python",
+        "Jupyter Notebook",
+        "GitHub"
+      ],
+      "skills": [
+        "Python",
+        "Deep Learning",
+        "Tensorflow",
+        "Matplotlib"
+      ],
+      "githubLink": "https://github.com/LuisTurra/convolutionary-neural-networks-for-hand-signs.git"
+    },
+    {
+      "category": "academic",
+      "id": "acad5",
+      "imagePath": "",
+      "title": "Meu Portfólio (2025)",
+      "description": "Meu portfólio pessoal, onde apresento meus projetos e habilidades. Este site foi desenvolvido para mostrar meu trabalho e facilitar o contato com potenciais empregadores.",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "ChatBot",
+        "Jogos"
+      ],
+      "tools": [
+        "Visual Code",
+        "GitHub"
+      ],
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Json"
+      ],
+      "githubLink": "https://github.com/LuisTurra/MyPortfolio.git"
+    }
+  ]
+}

@@ -2,6 +2,16 @@
 <html lang="pt">
   <head>
     <meta charset="UTF-8" />
+    <!-- Desabilita cache durante desenvolvimento -->
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- Força recarregar CSS sempre -->
+    <link rel="stylesheet" href="seu-arquivo.css?v=<?php echo time(); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Luis Turra | Projetos e Experiência</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -83,267 +93,6 @@
           </li>
           <li>
             <a href="#about"><i class="fa fa-user"></i>Sobre</a>
-          </li>
-          <!-- <li><a href="game/game.html">Jogar Desafio do Caminho</a></li> -->
-          <li class="open">
-            <!--Projetos Destaques--------------------------------------------------->
-            <a href="#dashboards"
-              ><i class="fa fa-chart-line"></i>Projetos em Destaque</a
-            >
-            <ul class="nav-sub">
-              <li>
-                <a href="#churnsight"
-                  ><span class="white-ball"></span> ChurnSight AI (2026)</a
-                >
-              </li>
-              <li>
-                <a href="#investA"
-                  ><span class="white-ball"></span> InvestAgent (2026)</a
-                >
-              </li>
-              <li>
-                <a href="#manutencao-preditiva-turbofan"
-                  ><span class="white-ball"></span> Manutenção Preditiva
-                  Turbofan (2025)</a
-                >
-              </li>
-
-              <li>
-                <a href="#orsco"
-                  ><span class="white-ball"></span> Otimização de Rotas
-                  (SupplyChain Optimazer) (2025)</a
-                >
-              </li>
-
-              <li>
-                <a href="#datb"
-                  ><span class="white-ball"></span> Detecção de Anomalias em
-                  Transações Bitcoin (2026)</a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <!--Todos Projetos Destaques--------------------------------------------------->
-            <a href="#dashboards"
-              ><i class="fa fa-chart-line"></i>Outros Projetos</a
-            >
-            <ul class="nav-sub">
-              <li></li>
-
-              <li>
-                <a href="#fraudecartãocred"
-                  ><span class="white-ball"></span> Detecção de Fraude em Cartão
-                  de Crédito (2025)
-                </a>
-              </li>
-              <li>
-                <a href="#chicago-crime"
-                  ><span class="white-ball"></span> Análise Criminal: Cidade de
-                  Chicago (2001–2025)</a
-                >
-              </li>
-              <li>
-                <a href="#giran"
-                  ><span class="white-ball"></span> Impacto Financeiro: Conflito
-                  Irã 2026 (2025)</a
-                >
-              </li>
-              <li>
-                <a href="#trafego-urbanosp"
-                  ><span class="white-ball"></span> Otimização de Análise de
-                  Dados de Tráfego Urbano com ML</a
-                >
-              </li>
-
-              <li>
-                <a href="#earthquakeai"
-                  ><span class="white-ball"></span> EarthQuake AI – Analisador
-                  Global de Risco Sísmico com Previsão por Inteligência
-                  Artificial (2025)</a
-                >
-              </li>
-              <li>
-                <a href="#ptcrnn"
-                  ><span class="white-ball"></span> Previsão de Taxas de Câmbio
-                  com RNN (2026)</a
-                >
-              </li>
-              <li>
-                <a href="#chatbot"
-                  ><span class="white-ball"></span> Chatbot IA Integrado ao
-                  Portfólio Pessoal (2026)</a
-                >
-              </li>
-              <li>
-                <a href="#manupred"
-                  ><span class="white-ball"></span> Sistema de Manutenção
-                  Preditiva de Máquinas Industriais</a
-                >
-              </li>
-              <li>
-                <a href="#xgchutes"
-                  ><span class="white-ball"></span> xG Model - Brasileirão Série
-                  A 2025</a
-                >
-              </li>
-
-              <li>
-                <a href="#analisehidro"
-                  ><span class="white-ball"></span> Análise de Eficiência
-                  Hidráulica com Regressão (2026)</a
-                >
-              </li>
-              <li>
-                <a href="#analise-carros-usados"
-                  ><span class="white-ball"></span> Dashboard e Predição de
-                  Carro Usados (2025)</a
-                >
-              </li>
-              <li>
-                <a href="#sistema-financeiro"
-                  ><span class="white-ball"></span> Simulação FInanceira
-                  (2025)</a
-                >
-              </li>
-              <li>
-                <a href="#invest"
-                  ><span class="white-ball"></span> Otimização de Portfólio de
-                  Investimentos - Teoria Moderna de Markowitz (2026)</a
-                >
-              </li>
-              <li>
-                <a href="#recomendacao-colheita"
-                  ><span class="white-ball"></span> Sistema de Recomendação de
-                  Cultura (2025)</a
-                >
-              </li>
-              <li>
-                <a href="#precoboi"
-                  ><span class="white-ball"></span> PreçoBoiBR - Preço do Boi
-                  Gordo no Brasil
-                </a>
-              </li>
-              <li>
-                <a href="#analise-eletricidade"
-                  ><span class="white-ball"></span> Custo de Eletricidade
-                  Dashboard (2025)</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li>
-            <!--Projetos SQL--------------------------------------------------->
-            <a href="#dashboards"
-              ><i class="fa fa-chart-line"></i>Projetos SQL</a
-            >
-            <ul class="nav-sub">
-              <li></li>
-              <li>
-                <a href="#sql5"
-                  ><span class="white-ball"></span> Northwind Business
-                  Intelligence (2026)</a
-                >
-              </li>
-              <li>
-                <a href="#sql1"
-                  ><span class="white-ball"></span> Data Warehouse com Star
-                  Schema no Dataset Olist (2026)</a
-                >
-              </li>
-              <li>
-                <a href="#sql2"
-                  ><span class="white-ball"></span> Análise de Viagens de Táxi
-                  em Nova York com DuckDB + Python</a
-                >
-              </li>
-              <li>
-                <a href="#sql3"
-                  ><span class="white-ball"></span> Otimização de Queries SQL:
-                  Performance e Consumo de Recursos</a
-                >
-              </li>
-              <li>
-                <a href="#sql4"
-                  ><span class="white-ball"></span> DuckGuard: Avaliação de
-                  Saúde e Otimização de Queries</a
-                >
-              </li>
-              <li>
-                <a href="#sql6"
-                  ><span class="white-ball"></span> Dashboard de Análise
-                  Financeira: Análise de Risco de Crédito</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li>
-            <!--Projetos Jogos--------------------------------------------------->
-            <a href="#dashboards"><i class="fa fa-chart-line"></i>Jogos</a>
-            <ul class="nav-sub">
-              <li></li>
-              <li>
-                <a href="#jogo1"
-                  ><span class="white-ball"></span> Code Path Challenge/Caminho
-                  Codificado</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li>
-            <!--Projetos PBI e Excel--------------------------------------------------->
-            <a href="#dashboards"
-              ><i class="fa fa-chart-line"></i>Power BI e Excel</a
-            >
-            <ul class="nav-sub">
-              <li>
-                <a href="#analise-salario"
-                  ><span class="white-ball"></span> DashBoard Salários de Dados
-                  (2025)</a
-                >
-              </li>
-
-              <li>
-                <a href="#analise-sentimento-headset"
-                  ><span class="white-ball"></span> Analise de Sentimento de
-                  Produtos Headset Amazon Kindle Store (2025)</a
-                >
-              </li>
-              <li>
-                <a href="#analise-shopify"
-                  ><span class="white-ball"></span> Análise Shopify (2025)</a
-                >
-              </li>
-              <li>
-                <a href="#analise-netflix"
-                  ><span class="white-ball"></span> Netflix Análise (2025)</a
-                >
-              </li>
-              <li>
-                <a href="#analise-demissoes"
-                  ><span class="white-ball"></span> Demissões Dashboard
-                  (2025)</a
-                >
-              </li>
-              <li>
-                <a href="#analise-contratacao"
-                  ><span class="white-ball"></span> Contratação Dashboard
-                  (2025)</a
-                >
-              </li>
-              <li>
-                <a href="#analise-bicicle"
-                  ><span class="white-ball"></span> Análise de Vendas de
-                  Bicicletas (2025)</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#portfolio"
-              ><i class="fa fa-briefcase"></i>Projetos Acadêmicos</a
-            >
           </li>
         </ul>
       </div>
@@ -521,15 +270,48 @@
         <!--====About section end====-->
         <!-- ****************************************************************************************************************** -->
         <!-- ****************************************************************************************************************** -->
+        <!-- FILTROS -->
+        <!-- FILTROS -->
+        <div class="project-filters">
+          <div class="filter-group">
+            <label for="filter-category">Categoria</label>
+            <select id="filter-category">
+              <option value="">Todas as Categorias</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filter-tag">Tags</label>
+            <select id="filter-tag">
+              <option value="">Todas as Tags</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filter-tool">Ferramentas</label>
+            <select id="filter-tool">
+              <option value="">Todas as Ferramentas</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filter-skill">Skills</label>
+            <select id="filter-skill">
+              <option value="">Todas as Skills</option>
+            </select>
+          </div>
+
+          <button id="clear-filters">Limpar</button>
+
+          <div class="filter-counter">
+            <span id="projects-count"></span>
+          </div>
+        </div>
+        <!-- ****************************************************************************************************************** -->
         <!-- ****************************************************************************************************************** -->
         <!--====Projetos em Destaque start====-->
         <section class="portfolio section" id="dashboards">
           <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>Projetos em Destaque</h2>
-              </div>
-            </div>
             <div id="projetos-destaque-container"></div>
           </div>
         </section>
@@ -538,11 +320,6 @@
         <!-- DASHBOARD items start-->
         <section class="portfolio section bg-dark text-white" id="dashboards">
           <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>Outros Projetos</h2>
-              </div>
-            </div>
             <div id="todos-projetos-container"></div>
           </div>
         </section>
@@ -553,11 +330,6 @@
         <!-- Projetos SQL items start-->
         <section class="portfolio section bg-dark text-white" id="dashboards">
           <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>Projetos SQL</h2>
-              </div>
-            </div>
             <div id="projetos-sql-container"></div>
           </div>
         </section>
@@ -569,11 +341,6 @@
         <!-- Jogos items start-->
         <section class="portfolio section bg-dark text-white" id="dashboards">
           <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>Jogos</h2>
-              </div>
-            </div>
             <div id="jogos-container"></div>
           </div>
         </section>
@@ -586,11 +353,6 @@
         <!-- DASHBOARD items start-->
         <section class="portfolio section bg-dark text-white" id="dashboards">
           <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>Power Bi e Excel</h2>
-              </div>
-            </div>
             <div id="excelPBI-container"></div>
           </div>
         </section>
@@ -599,339 +361,16 @@
         <!-- ****************************************************************************************************************** -->
         <!-- ****************************************************************************************************************** -->
         <!-- ****************************************************************************************************************** -->
-
-        <!-- ****************************************************************************************************************** -->
-        <!-- ****************************************************************************************************************** -->
-        <!-- ****************************************************************************************************************** -->
-        <!--====portifolio section start====-->
-        <section class="portfolio section" id="portfolio">
+        <!-- Projeto Academico items start-->
+        <section class="portfolio section bg-dark text-white" id="dashboards">
           <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>Projetos Acadêmicos</h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="portfolio-heading padd-15">
-                <h2>Meus últimos projetos:</h2>
-              </div>
-            </div>
-            <div class="row portfolio-items">
-              <!-- Portfolio Item 1 -->
-              <div class="portfolio-item padd-15" data-aos="fade-up">
-                <div class="portfolio-item-inner shadow-dark">
-                  <div
-                    class="flip-card"
-                    onclick="this.classList.toggle('flipped')"
-                  >
-                    <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <h2>Web Climático (2021)</h2>
-                        <p class="portfolio-description">
-                          Desenvolvimento de um site para análise de dados de
-                          temperatura e CO₂ no campus, utilizando algoritmos
-                          matemáticos e estatísticos para visualização de
-                          padrões climáticos. Projeto desenvolvido como parte do
-                          meu curso de Ciência de Dados.
-                        </p>
-                      </div>
-                      <div class="flip-card-back">
-                        <div class="row">
-                          <div class="column">
-                            <div class="portfolio-tools">
-                              <strong
-                                ><span class="highlight"
-                                  >Ferramentas:</span
-                                ></strong
-                              >
-                              <ul>
-                                <li>Visual Code</li>
-                                <li>Jupyter Notebook</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="column">
-                            <div class="portfolio-tools">
-                              <strong
-                                ><span class="highlight">Skills:</span></strong
-                              >
-                              <ul>
-                                <li>PHP</li>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>Python</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <button
-                          class="relatorio-btn"
-                          onclick="
-                            window.open(
-                              'relatoriopdf/Projeto Integrador 2.pdf',
-                              '_blank',
-                            )
-                          "
-                        >
-                          📄 Relatório
-                        </button>
-                        <a
-                          href="https://github.com/LuisTurra/Web_Climatico.git"
-                          target="_blank"
-                          class="github-link"
-                        >
-                          View on GitHub
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Portfolio Item 2 -->
-              <div class="portfolio-item padd-15" data-aos="fade-up">
-                <div class="portfolio-item-inner shadow-dark">
-                  <div
-                    class="flip-card"
-                    onclick="this.classList.toggle('flipped')"
-                  >
-                    <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <h2>Searcher (2022)</h2>
-                        <p class="portfolio-description">
-                          Software de mecanismo de busca para pesquisar
-                          informações em um banco de dados MySQL, com uso de
-                          processamento de linguagem natural para filtrar as
-                          informações. Projeto desenvolvido como parte do meu
-                          curso de Ciência de Dados.
-                        </p>
-                      </div>
-                      <div class="flip-card-back">
-                        <div class="row">
-                          <div class="column">
-                            <div class="portfolio-tools">
-                              <strong
-                                ><span class="highlight"
-                                  >Ferramentas:</span
-                                ></strong
-                              >
-                              <ul>
-                                <li>Jupyter Notebook</li>
-                                <li>MySQL</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="column">
-                            <div class="portfolio-tools">
-                              <strong
-                                ><span class="highlight">Skills:</span></strong
-                              >
-                              <ul>
-                                <li>Python</li>
-                                <li>MySQL</li>
-                                <li>Pandas</li>
-                                <li>NLTK</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <a
-                          href="https://github.com/LuisTurra/MotorDeBusca.git"
-                          target="_blank"
-                          class="github-link"
-                        >
-                          View on GitHub
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Portfolio Item 3 -->
-              <div class="portfolio-item padd-15" data-aos="fade-up">
-                <div class="portfolio-item-inner shadow-dark">
-                  <div
-                    class="flip-card"
-                    onclick="this.classList.toggle('flipped')"
-                  >
-                    <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <h2>Sistema de Recomendação (2023)</h2>
-                        <p class="portfolio-description">
-                          Utilização de um banco de dados com livros e aplicação
-                          de pré-processamento de dados. Projeto desenvolvido
-                          como parte do meu curso de Ciência de Dados.
-                        </p>
-                      </div>
-                      <div class="flip-card-back">
-                        <div class="row">
-                          <div class="column">
-                            <div class="portfolio-tools">
-                              <strong
-                                ><span class="highlight"
-                                  >Ferramentas:</span
-                                ></strong
-                              >
-                              <ul>
-                                <li>Jupyter Notebook</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="column">
-                            <div class="portfolio-tools">
-                              <strong
-                                ><span class="highlight">Skills:</span></strong
-                              >
-                              <ul>
-                                <li>Python</li>
-                                <li>Pandas</li>
-                                <li>NLTK</li>
-                                <li>Machine Learning</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <a
-                          href="https://github.com/LuisTurra/SistemaRecomendacao.git"
-                          target="_blank"
-                          class="github-link"
-                        >
-                          View on GitHub
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Portfolio Item 4 -->
-              <div class="portfolio-item padd-15" data-aos="fade-up">
-                <div class="portfolio-item-inner shadow-dark">
-                  <div
-                    class="flip-card"
-                    onclick="this.classList.toggle('flipped')"
-                  >
-                    <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <h2>Trabalho de Graduação (2023)</h2>
-                        <p class="portfolio-description">
-                          Uso de Redes Neurais Convolucionais para o
-                          Reconhecimento de LIBRAS: Dissertação utilizando uma
-                          Rede Neural Convolucional para classificar imagens de
-                          identificação de sinais gestuais. Projeto desenvolvido
-                          como parte do meu curso de Ciência de Dados.
-                        </p>
-                      </div>
-                      <div class="flip-card-back">
-                        <div class="row">
-                          <div class="column">
-                            <div class="portfolio-tools">
-                              <strong
-                                ><span class="highlight"
-                                  >Ferramentas:</span
-                                ></strong
-                              >
-                              <ul>
-                                <li>Jupyter Notebook</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="column">
-                            <div class="portfolio-tools">
-                              <strong
-                                ><span class="highlight">Skills:</span></strong
-                              >
-                              <ul>
-                                <li>Python</li>
-                                <li>Deep Learning</li>
-                                <li>Tensorflow</li>
-                                <li>Matplotlib</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <button
-                          class="relatorio-btn"
-                          onclick="
-                            window.open(
-                              'relatoriopdf/TCC_Anderson_Luis_FINAL_IMPRES.pdf',
-                              '_blank',
-                            )
-                          "
-                        >
-                          📄 Relatório
-                        </button>
-                        <a
-                          href="https://github.com/LuisTurra/convolutionary-neural-networks-for-hand-signs.git"
-                          target="_blank"
-                          class="github-link"
-                        >
-                          View on GitHub
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Portfolio Item 5 -->
-              <div class="portfolio-item padd-15" data-aos="fade-up">
-                <div class="portfolio-item-inner shadow-dark">
-                  <div
-                    class="flip-card"
-                    onclick="this.classList.toggle('flipped')"
-                  >
-                    <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <h2>Meu Portfólio (2025)</h2>
-                        <p class="portfolio-description">
-                          Meu portfólio pessoal, onde apresento meus projetos e
-                          habilidades. Este site foi desenvolvido para mostrar
-                          meu trabalho e facilitar o contato com potenciais
-                          empregadores.
-                        </p>
-                      </div>
-                      <div class="flip-card-back">
-                        <div class="row">
-                          <div class="column">
-                            <div class="portfolio-tools">
-                              <strong
-                                ><span class="highlight"
-                                  >Ferramentas:</span
-                                ></strong
-                              >
-                              <ul>
-                                <li>Visual Code</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="column">
-                            <div class="portfolio-tools">
-                              <strong
-                                ><span class="highlight">Skills:</span></strong
-                              >
-                              <ul>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <a
-                          href="https://github.com/LuisTurra/MyPortfolio.git"
-                          target="_blank"
-                          class="github-link"
-                        >
-                          View on GitHub
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div id="Academico-container"></div>
           </div>
         </section>
-        <!-- portfolio section end-->
+        <!-- ****************************************************************************************************************** -->
+        <!-- ****************************************************************************************************************** -->
+        <!-- ****************************************************************************************************************** -->
+        
         <!-- ****************************************************************************************************************** -->
         <!-- ****************************************************************************************************************** -->
       </div>
@@ -1042,27 +481,6 @@
           : "Show Dashboard";
       }
 
-      document.querySelector(".nav-toggler").addEventListener("click", () => {
-        const navToggler = document.querySelector(".nav-toggler");
-        const aside = document.querySelector(".aside");
-
-        // Toggle sidebar
-        aside.classList.toggle("open");
-
-        // Add .clicked class to trigger blink, then remove after animation
-        navToggler.classList.add("clicked");
-        setTimeout(() => {
-          navToggler.classList.remove("clicked");
-        }, 300); // Match animation duration (0.3s)
-      });
-      const navLinks = document.querySelectorAll(".aside .nav li a");
-
-      // Close aside when any link is clicked
-      navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          document.querySelector(".aside").classList.remove("open");
-        });
-      });
       window.addEventListener("load", function () {
         const sidebar = document.querySelector(".sidebar");
         if (sidebar) sidebar.scrollTop = 0;
@@ -1138,163 +556,7 @@
         });
       });
     </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const destaqueContainer = document.getElementById(
-          "projetos-destaque-container",
-        );
-        const todosContainer = document.getElementById(
-          "todos-projetos-container",
-        );
-        const sqlContainer = document.getElementById("projetos-sql-container");
-        const excelPBIContainer = document.getElementById("excelPBI-container");
-        const jogosContainer = document.getElementById("jogos-container");
 
-        // Mensagem de loading
-        destaqueContainer.innerHTML =
-          '<p style="text-align:center; padding:50px;">Carregando projetos em destaque...</p>';
-        todosContainer.innerHTML =
-          '<p style="text-align:center; padding:50px;">Carregando todos os projetos...</p>';
-        sqlContainer.innerHTML =
-          '<p style="text-align:center; padding:50px;">Carregando projetos SQL...</p>';
-        excelPBIContainer.innerHTML =
-          '<p style="text-align:center; padding:50px;">Carregando projetos Excel e PBI...</p>';
-        jogosContainer.innerHTML =
-          '<p style="text-align:center; padding:50px;">Carregando projetos Excel e PBI...</p>';
-
-        // Função para inicializar TODOS os efeitos nos cards novos
-        function initCards(container) {
-          // 1. Reinicia AOS (animações de entrada)
-          if (typeof AOS !== "undefined") {
-            AOS.refresh();
-          }
-
-          // 2. Flip cards (clique no trigger da frente)
-          container.querySelectorAll(".flip-trigger").forEach((trigger) => {
-            trigger.addEventListener("click", (e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              trigger.closest(".flip-card").classList.toggle("flipped");
-            });
-          });
-
-          // 3. Virar de volta ao clicar no verso (exceto em links/botões)
-          container.querySelectorAll(".flip-card-back").forEach((back) => {
-            back.addEventListener("click", (e) => {
-              if (!e.target.closest("a, button, .scrollable-content")) {
-                back.closest(".flip-card").classList.remove("flipped");
-              }
-            });
-          });
-
-          // 4. Efeito de preview/hover no botão 👁️ Preview (o que estava faltando!)
-          container.querySelectorAll(".hover-indicator-btn").forEach((btn) => {
-            const overlay = btn
-              .closest(".project-card")
-              .querySelector(".project-overlay");
-            const background = btn
-              .closest(".project-card")
-              .querySelector(".project-background");
-
-            btn.addEventListener("mouseenter", () => {
-              if (overlay) overlay.style.opacity = "0";
-              if (background) background.style.transform = "scale(1.03)";
-            });
-
-            btn.addEventListener("mouseleave", () => {
-              if (overlay) overlay.style.opacity = "1";
-              if (background) background.style.transform = "scale(1)";
-            });
-          });
-
-          // 5. Força animação dos GIFs no background (comum em background-image)
-          container.querySelectorAll(".project-background").forEach((bg) => {
-            const current = bg.style.backgroundImage;
-            if (current) {
-              bg.style.backgroundImage = "none";
-              bg.offsetHeight; // reflow
-              bg.style.backgroundImage = current;
-            }
-          });
-
-          // 6. Altura consistente dos cards (função que já existe no seu script.js)
-          if (typeof setConsistentCardHeights === "function") {
-            setConsistentCardHeights();
-          }
-          setupDashboardButtons();
-        }
-
-        // Cache buster (resolve o problema do refresh normal)
-        const cacheBuster = "?v=" + Date.now();
-
-        // Carrega Destaque
-        fetch("projetos-destaque.html" + cacheBuster)
-          .then((response) => {
-            if (!response.ok) throw new Error("Arquivo não encontrado");
-            return response.text();
-          })
-          .then((data) => {
-            destaqueContainer.innerHTML = data;
-            initCards(destaqueContainer);
-          })
-          .catch((err) => {
-            destaqueContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
-          });
-
-        // Carrega Todos os Projetos
-        fetch("todos-projetos.html" + cacheBuster)
-          .then((response) => {
-            if (!response.ok) throw new Error("Arquivo não encontrado");
-            return response.text();
-          })
-          .then((data) => {
-            todosContainer.innerHTML = data;
-            initCards(todosContainer);
-          })
-          .catch((err) => {
-            todosContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
-          });
-        // Carrega Projetos SQL
-        fetch("sql-projetos.html" + cacheBuster)
-          .then((response) => {
-            if (!response.ok) throw new Error("Arquivo não encontrado");
-            return response.text();
-          })
-          .then((data) => {
-            sqlContainer.innerHTML = data;
-            initCards(sqlContainer);
-          })
-          .catch((err) => {
-            sqlContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
-          });
-        // Carrega Projetos excelPBI
-        fetch("excelPBI.html" + cacheBuster)
-          .then((response) => {
-            if (!response.ok) throw new Error("Arquivo não encontrado");
-            return response.text();
-          })
-          .then((data) => {
-            excelPBIContainer.innerHTML = data;
-            initCards(excelPBIContainer);
-          })
-          .catch((err) => {
-            excelPBIContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
-          });
-        // Carrega Projetos Jogos
-        fetch("jogos.html" + cacheBuster)
-          .then((response) => {
-            if (!response.ok) throw new Error("Arquivo não encontrado");
-            return response.text();
-          })
-          .then((data) => {
-            jogosContainer.innerHTML = data;
-            initCards(jogosContainer);
-          })
-          .catch((err) => {
-            jogosContainer.innerHTML = `<p style="color:red;text-align:center;">Erro: ${err.message}</p>`;
-          });
-      });
-    </script>
     <!---*************************************************************-->
     <!--**************ChatBOT***********************************************-->
     <!-- Chatbot Widget com IA (versão com estilos inline - sem Tailwind) -->
@@ -1656,291 +918,9 @@
         });
       });
     </script>
-    <script>
-      let techChartInstance = null;
-      let skillsChartInstance = null;
-
-      const techData = {
-        Python: 14,
-        GitHub: 18,
-        "VS Code": 16,
-        SQL: 12,
-        Streamlit: 9,
-        "Power BI": 8,
-        DuckDB: 7,
-        Plotly: 5,
-        XGBoost: 4,
-        Pandas: 5,
-        "Scikit-learn": 4,
-        Dash: 3,
-        Render: 3,
-        "Looker Studio": 3,
-        MySQL: 3,
-        Firebase: 1,
-        JavaScript: 1,
-        "HTML/CSS": 1,
-        "Groq API": 1,
-        LLM: 1,
-        dbt: 1,
-        BigQuery: 1,
-        PyTorch: 1,
-        Gradio: 1,
-        Folium: 1,
-        "Hugging Face": 1,
-        Excel: 2,
-        "Jupyter Notebook": 2,
-      };
-
-      const skillData = {
-        "Análise de Dados": 16,
-        "Programação em Python": 14,
-        "SQL": 12,
-        "Desenvolvimento de Dashboards": 12,
-        "Visualização de Dados": 11,
-        "Aprendizado de Máquina": 8,
-        "ETL / Limpeza de Dados": 8,
-        "Resolução de Problemas": 12,
-        "Pensamento Analítico": 12,
-        "Modelagem de Dados": 7,
-        "Inteligência de Negócios": 7,
-        "Engenharia de Features": 5,
-        "Análise Preditiva": 5,
-        "Avaliação de Modelos": 4,
-        "Modelagem com XGBoost": 4,
-        "Análise de Séries Temporais": 3,
-        "Processamento de Linguagem Natural (NLP)": 2,
-        "Análise de Sentimento": 1,
-        "IA Explicável (SHAP)": 1,
-        "IA Generativa": 1,
-        "Integração de LLMs": 1,
-        "Aprendizado por Reforço": 1,
-        "Aprendizado Profundo": 1,
-        "Data Warehouse": 1,
-        "Esquema Estrela": 1,
-        "Implantação na Nuvem": 4,
-        "Implantação em Produção": 4,
-        "Análise Financeira": 2,
-        "Análise de Risco": 2,
-        "Algoritmos de Otimização": 1,
-        "IoT / Análise de Sensores": 1,
-      };
-
-      // ============================================================
-      // Ordenação automática dos gráficos
-      // Maior valor aparece primeiro
-      // ============================================================
-
-      function sortChartData(data, limit = 15) {
-        return Object.fromEntries(
-          Object.entries(data)
-            .sort((a, b) => b[1] - a[1])
-            .slice(0, limit),
-        );
-      }
-
-      function initCharts() {
-        const isDarkMode = document.body.classList.contains("dark");
-
-        // Dados já ordenados
-        const sortedTechData = sortChartData(techData, 15);
-        const sortedSkillData = sortChartData(skillData, 15);
-
-        const textColor = isDarkMode ? "#ffffff" : "#222222";
-        const gridColor = isDarkMode
-          ? "rgba(255,255,255,0.12)"
-          : "rgba(0,0,0,0.08)";
-
-        const tickColor = isDarkMode ? "#eeeeee" : "#555555";
-        const titleColorTech = isDarkMode ? "#00ff88" : "#00aa66";
-        const titleColorSkill = isDarkMode ? "#e066ff" : "#8800cc";
-
-        const getGradient = (ctx, chartArea) => {
-          const gradient = ctx.createLinearGradient(
-            0,
-            chartArea.bottom,
-            0,
-            chartArea.top,
-          );
-
-          gradient.addColorStop(0, isDarkMode ? "#00ccff" : "#0099cc");
-          gradient.addColorStop(1, isDarkMode ? "#00ff88" : "#00cc77");
-
-          return gradient;
-        };
-
-        const commonOptions = {
-          indexAxis: "y",
-          responsive: true,
-          maintainAspectRatio: false,
-
-          plugins: {
-            legend: {
-              display: false,
-            },
-            tooltip: {
-              backgroundColor: isDarkMode
-                ? "rgba(30,30,30,0.95)"
-                : "rgba(255,255,255,0.95)",
-              titleColor: isDarkMode ? "#fff" : "#000",
-              bodyColor: isDarkMode ? "#fff" : "#000",
-              borderColor: isDarkMode ? "#00ff88" : "#00aa66",
-              borderWidth: 1,
-            },
-          },
-
-          scales: {
-            x: {
-              beginAtZero: true,
-              grid: {
-                color: gridColor,
-              },
-
-              ticks: {
-                color: tickColor,
-                font: {
-                  size: 12,
-                },
-              },
-            },
-
-            y: {
-              grid: {
-                display: false,
-              },
-
-              ticks: {
-                color: textColor,
-
-                font: {
-                  size: 13,
-                  weight: "600",
-                },
-              },
-            },
-          },
-
-          borderRadius: 6,
-          borderSkipped: false,
-        };
-        if (techChartInstance) techChartInstance.destroy();
-        if (skillsChartInstance) skillsChartInstance.destroy();
-
-        // ============================================================
-        // GRÁFICO DE TECNOLOGIAS
-        // ============================================================
-
-        const ctxTech = document.getElementById("techChart").getContext("2d");
-
-        techChartInstance = new Chart(ctxTech, {
-          type: "bar",
-          data: {
-            labels: Object.keys(sortedTechData),
-            datasets: [
-              {
-                data: Object.values(sortedTechData),
-
-                backgroundColor: (context) => {
-                  const chart = context.chart;
-                  const { ctx, chartArea } = chart;
-                  if (!chartArea) return "#00ccff";
-                  return getGradient(ctx, chartArea);
-                },
-                hoverBackgroundColor: isDarkMode ? "#ffffff" : "#111111",
-              },
-            ],
-          },
-
-          options: {
-            ...commonOptions,
-
-            plugins: {
-              ...commonOptions.plugins,
-
-              title: {
-                display: true,
-                text: "TOP FERRAMENTAS",
-                color: titleColorTech,
-                font: {
-                  size: 19,
-                  weight: "bold",
-                },
-                padding: 20,
-              },
-            },
-          },
-        });
-
-        // ============================================================
-        // GRÁFICO DE SKILLS
-        // ============================================================
-
-        const ctxSkills = document
-          .getElementById("skillsChart")
-          .getContext("2d");
-
-        skillsChartInstance = new Chart(ctxSkills, {
-          type: "bar",
-          data: {
-            labels: Object.keys(sortedSkillData),
-            datasets: [
-              {
-                data: Object.values(sortedSkillData),
-
-                backgroundColor: isDarkMode ? "#e066ff" : "#8800cc",
-
-                hoverBackgroundColor: isDarkMode ? "#f08cff" : "#aa00ff",
-              },
-            ],
-          },
-
-          options: {
-            ...commonOptions,
-            plugins: {
-              ...commonOptions.plugins,
-              title: {
-                display: true,
-                text: "COMPETÊNCIAS CHAVE",
-                color: titleColorSkill,
-                font: {
-                  size: 19,
-                  weight: "bold",
-                },
-                padding: 20,
-              },
-            },
-          },
-        });
-      }
-
-      // ============================================================
-      // INICIALIZAÇÃO
-      // ============================================================
-
-      document.addEventListener("DOMContentLoaded", () => {
-        setTimeout(initCharts, 100);
-
-        const dayNightBtn = document.querySelector(".day-night");
-
-        if (dayNightBtn) {
-          dayNightBtn.addEventListener("click", () => {
-            setTimeout(initCharts, 180);
-          });
-        }
-
-        const observer = new MutationObserver(() => {
-          initCharts();
-        });
-
-        observer.observe(
-          document.body,
-
-          {
-            attributes: true,
-
-            attributeFilter: ["class"],
-          },
-        );
-      });
-    </script>
+    <script src="js/charts.js"></script>
+    <script src="js/renderProjects.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/sidebar.js"></script>
   </body>
 </html>
