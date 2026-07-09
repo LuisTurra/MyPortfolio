@@ -119,11 +119,45 @@ ul {
   margin-top: 8px;
 }
 
-.section .container {
+/* .section .container {
   padding-top: 15%;
   padding-bottom: 50px;
   justify-content: center;
   align-items: center;
+} */
+.section .container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== Ajuste da seção de projetos ===== */
+
+/* ===== Remove espaço vazio da seção de projetos ===== */
+
+.portfolio.section {
+  min-height: auto !important;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.portfolio.section .container {
+  padding-top: 0 !important;
+  padding-bottom: 20px !important;
+}
+
+.portfolio .row {
+  align-content: start;
+}
+
+#projetos-destaque-container,
+#todos-projetos-container,
+#projetos-sql-container,
+#jogos-container,
+#excelPBI-container,
+#Academico-container {
+  align-content: start;
 }
 
 .row {
@@ -473,8 +507,27 @@ body,
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 20px;
   padding: 0 12px;
+  /* width: 100%; */
+}
+/* #projetos-destaque-container,
+#todos-projetos-container,
+#projetos-sql-container,
+#jogos-container,
+#excelPBI-container,
+#Academico-container {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 12px;
+  width: 100%;
+  justify-content: start;
+  align-content: start;
 }
 
+
+.portfolio {
+  min-height: auto !important;
+} */
 /****************************************************************************************************/
 
 .game-toggle {

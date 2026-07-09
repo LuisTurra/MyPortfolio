@@ -105,7 +105,19 @@ function renderProjects(projects) {
   // Render each group
   Object.entries(grouped).forEach(([category, categoryProjects]) => {
     const container = containers[category];
-    if (!container || categoryProjects.length === 0) return;
+    if (!container) return;
+
+    const parentSection = container.closest("section");
+
+    console.log(category, parentSection);
+
+    if (parentSection) {
+      parentSection.style.display = categoryProjects.length > 0 ? "" : "none";
+    }
+
+    if (categoryProjects.length === 0) return;
+
+    // resto...
     // Cria o header da categoria apenas se não existir
     if (!container.querySelector(".section-title")) {
       container.insertAdjacentHTML(
