@@ -1,2 +1,6 @@
 chatbot.txt
-pythonextratc
+pythonextratc/
+
+*.html
+!index.html
+!404.html
