@@ -1847,7 +1847,7 @@ body:not(.dark) .chart-card {
   perspective: 1000px;
   width: 100%;
   min-height: 400px;
-  height:  400px;
+  height: 400px;
 }
 
 .dashboard .flip-card-back .row {
@@ -2001,6 +2001,82 @@ body:not(.dark) .chart-card {
   font-weight: 600;
   white-space: nowrap;
   flex-shrink: 0;
+}
+/* ====================== FILTER BUTTONS ====================== */
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+
+  margin: 40px auto;
+
+  max-width: 1300px;
+
+  padding: 15px;
+}
+
+.project-filters select {
+  width: 260px;
+
+  padding: 12px 18px;
+
+  border-radius: 10px;
+
+  border: 1px solid #444;
+
+  background: #202020;
+
+  color: #fff;
+
+  font-size: 15px;
+
+  transition: 0.25s;
+
+  cursor: pointer;
+}
+
+.project-filters select:hover {
+  border-color: #00bcd4;
+}
+
+.project-filters button {
+  padding: 12px 24px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #00bcd4;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.25s;
+}
+
+.project-filters button:hover {
+  transform: translateY(-2px);
+
+  opacity: 0.9;
+}
+
+.filter-counter {
+  width: 100%;
+
+  text-align: center;
+
+  margin-top: 15px;
+
+  font-size: 16px;
+
+  color: #ddd;
+
+  font-weight: 600;
 }
 
 /****************************************************************************************************/
@@ -3130,137 +3206,34 @@ body:not(.dark) .flip-card-back .github-link {
   }
 }
 
-/* ====================== FILTER BUTTONS ====================== */
-.project-filters{
-
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:center;
-    gap:18px;
-
-    margin:40px auto;
-
-    max-width:1300px;
-
-    padding:15px;
-
-}
-
-.project-filters select{
-
-    width:260px;
-
-    padding:12px 18px;
-
-    border-radius:10px;
-
-    border:1px solid #444;
-
-    background:#202020;
-
-    color:#fff;
-
-    font-size:15px;
-
-    transition:.25s;
-
-    cursor:pointer;
-
-}
-
-.project-filters select:hover{
-
-    border-color:#00bcd4;
-
-}
-
-.project-filters button{
-
-    padding:12px 24px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#00bcd4;
-
-    color:white;
-
-    cursor:pointer;
-
-    font-weight:600;
-
-    transition:.25s;
-
-}
-
-.project-filters button:hover{
-
-    transform:translateY(-2px);
-
-    opacity:.9;
-
-}
-
-.filter-counter{
-
-    width:100%;
-
-    text-align:center;
-
-    margin-top:15px;
-
-    font-size:16px;
-
-    color:#ddd;
-
-    font-weight:600;
-
-}
-
 /* Tablet */
 
-@media(max-width:900px){
+@media (max-width: 900px) {
+  .project-filters {
+    gap: 12px;
+  }
 
-    .project-filters{
-
-        gap:12px;
-
-    }
-
-    .project-filters select{
-
-        width:220px;
-
-    }
-
+  .project-filters select {
+    width: 220px;
+  }
 }
 
 /* Mobile */
 
-@media(max-width:600px){
+@media (max-width: 600px) {
+  .project-filters {
+    flex-direction: column;
+  }
 
-    .project-filters{
+  .project-filters select {
+    width: 100%;
 
-        flex-direction:column;
+    max-width: 350px;
+  }
 
-    }
+  .project-filters button {
+    width: 100%;
 
-    .project-filters select{
-
-        width:100%;
-
-        max-width:350px;
-
-    }
-
-    .project-filters button{
-
-        width:100%;
-
-        max-width:350px;
-
-    }
-
+    max-width: 350px;
+  }
 }
