@@ -117,7 +117,7 @@ function renderProjects(projects) {
 
     if (categoryProjects.length === 0) return;
 
-    // resto...
+    
     // Cria o header da categoria apenas se não existir
     if (!container.querySelector(".section-title")) {
       container.insertAdjacentHTML(
@@ -226,7 +226,7 @@ function renderProjects(projects) {
   }
 }
 
-// Nova função centralizada para inicializar tudo
+//  inicializar tudo
 function initializeCardInteractions() {
   // Força visibilidade dos overlays
   document.querySelectorAll(".project-overlay").forEach((ov) => {
@@ -245,7 +245,7 @@ function initializeCardInteractions() {
       .querySelectorAll(".flip-card, .flip-card-inner, .project-card")
       .forEach((el) => {
         el.style.display = "none";
-        void el.offsetHeight; // Force reflow
+        void el.offsetHeight; 
         el.style.display = "";
       });
 
@@ -264,7 +264,7 @@ function initPreviewHover() {
     ov.style.opacity = "1";
   });
 
-  // usa pointer events (funciona bem em desktop + touch)
+  // usa pointer events
   document.querySelectorAll(".hover-indicator-btn").forEach((btn) => {
     const card = btn.closest(".project-card");
     if (!card) return;
@@ -327,14 +327,14 @@ function ensureUIInitialized() {
     bg.style.transform = "scale(1)";
   });
 
-  // reanexa handlers (funções que você já tem)
+  // reanexa handlers
   if (typeof initPreviewHover === "function") initPreviewHover();
   //   if (typeof initFlipCards === "function") initFlipCards();
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-// roda no load (também pode rodar no DOMContentLoaded)
+// roda no load 
 window.addEventListener("load", () => {
   ensureUIInitialized();
 });

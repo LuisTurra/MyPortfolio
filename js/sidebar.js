@@ -43,7 +43,7 @@ async function loadSidebar() {
       },
     };
 
-    // continua o restante...
+   
 
     const nav = document.querySelector(".nav");
 
@@ -143,7 +143,7 @@ async function loadSidebar() {
 
         `;
 
-        // começa fechado
+       
         li.classList.add("closed");
       }
 
