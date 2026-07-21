@@ -1,11 +1,70 @@
 {
   "projects": [
     {
-      "_section1": "🚀 ==================== OTHER ==================== 🚀",
-      "_section2": "🚀 ==================== OTHER ==================== 🚀",
-      "_section3": "🚀 ==================== OTHER ==================== 🚀",
-      "_section4": "🚀 ==================== OTHER ==================== 🚀"
+      "_section1": "🚀 ==================== featured ==================== 🚀",
+      "_section2": "🚀 ==================== featured ==================== 🚀",
+      "_section3": "🚀 ==================== featured ==================== 🚀",
+      "_section4": "🚀 ==================== featured ==================== 🚀"
     },
+    {
+  "id": "businessIC",
+  "category": "featured",
+  "title": "Business Intelligence Copilot",
+  "description": "Sistema completo de Business Intelligence desenvolvido para transformar grandes volumes de dados de vendas em insights estratégicos. O projeto combina um Analytics Engine em Python, dashboards interativos em Streamlit e Inteligência Artificial Generativa com Groq para produzir análises executivas, identificar padrões de negócio e gerar recomendações baseadas em dados.",
+  "imagePath": "image/businessIC.gif",
+  "tags": [
+    "Python",
+    "Business Intelligence",
+    "Streamlit",
+    "Plotly",
+    "Groq API"
+  ],
+  "tools": [
+    "Visual Studio Code",
+    "Python",
+    "Streamlit",
+    "Plotly",
+    "Groq API",
+    "GitHub"
+  ],
+  "skills": [
+    "Python",
+    "Business Intelligence",
+    "Data Analytics",
+    "Data Cleaning",
+    "Data Validation",
+    "Feature Engineering",
+    "Pandas",
+    "NumPy",
+    "Statistical Analysis",
+    "KPI Development",
+    "Sales Analytics",
+    "Store Performance Analysis",
+    "Product Analysis",
+    "Customer Analytics",
+    "Seasonality Analysis",
+    "Revenue Analysis",
+    "Business Metrics",
+    "Anomaly Detection",
+    "Executive Dashboard",
+    "Interactive Dashboards",
+    "Data Visualization",
+    "Plotly",
+    "Streamlit",
+    "Generative AI",
+    "LLM Integration",
+    "Groq API",
+    "Executive Reporting",
+    "Prompt Engineering",
+    "JSON Data Pipeline",
+    "Software Architecture",
+    "Modular Architecture",
+    "Production Ready"
+  ],
+  "githubLink": "https://github.com/LuisTurra/Analista-copilot",
+  "reportPath": "",
+  "demoLink": "https://luisturra-analista-copilot-streamlit-app-uxbpbf.streamlit.app/AI_Executive_Assistant"
+},
     {
       "id": "churnsight",
       "category": "featured",
