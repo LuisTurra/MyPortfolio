@@ -37,16 +37,32 @@ async function loadProjectsData() {
 // ============================================================
 function countItems(projects, field) {
   const counter = {};
+  const labels = {};
 
   projects.forEach((project) => {
     if (!Array.isArray(project[field])) return;
 
     [...new Set(project[field])].forEach((item) => {
-      counter[item] = (counter[item] || 0) + 1;
+      const key = item
+        .toString()
+        .trim()
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+
+      // guarda o primeiro formato encontrado
+      if (!labels[key]) {
+        labels[key] = item;
+      }
+
+      counter[key] = (counter[key] || 0) + 1;
     });
   });
 
-  return counter;
+  // transforma novamente para exibição
+  return Object.fromEntries(
+    Object.entries(counter).map(([key, value]) => [labels[key], value]),
+  );
 }
 // ============================================================
 // Ordenação automática dos gráficos

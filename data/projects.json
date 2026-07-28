@@ -8,7 +8,7 @@
     },
     {
   "id": "ragKnowledgeAssistant",
-  "category": "featured",
+  "category": ["llm", "featured"],
   "title": "RAG Knowledge Assistant",
   "description": "Sistema completo de Retrieval-Augmented Generation (RAG) desenvolvido para responder perguntas utilizando exclusivamente informações presentes em documentos enviados pelo usuário. O projeto realiza upload de arquivos PDF, extração e processamento do texto, geração de embeddings, indexação vetorial com FAISS e busca semântica para recuperar os trechos mais relevantes antes de gerar respostas contextualizadas utilizando a API da Groq.",
   "imagePath": "image/ragknowassistant.gif",
@@ -64,7 +64,7 @@
 },
     {
   "id": "businessIC",
-  "category": "featured",
+  "category": ["llm"],
   "title": "Business Intelligence Copilot",
   "description": "Sistema completo de Business Intelligence desenvolvido para transformar grandes volumes de dados de vendas em insights estratégicos. O projeto combina um Analytics Engine em Python, dashboards interativos em Streamlit e Inteligência Artificial Generativa com Groq para produzir análises executivas, identificar padrões de negócio e gerar recomendações baseadas em dados.",
   "imagePath": "image/businessIC.gif",
@@ -123,7 +123,7 @@
 },
     {
       "id": "churnsight",
-      "category": "featured",
+      "category": ["llm", "featured"],
       "title": "ChurnSight AI",
       "description": "O projeto tem como objetivo transformar dados de clientes em decisões estratégicas de retenção, combinando análise preditiva, inteligência artificial generativa e simulações financeiras.",
       "imagePath": "image/churnsight.gif",
@@ -176,7 +176,7 @@
     },
     {
       "id": "investA",
-      "category": "featured",
+      "category": ["llm"],
       "title": "InvestAgent",
       "description": "O InvestAgent é um sistema híbrido de análise de ativos financeiros que combina modelos quantitativos desenvolvidos em Python com interpretação contextual por meio de um modelo de linguagem (LLM). O sistema coleta dados de mercado, calcula indicadores técnicos e gera scores quantitativos para avaliar tendência, momentum, risco e qualidade técnica de um ativo. Esses resultados são apresentados em um dashboard interativo desenvolvido em Streamlit, onde uma IA interpreta os sinais e fornece uma recomendação estruturada de investimento acompanhada de justificativa em linguagem natural.",
       "imagePath": "image/investagent.gif",
@@ -248,7 +248,7 @@
     },
     {
       "id": "orsco",
-      "category": "featured",
+      "category": "other",
       "title": "Otimização de Rotas (SupplyChain Optimizer)",
       "description": "O objetivo principal dessa análise é avaliar a eficiência de algoritmos de Reinforcement Learning na otimização de rotas logísticas em São Paulo, comparando Q-Learning e Deep Q-Network (DQN) para minimizar custos de transporte e atendimento de demandas. Usando Folium para geração do mapa das rotas e Gradio para interface visual.",
       "imagePath": "image/supplychain2.gif",
@@ -289,7 +289,7 @@
     },
     {
       "id": "datb",
-      "category": "featured",
+      "category": "other",
       "title": "Detecção de Anomalias em Transações Bitcoin",
       "description": "Desenvolvi um pipeline completo de detecção de anomalias em transações do blockchain Bitcoin usando apenas recursos gratuitos do Google Cloud Platform. Com dbt, criei models de staging e feature engineering para transformar dados públicos do BigQuery em atributos relevantes como valor da transação, contagem de inputs/outputs e razão da taxa. Implementei uma solução rule-based avançada com thresholds dinâmicos e anomaly score composto devido às limitações do Sandbox. O resultado é um sistema explicável e reproduzível para identificar padrões suspeitos como mixing e transações de alto risco.",
       "imagePath": "image/deteccaoanamolia.png",
@@ -401,7 +401,7 @@
       "demoLink": "https://lookerstudio.google.com/reporting/2e137245-51e8-4121-86ec-aa45754fcf76"
     },
     {
-      "category": "other",
+      "category": ["other","featured"],
       "id": "giran",
       "imagePath": "image/impactosfinIran.gif",
       "title": "Impacto Financeiro: Conflito Irã 2026",

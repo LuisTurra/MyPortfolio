@@ -18,6 +18,15 @@ function normalizeText(text) {
     .replace(/[-_]/g, " ")
     .replace(/\s+/g, " ");
 }
+function hasCategory(project, category) {
+  if (!project || !project.category) return false;
+
+  if (Array.isArray(project.category)) {
+    return project.category.map(normalizeText).includes(category);
+  }
+
+  return normalizeText(project.category) === category;
+}
 function setupFilters() {
   const categorySelect = document.getElementById("filter-category");
   const tagSelect = document.getElementById("filter-tag");
@@ -42,9 +51,15 @@ function setupFilters() {
 
   allProjects.forEach((project) => {
     // Categoria
-    const category = normalizeText(project.category);
+    const projectCategories = Array.isArray(project.category)
+      ? project.category
+      : [project.category];
 
-    categories[category] = (categories[category] || 0) + 1;
+    projectCategories.forEach((category) => {
+      const cleanCategory = normalizeText(category);
+
+      categories[cleanCategory] = (categories[cleanCategory] || 0) + 1;
+    });
 
     // Tags
     (project.tags || []).forEach((tag) => {
@@ -182,25 +197,31 @@ function filterProjects() {
 
   selectedSkill = document.getElementById("filter-skill").value;
 
-  filteredProjects = allProjects.filter((project) => {
-    const categoryOk =
-      selectedCategory === "" ||
-      normalizeText(project.category) === selectedCategory;
+  filteredProjects = [
+    ...new Map(
+      allProjects
+        .filter((project) => {
+          const categoryOk =
+            selectedCategory === "" ||
+            normalizeText(project.category) === selectedCategory;
 
-    const tagOk =
-      selectedTag === "" ||
-      (project.tags || []).map(normalizeText).includes(selectedTag);
+          const tagOk =
+            selectedTag === "" ||
+            (project.tags || []).map(normalizeText).includes(selectedTag);
 
-    const toolOk =
-      selectedTool === "" ||
-      (project.tools || []).map(normalizeText).includes(selectedTool);
+          const toolOk =
+            selectedTool === "" ||
+            (project.tools || []).map(normalizeText).includes(selectedTool);
 
-    const skillOk =
-      selectedSkill === "" ||
-      (project.skills || []).map(normalizeText).includes(selectedSkill);
+          const skillOk =
+            selectedSkill === "" ||
+            (project.skills || []).map(normalizeText).includes(selectedSkill);
 
-    return categoryOk && tagOk && toolOk && skillOk;
-  });
+          return categoryOk && tagOk && toolOk && skillOk;
+        })
+        .map((project) => [project.id, project]),
+    ).values(),
+  ];
 
   renderProjects(filteredProjects);
 

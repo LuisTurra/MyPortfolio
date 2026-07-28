@@ -1,7 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   loadSidebar();
 });
+function hasCategory(project, category) {
+  if (!project || !project.category) return false;
 
+  if (Array.isArray(project.category)) {
+    return project.category.includes(category);
+  }
+
+  return project.category === category;
+}
 async function loadSidebar() {
   try {
     const response = await fetch("data/projects.json");
@@ -15,6 +23,10 @@ async function loadSidebar() {
     const categories = {
       featured: {
         name: "Projetos em Destaque",
+        icon: "fa-chart-line",
+      },
+      llm: {
+        name: "LLM e IA Generativa",
         icon: "fa-chart-line",
       },
 
@@ -43,8 +55,6 @@ async function loadSidebar() {
       },
     };
 
-   
-
     const nav = document.querySelector(".nav");
 
     if (!nav) return;
@@ -60,8 +70,8 @@ async function loadSidebar() {
     nav.appendChild(home);
     nav.appendChild(about);
     Object.keys(categories).forEach((category) => {
-      const filtered = projects.filter(
-        (project) => project.category === category,
+      const filtered = projects.filter((project) =>
+        hasCategory(project, category),
       );
 
       if (filtered.length === 0) return;
@@ -143,7 +153,6 @@ async function loadSidebar() {
 
         `;
 
-       
         li.classList.add("closed");
       }
 
@@ -161,8 +170,6 @@ async function loadSidebar() {
       item.classList.toggle("closed");
     });
     // mantém projetos acadêmicos no final
-
-    
   } catch (error) {
     console.error("Erro carregando sidebar:", error);
   }

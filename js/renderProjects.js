@@ -59,6 +59,20 @@ window.addEventListener("load", () => {
     }
   }, 2000);
 });
+
+function hasCategory(project, category) {
+  if (!project || !project.category) return false;
+
+  // Novo formato:
+  // "category": ["featured", "llm"]
+  if (Array.isArray(project.category)) {
+    return project.category.includes(category);
+  }
+
+  // Formato antigo:
+  // "category": "llm"
+  return project.category === category;
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -70,6 +84,7 @@ function renderProjects(projects) {
 
   const containers = {
     featured: document.getElementById("projetos-destaque-container"),
+    llm: document.getElementById("projetos-llm-container"),
     other: document.getElementById("todos-projetos-container"),
     sql: document.getElementById("projetos-sql-container"),
     games: document.getElementById("jogos-container"),
@@ -86,16 +101,24 @@ function renderProjects(projects) {
 
   // Group projects by category
   const grouped = {
-    featured: projects.filter((p) => p && p.category === "featured"),
-    other: projects.filter((p) => p && p.category === "other"),
-    sql: projects.filter((p) => p && p.category === "sql"),
-    games: projects.filter((p) => p && p.category === "games"),
-    excel: projects.filter((p) => p && p.category === "excel"),
-    academic: projects.filter((p) => p && p.category === "academic"),
+    featured: projects.filter((p) => hasCategory(p, "featured")),
+
+    llm: projects.filter((p) => hasCategory(p, "llm")),
+
+    other: projects.filter((p) => hasCategory(p, "other")),
+
+    sql: projects.filter((p) => hasCategory(p, "sql")),
+
+    games: projects.filter((p) => hasCategory(p, "games")),
+
+    excel: projects.filter((p) => hasCategory(p, "excel")),
+
+    academic: projects.filter((p) => hasCategory(p, "academic")),
   };
   // Headers das categorias gerados automaticamente
   const categoryTitles = {
     featured: "Projetos em Destaque",
+    llm: "LLM e IA Generativa",
     other: "Outros Projetos",
     sql: "Projetos SQL",
     games: "Jogos",
@@ -117,7 +140,6 @@ function renderProjects(projects) {
 
     if (categoryProjects.length === 0) return;
 
-    
     // Cria o header da categoria apenas se não existir
     if (!container.querySelector(".section-title")) {
       container.insertAdjacentHTML(
@@ -245,7 +267,7 @@ function initializeCardInteractions() {
       .querySelectorAll(".flip-card, .flip-card-inner, .project-card")
       .forEach((el) => {
         el.style.display = "none";
-        void el.offsetHeight; 
+        void el.offsetHeight;
         el.style.display = "";
       });
 
@@ -334,7 +356,7 @@ function ensureUIInitialized() {
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-// roda no load 
+// roda no load
 window.addEventListener("load", () => {
   ensureUIInitialized();
 });
