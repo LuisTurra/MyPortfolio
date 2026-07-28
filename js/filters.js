@@ -6,6 +6,7 @@ let selectedCategory = "";
 let selectedTag = "";
 let selectedTool = "";
 let selectedSkill = "";
+
 function normalizeText(text) {
   if (!text) return "";
 
@@ -18,15 +19,40 @@ function normalizeText(text) {
     .replace(/[-_]/g, " ")
     .replace(/\s+/g, " ");
 }
+
 function hasCategory(project, category) {
   if (!project || !project.category) return false;
 
-  if (Array.isArray(project.category)) {
-    return project.category.map(normalizeText).includes(category);
-  }
+  const categories = Array.isArray(project.category)
+    ? project.category
+    : [project.category];
 
-  return normalizeText(project.category) === category;
+  return categories.map(normalizeText).includes(category);
 }
+
+function capitalize(text) {
+  if (!text) return "";
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+// Função auxiliar para popular os selects
+function populateSelect(selectId, items, useCapitalize = true) {
+  const select = document.getElementById(selectId);
+  if (!select) return;
+
+  select.innerHTML = `<option value="">Todas (${allProjects.length})</option>`;
+
+  Object.keys(items)
+    .sort((a, b) => a.localeCompare(b))
+    .forEach((key) => {
+      const displayText = useCapitalize ? capitalize(key) : key;
+      select.insertAdjacentHTML(
+        "beforeend",
+        `<option value="${key}">${displayText} (${items[key]})</option>`
+      );
+    });
+}
+
 function setupFilters() {
   const categorySelect = document.getElementById("filter-category");
   const tagSelect = document.getElementById("filter-tag");
@@ -39,143 +65,55 @@ function setupFilters() {
     return;
   }
 
-  categorySelect.innerHTML = "";
-  tagSelect.innerHTML = "";
-  toolSelect.innerHTML = "";
-  skillSelect.innerHTML = "";
-
   const categories = {};
   const tags = {};
   const tools = {};
   const skills = {};
 
   allProjects.forEach((project) => {
-    // Categoria
+    // Categoria (suporta array ou string)
     const projectCategories = Array.isArray(project.category)
       ? project.category
       : [project.category];
 
     projectCategories.forEach((category) => {
-      const cleanCategory = normalizeText(category);
-
-      categories[cleanCategory] = (categories[cleanCategory] || 0) + 1;
+      const clean = normalizeText(category);
+      if (clean) categories[clean] = (categories[clean] || 0) + 1;
     });
 
     // Tags
     (project.tags || []).forEach((tag) => {
-      const cleanTag = normalizeText(tag);
-
-      tags[cleanTag] = (tags[cleanTag] || 0) + 1;
+      const clean = normalizeText(tag);
+      if (clean) tags[clean] = (tags[clean] || 0) + 1;
     });
 
+    // Tools
     (project.tools || []).forEach((tool) => {
-      const cleanTool = normalizeText(tool);
-
-      tools[cleanTool] = (tools[cleanTool] || 0) + 1;
+      const clean = normalizeText(tool);
+      if (clean) tools[clean] = (tools[clean] || 0) + 1;
     });
 
     // Skills
     (project.skills || []).forEach((skill) => {
-      const cleanSkill = normalizeText(skill);
-
-      skills[cleanSkill] = (skills[cleanSkill] || 0) + 1;
+      const clean = normalizeText(skill);
+      if (clean) skills[clean] = (skills[clean] || 0) + 1;
     });
   });
 
-  ///////////////////////////////////////////////////////
-  // Categoria
-  ///////////////////////////////////////////////////////
+  // Popular selects
+  populateSelect("filter-category", categories, true);
+  populateSelect("filter-tag", tags, true);
+  populateSelect("filter-tool", tools, false);   // mantive sem capitalize (você decide)
+  populateSelect("filter-skill", skills, false);
 
-  categorySelect.insertAdjacentHTML(
-    "beforeend",
-    `<option value="">Todas (${allProjects.length})</option>`,
-  );
-
-  Object.keys(categories)
-    .sort((a, b) => a.localeCompare(b))
-    .forEach((category) => {
-      categorySelect.insertAdjacentHTML(
-        "beforeend",
-        `<option value="${category}">
-                    ${capitalize(category)} (${categories[category]})
-                </option>`,
-      );
-    });
-
-  ///////////////////////////////////////////////////////
-  // Tags
-  ///////////////////////////////////////////////////////
-
-  tagSelect.insertAdjacentHTML(
-    "beforeend",
-    `<option value="">Todas (${allProjects.length})</option>`,
-  );
-
-  Object.keys(tags)
-    .sort((a, b) => a.localeCompare(b))
-    .forEach((tag) => {
-      tagSelect.insertAdjacentHTML(
-        "beforeend",
-        `<option value="${tag}">
-                    ${capitalize(tag)} (${tags[tag]})
-                </option>`,
-      );
-    });
-
-  ///////////////////////////////////////////////////////
-  // Tools
-  ///////////////////////////////////////////////////////
-
-  toolSelect.insertAdjacentHTML(
-    "beforeend",
-    `<option value="">Todas (${allProjects.length})</option>`,
-  );
-
-  Object.keys(tools)
-    .sort((a, b) => a.localeCompare(b))
-    .forEach((tool) => {
-      toolSelect.insertAdjacentHTML(
-        "beforeend",
-        `<option value="${tool}">
-                    ${tool} (${tools[tool]})
-                </option>`,
-      );
-    });
-
-  ///////////////////////////////////////////////////////
-  // Skills
-  ///////////////////////////////////////////////////////
-
-  skillSelect.insertAdjacentHTML(
-    "beforeend",
-    `<option value="">Todas (${allProjects.length})</option>`,
-  );
-
-  Object.keys(skills)
-    .sort((a, b) => a.localeCompare(b))
-    .forEach((skill) => {
-      skillSelect.insertAdjacentHTML(
-        "beforeend",
-        `<option value="${skill}">
-                    ${skill} (${skills[skill]})
-                </option>`,
-      );
-    });
-
-  ///////////////////////////////////////////////////////
-
-  categorySelect.removeEventListener("change", filterProjects);
-  tagSelect.removeEventListener("change", filterProjects);
-  toolSelect.removeEventListener("change", filterProjects);
-  skillSelect.removeEventListener("change", filterProjects);
-
-  categorySelect.addEventListener("change", filterProjects);
-  tagSelect.addEventListener("change", filterProjects);
-  toolSelect.addEventListener("change", filterProjects);
-  skillSelect.addEventListener("change", filterProjects);
+  // Remover listeners antigos e adicionar novos
+  const filters = [categorySelect, tagSelect, toolSelect, skillSelect];
+  filters.forEach(select => {
+    select.removeEventListener("change", filterProjects);
+    select.addEventListener("change", filterProjects);
+  });
 
   const clearBtn = document.getElementById("clear-filters");
-
   if (clearBtn) {
     clearBtn.removeEventListener("click", clearFilters);
     clearBtn.addEventListener("click", clearFilters);
@@ -190,43 +128,31 @@ function setupFilters() {
 
 function filterProjects() {
   selectedCategory = document.getElementById("filter-category").value;
-
   selectedTag = document.getElementById("filter-tag").value;
-
   selectedTool = document.getElementById("filter-tool").value;
-
   selectedSkill = document.getElementById("filter-skill").value;
 
-  filteredProjects = [
-    ...new Map(
-      allProjects
-        .filter((project) => {
-          const categoryOk =
-            selectedCategory === "" ||
-            normalizeText(project.category) === selectedCategory;
+  filteredProjects = allProjects.filter((project) => {
+    const categoryOk = selectedCategory === "" || hasCategory(project, selectedCategory);
 
-          const tagOk =
-            selectedTag === "" ||
-            (project.tags || []).map(normalizeText).includes(selectedTag);
+    const tagOk =
+      selectedTag === "" ||
+      (project.tags || []).some(tag => normalizeText(tag) === selectedTag);
 
-          const toolOk =
-            selectedTool === "" ||
-            (project.tools || []).map(normalizeText).includes(selectedTool);
+    const toolOk =
+      selectedTool === "" ||
+      (project.tools || []).some(tool => normalizeText(tool) === selectedTool);
 
-          const skillOk =
-            selectedSkill === "" ||
-            (project.skills || []).map(normalizeText).includes(selectedSkill);
+    const skillOk =
+      selectedSkill === "" ||
+      (project.skills || []).some(skill => normalizeText(skill) === selectedSkill);
 
-          return categoryOk && tagOk && toolOk && skillOk;
-        })
-        .map((project) => [project.id, project]),
-    ).values(),
-  ];
+    return categoryOk && tagOk && toolOk && skillOk;
+  });
 
   renderProjects(filteredProjects);
 
   const counter = document.getElementById("projects-count");
-
   if (counter) {
     counter.textContent = `${filteredProjects.length} de ${allProjects.length} projetos`;
   }
@@ -245,23 +171,12 @@ function clearFilters() {
   selectedTool = "";
   selectedSkill = "";
 
-  filteredProjects = allProjects;
+  filteredProjects = [...allProjects]; // cópia para evitar referência
 
   renderProjects(filteredProjects);
 
   const counter = document.getElementById("projects-count");
-
   if (counter) {
     counter.textContent = `${allProjects.length} de ${allProjects.length} projetos`;
   }
 }
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function capitalize(text) {
-  if (!text) return "";
-
-  return text.charAt(0).toUpperCase() + text.slice(1);
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
