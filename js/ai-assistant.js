@@ -23,7 +23,7 @@ async function askPortfolioAI(question){
 
 
     const data = await response.json();
-
+    console.log("RESPOSTA API:", data);
 
     return data.answer;
 

@@ -10,24 +10,48 @@ button.onclick = () => {
   windowAI.classList.toggle("open");
 };
 
-input.addEventListener("keydown", async (e) => {
-  if (e.key === "Enter") {
-    const question = input.value;
+function addChatMessage(text, type) {
+  const p = document.createElement("p");
 
-    messages.innerHTML += `
-<p class="user-message">
-<b>Você:</b> ${question}
-</p>
-`;
+  p.className = type;
 
-    input.value = "";
+  p.textContent = text;
 
+  messages.appendChild(p);
+
+  messages.scrollTop = messages.scrollHeight;
+}
+
+input.addEventListener("keydown", async (event) => {
+  if (event.key !== "Enter") {
+    return;
+  }
+
+  const question = input.value.trim();
+
+  if (!question) {
+    return;
+  }
+
+  addChatMessage("Você: " + question, "user-message");
+
+  input.value = "";
+
+  addChatMessage("AI: Pensando...", "ai-message");
+
+  try {
     const answer = await askPortfolioAI(question);
 
-    messages.innerHTML += `
-<p class="ai-message">
-<b>AI:</b> ${answer}
-</p>
-`;
+    const loading = document.querySelector(".ai-message:last-child");
+
+    if (loading && loading.textContent.includes("Pensando")) {
+      loading.remove();
+    }
+
+    addChatMessage("AI: " + answer, "ai-message");
+  } catch (error) {
+    console.error(error);
+
+    addChatMessage("AI: Erro ao conectar.", "ai-message");
   }
 });
