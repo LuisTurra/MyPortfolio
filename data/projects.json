@@ -7,6 +7,47 @@
       "_section4": "🚀 ==================== featured ==================== 🚀"
     },
     {
+  "category": "llm",
+  "id": "portfolioAIAssistant",
+  "imagePath": "image/portfolio-ai-assistant.gif",
+  "title": "Portfolio AI Assistant – Assistente Inteligente com Cloudflare Workers V2",
+  "description": "Assistente virtual inteligente integrado ao site de portfólio, desenvolvido para responder perguntas sobre projetos, formação, habilidades e trajetória profissional utilizando Inteligência Artificial Generativa. A aplicação utiliza Cloudflare Workers como backend serverless, classificação automática de intenção, busca contextual em arquivos JSON de conhecimento e integração com a API da Groq para geração de respostas baseadas exclusivamente nas informações do portfólio.",
+  "tags": [
+    "JavaScript",
+    "Cloudflare Workers",
+    "Groq API",
+    "LLM",
+    "IA Generativa",
+    "Chatbot"
+  ],
+  "tools": [
+    "JavaScript",
+    "Cloudflare Workers",
+    "Groq API",
+    "GitHub",
+    "HTML",
+    "CSS"
+  ],
+  "skills": [
+    "JavaScript",
+    "Arquitetura Serverless",
+    "Cloudflare Workers",
+    "Large Language Models (LLM)",
+    "Inteligência Artificial Generativa",
+    "Processamento de Linguagem Natural",
+    "Prompt Engineering",
+    "Classificação de Intenção",
+    "Busca Contextual",
+    "Integração de APIs",
+    "Desenvolvimento Web",
+    "Arquitetura de Software",
+    "Git & GitHub",
+    "Deploy em Cloud"
+  ],
+  "githubLink": "https://github.com/LuisTurra/portfolio-ai-assistant",
+  "demoLink": ""
+},
+    {
   "id": "ragKnowledgeAssistant",
   "category": ["llm", "featured"],
   "title": "RAG Knowledge Assistant",
@@ -564,7 +605,7 @@
     },
     {
       "category": "other",
-      "id": "chatbot",
+      "id": ["chatbot","llm"],
       "imagePath": "image/chatbot.gif",
       "title": "Chatbot IA Integrado ao Portfólio Pessoal",
       "description": "Desenvolvi e integrei um chatbot inteligente diretamente a meu site portfólio, permitindo que visitantes interajam em tempo real e façam perguntas sobre meus projetos, habilidades e experiência profissional. O bot usa IA generativa real, prompt personalizado com meu background completo e widget flutuante responsivo.",
