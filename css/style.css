@@ -3290,3 +3290,266 @@ body:not(.dark) .flip-card-back .github-link {
     max-width: 350px;
   }
 }
+
+/* ============================================= */
+/* chat            */
+/* ============================================= */
+/* ================================
+   AI ASSISTANT WIDGET
+================================ */
+
+#ai-chat {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+/* Botão flutuante */
+
+#ai-button {
+  position: fixed;
+
+  right: 30px;
+  bottom: 30px;
+
+  width: 64px;
+  height: 64px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+
+  color: white;
+
+  font-size: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  z-index: 9999;
+}
+
+#ai-button:hover {
+  transform: translateY(-4px) scale(1.05);
+
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.45);
+}
+
+/* Janela */
+
+#ai-window {
+  display: none;
+
+  position: fixed;
+
+  right: 30px;
+
+  bottom: 110px;
+
+  width: 380px;
+
+  max-width: calc(100vw - 40px);
+
+  height: 520px;
+
+  background: #ffffff;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+
+  border: 1px solid #e5e7eb;
+
+  flex-direction: column;
+
+  z-index: 9998;
+
+  animation: fadeUp 0.25s ease;
+}
+
+#ai-window.open {
+  display: flex;
+}
+
+/* Animação */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+
+#ai-window::before {
+  content: "🤖 Luis Turra AI Assistant";
+
+  display: block;
+
+  padding: 18px 20px;
+
+  color: white;
+
+  font-weight: 600;
+
+  font-size: 16px;
+
+  background: linear-gradient(135deg, #111827, #1e40af);
+}
+
+/* Área das mensagens */
+
+#ai-messages {
+  flex: 1;
+
+  padding: 18px;
+
+  overflow-y: auto;
+
+  background: #f8fafc;
+}
+
+/* Mensagens */
+
+#ai-messages p {
+  margin: 0 0 14px;
+
+  padding: 12px 15px;
+
+  border-radius: 14px;
+
+  line-height: 1.5;
+
+  font-size: 14px;
+}
+
+/* usuário */
+
+#ai-messages p b:first-child {
+  color: #2563eb;
+}
+
+/* Input */
+
+#ai-input {
+  margin: 15px;
+
+  padding: 14px 16px;
+
+  border-radius: 14px;
+
+  border: 1px solid #d1d5db;
+
+  outline: none;
+
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+#ai-input:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Scroll */
+
+#ai-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+#ai-messages::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 10px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  #ai-button {
+    right: 20px;
+
+    bottom: 20px;
+  }
+
+  #ai-window {
+    right: 10px;
+
+    bottom: 95px;
+
+    width: calc(100vw - 20px);
+
+    height: 70vh;
+  }
+}
+/* Texto geral do chat */
+#ai-messages {
+  color: #1f2937;
+}
+
+
+/* Mensagem do assistente */
+#ai-messages p {
+  background: #ffffff;
+  color: #1f2937;
+
+  border: 1px solid #e5e7eb;
+}
+
+
+/* Mensagem do usuário */
+#ai-messages p.user-message {
+  background: #2563eb;
+  color: #ffffff;
+
+  margin-left: auto;
+
+  border: none;
+}
+
+
+/* Títulos dentro da mensagem */
+#ai-messages b {
+  color: inherit;
+}
+.ai-message {
+  background: #ffffff;
+  color: #1f2937;
+  align-self: flex-start;
+}
+
+
+.user-message {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #06b6d4
+  );
+
+  color: white;
+
+  margin-left: auto;
+}

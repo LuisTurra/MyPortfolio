@@ -1,0 +1,45 @@
+{
+  "education": [
+    {
+      "id": "tecnico_desenvolvimento_sistemas",
+      "institution": "ETEC Eudécio Luiz Vicente",
+      "location": "Adamantina - SP, Brasil",
+      "degree": "Técnico em Desenvolvimento de Sistemas",
+      "type": "Curso Técnico",
+      "start_year": 2019,
+      "end_year": 2020,
+      "status": "Concluído",
+      "description": "Curso Técnico em Desenvolvimento de Sistemas com foco no desenvolvimento de websites, aplicações desktop, mobile e servidor.",
+      "skills": [
+        "Java",
+        "C#",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP",
+        "MySQL"
+      ]
+    },
+    {
+      "id": "ciencia_dados_fatec",
+      "institution": "FATEC Adamantina",
+      "location": "Adamantina - SP, Brasil",
+      "degree": "Tecnólogo em Ciência de Dados",
+      "type": "Graduação",
+      "start_year": 2020,
+      "end_year": 2023,
+      "status": "Concluído",
+      "description": "Graduação em Ciência de Dados com foco em análise de dados, estatística, Machine Learning e Inteligência Artificial, utilizando ferramentas modernas para análise, modelagem e visualização de dados.",
+      "skills": [
+        "Python",
+        "R",
+        "Power BI",
+        "Excel",
+        "Jupyter Notebook",
+        "Machine Learning",
+        "Estatística",
+        "Análise de Dados"
+      ]
+    }
+  ]
+}

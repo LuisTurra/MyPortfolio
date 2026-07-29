@@ -1,0 +1,35 @@
+{
+  "name": "Luis Henrique Turra Ramos",
+  "title": "Cientista de Dados",
+  "summary": "Tenho 30 anos, nasci e cresci em Adamantina-SP. Sou apaixonado por Programação, Estatística e Ciência de Dados, desenvolvendo projetos de Machine Learning, Inteligência Artificial, Engenharia de Dados e Business Intelligence para transformar dados em soluções práticas.",
+  "personal_information": {
+    "birth_date": "1994-11-23",
+    "age": 30,
+    "city": "Adamantina",
+    "state": "SP",
+    "country": "Brasil",
+    "education": "Tecnólogo em Ciência de Dados",
+    "employment_status": "Buscando oportunidades na área de Ciência de Dados"
+  },
+  "interests": [
+    "Programação",
+    "Estatística",
+    "Ciência de Dados",
+    "Machine Learning",
+    "Deep Learning",
+    "Inteligência Artificial",
+    "Business Intelligence",
+    "Engenharia de Dados"
+  ],
+  "career_objective": "Atuar como Cientista de Dados desenvolvendo soluções baseadas em dados, Machine Learning e Inteligência Artificial para gerar valor ao negócio e apoiar a tomada de decisão.",
+  "languages": [
+    {
+      "language": "Português",
+      "level": "Nativo"
+    },
+    {
+      "language": "Inglês",
+      "level": "Intermediário"
+    }
+  ]
+}

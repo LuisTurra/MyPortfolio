@@ -562,11 +562,32 @@
         });
       });
     </script>
+    <div id="ai-messages">
+    <p class="ai-message">
+        Olá! Sou o assistente do portfólio do Luis. 
+        Como posso ajudar?
+    </p>
+</div>
+      <button id="ai-button">🤖</button>
 
+      <div id="ai-window">
+        <div id="ai-messages">
+          <div>
+            Olá! Sou o assistente do portfólio do Luis. Pergunte sobre projetos,
+            formação ou habilidades.
+          </div>
+        </div>
+
+        <input id="ai-input" placeholder="Pergunte algo..." />
+      </div>
+    </div>
+
+    <script src="js/ai-assistant.js"></script>
+    <script src="js/chat.js"></script>
     <!---*************************************************************-->
     <!--**************ChatBOT***********************************************-->
     <!-- Chatbot Widget com IA (versão com estilos inline - sem Tailwind) -->
-    <style>
+    <!-- <style>
       #chat-widget-container {
         position: fixed;
         bottom: 20px;
@@ -729,8 +750,8 @@
           />
         </div>
       </div>
-    </div>
-    <script>
+    </div> -->
+    <!-- <script>
       // ===== CONFIGURAÇÕES =====
       const CHATBOT_URL =
         "https://chatbot-portfolio.chatbot-portfolio.workers.dev";
@@ -833,7 +854,7 @@
           }
         }
       });
-    </script>
+    </script> -->
     <!-- TOAST DE AVISO DE CARREGAMENTO -->
     <div id="project-toast" class="project-toast">
       <div class="toast-info">
